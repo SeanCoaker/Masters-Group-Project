@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.11.6)  6 DEC 2021 00:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.11.6)  6 DEC 2021 23:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1548,9 +1548,7 @@ Package pdftex.def Info: graphics/swansea.png  used on input line 33.
 
 
 
-] [2]) (./milestone1.bbl [3] [4
-
-]
+] [2] [3]) (./milestone1.bbl [4]
 bibitemlist
 
 LaTeX Warning: Empty `thebibliography' environment on input line 24.
@@ -1561,23 +1559,25 @@ Package minitoc Info: I0009
 (minitoc)             Creating the milestone1.maf file.
 \openout4 = `milestone1.maf'.
 
- [5] (./milestone1.aux)
+ [5
+
+] (./milestone1.aux)
 Package rerunfilecheck Info: File `milestone1.out' has not changed.
 (rerunfilecheck)             Checksum: D8B8F79EF272B0E9E668CAD67C1FE62C;505.
  ) 
 Here is how much of TeX's memory you used:
- 34718 strings out of 478579
- 595975 string characters out of 5853457
- 961275 words of memory out of 5000000
+ 34719 strings out of 478579
+ 595991 string characters out of 5853457
+ 962277 words of memory out of 5000000
  51770 multiletter control sequences out of 15000+600000
  429856 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,12n,120p,1448b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,11n,120p,1981b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on milestone1.pdf (7 pages, 77466 bytes).
+Output written on milestone1.pdf (7 pages, 80457 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
+ 87 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
