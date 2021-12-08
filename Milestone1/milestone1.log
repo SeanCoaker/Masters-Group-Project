@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.11.6)  6 DEC 2021 23:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.20)  8 DEC 2021 00:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -512,20 +512,20 @@ File: english.mld 2006/01/13
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
 )) (/usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
  (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 227.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
-Package xcolor Info: Model `RGB' extended on input line 1368.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
@@ -1534,7 +1534,7 @@ LaTeX Info: Redefining \nameref on input line 10.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-<graphics/swansea.png, id=27, 416.2752pt x 284.7438pt>
+<graphics/swansea.png, id=35, 416.2752pt x 284.7438pt>
 File: graphics/swansea.png Graphic file (type png)
 <use graphics/swansea.png>
 Package pdftex.def Info: graphics/swansea.png  used on input line 33.
@@ -1548,7 +1548,13 @@ Package pdftex.def Info: graphics/swansea.png  used on input line 33.
 
 
 
-] [2] [3]) (./milestone1.bbl [4]
+] [2] [3]) (./chapter/requirements.tex [4] (./tables/func_reqs.tex (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd) (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omlztmcm.fd) (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omsztmcm.fd) (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/omxztmcm.fd) (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd) (/usr/local/texlive/2021/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [5
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.85 	\end{xltabular}
+                     ])) (./milestone1.bbl [6]
 bibitemlist
 
 LaTeX Warning: Empty `thebibliography' environment on input line 24.
@@ -1559,25 +1565,25 @@ Package minitoc Info: I0009
 (minitoc)             Creating the milestone1.maf file.
 \openout4 = `milestone1.maf'.
 
- [5
+ [7
 
 ] (./milestone1.aux)
 Package rerunfilecheck Info: File `milestone1.out' has not changed.
-(rerunfilecheck)             Checksum: D8B8F79EF272B0E9E668CAD67C1FE62C;505.
+(rerunfilecheck)             Checksum: 3218478DC12D741AA4620C76A7F61AE9;780.
  ) 
 Here is how much of TeX's memory you used:
- 34719 strings out of 478579
- 595991 string characters out of 5853457
- 962277 words of memory out of 5000000
- 51770 multiletter control sequences out of 15000+600000
- 429856 words of font info for 48 fonts, out of 8000000 for 9000
+ 34881 strings out of 478579
+ 598824 string characters out of 5853456
+ 975399 words of memory out of 5000000
+ 51886 multiletter control sequences out of 15000+600000
+ 442544 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,11n,120p,1981b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 89i,11n,120p,1981b,619s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on milestone1.pdf (7 pages, 80457 bytes).
+Output written on milestone1.pdf (9 pages, 86489 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 105 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 20 named destinations out of 1000 (max. 500000)
+ 74 words of extra memory for PDF output out of 10000 (max. 10000000)
 
