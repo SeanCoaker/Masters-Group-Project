@@ -2218,10 +2218,10 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT ./milestone1.bbl
-INPUT milestone1.bbl
-INPUT ./milestone1.bbl
-INPUT milestone1.bbl
+INPUT ./tables/non_func_reqs.tex
+INPUT ./tables/non_func_reqs.tex
+INPUT ./tables/non_func_reqs.tex
+INPUT ./tables/non_func_reqs.tex
 OUTPUT milestone1.maf
 INPUT ./milestone1.mtc
 INPUT milestone1.mtc

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.20)  8 DEC 2021 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.20)  9 DEC 2021 00:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1559,36 +1559,33 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.85 	\end{xltabular}
-                     ])) (./milestone1.bbl [8]
-bibitemlist
-
-LaTeX Warning: Empty `thebibliography' environment on input line 24.
-
-)
+                     ]) (./tables/non_func_reqs.tex [8] [9pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.85 	\end{xltabular}
+                     ]))
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the milestone1.maf file.
 \openout4 = `milestone1.maf'.
 
- [9
-
-] (./milestone1.aux)
+ [10] (./milestone1.aux)
 Package rerunfilecheck Info: File `milestone1.out' has not changed.
-(rerunfilecheck)             Checksum: EF063BE36BD8CB527D73634BD4A05A97;1717.
+(rerunfilecheck)             Checksum: 13916AADB745D6A5AE5D78C19A4FEDCC;1805.
  ) 
 Here is how much of TeX's memory you used:
- 34911 strings out of 478579
- 599324 string characters out of 5853456
- 975471 words of memory out of 5000000
- 51902 multiletter control sequences out of 15000+600000
+ 34910 strings out of 478579
+ 599335 string characters out of 5853456
+ 980693 words of memory out of 5000000
+ 51899 multiletter control sequences out of 15000+600000
  442544 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,11n,120p,1981b,619s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on milestone1.pdf (11 pages, 90842 bytes).
+Output written on milestone1.pdf (12 pages, 94114 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
+ 144 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
  122 words of extra memory for PDF output out of 10000 (max. 10000000)
 

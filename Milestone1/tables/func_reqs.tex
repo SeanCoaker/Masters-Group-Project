@@ -28,11 +28,11 @@
 
         &
 
-        The wearable device should detect when a patient has walked more than 1 metre before sounding an alarm if the walking aid is not moving.
+        The wearable device should detect when a patient has walked more than 1 metre before communicating with the walking aid.
 
         &
 
-        We can use a tri axial accelerometer here to detect the acceleration of the device and in which direction. Using the equation of distance = speed * time, we can deduce from this a distance walked before deciding to fire an alarm to the patient.\\
+        We can use a tri axial accelerometer to detect changes in acceleration that are indicative of the user moving or being mobile. Once movement is confirmed, we will then commuicate with the walking aid device to ensure the user has successively reached and engaged with it, prior to alerting them to use it.\\
 
         \midrule
 
@@ -40,7 +40,7 @@
 
         &
 
-        Patients should be alerted with the voice of friend, carer or relative to avoid startling them.
+        Patients should be alerted with the voice of a friend, carer or relative to avoid startling them.
 
         &
 
@@ -52,7 +52,7 @@
 
         &
 
-        The wearble device should include a solution for deaf people that still reminds them to take their walking aid with them without the need for an audio alarm.
+        The wearable device should include a solution for deaf people that still reminds them to take their walking aid with them without the need for an audio alarm.
 
         &
 
@@ -64,7 +64,7 @@
 
         &
 
-        If developement time allows, the system should include fall detection as a 'nice-to-have' feature.
+        If development time allows, the system should include fall detection as a stretch goal feature.
 
         &
 
@@ -80,7 +80,7 @@
 
         &
 
-        There are a few options we could use to meet this user requirement. The obvious option would be to use bluetooth to communicate between the 2 TinyPICO devices. Other options include using web sockets and WiFi to communicate between the 2 devices, but this requires a WiFi connection to work. Lastly, we could utilise LoRa modules to communicate between the 2 devices. However, using LoRa modules would consume more of our budget than using the buil in bluetooth technology on the TinyPICO board.
+        To meet this requirement we investigate the use of 433MHz Rx/Tx modules for low power and low level communication between the 2 devices in the system, this technology should allow for the basic level of communication required, with minimal power use and minimal complexity.\\
 
 	\end{xltabular}
 	\label{tbl:func_reqs_table}
