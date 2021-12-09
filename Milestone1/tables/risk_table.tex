@@ -1,0 +1,171 @@
+\small
+\begin{xltabular}[H]{\textwidth}{c | X | X}
+    \caption[Risks Table]{A table of risks along with strategies to mitigate those risks.}\\
+
+    \toprule
+
+    Code & Risk & Mitigation\\
+
+    \midrule
+    \endfirsthead
+
+    \toprule
+
+    Code & Risk & Mitigation\\
+
+    \midrule
+    \endhead
+
+    \hline
+    \multicolumn{3}{|r|}{{Continued on next page}}\\
+    \hline
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    RSK1
+
+    &
+
+    One or more of our hardware devices may fail and will limit how much testing can be done.
+
+    &
+
+    To mitigate this risk we will choose to use low cost but still effective hardware, which will allow for extra funds within our £150 budget should we need it to replace hardware during development. We also have the opportunity to attain TinyPICO devices from the University for this project, allowing us to minimise the effects on our budget.\\
+
+    \midrule
+
+    RSK2
+
+    &
+
+    The Rx/Tx modules could fail and would disable the communication feature between the wearable and walking aid devices.
+
+    &
+
+    The replacement of these modules should not be much of an issue due to their low cost. The real issue would arise when an Rx/Tx module fails whilst in operation for a patient. We would need to form a protocol here that detects when communication is unable to occur between the 2 devices, and can alert the patient's carer of this.\\
+
+    \midrule
+
+    RSK3
+
+    &
+
+    Code that we upload to the TinyPICO devices could brick the TinyPICO devices and cause them to not function at all.
+
+    &
+
+    Should this occur, we could attempt to reflash previosuly working code onto the TinyPICO. If this fails, we would be left with the occurrence of risk RSK1.\\
+
+    \midrule
+
+    RSK4
+
+    &
+
+    GitHub could experience a failure which could cause the loss of our repository.
+
+    &
+
+    Mitigating this risk is difficult. It's unlikely this will happen and that we would lose our repository as GitHub likely uses a vast backup storage solution. But, should it happen it would be catastrophic and so we should mitigate against this risk. To do this, each developer within the team will store a clone of the repository on their personal system and the team will be able to piece the code back together should this risk arise.\\
+
+    \midrule
+
+    RSK5
+
+    &
+
+    We could over-project what features can be included in the project before the given deadline, potentially leaving the client disappointed at project handover.
+
+    &
+
+    To mitigate against this risk, we have discussed our user requirements with the clients and feel that we have decided upon a set of features that we confidently implement within the time frame given to us. We will prioritise the most important features to ensure that stretch goal features are added when critical goals have already been met.\\
+
+    \midrule
+
+    RSK6
+
+    &
+
+    Other work of the University curriculum could impact and delay the development of the project.
+
+    &
+
+    We have attempted to account for this within our schedule in chapter \ref{chap:schedule} by allowing for slippage at the end of the schedule, which can be used for developing incomplete features.\\
+
+    \midrule
+
+    RSK7
+
+    &
+
+    Compatibility issues between Arduino libraries and our hardware devices could cause setbacks when developing code.
+
+    &
+
+    To mitigate against this risk, we will use hardware devices that have libraries developed for them and hardware that the team have previous experience for successful development in our code.\\
+
+    \midrule
+
+    RSK8
+
+    &
+
+    The fast growth of an unknown competitor could fill the void in the market that we are aiming to fill with this project.
+
+    &
+
+    It would be difficult to specifically mitigate this risk. We shall ensure that the developed product is made to the highest quality producable by our team.\\
+
+    \midrule
+
+    RSK9
+
+    &
+
+    Natural disasters could bring about the loss of hardware and software being used for the development of our product.
+
+    &
+
+    The use of low cost hardware in this system will allow us to replace any compromised hardware if need be. We have decided to store the team's code in a GitHub repository which will allow our code to be protected in an off cite facility. The loss of developer computer systems is by far the biggest risk here, where our budget would not be able to cover the replacement of such computer systems.\\
+
+    \midrule
+
+    RSK10
+
+    &
+
+    Especially in the current coronavirus climate, our developers may be unwell for a period of time that has a negative impact on the development of the product.
+
+    &
+
+    Within our schedule we have included time for slippage that to allow for any time needed by the team to be take off due to illness. Should a developer need to self isolate and should they not be experiencing symptoms, they could continue to work on the product from a remote location using the GitHub repository.\\
+
+    \midrule
+
+    RSK11
+
+    &
+
+    An Inadequate testing strategy could allow unidentified bugs to be released in the product when handing it over to the client. This could lead to a disappointed client.
+
+    &
+
+    To mitigate against this risk we have devised a testing strategy that ensures thorough testing is carried out throughout the development of our product. We are confident that the proposed testing strategy will allow the team to identify and correct errors in the system before the product is released to the client.\\
+
+    \midrule
+
+    RSK12
+
+    &
+
+    Poorly developed code could mean that despite substantial testing, many bugs could still be included in the product at the conclusion of the project lifecycle.
+
+    &
+
+    To mitigate this risk, we will be following our testing strategy outlined in this document to allow for integration testing. This means that testing will take place every time a new feature is added to the system, allowing us to detect bugs quickly as features are implemented.\\
+
+
+\end{xltabular}
+\label{tbl:risk_table}

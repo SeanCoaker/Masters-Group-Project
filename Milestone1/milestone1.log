@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.20)  9 DEC 2021 00:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.10.20)  9 DEC 2021 19:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1534,7 +1534,7 @@ LaTeX Info: Redefining \nameref on input line 10.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-<graphics/swansea.png, id=59, 416.2752pt x 284.7438pt>
+<graphics/swansea.png, id=71, 416.2752pt x 284.7438pt>
 File: graphics/swansea.png Graphic file (type png)
 <use graphics/swansea.png>
 Package pdftex.def Info: graphics/swansea.png  used on input line 33.
@@ -1563,29 +1563,56 @@ l.85 	\end{xltabular}
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.85 	\end{xltabular}
-                     ]))
+                     ])) (./chapter/risks.tex [10] (./tables/risk_table.tex
+Underfull \hbox (badness 1762) in paragraph at lines 170--170
+[]|\T1/ptm/m/n/10 To mit-i-gate against this risk, we have
+ []
+
+
+LaTeX Warning: Reference `chap:schedule' on page 11 undefined on input line 170.
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 170--170
+[]|\T1/ptm/m/n/10 We have at-tempted to ac-count for this
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 170--170
+\T1/ptm/m/n/10 braries and our hard-ware de-vices could
+ []
+
+[11
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.170 \end{xltabular}
+                     ] [12] [13]))
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the milestone1.maf file.
 \openout4 = `milestone1.maf'.
 
- [10] (./milestone1.aux)
+ [14] (./milestone1.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `milestone1.out' has not changed.
-(rerunfilecheck)             Checksum: 13916AADB745D6A5AE5D78C19A4FEDCC;1805.
+(rerunfilecheck)             Checksum: 77BC671CD448449B6A56CE3F0EC10037;2441.
  ) 
 Here is how much of TeX's memory you used:
- 34910 strings out of 478579
- 599335 string characters out of 5853456
- 980693 words of memory out of 5000000
- 51899 multiletter control sequences out of 15000+600000
- 442544 words of font info for 77 fonts, out of 8000000 for 9000
+ 34947 strings out of 478579
+ 599882 string characters out of 5853456
+ 998870 words of memory out of 5000000
+ 51918 multiletter control sequences out of 15000+600000
+ 445347 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,11n,120p,1981b,619s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on milestone1.pdf (12 pages, 94114 bytes).
+Output written on milestone1.pdf (16 pages, 104571 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 122 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 178 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
