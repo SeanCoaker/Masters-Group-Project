@@ -28,7 +28,7 @@
 
     &
 
-    One or more of our hardware devices may fail and will limit how much testing can be done.
+    Our hardware devices may fail and will limit development and testing.
 
     &
 
@@ -40,7 +40,7 @@
 
     &
 
-    The Rx/Tx modules could fail and would disable the communication feature between the wearable and walking aid devices.
+    The Rx/Tx modules could fail disabling communication between the wearable and walking aid devices.
 
     &
 
@@ -52,11 +52,11 @@
 
     &
 
-    Code that we upload to the TinyPICO devices could brick the TinyPICO devices and cause them to not function at all.
+    Uploading erroneous code to our TinyPICO devices could brick the TinyPICO devices.
 
     &
 
-    Should this occur, we could attempt to reflash previosuly working code onto the TinyPICO. If this fails, we would be left with the occurrence of risk RSK1.\\
+    Should this occur, we could attempt to reflash previosuly working code onto the TinyPICO. If this fails, we would be left with the occurrence of risk RSK1 where we would need to replace the TinyPICO devices that have been bricked. The low cost of the TinyPICO devices should enable us to purchase some replacements if need be.\\
 
     \midrule
 
@@ -64,7 +64,7 @@
 
     &
 
-    GitHub could experience a failure which could cause the loss of our repository.
+    GitHub experience a malicious attack or a server failure which could cause our repository to be lost.
 
     &
 
@@ -76,11 +76,11 @@
 
     &
 
-    We could over-project what features can be included in the project before the given deadline, potentially leaving the client disappointed at project handover.
+    The user requirements we accept could be too large to implement within the given timeframe for the project, potentially leaving the client disappointed at project handover.
 
     &
 
-    To mitigate against this risk, we have discussed our user requirements with the clients and feel that we have decided upon a set of features that we confidently implement within the time frame given to us. We will prioritise the most important features to ensure that stretch goal features are added when critical goals have already been met.\\
+    To mitigate against this risk, we have discussed our user requirements with the clients and feel that we have decided upon a set of features that we feel we can confidently implement within the time frame given to us. We have also some marked some features as stretch goals to ensure that the most important features are added first.\\
 
     \midrule
 
@@ -88,11 +88,11 @@
 
     &
 
-    Other work of the University curriculum could impact and delay the development of the project.
+    University commitments could impact the development and testing of the product.
 
     &
 
-    We have attempted to account for this within our schedule in chapter \ref{chap:schedule} by allowing for slippage at the end of the schedule, which can be used for developing incomplete features.\\
+    We have attempted to account for this within our schedule by allowing for slippage. Slippage time could allow for the development of unfinished features. We could also spread unfinished work between developers as extra work in an attempt to complete the development of features on time.\\
 
     \midrule
 
@@ -100,11 +100,11 @@
 
     &
 
-    Compatibility issues between Arduino libraries and our hardware devices could cause setbacks when developing code.
+    The hardware we choose to use may lack the libraries and compatibility with other hardware for quality feature development.
 
     &
 
-    To mitigate against this risk, we will use hardware devices that have libraries developed for them and hardware that the team have previous experience for successful development in our code.\\
+    To avoid this, we will select hardware that is compatible with the Arduino ecosystem to ensure that they are compatible with each other and that libraries are available for code development.\\
 
     \midrule
 
@@ -112,11 +112,11 @@
 
     &
 
-    The fast growth of an unknown competitor could fill the void in the market that we are aiming to fill with this project.
+    Natural disasters could bring about the loss of hardware and software being used for the development of our product.
 
     &
 
-    It would be difficult to specifically mitigate this risk. We shall ensure that the developed product is made to the highest quality producable by our team.\\
+    The use of low cost hardware in this system will allow us to replace any compromised hardware if need be. We have decided to store the team's code in a GitHub repository which will allow our code to be protected in an off cite facility. The loss of developer computer systems is by far the biggest risk here, as our budget would not be able to cover the replacement of such computer systems.\\
 
     \midrule
 
@@ -124,27 +124,15 @@
 
     &
 
-    Natural disasters could bring about the loss of hardware and software being used for the development of our product.
+    Especially in the current coronavirus climate, our developers may be unwell for a period of time that has a negative impact on the development of the project.
 
     &
 
-    The use of low cost hardware in this system will allow us to replace any compromised hardware if need be. We have decided to store the team's code in a GitHub repository which will allow our code to be protected in an off cite facility. The loss of developer computer systems is by far the biggest risk here, where our budget would not be able to cover the replacement of such computer systems.\\
+    Within our schedule we have included time for slippage that should allow for any time needed by the team to be taken off due to illness. Should a developer need to self isolate and should they not be experiencing symptoms, they could continue to work on the product from a remote location using the GitHub repository.\\
 
     \midrule
 
     RSK10
-
-    &
-
-    Especially in the current coronavirus climate, our developers may be unwell for a period of time that has a negative impact on the development of the product.
-
-    &
-
-    Within our schedule we have included time for slippage that to allow for any time needed by the team to be take off due to illness. Should a developer need to self isolate and should they not be experiencing symptoms, they could continue to work on the product from a remote location using the GitHub repository.\\
-
-    \midrule
-
-    RSK11
 
     &
 
@@ -156,16 +144,51 @@
 
     \midrule
 
-    RSK12
+    RSK11
 
     &
 
-    Poorly developed code could mean that despite substantial testing, many bugs could still be included in the product at the conclusion of the project lifecycle.
+    Poorly developed code could mean that despite substantial testing, many bugs could still be included in the product at the conclusion of the project lifecycle, leaving our product to be ineffective for the uses that the client requires.
 
     &
 
     To mitigate this risk, we will be following our testing strategy outlined in this document to allow for integration testing. This means that testing will take place every time a new feature is added to the system, allowing us to detect bugs quickly as features are implemented.\\
 
+    \midrule
+
+    RSK12
+
+    &
+
+    The wearable device we create may cause patients to feel uncomfortable limiting their use of the device.
+
+    &
+
+    We are slightly out of control with this risk as it mainly depends on how the patient reacts to the wearable. Having said this, we aim to make the wearable as discrete and as watch like as possible in an attempt to avoid the patient feeling uncomfortable when wearing it.\\
+
+    \midrule
+
+    RSK13
+
+    &
+
+    Our device could startle or scare the patient putting them in danger.
+
+    &
+
+    We have taken on board the advice of the client for this risk and will be ensuring the watch does not use vibrations or LEDs unless the patient is deaf. We will ensure that generic alarms are not used also in an attempt to avoid startling the patient.\\
+
+    \midrule
+
+    RSK14
+
+    &
+
+    One of our developers could leave the institution, lowring the number of developers we have available to work on the project.
+
+    &
+
+    Should this occur, we would definitely need to use the slippage time we have allowed for in our schedule. We would not be able to bring another developer into the team and would therefore need to share the workload of the developer that is leaving to the other developers on the team.\\
 
 \end{xltabular}
 \label{tbl:risk_table}
