@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.12.9)  10 DEC 2021 11:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.12.9)  10 DEC 2021 14:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1576,11 +1576,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.85 	\end{xltabular}
-                     ])) (./chapter/Specification.tex [8]) (./chapter/risks.tex [9
+                     ])) (./chapter/Specification.tex [8] [9
 
-] [10
-
-] (./tables/risk_table.tex
+]) (./chapter/risks.tex [10] (./tables/risk_table.tex
 Underfull \hbox (badness 1762) in paragraph at lines 170--170
 []|\T1/ptm/m/n/10 To mit-i-gate against this risk, we have
  []
@@ -1598,7 +1596,9 @@ Underfull \hbox (badness 1028) in paragraph at lines 170--170
 \T1/ptm/m/n/10 braries and our hard-ware de-vices could
  []
 
-[11pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
+[11
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.170 \end{xltabular}
@@ -1613,7 +1613,7 @@ Package minitoc Info: I0009
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `milestone1.out' has not changed.
-(rerunfilecheck)             Checksum: 300A98830377CB6ECA9C0F2AC7E3D4E2;1859.
+(rerunfilecheck)             Checksum: A8CC0E1D7A990D02C4CB96A8AB30612C;1869.
  ) 
 Here is how much of TeX's memory you used:
  36130 strings out of 478353
@@ -1624,7 +1624,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  89i,11n,120p,1981b,617s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on milestone1.pdf (16 pages, 103349 bytes).
+Output written on milestone1.pdf (16 pages, 104788 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
