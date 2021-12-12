@@ -1,7 +1,7 @@
 % Two sided means the left and right margins are different sizes and they alternate every page.
 % If your document is printed to be book or spiral bound this allows for a thick spine to not
 % eat into the space for your page content.
-\documentclass[11pt, a4paper, twoside, openright]{custard}
+\documentclass[11pt, a4paper, oneside]{custard}
 
 % All imports, packages, and configuration in here.
 % Your document should be about content so we abstract away the styling rules and tools we are using.
@@ -30,7 +30,8 @@
 % starting from 1 at that point.
 	\frontmatter%
 	\maketitle
-	\cleardoublepage
+	%\cleardoublepage
+	\tableofcontents
 
 % Optionally you can make a bank of known acronyms in acronyms.tex that you can call on throughout your document.
 	%\input{acronyms}
@@ -41,7 +42,7 @@
 % Insert the code for each of your chapters
 	\input{./chapter/topic}
 	\input{./chapter/requirements}
-	\input{./chapter/Specification}
+	\input{./chapter/specification}
 	\input{./chapter/methodology}
 	\input{./chapter/risks}
 
