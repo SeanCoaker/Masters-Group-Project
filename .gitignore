@@ -7,3 +7,6 @@ out
 *.iml
 *.aux
 *.blg
+*ilestone1.*
+!milestone.tex
+!out/milestone1.pdf
