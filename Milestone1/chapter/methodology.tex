@@ -32,7 +32,7 @@
             team should have made a shippable product. The team will also meet and hold a sprint review, along with the
             product owner. That demonstrates the product and how it has been developed since the last sprint. The team
             will also review the previous sprint, to see if any changes need to be made in anticipation of the next
-            one~\cite{nuevo_2011_scrumbased}. 
+            one~\cite{nuevo_2011_scrumbased}.
             
             In our case, we will be slightly modifying the implementation of scrum.
             The above-mentioned workflow is designed as a framework for full time software developers, which we are not.
@@ -55,45 +55,58 @@
             problems earlier, have longer to address them, or to have time to plan alternative implementations that
             avoid such problems. 
             
-            We chose scrum over other agile methodologies for a few reasons. But mainly because we
+            We chose scrum over other agile methodologies for a few reasons, but mainly because we
             thought it was the best fit for our team and situation. Other methodologies, like extreme programming, could
             have worked well for us, but didn’t suit our situation as students as well. For example, extreme programming
             requires pair programming, something that would be hard for us to do and would drastically tank our
             productivity. Overall, we made our decision based on what would work best for us as a team.
 
     
-        \subsection{Hardware and Software}
-            With regards to hardware and software that we intend to use, we made our decisions based on the experience with
-            hardware from previous work. For hardware, our product is going to be made using tiny PICO hardware. Multiple
-            members of our group took the Embedded Systems module previously, so we have experience using this hardware. The
-            tiny PICO on its own, does not have all the features we need, so we will be using extra hardware to supplement it.
-            We will be using accelerometers to measure changes in movement of the dementia patients. We will also be
-            implementing speakers and microphones to allow voice recordings to be created and played back. In the same vein, we
-            will be using SD storage for storing sound files that can be played back. We also have access to a 3d printer, we
-            will use this to create prototype casings for our product. It will enable us to rapidly design and test prototype
-            products. This is important, as mentioned before in this document, the form factor of our product is important to
-            minimise patient discomfort or resistiveness. Using 3d printing we can quickly test form factors and send prototype
-            designs to our client quickly if they have a 3d printer too. This rapid prototyping will be beneficial, getting the
-            right form factor is vitally important to ensure that the product is likely to be accepted by dementia patients It
-            will help us meet requirement NONFREQ1. 
-            
-            We will be using a variety of software too. As is sensible with any product,
-            we will be using git for version control and collaboration. Using git has a variety of benefits, version control,
-            and enabling proper collaboration in the easiest way. It enables us to work on the same project without having to
-            share resources. As mentioned, we are using TinyPICO devices as our hardware. Programming these devices is done in
-            the Arduino C language, we will be using the Arduino IDE to program our product. Our document is created with latex,
-            shared on git to enable us to collaborate and work on the document together. 
-            
-            With relation to our requirements, the
-            hardware we use was chosen too directly meet the non-functional requirements that we defined. Tiny PICOs are
-            incredibly small and can be fitted in very small form factors such as a watch which is in line with NONFREQ1.
-            Accelerometers can also be made in small form factors too, which enables them to also fit in a small casing and help
-            us meet our requirements. Tiny Picos are also power efficient, for example, they have various sleep modes that we
-            can utilise to minimise power output, by avoiding using items such as LEDs, we can extend battery life, but also
-            meet our requirement on not having obnoxious or startling lights or effects, these features help meet NONFREQ2 and
-            3. We chose some of the other hardware to meet the functional requirements of the project. Accelerometers can detect
-            if the user is walking, helping to meet FREQ 1. And the speaker we will use can play back messages to the user,
-            meeting FREQ2. Storage and microphones also enable this requirement to be met.
+        \subsection{Hardware}
+            We have chosen to base our hardware on the TinyPico implementation of the Espressif Systems ESP32 family of
+            devices.\ This is mainly due to our experience with the platform, including previous university modules
+            experimenting with these microcontrollers.\ To compliment the TinyPico, we will need to include an array of
+            input sensors, as well as ways to output information to the user.\ In order to detect movement, we will rely
+            on accelerometer data from the pervasive ADXL family of accelerometers, namely the ADXL345 due to its
+            reliable and proven performance, as well as its easy availability and team members' experience with the
+            device.\ Beyond what's available on the TinyPico, we may also require additional methods of receiving and
+            transiting data to and from our wearable device and the walking aid device, we have a few technologies we
+            are considering, such as 433MHz Rx/Tx, or the proprietary LoRa communication system if the budget allows for
+            it.
 
+            For outputs, the wearable device will need an output LED that may be handled by the TinyPico itself, or most
+            likely an external low voltage LED to allow for more flexible placement, furthermore, it will need support
+            for vibration feedback, which will likely come in the format of a mobile phone style vibration motor.\ This
+            will ensure the users are not startled, due to its lower power and smaller size The walking aid device will
+            require to have a small speaker as an output, in order to prompt the user to use their walking aid.\ We can
+            then either include a microphone onboard the device to record and store data to the onboard TinyPico
+            storage, or support the use of an external SD card to access a prerecorded message.
 
-    
+            One of the group members has access to a 3D Printer and has experience in 3D Design, and such we will be
+            able to rapidly develop and test chassis and shells for our sensors, to more close resemble a finished
+            proud whilst testing or demoing to our client.\ This is crucial due to the importance of the form factor
+            and readability of the devices, as previously discussed in the document, such as minimising patient discomfort.
+
+            The TinyPico form factor is incredibly compact, and would be viable for the NONFREQ1 requirement.\ This also
+            extends to the input and output sensors, which we also believe would easily fit on a wearable or walking aid
+            based device.\ The low power consumption of the TinyPico and sensors,  will help us ensure NONFREQ2 and
+            NONFREQ3 are met.\ This can be further exploited by implementing deep sleep algorithms within the TinyPico's
+            routine, further reducing power consumption thus extending battery life on a single charge.
+
+        \subsection{Software}
+            Whilst working on the project, our team will use a plethora of services to assist in communication and
+            management of the project.\ We have decided to use the Discord platform to keep in touch and communicate.
+            This allows us to organise our channels and information streams accordingly, and even has essential tools
+            for peer-development such as voice/video calls, with screen sharing support.\ We started a git repository on
+            GitHub, which is where our source code and work towards our project deliverables will be.\ This version
+            control software allows us all to work on the tasks together or independently, and for progress to be easily
+            managed, tracked and merged with everyone else's work.
+
+            Our milestones and written deliverables will be written in Latex, and stored on the GitHub to allow each
+            team member to use the IDE or editing environment they are most familiar with, this ranges from Overleaf, to
+            Intellij, to less specific editors like ATOM or SublimeText
+
+            The TinyPico supports Arduino C, which is a subset of C with an essentially very similar, but tailored
+            featureset and commandset.\ We have some experience with this in the past, however we will keep an open mind
+            towards Micropython, which promises similar levels of performance and flexibility, in an arguably easier to
+            learn and use language which we have more experience with.
