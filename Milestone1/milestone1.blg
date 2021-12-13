@@ -1,14 +1,15 @@
-This is BibTeX, Version 0.99d (TeX Live 2021)
+This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: milestone1.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: IEEEtran.bst
 I found no \citation commands---while reading file milestone1.aux
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: citations.bib
+I found no \bibdata command---while reading file milestone1.aux
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -16,7 +17,7 @@ Database file #1: citations.bib
 Done.
 You've used 0 entries,
             4087 wiz_defined-function locations,
-            821 strings with 7298 characters,
+            820 strings with 7289 characters,
 and the built_in function-call counts, 104 in all, are:
 = -- 0
 > -- 0
@@ -55,4 +56,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 22
-(There was 1 error message)
+(There were 2 error messages)
