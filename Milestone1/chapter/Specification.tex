@@ -1,52 +1,40 @@
 \chapter{Specification}\label{ch:specification}
 
-In this chapter, we'll go through the project in further depth.
-More specifically, we will outline a proposed solution as well as describing the
-product.
+    In this chapter, we'll go through the project in further depth. More specifically, we will outline a proposed
+    solution as well as describing the product.
 
-\section{Description}
+    \section{Description}
 
-The challenge of this project is to develop an effective system that interacts
-with users, who are dementia patients. This project will support the development
-of a wearable device including an application. The dementia patient or user will
-be encouraged to use the walking assistance in this application. A recorded
-message from a family member or relative will act as the notification. The device
-will detect if the user is sleeping and if is not, the device will only then be
-activated, since we do not want the device to begin notifying the user while he
-is sleeping, as the user might be startled by the notice.
+        The challenge of this project is to develop an effective system that interacts with users, who are dementia
+        patients. This project will support the development of a wearable device including an application. The dementia
+        patient or user will be encouraged to use the walking assistance in this application. A recorded message from a
+        family member or relative will act as the notification. The device will detect if the user is sleeping and if is
+        not, the device will only then be activated, since we do not want the device to begin notifying the user while
+        he is sleeping, as the user might be startled by the notice.
 
-The user does not need to log in or register with the system since the device
-will obtain the necessary data through an SD card, such as the familiar voice of
-a relative or family member. Although dementia patients may be deaf, the
-wearable device will support a solution for deaf individuals, such as reminding
-them to take their walking aid with them without utilising any audio, such as a
-slight vibration.
+        The user does not need to log in or register with the system since the device will obtain the necessary data
+        through an SD card, such as the familiar voice of a relative or family member. Although dementia patients may be
+        deaf, the wearable device will support a solution for deaf individuals, such as reminding them to take their
+        walking aid with them without utilising any audio, such as a slight vibration.
 
-\section{Software behaviors}
+    \section{Software behaviors}
 
-The wearable device must communicate with the walking aid device in order for
-all of this to be happen. This communication, can be happened by using a
-transmitter. As soon as movement is detected, the transmitter will send message
-to the wearable device, letting it know that the user started walking. In this
-way the wearable device will be able to tell when the patient has used the
-walking aid and is actually walking. Otherwise, as mentioned before a message will
-be played to remind the patient to take their walking aid with them. The device
-will cease warning the user once the system detects that the user has used the
-walking aid and begun walking.
+        The wearable device must communicate with the walking aid device in order for all of this to be happen. This
+        communication, can be happened by using a transmitter. As soon as movement is detected, the transmitter will
+        send message to the wearable device, letting it know that the user started walking. In this way the wearable
+        device will be able to tell when the patient has used the walking aid and is actually walking. Otherwise, as
+        mentioned before a message will be played to remind the patient to take their walking aid with them. The device
+        will cease warning the user once the system detects that the user has used the walking aid and begun walking.
 
-Furthermore, dementia all types of people at varying ages. That means that the
-wearable device must be able to fit on anyone's wrist. Because we do not want
-patients to feel uncomfortable while using the wearable device, it will be
-designed to look like a watch. That means that the user, who in this case is a
-dementia patient, will not interact with the watch, by any means of having to
-select an option on the device or even to change a setting. Apart from the
-device's appearance and dimensions, the device should be power efficient, as the
-patients most of the time will forget to charge it.
+        Furthermore, dementia all types of people at varying ages. That means that the wearable device must be able to
+        fit on anyone's wrist. Because we do not want patients to feel uncomfortable while using the wearable device, it
+        will be designed to look like a watch. That means that the user, who in this case is a dementia patient, will
+        not interact with the watch, by any means of having to select an option on the device or even to change a
+        setting. Apart from the device's appearance and dimensions, the device should be power efficient, as the
+        patients most of the time will forget to charge it.
 
-The device will also include a fall detection functionality. If the development
-time allows, we will integrate this capability into the device. A tri axial
-accelerometer will be used to determine the user's hand height, and more
-particularly the device's height. If the user's hand is extremely close to the
-ground, it is likely that the user has fallen. If the device detects that the
-user has been on the ground for an extended amount of time, it will begin
-informing a relative or a nearby caregiver.
+        The device will also include a fall detection functionality. If the development time allows, we will integrate
+        this capability into the device. A tri axial accelerometer will be used to determine the user's hand height, and
+        more particularly the device's height. If the user's hand is extremely close to the ground, it is likely that
+        the user has fallen. If the device detects that the user has been on the ground for an extended amount of time,
+        it will begin informing a relative or a nearby caregiver.

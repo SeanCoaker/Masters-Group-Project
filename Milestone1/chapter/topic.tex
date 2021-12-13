@@ -1,28 +1,134 @@
-\chapter{Topic}
-\label{ch:topic}
+\chapter{Topic} \label{ch:topic}
 
-Within this chapter we will detail the problem our project aims to solve along with the limitations that could effect our project and an analysis of the current solutions our project would have to compete with. We will provide some background research on dementia patients and their issues with forgetting their walking aids when moving and how wearable devices can have a psychological impact on them. Finally, we will detail our current progress consisting of two initial meetings with our client, and our takeaways from these meetings.
+        Within this chapter we will detail the problem our project aims to solve along with the limitations that could
+        effect our project and an analysis of the current solutions our project would have to compete with. We will
+        provide some background research on dementia patients and their issues with forgetting their walking aids when
+        moving and how wearable devices can have a psychological impact on them. Finally, we will detail our current
+        progress consisting of two initial meetings with our client, and our takeaways from these meetings.
 
-\section{Background}
+    \section{Background}
 
-\section{The Problem}
-    Upon completion of our initial meeting with the client, we clarified the motivation behind this project and the problem that we are working together to solve. That problem is to develop a solution that detects when a dementia patient is moving without their walking aid, and reminds the patient (with a recorded message by a friend or a relative) to take their walking aid with them. Initial discussions between ourselves and the client identified current issues with dementia patients feeling uncomfortable in being forced to wear foreign objects, meaning we would need to take this into account when developing our solution. We also clarified that dementia patients get easily alarmed and frightened by generic alarms, often associating them with danger notifying alarms such as fire alarms, with the client suggesting that we facilitate a recording feature within our solution that would allow recognisable voices to the dementia patient to remind them to use their walking aid.
+        Within this chapter we will detail the problem our project aims to solve along with the limitations that could
+        affect our project and an analysis of the current solutions our project would have to compete with. We will
+        provide some background research on dementia patients and their issues with forgetting their walking aids when
+        moving and how wearable devices can have a psychological impact on them. Finally, we will detail our current
+        progress consisting of two initial meetings with our client, and our takeaways from these meetings.
 
-    \subsection{Similar Solutions}
-        Current solutions include the use of locator systems that allow dementia patients to easily track down valuables such as keys or a wallet. Such systems include the Tile ecosystem which allows a dementia patient to attach a Tile device to their valuables and then use a smartphone app to fire an alarm from the Tile device that notifies the patient of the location of their valuable. As previously mentioned, dementia patients can get frightened and disorientated by the sounds of alarms often associating them with danger rendering these forms of solutions unsuitable for our problem. This is without considering how difficult a dementia patient mind find navigating through a smartphone device to open an application and request their Tile device to ring an alarm to help them identify the location of their valuable. Other more old fashioned systems that carers may use to notify themselves that their patient is moving include hanging items from door frames that clatter together when the patient walks through the door, or adding pressure pads under door mats that sound an alarm when the patient steps on the door mat. But what we are trying to expand upon with our solution is the protection of dementia patients that are alone and wanting to move around their home or ward. Meaning that door mat pressure pad solutions and methods for alarming a carer would be insuffient.
+        The client came to us with the idea of developing a product for those suffering with dementia, a syndrome that
+        is usually associated with a declining functionality of the brain. Dementia can manifest itself with a range of
+        symptoms, more well-known ones including memory loss, loss of mental sharpness, or loss of the use of language.
+        \cite{nhs_choices} More importantly to our project though, one other symptom can be a loss in movement skills,
+        or an increased difficulty in moving. Dementia has been recognised something that causes an increase in fall
+        risk within patients source
+        \cite{doorn_gruber-baldini_zimmerman_hebel_port_baumgarten_quinn_taler_may_magaziner_et_al._2003}. As dementia
+        affects more elderly persons, falls are often more dangerous to them. Because of this, it is not uncommon for
+        dementia patients to be using walking aides to help mitigate this. Obviously though, a walking aid is only
+        effective if it is used by the patient. Something that was made clear to us with our meeting with the client.
+
+    \section{The Problem}
+        Upon completion of our initial meeting with the client, we clarified the motivation behind this project and the
+        problem that we are working together to solve. That problem is to develop a solution that detects when a
+        dementia patient is moving without their walking aid and reminds the patient (with a recorded message by a
+        friend or a relative) to take their walking aid with them. Initial discussions between ourselves and the client
+        identified current issues with dementia patients feeling uncomfortable in being forced to wear foreign objects,
+        meaning we would need to take this into account when developing our solution. We also clarified that dementia
+        patients get easily alarmed and frightened by generic “obnoxious” alarms, often associating them with those
+        notifying them of danger, such as fire alarms. The client suggested that we facilitate a recording feature
+        within our solution that would allow recognisable voices to the dementia patient to remind them to use their
+        walking aid.
+
+        \subsection{Similar Solutions}
+            Current solutions include the use of locator systems that allow dementia patients to easily track down
+            valuables such as keys or a wallet. Such systems include the Tile ecosystem which allows a dementia patient
+            to attach a Tile device to their valuables and then use a smartphone app to fire an alarm from the Tile
+            device that notifies the patient of the location of their valuable. As previously mentioned, dementia
+            patients can get frightened and disorientated by the sounds of alarms often associating them with danger
+            rendering these forms of solutions unsuitable for our problem. This is without considering how difficult a
+            dementia patient mind finds navigating through a smartphone device to open an application and request their
+            Tile device to ring an alarm to help them identify the location of their valuable. Another problem with such
+            an approach though, is the lack of functionality for sending an alarm to the patient if they start walking
+            without the aide. Solutions such as Tile would help a patient find the aide if it had been misplaced but
+            implementing functionality to remind the patient to find the aide if they have already started walking
+            without it, is sadly limited. Other more old-fashioned systems that carers may use to notify themselves that
+            their patient is moving include hanging items from door frames that clatter together when the patient walks
+            through the door or adding pressure pads under door mats that sound an alarm when the patient steps on the
+            door mat. But what we are trying to expand upon with our solution is the protection of dementia patients
+            that are alone and wanting to move around their home or ward. Meaning that door mat pressure pad solutions
+            and methods for alarming a carer would be insufficient. We also would like our design to be more elegant,
+            with those rudimentary solutions, if the patient is walking fine, with the aide, they will still get an
+            alarm from the pressure pad. Or they will still have to remove the hangars from the aide. A well implemented
+            system could alleviate both those problems, and increase the quality of life of the patient, even if only by
+            a little.
 
         \subsection{Limitations}
-            Our main limitation for our project is that we need to develop a discrete device that will not make the dementia patient feel uncomfortable in any way. Early plans for the device lean towards a watch style device that the patients can wear on their wrist to track their movement. But if we are to create a wrist wearable device then we would need to ensure that the footprint of device is small enough to be worn on a wrist. This limits the hardware that we can feasibly use for our project. We also need to consider the number of devices being used and how they can all be fit within a wrist device. The head of the Embedded Systems module within our department has kindly offered to supply us with ESP32 based TinyPICO devices which would be suitable for this project due to its small form factor. We would need to consider how an accelerometer could be attached to the TinyPICO to allow both devices to fit within a watch casing. Other limitations for the wrist device part of the system is that it should not contain any LEDs, vibration motors or alarms to avoid startling the dementia patient. Avoiding the use of LEDs would actually be of benefit to us here as it would allow the watch device to save battery during operation. On the topic of saving battery, another limitation to the watch device is that it would need to be power efficient in order to avoid the dementia patient needing to frequently charge the device to create a more user friendly experience for them. The ESP32 chips included on the TinyPICO boards utilise a system called 'deep sleep', which effectively powers down certain modules connected to the board. We could theoretically create a system here that fires an interrupt when the accelerometer detects movement, then forcing the ESP32 to wake up and handle the interrupt. Thus meaning that when the patient is static, the device can be in a 'deep sleep' state to save battery.
+            Our main limitation for our project is that we need to develop a discrete device that will not make the
+            dementia patient feel uncomfortable in any way or will minimise discomfort to an extent where it is
+            acceptable for day-to-day life. Early plans for the device lean towards a watch style device that the
+            patients can wear on their wrist to track their movement. But if we are to create a wrist wearable device
+            then we would need to ensure that the footprint of device is small enough to be worn on a wrist. This limits
+            the hardware that we can feasibly use for our project. We also need to consider the number of devices being
+            used and how they can all be fit within a wrist device. The head of Swansea University’s Embedded Systems
+            module has kindly offered to supply us with ESP32 based TinyPICO devices which would be suitable for this
+            project due to its small form factor. We would need to consider how an accelerometer could be attached to
+            the TinyPICO to allow both devices to fit within a watch casing. Even still, if we could find hardware small
+            enough to build into a watch-based prototype, we may still run into issues with the patients wanting to use
+            the product. During our meeting we were told that patients already had to wear wrist tags or similar items.
+            Adding more items to the list of items the patient needs to wear is unlikely to be well received. Our form
+            factor perhaps could take the form of something that clips onto something the patient is already wearing,
+            such as clothes or belts, or a tag that they already use. Other limitations for the wrist device part of the
+            system are that it should not contain any LEDs, vibration motors or alarms to avoid startling the dementia
+            patient. Avoiding the use of LEDs would be of benefit to us here as it would allow the watch device to save
+            battery during operation. On the topic of saving battery, another limitation to the watch device is that it
+            would need to be power efficient enough to avoid the dementia patient needing to frequently charge the
+            device. The patient needing to do this would work against our goal of creating a user-friendly experience
+            for them. The ESP32 chips included on the TinyPICO boards utilise a system called 'deep sleep', which
+            effectively powers down certain modules connected to the board. We could theoretically create a system here
+            that fires an interrupt when the accelerometer detects movement, then forcing the ESP32 to wake up and
+            handle the interrupt. Thus, meaning that when the patient is static, the device can be in a 'deep sleep'
+            state to save battery. Limitations for the device being fitted to the walking aid are far less. With this
+            device, we do not need to consider a small form factor as it is not being worn but will be using a TinyPICO
+            for this device too for consistency. Our limitation with this device is to also disable the use of LEDs to
+            avoid startling the patients, and to include a speaker and microphone to allow a relative or carer to record
+            a voice note which will be played to remind the patient to take their walking aid with them when moving. The
+            TinyPICO boards include a very minimal amount of storage space and so we may need to include a SD card to
+            store the voice notes on. We will also be limited to the budget of £150 that we have been assigned and must
+            ensure that all the devices needed to build the system can be purchased within our budget.
 
-            Limitations for the device being fitted to the walking aid are far less. With this device, we do not need to consider a small form factor as it is not being worn, but will be using a TinyPICO for this device too for consistency. Our limitations with this device is to also disbale the use of LEDs to avoid startling th patients, and to include a speaker and microphone in order to allow a relative or carer to record a voicenote which will be played to remind the patient to take their walking aid with them when moving. The TinyPICO boards include a very minimal amount of storage space and so we may need to include an sd card to store the voice notes on. We will also be limited to the budget of £150 that we have been assigned, and must ensure that all the devices needed to build the system can be purchased within our budget.
+    \section{Current Work}
+        As stated earlier in this chapter, we have held initial meetings with the client where we have clarified the
+        problem they aim to solve with this project and outlining the project scope. On the 18th of Novemeber we held an
+        introductory meeting with the client where we gained an understanding of what the problem is and what kind of
+        system the client was expecting to be produced. We clarified that we would need to gain our supply of hardware
+        ourselves and that a budget of £150 would be allocated to us to aid with the procurement of the necessary
+        hardware devices. However, within this initial meeting we failed to identify the final direction the client
+        wanted the project to head down and instead came away with the option of either developing a wearable device
+        that would detect when the dementia patient was moving, or to use a non-wearable device such as a pressure
+        blanket that would detect when the patient had got up from where they were static. We agreed with the client
+        that we would schedule a second meeting for the 25th of Novemeber and within that time analyse the advantages
+        and disadvantages to each method of developing the solution. We then agreed that we would return with a solution
+        that we thought would best suit the design brief and that would best suit the development talent available to us
+        within our team.
 
-\section{Current Work}
-As stated earlier in this chapter, we have held initial meetings with the client where we have clarified the problem they aim to solve with this project and outlining the project scope. On the 18th of Novemeber we held an introductory meeting with the client where we gained an understanding of what the problem is and what kind of system the client was expecting to be produced. We clarified that we would need to gain our supply of hardware ourselves and that a budget of £150 would be allocated to us to aid with the procurement of the necessary hardware devices. However, within this initial meeting we failed to identify the final direction the client wanted the project to head down and instead came away with the option of either developing a wearable device that would detect when the dementia patient was moving, or to use a non-wearable device such as a pressure blanket that would detect when the patient had got up from where they were static. We agreed with the client that we would schedule a second meeting for the 25th of Novemeber and within that time analyse the advantages and disadvantages to each method of developing the solution. We then agreed that we would return with a solution that we thought would best suit the design brief and that would best suit the development talent available to us within our team.
+        Within our own intra-team meeting we decided upon building and developing a wearable device solution over a
+        non-wearbale solution due to the extra features that could be included into a wearable device such as a fall
+        detection system, a system recommended to be included by the client. We felt that despite a non-wearable device
+        being a plausible route to take the project down, that factors such as a dementia patient moving off a pressure
+        pad without actually standing up and walking would diminish the effectiveness of our solution.
 
-    Within our own intra-team meeting we decided upon building and developing a wearable device solution over a non-wearbale solution due to the extra features that could be included into a wearable device such as a fall detection system, a system recommended to be included by the client. We felt that despite a non-wearable device being a plausible route to take the project down, that factors such as a dementia patient moving off a pressure pad without actually standing up and walking would diminish the effectiveness of our solution.
+        On the 25th of November we hosted our second meeting with the client and established the team's preferred route
+        for the development of this project. The client was content with this and agreed that the solution should be
+        developed as a wearable device. We finalised the £150 budget with the client and agreed that our next steps
+        would be to complete our milestone 1 document, including user requirements, and compiling a list of necessary
+        hardware to develop the project. Our next meeting with the client is scheduled for December 16th where we will
+        finalise the user requirements and compile a list of hardware to be purchased with the budget made available to
+        us.
 
-    On the 25th of November we hosted our second meeting with the client and established the team's preferred route for the development of this project. The client was content with this and agreed that the solution should be developed as a wearable device. We finalised the £150 budget with the client and agreed that our next steps would be to complete our milestone 1 document, including user requirements, and compiling a list of necessary hardware to develop the project. Our next meeting with the client is scheduled for December 16th where we will finalise the user requirements and compile a list of hardware to be purchased with the budget made available to us.
-
-\section{Project Aims}
-In order for this project to be successfully, there a few broad targets and ambitions we are looking to fulfil with our final system.
-First of all, the system needs to be able to effectively remind its user that they have forgotten their walking aid, and actively encourage them to use it. The goal is to prevent accidental falls, which according to our client, are a common problem with dementia patients or senior citizens, who often forget or don't want to use their walking aid. This must also easily integrate with the patients existing lifestyle, as often they have a large amount of inertia and would prefer to avoid change. This is why we are purseing a small wearable device, like similar solutions in the market they may have experienced before, and incorporating a familiar voice to help calm and ease them into using our system.
+    \section{Project Aims}
+        In order for this project to be successfully, there a few broad targets and ambitions we are looking to fulfil
+        with our final system. First of all, the system needs to be able to effectively remind its user that they have
+        forgotten their walking aid, and actively encourage them to use it. The goal is to prevent accidental falls,
+        which according to our client, are a common problem with dementia patients or senior citizens, who often forget
+        or don't want to use their walking aid. This must also easily integrate with the patients existing lifestyle, as
+        often they have a large amount of inertia and would prefer to avoid change. This is why we are purseing a small
+        wearable device, like similar solutions in the market they may have experienced before, and incorporating a
+        familiar voice to help calm and ease them into using our system.
