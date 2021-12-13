@@ -1,0 +1,9 @@
+.idea/
+.idea
+auxil/
+auxil
+out/
+out
+*.iml
+*.aux
+*.blg
