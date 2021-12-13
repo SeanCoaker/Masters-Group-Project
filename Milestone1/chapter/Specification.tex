@@ -1,26 +1,18 @@
 \chapter{Specification}\label{ch:specification}
-
-    In this chapter, we'll go through the project in further depth. More specifically, we will outline a proposed
-    solution as well as describing the product.
-
     \section{Description}
 
-        The challenge of this project is to develop an effective system that interacts with users, who are dementia
-        patients. This project will support the development of a wearable device including an application. The dementia
-        patient or user will be encouraged to use the walking assistance in this application. A recorded message from a
-        family member or relative will act as the notification. The device will detect if the user is sleeping and if is
-        not, the device will only then be activated, since we do not want the device to begin notifying the user while
-        he is sleeping, as the user might be startled by the notice.
+        This project includes the development of a wearable device that is able to detect when the user is/has moved,
+        and a remote device attached to their walking aid, that is able to remind them to use it if they have not done
+        so.\ A prerecorded message from a family member or relative will act as the notification.\ Both devices have to
+        be discrete and unobtrusive, as the users are known to be easily startled by new and foreign devices near them,
+        as well as with lights/vibration and other stimulus easily confusing them.\ The message will be stored locally,
+        either on the hardware products inbuilt storage, or an external SD card.\ In the eventuality that the user
+        is deaf or hard of hearing, the device will also have to have support for alternatives stimuli, such as vibration or light based feedback.
 
-        The user does not need to log in or register with the system since the device will obtain the necessary data
-        through an SD card, such as the familiar voice of a relative or family member. Although dementia patients may be
-        deaf, the wearable device will support a solution for deaf individuals, such as reminding them to take their
-        walking aid with them without utilising any audio, such as a slight vibration.
+    \section{Software Behaviour}
 
-    \section{Software behaviors}
-
-        The wearable device must communicate with the walking aid device in order for all of this to be happen. This
-        communication, can be happened by using a transmitter. As soon as movement is detected, the transmitter will
+        The wearable device must communicate with the walking aid device in order for the project to be a success. This
+        communication, can happen. As soon as movement is detected, the transmitter will
         send message to the wearable device, letting it know that the user started walking. In this way the wearable
         device will be able to tell when the patient has used the walking aid and is actually walking. Otherwise, as
         mentioned before a message will be played to remind the patient to take their walking aid with them. The device
