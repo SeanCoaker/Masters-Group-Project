@@ -12,6 +12,10 @@ auxil
 *.blg
 *.gz
 *.toc
+*.bbl
+*.pdf
+*.fdb_latexmk
+*.fls
 !milestone.tex
 !out/milestone1.pdf
 !/out/milestone1.pdf
