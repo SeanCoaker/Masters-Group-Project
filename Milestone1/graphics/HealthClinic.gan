@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Bangor Health Clinic" company="" webLink="http://" view-date="2021-11-21" view-index="0" gantt-divider-location="458" resource-divider-location="300" version="3.1.3100" locale="en_US">
+    <description/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Name" width="324" order="0"/>
+        <field id="tpd4" name="Begin date" width="66" order="1"/>
+        <field id="tpd5" name="End date" width="64" order="2"/>
+        <option id="color.recent">
+            <![CDATA[#000000]]>
+        </option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="7" name="Sprint 1" color="#000000" shape="1,0,1,0,0,1,0,1,1,0,1,0,0,1,0,1" meeting="false" start="2021-11-25" duration="14" complete="0" thirdDate="2021-12-13" thirdDate-constraint="0" expand="true">
+            <depend id="15" type="2" difference="0" hardness="Strong"/>
+            <depend id="29" type="2" difference="0" hardness="Strong"/>
+            <task id="13" name="Requirements collection" color="#8cb6ce" meeting="false" start="2021-11-25" duration="10" complete="0" thirdDate="2021-12-13" thirdDate-constraint="0" expand="true">
+                <depend id="193" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="193" name="Project Plan" color="#8cb6ce" meeting="false" start="2021-12-09" duration="4" complete="0" thirdDate="2022-01-17" thirdDate-constraint="0" expand="true">
+                <depend id="12" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="12" name="Milestone 1" color="#8cb6ce" meeting="true" start="2021-12-15" duration="0" complete="0" thirdDate="2021-11-11" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="15" name="Sprint 2" color="#000000" meeting="false" project="true" start="2021-12-15" duration="67" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+            <depend id="40" type="2" difference="0" hardness="Strong"/>
+            <task id="29" name="Sprint2 - Planning" color="#8cb6ce" meeting="false" start="2021-12-15" duration="5" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+                <depend id="3" type="2" difference="0" hardness="Strong"/>
+                <depend id="6" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="6" name="Design Hardware" color="#8cb6ce" meeting="false" start="2021-12-28" duration="10" complete="0" thirdDate="2021-12-13" thirdDate-constraint="0" expand="true">
+                <depend id="3" type="2" difference="0" hardness="Strong"/>
+                <depend id="24" type="2" difference="0" hardness="Strong"/>
+                <task id="110" name="Design wrist device dimensions" color="#8cb6ce" meeting="false" start="2021-12-28" duration="5" complete="0" thirdDate="2022-02-14" thirdDate-constraint="0" expand="true">
+                    <depend id="108" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="108" name="Design components" color="#8cb6ce" meeting="false" start="2022-01-04" duration="5" complete="0" thirdDate="2022-02-14" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="24" name="Build Hardware" color="#8cb6ce" meeting="false" start="2022-01-11" duration="12" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+                <task id="142" name="Prototyping" color="#8cb6ce" meeting="false" start="2022-01-11" duration="6" complete="0" thirdDate="2022-02-17" thirdDate-constraint="0" expand="true">
+                    <depend id="147" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="147" name="Design for Manufacturing &amp; Assembly" color="#8cb6ce" meeting="false" start="2022-01-19" duration="6" complete="0" thirdDate="2022-02-17" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="3" name="Design Software" color="#8cb6ce" meeting="false" start="2022-01-11" duration="6" complete="0" thirdDate="2021-12-13" thirdDate-constraint="0" expand="true">
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+                <task id="130" name="Design software architecture" color="#8cb6ce" meeting="false" start="2022-01-11" duration="6" complete="0" thirdDate="2022-01-24" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="23" name="Build Software" color="#8cb6ce" meeting="false" start="2022-01-27" duration="29" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+                <task id="133" name="Coding/Implementation" color="#8cb6ce" meeting="false" start="2022-01-27" duration="24" complete="0" thirdDate="2022-01-27" thirdDate-constraint="0" expand="true">
+                    <depend id="136" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="136" name="Testing" color="#8cb6ce" meeting="false" start="2022-03-02" duration="5" complete="0" thirdDate="2022-01-27" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="36" name="Sprint2 - Retrospective" color="#8cb6ce" meeting="false" start="2022-03-09" duration="7" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+                <depend id="53" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="53" name="Milestone 2" color="#8cb6ce" meeting="true" start="2022-03-18" duration="0" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+                <depend id="42" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="40" name="Sprint 3" color="#000000" meeting="false" start="2022-03-18" duration="21" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+            <task id="42" name="Sprint3 - Planning" color="#8cb6ce" meeting="false" start="2022-03-18" duration="4" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+                <depend id="43" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="43" name="Sprint3 - Execution" color="#8cb6ce" meeting="false" start="2022-03-24" duration="4" complete="0" thirdDate="2022-03-18" thirdDate-constraint="0" expand="true">
+                <depend id="44" type="2" difference="0" hardness="Strong"/>
+                <task id="169" name="Add devices to walking aids" color="#8cb6ce" meeting="false" start="2022-03-24" duration="4" complete="0" thirdDate="2022-03-29" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="44" name="Sprint3 - Implementation" color="#8cb6ce" meeting="false" start="2022-03-30" duration="8" complete="0" thirdDate="2022-03-18" thirdDate-constraint="0" expand="true">
+                <depend id="45" type="2" difference="0" hardness="Strong"/>
+                <task id="179" name="Connect wrist device w/ walking aids" color="#8cb6ce" meeting="false" start="2022-03-30" duration="5" complete="0" thirdDate="2022-04-04" thirdDate-constraint="0" expand="true">
+                    <depend id="187" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="187" name="Testing" color="#8cb6ce" meeting="false" start="2022-04-06" duration="3" complete="0" thirdDate="2022-04-04" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="45" name="Sprint3 - Retrospective" color="#8cb6ce" meeting="false" start="2022-04-11" duration="5" complete="0" thirdDate="2021-11-22" thirdDate-constraint="0" expand="true">
+                <depend id="99" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="99" name="Milestone 3" color="#8cb6ce" meeting="true" start="2022-04-18" duration="0" complete="0" thirdDate="2022-03-18" thirdDate-constraint="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
