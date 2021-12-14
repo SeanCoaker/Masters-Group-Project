@@ -112,9 +112,36 @@
             learn and use language which we have more experience with.
 
     \section{Testing Strategy}
+        To perform successful and consistent testing across the development of our project, we have decided upon a
+        testing strategy that our team will follow.\ We have designed the testing strategy around our small team,
+        following the schedule detailed earlier in the document, and complies with our chosen software lifecycle
+        methodology of an adapted scrum methodology.\ Our testing strategy consists of mainly integration testing, which
+        we will perform at the conclusion of the scrum sprints.\ A sprint consists of a block of time where our
+        developers will develop code for a specific feature that needs to be added to the already built system.
+        Integration testing will be performed at the conclusion of these sprints to ensure that the features being added
+        to the system do not create any additional issues within the system, and that its role in the system is performed
+        as expected.
 
-        To perform successful and consistent testing across the development of our project, we have decided upon a testing strategy that should be followed by all testers within our team. We have designed the testing strategy such that it suits our small team, follows the schedule detailed in this document, and complies with our chosen software lifecycle methodology of an adjusted scrum methodology. Our testing strategy consists of mainly integration testing, which we will perform at the conclusion of the sprints that have been specified within our schedule. In effect, a sprint consists of a block of time where our developers will develop code for a specific feature that needs to be added to the already built system. Integration testing will be performed at the conclusion of these sprints to ensure that the features being added to the system do not create any extra bugs within the system and does not cause the system to fail in any way.
+        Additionally, the features being added at the conclusion of a sprint need to be tested throughout the sprint
+        periods.\ The testing of embedded systems can be a very manual process due to the fact that many of these systems
+        rely upon actions from the outside world to effect how the system responds.\ We will still aim to include unit
+        testing when developing our features to ensure they are working correctly before they are implemented into the
+        larger system, possibly using expected real world values in place of direct sensor data.\ Such unit tests could
+        consist of checking that correct outputs are produced when certain inputs are passed into a function.\ For
+        example, an input of distance walked could be passed into a function along with a boolean value that states
+        whether the walking aid is moving or not.\ We would expect here that a notification is output to the walking aid
+        when the distance walked is greater than 1m, but no notification is otherwise expected.\ Therefore, we could unit
+        test this to ensure that the correct message is output when a certain criteria of input is passed into the
+        function.\ The unit tests themselves could be classified as white box testing and will be used to test the inner
+        workings of the system in an attempt to identify bugs that are hidden within the implementations of functions or
+        through the use of complex code.\ However, we will also apply black box testing to our features to test the more
+        broad functionality of the component being worked on, within the scope of the system
 
-        Additionally, the features being added at the conclusion of a sprint need to be tested themselves throughout the sprint periods. The testing of embedded systems can tend to be a very manual process due to the fact that many embedded systems rely upon actions from the outside world to effect how the system responds. Having said this, we still aim to include unit testing when developing our features to ensure they are working correctly before they are implemented into the larger system. Such unit tests could consist of checking that correct outputs are produced when certain inputs are passed into a function. For example, an input of distance walked could be passed into a function along with a boolean value that states whether the walking aid is moving or not. We would expect here that a warning message is output to the walking aid when the distance walked is greater than 1m, but no message is output otherwise. Therefore, we could unit test this to ensure that the correct message is output when a certain criteria of input is passed into the function. The unit tests themselves could be classified as white box testing and will be used to test the inner workings of the system in an attempt to identify bugs that are hidden within the implementations of functions. However, we will also apply black box testing to our features to test the more broad functionality of the feature.
-
-        Finally, as mentioned previously, embedded systems tend to include a manual testing process and our embedded systems will be no different. Manual tests will allow for the effects of real life events to be tested. Such events could consist of testing the fall detection feature (which is a stretch goal, but is used here as it's a good example) which cannot simply be tested within the code itself. We would instead simulate the device falling to the ground and then manually checking if an emergency message has been fired by our wearable device. Manual tests on our embedded systems will be documented and will include the procedures taken to run the tests and the effects this had on the system. Our manual testing will then be evaluated to ensure that the behaviour of the system matches the team's desires.
+        As previously mentioned, embedded systems involve hands on and manual testing within a real world scenario.
+        Manual tests will allow for the effects of real life events to be simulated, and thus the product tested during
+        production.\ Such events could consist of testing the fall detection feature (which is a stretch goal, but is a
+        good example) which cannot simply be tested within the code itself.\ We would instead simulate the inputs of the
+        device falling to the ground and then checking if an emergency message has been fired by our wearable device.
+        Manual tests on our embedded systems will be documented and will include the procedures taken to run the tests
+        and the effects this had on the system.\ Our testing will then be evaluated to ensure that the behaviour of the
+        system matches the specification and the expected outputs.
