@@ -1,21 +1,21 @@
 \chapter{Topic} \label{ch:topic}
 
-        This chapter details the problem and task our project aims to solve along with the limitations that could affect
-        our project, including an analysis of the current solutions our project has to compete with.\ We will provide
-        background research on dementia patients and senior citizens with similar conditions (hereby depicted as the
-        'User(s)') and their issues with forgetting their walking aids, and how wearable devices can have a varying
-        psychological impact on them.\ Finally, we will detail our current progress consisting of two initial meetings
-        with our client, and our takeaways from these engagements.
+    This chapter details the problem and task our project aims to solve along with the limitations that could affect
+    our project, including an analysis of the current solutions our project has to compete with.\ We will provide
+    background research on dementia patients and senior citizens with similar conditions (hereby depicted as the
+    'User(s)') and their issues with forgetting their walking aids, and how wearable devices can have a varying
+    psychological impact on them.\ Finally, we will detail our current progress consisting of two initial meetings
+    with our client, and our takeaways from these engagements.
 
     \section{Background}
 
         The client came to us with the idea of developing a product for those suffering with dementia, a syndrome that
         is usually associated with a declining functionality of the brain.\ Dementia can manifest itself with a large
         range of symptoms, most commonly including memory loss, loss of mental sharpness, or loss of the use of
-        language.~\cite{nhs_choices} More importantly to our project, one other symptom can be a loss in movement
+        language~\cite{nhs_choices}.\ More importantly to our project, one other symptom can be a loss in movement
         skills, or an increased difficulty in moving.\ Dementia has been recognised as an illness that causes an
         increase in falls within
-        patients~\cite{doorn_gruber-baldini_zimmerman_hebel_port_baumgarten_quinn_taler_may_magaziner_et_al._2003}. As
+        patients~\cite{doorn_gruber-baldini_zimmerman_hebel_port_baumgarten_quinn_taler_may_magaziner_et_al._2003}.\ As
         dementia affects mainly more elderly population, falls are often more dangerous to them.\ It is therefor not
         uncommon for dementia patients to be using walking aides to help mitigate this, a walking aid is only effective
         if it is used by the patient, and as explained by the client, this is something the users may struggle with
@@ -78,7 +78,7 @@
             ESP32 chips included on the TinyPICO boards utilise a facility called 'deep sleep' or hibernation states,
             which effectively powers down certain modules connected to the board.\ We could create a system here that
             fires an interrupt when the accelerometer detects movement, then forcing the ESP32 to wake up and handle the
-            interrupt.\ The device could therefor be in sleep whilst the patient is static, to save battery.
+            interrupt.\ The device could therefore be in sleep whilst the patient is static, to save battery.
 
             The device attached to the walking aid has much less limitations, and so we do not need to consider such a
             small form factor as it is not being worn but will still be using a TinyPICO to encourage compatibility and
@@ -137,21 +137,21 @@
                     generic alarms.
             \end{itemize}
             \item Create prototype devices that avoid startling the user(s) and avoids making them uncomfortable.
-                    \begin{itemize}
-                        \item The wearable device should be designed and built such that it is inconspicuous in attempt
-                            to not draw attention to it from the user(s).
-                        \item Unless the user(s) is deaf, we should avoid the use of LEDs, vibration motors, and the use
-                            of generic alarms.
-                        \item The wearable device should be developed to be worn on the wrist rather than on a more
-                            uncomfortable body part such as the neck.
-                    \end{itemize}
+            \begin{itemize}
+                \item The wearable device should be designed and built such that it is inconspicuous in attempt
+                    to not draw attention to it from the user(s).
+                \item Unless the user(s) is deaf, we should avoid the use of LEDs, vibration motors, and the use
+                    of generic alarms.
+                \item The wearable device should be developed to be worn on the wrist rather than on a more
+                    uncomfortable body part such as the neck.
+            \end{itemize}
             \item Produce a solution that the client concludes is satisfactory.
-                    \begin{itemize}
-                        \item Produce a document of user requirements and receive confirmation from the
-                            client that the requirements are sufficient.
-                        \item Allow for changes in requirements during project
-                            development.\ Our chosen agile methodology will allow for easy integration of changed user
-                            requirements here.
-                        \item Develop the solution such that it is compliant with the user requirements.
+            \begin{itemize}
+                \item Produce a document of user requirements and receive confirmation from the
+                    client that the requirements are sufficient.
+                \item Allow for changes in requirements during project
+                    development.\ Our chosen agile methodology will allow for easy integration of changed user
+                    requirements here.
+                \item Develop the solution such that it is compliant with the user requirements.
                     \end{itemize}
         \end{itemize}
