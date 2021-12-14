@@ -1,11 +1,11 @@
 \chapter{Methodology} \label{ch:methodology}
     \section{Software Developement Methodologies}
         \subsection{Development Methodology}
-            Due to the nature of our team and project, We decided to implement an agile based development methodology.\
+            Due to the nature of our team and project, We decided to implement an agile-based development methodology.\
             As a small team, it is easy for us to communicate with each other about the project, which allows us to be
             aware of what the other members of our team are doing, both of which are key factors for choosing an agile
-            methodology.\ The question There are a variety of methodologies available, each with their own upsides and
-            downsides, which are discussion below.\ Based on our research into these, we settled and agreed to use a
+            methodology.\ The question There are a variety of methodologies available, each with its upsides and
+            downsides, which are discussed below.\ Based on our research into these, we settled and agreed to use a
             scrum-based development methodology.\ Scrum is a combination of iterative and incremental development.\
             Allowing for a best of both worlds approach of having early builds working, but also being agile, and able
             to add requirements during the development process\cite{srivastava_2017_scrum}.
@@ -15,11 +15,11 @@
             close collaboration with each other, and have multiple, continuous iterations of the software builds to
             create a finished product.\ The role of the scrum master is to eliminate
             impediments\cite{srivastava_2017_scrum}, and to create the conditions that allow the development team to
-            work in their most effective manner, they take a leading role in choosing what sprints the team work on and
+            work in their most effective manner, they take a leading role in choosing what sprints the teamwork on and
             are crucial when team splitting decisions are required.
 
             A typical scrum workflow consists of iterative scrum cycles, typically lasting one to three weeks each.\
-            Initially a requirements backlog is created.\ This is done in collaboration with the client and is the
+            Initially, a requirements backlog is created.\ This is done in collaboration with the client and is the
             documentation that describes all the requirements that the software must meet.\ Essentially, it is a
             description of the product that the team are aiming to build.\ After the initial backlog is established, the
             scrum cycles can start.\ As before, each scrum cycle lasts typically up to three weeks.\ The cycle begins
@@ -35,10 +35,10 @@
             one.\cite{nuevo_2011_scrumbased}
 
             For our project, we will be slightly modifying the implementation of scrum. The above-mentioned workflow is
-            designed as a framework for full time software developers, which we are not. As students with other
-            commitments, we will not be able to meet daily to discuss the project or work on it fulltime. It would be an
+            designed as a framework for full-time software developers, which we are not. As students with other
+            commitments, we will not be able to meet daily to discuss the project or work on it full-time. It would be an
             unrealistic target to hold daily scrums, but we can still follow our adaptation of the methodology. We will
-            aim to hold scrums at frequent intervals, most likely every week, other coursework dependant. This wil allow
+            aim to hold scrums at frequent intervals, most likely every week, depending on other work needed to be completed for the university. This will allow
             us to keep track of current sprints, as well as compensate for this by being realistic in what we can
             achieve in the given sprint timeframe, and what we set as the sprint’s goals.
 
@@ -51,22 +51,22 @@
             iterations during sprints would allow us to streamline our implementation and constantly improve it, which
             also minimises risk.
 
-            In comparison, the waterfall methodology where implementation begin much later in the lifecycle once all
+            In comparison, the waterfall methodology where implementation begins much later in the lifecycle once all
             documentation and test suites are formulated. Using scrum, we start programming earlier, giving us more time
             to deal with any difficulties we encounter. It allows us to identify problems earlier, have longer to
-            address them, or encourage us to plan alternative implementations that avoid such development deadlocks.
+            address them and encourage us to plan alternative implementations that avoid such development deadlocks.
 
             We chose scrum over other pure agile methodologies mainly because we thought it was the best fit for our
             team and situation. Other methodologies, like extreme programming, could have worked well, but didn’t suit
-            our situation as students as well and added unnecessary risk to an already time critical project. For
+            our situation as students as well and added unnecessary risk to an already time-critical project. For
             example, extreme programming requires pair programming, something that would be hard for us to do
             consistently and would drastically diminish our overall productivity.
 
         \subsection{Hardware}
             We have chosen to base our hardware on the TinyPico implementation of the Espressif Systems ESP32 family of
             devices.\ This is mainly due to our experience with the platform, including previous university modules
-            experimenting with these microcontrollers.\ To compliment the TinyPico, we will need to include an array of
-            input sensors, as well as ways to output information to the user.\ In order to detect movement, we will rely
+            experimenting with these microcontrollers.\ To complement the TinyPico, we will need to include an array of
+            input sensors, as well as ways to output information to the user.\ To detect movement, we will rely
             on accelerometer data from the pervasive ADXL family of accelerometers, namely the ADXL345 due to its
             reliable and proven performance, as well as its easy availability and team members' experience with the
             device.\ Beyond what's available on the TinyPico, we may also require additional methods of receiving and
@@ -78,70 +78,70 @@
             likely an external low voltage LED to allow for more flexible placement, furthermore, it will need support
             for vibration feedback, which will likely come in the format of a mobile phone style vibration motor.\ This
             will ensure the users are not startled, due to its lower power and smaller size The walking aid device will
-            require to have a small speaker as an output, in order to prompt the user to use their walking aid.\ We can
+            require to have a small speaker as an output, to prompt the user to use their walking aid.\ We can
             then either include a microphone onboard the device to record and store data to the onboard TinyPico
-            storage, or support the use of an external SD card to access a prerecorded message.
+            storage or support the use of an external SD card to access a prerecorded message.
 
             One of the group members has access to a 3D Printer and has experience in 3D Design, and such we will be
-            able to rapidly develop and test chassis and shells for our sensors, to more close resemble a finished
-            proud whilst testing or demoing to our client.\ This is crucial due to the importance of the form factor
+            able to rapidly develop and test chassis and shells for our sensors, to more closely resemble a finished
+            product whilst testing or demoing to our client.\ This is crucial due to the importance of the form factor
             and readability of the devices, as previously discussed in the document, such as minimising patient discomfort.
 
-            The TinyPico form factor is incredibly compact, and would be viable for the NONFREQ1 requirement.\ This also
+            The TinyPico form factor is incredibly compact and would be viable for the NONFREQ1 requirement.\ This also
             extends to the input and output sensors, which we also believe would easily fit on a wearable or walking aid
-            based device.\ The low power consumption of the TinyPico and sensors,  will help us ensure NONFREQ2 and
-            NONFREQ3 are met.\ This can be further exploited by implementing deep sleep algorithms within the TinyPico's
+            based device.\ The low power consumption of the TinyPico and sensors will help us ensure NONFREQ2 and
+            NONFREQ3 are met.\ This can be further exploited by implementing deep sleep algorithms within TinyPico's
             routine, further reducing power consumption thus extending battery life on a single charge.
 
         \subsection{Software}
-            Whilst working on the project, our team will use a plethora of services to assist in communication and
+            Whilst working on the project, our team will use a plethora of services to assist in the communication and
             management of the project.\ We have decided to use the Discord platform to keep in touch and communicate.
             This allows us to organise our channels and information streams accordingly, and even has essential tools
-            for peer-development such as voice/video calls, with screen sharing support.\ We started a git repository on
+            for peer development such as voice/video calls, with screen sharing support.\ We started a git repository on
             GitHub, which is where our source code and work towards our project deliverables will be.\ This version
             control software allows us all to work on the tasks together or independently, and for progress to be easily
             managed, tracked and merged with everyone else's work.
 
-            Our milestones and written deliverables will be written in Latex, and stored on the GitHub to allow each
+            Our milestones and written deliverables will be written in Latex and stored on GitHub to allow each
             team member to use the IDE or editing environment they are most familiar with, this ranges from Overleaf, to
             Intellij, to less specific editors like ATOM or SublimeText
 
             The TinyPico supports Arduino C, which is a subset of C with an essentially very similar, but tailored
-            featureset and commandset.\ We have some experience with this in the past, however we will keep an open mind
+            feature set and command set.\ We have some experience with this in the past, however, we will keep an open mind
             towards Micropython, which promises similar levels of performance and flexibility, in an arguably easier to
-            learn and use language which we have more experience with.
+            learn and use language with which we have more experience.
 
     \section{Testing Strategy}
         To perform successful and consistent testing across the development of our project, we have decided upon a
         testing strategy that our team will follow.\ We have designed the testing strategy around our small team,
         following the schedule detailed earlier in the document, and complies with our chosen software lifecycle
         methodology of an adapted scrum methodology.\ Our testing strategy consists of mainly integration testing, which
-        we will perform at the conclusion of the scrum sprints.\ A sprint consists of a block of time where our
+        we will perform after the scrum sprints.\ A sprint consists of a block of time where our
         developers will develop code for a specific feature that needs to be added to the already built system.
-        Integration testing will be performed at the conclusion of these sprints to ensure that the features being added
-        to the system do not create any additional issues within the system, and that its role in the system is performed
+        Integration testing will be performed after these sprints to ensure that the features being added
+        to the system do not create any additional issues within the system and that its role in the system is performed
         as expected.
 
-        Additionally, the features being added at the conclusion of a sprint need to be tested throughout the sprint
-        periods.\ The testing of embedded systems can be a very manual process due to the fact that many of these systems
-        rely upon actions from the outside world to effect how the system responds.\ We will still aim to include unit
+        Additionally, the features being added after a sprint need to be tested throughout the sprint
+        periods.\ The testing of embedded systems can be a very manual process because many of these systems
+        rely upon actions from the outside world to affect how the system responds.\ We will still aim to include unit
         testing when developing our features to ensure they are working correctly before they are implemented into the
-        larger system, possibly using expected real world values in place of direct sensor data.\ Such unit tests could
+        larger system, possibly using expected real-world values in place of direct sensor data.\ Such unit tests could
         consist of checking that correct outputs are produced when certain inputs are passed into a function.\ For
         example, an input of distance walked could be passed into a function along with a boolean value that states
         whether the walking aid is moving or not.\ We would expect here that a notification is output to the walking aid
         when the distance walked is greater than 1m, but no notification is otherwise expected.\ Therefore, we could unit
-        test this to ensure that the correct message is output when a certain criteria of input is passed into the
+        test this to ensure that the correct message is output when a certain criterion of input is passed into the
         function.\ The unit tests themselves could be classified as white box testing and will be used to test the inner
         workings of the system in an attempt to identify bugs that are hidden within the implementations of functions or
-        through the use of complex code.\ However, we will also apply black box testing to our features to test the more
+        through the use of complex code.\ However, we will also apply black-box testing to our features to test the more
         broad functionality of the component being worked on, within the scope of the system
 
-        As previously mentioned, embedded systems involve hands on and manual testing within a real world scenario.
-        Manual tests will allow for the effects of real life events to be simulated, and thus the product tested during
-        production.\ Such events could consist of testing the fall detection feature (which is a stretch goal, but is a
+        As previously mentioned, embedded systems involve hands-on and manual testing within a real-world scenario.
+        Manual tests will allow for the effects of real-life events to be simulated, and thus the product tested during
+        production.\ Such events could consist of testing the fall detection feature (which is a stretch goal but is a
         good example) which cannot simply be tested within the code itself.\ We would instead simulate the inputs of the
-        device falling to the ground and then checking if an emergency message has been fired by our wearable device.
+        device falling to the ground and then check if an emergency message has been fired by our wearable device.
         Manual tests on our embedded systems will be documented and will include the procedures taken to run the tests
         and the effects this had on the system.\ Our testing will then be evaluated to ensure that the behaviour of the
         system matches the specification and the expected outputs.

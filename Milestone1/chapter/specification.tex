@@ -1,41 +1,41 @@
 \chapter{Specification}\label{ch:specification}
     \section{Description}
 
-        This project includes the development of a wearable device that is able to detect when the user is/has moved,
-        and a remote device attached to their walking aid, that is able to remind them to use it if they have not done
+        This project includes the development of a wearable device that can detect when the user is/has moved,
+        and a remote device attached to their walking aid, that can remind them to use it if they have not done
         so.\ A prerecorded message from a family member or relative will act as the notification.\ Both devices have to
         be discrete and unobtrusive, as the users are known to be easily startled by new and foreign devices near them,
-        as well as with lights/vibration and other stimulus easily confusing them.\ The message will be stored locally,
+        as well as with lights/vibration and other stimuli easily confusing them.\ The message will be stored locally,
         either on the hardware products inbuilt storage, or an external SD card.\ In the eventuality that the user is
-        deaf or hard of hearing, the device will also have to have support for alternatives stimuli, such as vibration
-        or light based feedback. Within this section we will provide a brief specification of the project along with
+        deaf or hard of hearing, the device will also have to have support for alternative stimuli, such as vibration
+        or light-based feedback (FREQ3). Within this section, we will provide a brief specification of the project along with
         references to requirements specified in chapter \ref{ch:requirements}.
 
     \section{Software Behaviour}
-        The wearable device must be able communicate with the walking aid device for the project to be successful
+        The wearable device must be able to communicate with the walking aid device for the project to be successful
         (FREQ5). This communication should occur once the wearable device has detected that the user has walked more
         than 1 metre (FREQ1). Then, the wearable device should communicate with the walking aid device to check if the
         walking aid is moving also. If it's not, then the walking aid device will play a pre-recorded message from a
         carer, friend or relative reminding the user to take their walking aid with them (FREQ2). Once the walking aid
         begins movement then the reminder will stop being played.
 
-        Furthermore, dementia effects all types of people at varying ages. That means that the wearable device must be
-        able to fit on anyone's wrist and must contain hardware small enough to allow the wearble to fit comfortably on
+        Furthermore, dementia affects all types of people of varying ages. That means that the wearable device must be
+        able to fit on anyone's wrist and must contain hardware small enough to allow the wearable to fit comfortably on
         the wrist (NONFREQ1). Because we do not want patients to feel uncomfortable while using the wearable device, it
         will be designed to look like a watch. Apart from the device's appearance and dimensions, the device should be
         power efficient, as the patients may forget to charge it (NONFREQ2). Aside from the device's appearance and
-        dimensions, the wearable device's material must be durable in  case it is dropped. That is why the material of
+        dimensions, the wearable device's material must be durable in case it is dropped. That is why the material of
         the wearable device will be ABS plastic, which is an opaque thermoplastic and amorphous polymer.
 
         Should time allow, the device will also include fall detection functionality as part of an agreed stretch goal
-        (FREQ4). A tri axial accelerometer will be used to determine the user's hand height, and more particularly the
-        device's height. If the user's hand is extremely close to the ground, it is likely that the user has fallen, and
+        (FREQ4). A tri-axial accelerometer will be used to determine the user's hand height, and more particularly the
+        device's height. If the user's hand is extremely close to the ground, the user has likely fallen, and
         if the device detects that the user has been on the ground for an extended amount of time it will begin an
         emergency procedure to notify an in case of emergency contact.
 
         In terms of the security of the system, the wearable device and the walking aid device will communicate only
         with each other in pairs. This can be achieved by using a unique synchronization mechanism between each device.
-        As a result, an external device will be unable to commuicate with the walking aid or even the wearable device
+        As a result, an external device will be unable to communicate with the walking aid or even the wearable device
         within the network (NONFREQ5).
 
     \section{Performance}
@@ -45,7 +45,7 @@
         avoid issues where the user may forget to charge the device rendering the device useless. Other performance
         concerns centre around the communication between our 2 devices, where the process should use a low amount of
         power and should allow for consistent and robust communication (FREQ5). Rx/Tx modules will provide the basis to
-        meet this performance criteria. Finally, the execution of processes by our device should be instantaneous to
-        allow the device to detect and respond to real time movements as quickly as possible. Using a stripped back
+        meet this performance criterion. Finally, the execution of processes by our device should be instantaneous to
+        allow the device to detect and respond to real-time movements as quickly as possible. Using a stripped-back
         language such as Arduino C will allow for this and will allow the developers the inclusion of unnecessary
         overheads within the code that is uploaded to our TinyPICO devices.
