@@ -8,28 +8,24 @@
         as well as with lights/vibration and other stimulus easily confusing them.\ The message will be stored locally,
         either on the hardware products inbuilt storage, or an external SD card.\ In the eventuality that the user is
         deaf or hard of hearing, the device will also have to have support for alternatives stimuli, such as vibration
-        or light based feedback.
+        or light based feedback. Within this section we will provide a brief specification of the project along with references to requirements specified in chapter \ref{ch:requirements}.
 
     \section{Software Behaviour}
 
-        The wearable device must communicate with the walking aid device in order for the project to be a success. This
-        communication, can happen. As soon as movement is detected, the transmitter will
-        send message to the wearable device, letting it know that the user started walking. In this way the wearable
-        device will be able to tell when the patient has used the walking aid and is actually walking. Otherwise, as
-        mentioned before a message will be played to remind the patient to take their walking aid with them. The device
-        will cease warning the user once the system detects that the user has used the walking aid and begun walking.
+        The wearable device must be able communicate with the walking aid device for the project to be successful (FREQ5). This communication should occur once the wearable device has detected that the user has walked more than 1 metre (FREQ1). Then, the wearable device should communicate with the walking aid device to check if the walking aid is moving also. If it's not, then the walking aid device will play a pre-recorded message from a carer, friend or relative reminding the user to take their walking aid with them (FREQ2). Once the walking aid begins movement then the reminder will stop being played.
 
-        Furthermore, dementia all types of people at varying ages. That means that the wearable device must be able to
-        fit on anyone's wrist. Because we do not want patients to feel uncomfortable while using the wearable device, it
-        will be designed to look like a watch. That means that the user, who in this case is a dementia patient, will
-        not interact with the watch, by any means of having to select an option on the device or even to change a
-        setting. Apart from the device's appearance and dimensions, the device should be power efficient, as the
-        patients most of the time will forget to charge it. Aside the device's appearance and dimensions, the wearable device's material must be durable in the case it is dropped by the user, that is why the material of the wearable device will be ABS plastic, which is an opaque thermoplastic and amorphous polymer.
+        Furthermore, dementia effects all types of people at varying ages. That means that the wearable device must be able to
+        fit on anyone's wrist and must contain hardware small enough to allow the wearble to fit comfortably on the wrist (NONFREQ1). Because we do not want patients to feel uncomfortable while using the wearable device, it
+        will be designed to look like a watch. Apart from the device's appearance and dimensions, the device should be power efficient, as the
+        patients may forget to charge it (NONFREQ2). Aside from the device's appearance and dimensions, the wearable device's material must be durable in  case it is dropped. That is why the material of the wearable device will be ABS plastic, which is an opaque thermoplastic and amorphous polymer.
 
-        The device will also include a fall detection functionality. If the development time allows, we will integrate
-        this capability into the device. A tri axial accelerometer will be used to determine the user's hand height, and
+        Should time allow, the device will also include fall detection functionality as part of an agreed stretch goal (FREQ4). A tri axial accelerometer will be used to determine the user's hand height, and
         more particularly the device's height. If the user's hand is extremely close to the ground, it is likely that
-        the user has fallen. If the device detects that the user has been on the ground for an extended amount of time,
-        it will begin informing a relative or a nearby caregiver.
+        the user has fallen, and if the device detects that the user has been on the ground for an extended amount of time
+        it will begin an emergency procedure to notify an in case of emergency contact.
 
-        In terms of the security of the system, the devices, wearble device and the walking aid, will communicate only with each other in pairs. This can be achieved by using a unique synchronization mechanism between each device, so that the network will know that a single wearble device belongs to a single user, as it is belongs to a single walking aid. As a result, an external device will be unable to commuicate with the walking aid or even the wearble device within the network.
+        In terms of the security of the system, the wearable device and the walking aid device will communicate only with each other in pairs. This can be achieved by using a unique synchronization mechanism between each device. As a result, an external device will be unable to commuicate with the walking aid or even the wearable device within the network (NONFREQ5).
+
+    \section{Performance}
+
+        Our main concern with the performance of the device is to ensure that the battery usage is kept at a minimum level (NONFREQ2). We have previously discussed how deep sleep cycles will be used to do this and is necessary to avoid issues where the user may forget to charge the device rendering the device useless. Other performance concerns centre around the communication between our 2 devices, where the process should use a low amount of power and should allow for consistent and robust communication (FREQ5). Rx/Tx modules will provide the basis to meet this performance criteria. Finally, the execution of processes by our device should be instantaneous to allow the device to detect and respond to real time movements as quickly as possible. Using a stripped back language such as Arduino C will allow for this and will allow the developers the inclusion of unnecessary overheads within the code that is uploaded to our TinyPICO devices.
