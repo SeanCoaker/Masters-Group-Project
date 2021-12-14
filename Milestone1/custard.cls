@@ -195,7 +195,8 @@
     \else
       \vspace{10mm}
       {\large Submitted to \@awardinginst in fulfilment\\
-      of the requirements for the Degree of \@degree}
+      of the requirements for the Degree of \@degree}\\
+      {\large in collaboration with Bangor Health Clinic}
 
       \vspace{22mm}
      
