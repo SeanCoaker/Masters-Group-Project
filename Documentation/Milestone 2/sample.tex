@@ -134,7 +134,36 @@ Due to the fact that we had left the introductory meeting without a clear set of
 
 Once we had clarified the route we wanted to take the project down, we scheduled a second meeting with the client for the 25th of November to discuss our decision with them. The client agreed with our reasoning for developing a wearable device and were content for the project to continue in this manner. We finalised a final budget of £150 and the client stated that they did not have any preference for hardware to be used within the development of this system. We agreed with the client that we would develop a list of functional and non-functional requirements for them to agree to or amend where they saw fit, and would include them within the submission of our milestone 1 document. Our next steps from here were to complete the milestone 1 document, and finalise a list of hardware devices that were necessary for the development of the system we had in mind. Once we had finalised a list of hardware devices to procure, we needed to submit them to the client for ordering so that we could begin code development.
 
+\section{Progress Since Milestone 1}
+
+Within this section we will detail the work that we have carried out since the submission of our milestone 1 document. This will include an insight into the challenges we faced in procuring the hardware needed for this project, research that was made into relative code that can be used to detect to walking or to provide communication between our devices, before finally discussing the code we have developed so far along with insights into the challenges we faced with the code and how we overcame them. Each challenge stated will have accompanying discussion as to how they may or may not have negatively affected our project progress both in terms of schedule and/or financing.
+
+\subsection{Hardware Procurement}
+
+The hardware procurement task of the project required our team to come together to agree upon a platform to develop our code on, as well as any additional devices that needed to be connected in order to allow us to meet the client's specified requirements. Our team unanimously voted to work on the Arduino platform, as it offers extensive hardware and documentation options, as well as the option to develop code in either of the Arduino C programming language or MicroPython. Once we had all agreed which platform to develop code on, we set about finalising a list of hardware devices to order. A table of the devices we intended to order, their worst case unit price, quantity, worst case total price and a description of their involvement within this project can be seen on the next page in table \ref{tbl:items}.
+
+\afterpage{%
+    \clearpage% Flush earlier floats (otherwise order might not be correct)
+    \thispagestyle{empty}% empty page style (?)
+    \begin{landscape}% Landscape page
+        \centering % Center table
+        \input{tables/itemsTable}
+    \end{landscape}
+    \clearpage% Flush page
+}
+
+\afterpage{
+
+\subsubsection{Issues Faced with Hardware Procurement}
+
+Unfortunately, the process of attaining hardware for this project has not been without its challenges and has meant that time and money has been lost that could have been spent elsewhere in advancing the progress of the project. The first challenge we faced was that the worst case price of our initial order list came in over budget, at £229.46. Far greater than the budget of £150 that we had been assigned by the client. We therefore needed to identify a solution that would allow us to lower the cost of our devices without hindering the quality of our final solution as well as the confidence of our team in delivering a product. 
+
+The solution we finalised on was to ask the university if we could borrow 2x TinyPICOs whilst also offering to purchase 4x Accelerometers and 4x Speakers using the team's own financing. This would have created a deduction in worst case costing of £85.76, bringing the total worst case price to £143.70. Unfortunately, we could only confirm these changes to the budget once a member of staff from the university confirmed that we could borrow 2x TinyPICOs, which could not happen until staff had returned from annual leave and until we had finished our exams over the Christmas period. That meant that the confirmation of the final item list was not completed until the 19th of January. 
+
+However, we received some good fortune on February 4th where the client stated that they would be able to order our item list within budget, providing that we could still borrow 2x TinyPICOs from the university. This meant that our team were able to save money in not needing to purchase some units of the accelerometers and speakers. The main downside that we faced with the client ordering our hardware items was that they needed to carry out the order process through the university's system. This meant that our team lost 4 weeks worth of development time due to the university needing to sort prices with the seller as well as needing to chase them for delivery updates after it had been delayed. In this time some members of our team decided to purchase some hardware items themselves in order to allow code development to take place whilst waiting for the full item list to arrive. The development that took place in that time was the soldering of 2 TinyPICO boards along with the code development of a communication system between those 2 TinyPICOs.
 
 \printbibliography
+
+}
 
 \end{document}
