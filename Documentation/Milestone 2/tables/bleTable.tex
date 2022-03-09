@@ -1,0 +1,58 @@
+\small
+		\begin{xltabular}[H]{\textwidth}{p{0.47\textwidth} | p{0.47\textwidth}}
+			\caption[BLE Advantages and Disadvantages]{A table listing the advantages and disadvantages of the BLE protocol.}\\
+
+			\toprule
+
+		 	Advantages & Disadvantages\\
+
+			\midrule
+			\endfirsthead
+
+			\toprule
+
+			Advantages & Disadvantages\\
+
+			\midrule
+			\endhead
+
+			\hline
+			\multicolumn{2}{|r|}{{Continued on next page}}\\
+			\hline
+			\endfoot
+
+			\bottomrule
+			\endlastfoot
+
+			Offers low energy consumption \cite{ble_adv_dis} allowing us to run the system off battery power for a long time without the patient needing to remember to change the batteries in our device.
+			
+			&
+			
+			It cannot operate at the higher data transfer rates that are offered by WiFi and mobile cellular technologies \cite{ble_adv_dis}.\\
+			
+			\midrule
+			
+			Uses a maximum message size of 255 bytes \cite{ble_adv_dis}. This would be perfect for our project as it would minimise communication overheads as we are only sending notification messages between the devices.
+			
+			&
+			
+			As with all wireless communication, it is susceptible to being compromised by a malicious attacker. For our project this may allow the attacker to repeatedly call a function that plays the reminder alarm from the walking stick device.\\
+			
+			\midrule
+			
+			As BLE includes Bluetooth technology, any board that includes BLE technology within their chips will be able to communicate with each other \cite{ble_adv_dis}. This would mean that it may be easier to upscale our production of the devices in future.
+			
+			&
+			
+			\\
+			
+			\midrule
+			
+			"BLE devices are robust to operate in congested environment due to introduction of V5.0" \cite{ble_adv_dis}. This will provide huge benefit should our devices be used in busy environments such as medical centres and care homes.
+			
+			&
+			
+			\\
+
+		\end{xltabular} 
+		\label{tbl:ble}

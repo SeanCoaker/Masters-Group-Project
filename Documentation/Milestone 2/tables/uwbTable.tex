@@ -1,0 +1,50 @@
+\small
+		\begin{xltabular}[H]{\textwidth}{p{0.47\textwidth} | p{0.47\textwidth}}
+			\caption[UWB Advantages and Disadvantages]{A table listing the advantages and disadvantages of the UWB protocol.}\\
+
+			\toprule
+
+		 	Advantages & Disadvantages\\
+
+			\midrule
+			\endfirsthead
+
+			\toprule
+
+			Advantages & Disadvantages\\
+
+			\midrule
+			\endhead
+
+			\hline
+			\multicolumn{2}{|r|}{{Continued on next page}}\\
+			\hline
+			\endfoot
+
+			\bottomrule
+			\endlastfoot
+
+			Similar to BLE, UWB is a low power technology \cite{bleesk} which would allow us to run the devices from battery power for a while without the patient or carer needing to remember to change the batteries of the device too often.
+			
+			&
+			
+			It would require us to acquire separate UWB modules for use with ESP32s. This would mean that we would exceed our budget.\\
+			
+			\midrule
+			
+			There is a minimal chance of signal interference as UWB operates over 3.1GHz-10GHz frequency bands \cite{bleesk}. This would allow us to effectively utilise UWB within busy settings such as medical centres and care homes without the fear of our devices losing their functionality due to interference from other devices.
+			
+			&
+			
+			UWB does not have the same widespread adoption that BLE offers. This would mean that our system may not be effective across multiple devices and may limit the scalability of our product.\\
+			
+			\midrule
+			
+			"UWB has low probability of detection and interception" \cite{uwb}, which would lower the risk of a successful malicious attack on our system in comparison to BLE.
+			
+			&
+			
+			\\
+
+		\end{xltabular} 
+		\label{tbl:uwb}

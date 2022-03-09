@@ -1,0 +1,58 @@
+\small
+		\begin{xltabular}[H]{\textwidth}{p{0.47\textwidth} | p{0.47\textwidth}}
+			\caption[ESP-Now Advantages and Disadvantages]{A table listing the advantages and disadvantages of the ESP-Now protocol.}\\
+
+			\toprule
+
+		 	Advantages & Disadvantages\\
+
+			\midrule
+			\endfirsthead
+
+			\toprule
+
+			Advantages & Disadvantages\\
+
+			\midrule
+			\endhead
+
+			\hline
+			\multicolumn{2}{|r|}{{Continued on next page}}\\
+			\hline
+			\endfoot
+
+			\bottomrule
+			\endlastfoot
+
+			Provides a simple implementation of two-way communication between ESP32s \cite{random_nerd_tutorials}. This would allow us to easily send messages between the wearable and walking aid device to check if either are moving.
+			
+			&
+			
+			Similar to UWB, it is only adoptable for ESP chips and therefore less adopted in this area than BLE, meaning we will be limited to using ESP chipped boards for future product development, or we would have to redevelop our communication system.\\
+			
+			\midrule
+			
+			Maximum message sizes are limited to 250 bytes \cite{random_nerd_tutorials}. Similar to the advantage stated with BLE, a small message size means minimal overheads, which is beneficial to our project as we will only be sending short signal messages between devices.
+			
+			&
+			
+			ESP-Now is less power efficient than BLE \cite{neupane_2019} and in turn less power efficient than UWB \cite{bender_2021}. This would mean that the patient or carer would need to remember to change the batteries in our devices more often.\\
+			
+			\midrule
+			
+			The ESP-Now library includes callbacks \cite{random_nerd_tutorials} that can allow our devices to notice whether their messages to the other devices have been received successfully or not. This can create a more robust communication protocol that attempts to avoid lost packets. This will mean that reminders that should be played to the patient are less likely to fail.
+			
+			&
+			
+			\\
+			
+			\midrule
+			
+			ESP-Now was developed for the ESP32 chips found on our TinyPICO boards. Because of this, the documentation provided that directly relates to our hardware is perfect for code development and lessens the difficulty of developing our communication protocol.
+			
+			&
+			
+			\\
+
+		\end{xltabular} 
+		\label{tbl:now}
