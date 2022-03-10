@@ -32,14 +32,14 @@
     style=ieee,
   ]{biblatex}
 
- \addbibresource{sample.bib}
+\addbibresource{sample.bib}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
 \lstset{frame=tb,
-  language=Java,
+  language=C++,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
@@ -85,7 +85,7 @@
 \makeabstract
 \maketableofcontents
 
-%\pagenumbering{roman} % I, II, III, IV 
+%\pagenumbering{roman} % I, II, III, IV {}
 %{
 %  \setlength{\parskip}{0pt}
 %  \tableofcontents
@@ -95,116 +95,10 @@
 %\pagebreak \setcounter{page}{1}
 %\pagenumbering{arabic} % 1,2,3
 
-\chapter{Introduction} 
+\input{./chapters/intro}
+\input{./chapters/current_progress}
 
-In our milestone 1 document, we introduced our plans to develop a system that reminds dementia patients to use their walking aids should we detect that they are walking without them. We discussed this issue with our client, Bangor Health Clinic, to finalise our list of requirements to ensure that we were able to develop an adequate system. Within that document, we also detailed our schedule for project development along with an in-depth risk analysis that outlined potential risks to our project along with a matrix that set out the likelihood of each detailed risk occurring and the severity of impact the risks would have on our project.
-
-It has been three months since the submission of that document on December 14th, where the project has progressed since then, both in terms of development and the understanding of the task at hand for our team. This document will outline the progress that has been made by our team since then, including detail of the work undertaken to finalise a parts list that would allow us to meet the requirements specified in milestone 1, and how the procurement of these parts has led to a delay in the commencing of software and embedded system development. We will detail the progress we have made in software development towards creating a walking detection system, which currently consists of 2 working prototypes that utilise different principals to count the steps taken when the patient is moving, as well as a communication system that allows our wearable and walking aid device to communicate with each other. Along with the progress made in software development, we will also outline the progress we  made in our understanding of the system when researching potential implementations of the walking detection system. Finally, we will detail if any amendments need to be made to our schedule and risk analysis sections from milestone 1 due reasons such as; the occurrence of impacting risks such as delays in the procurement of hardware, the effects of health conditions and other curricular activities on the productivity levels of our team, and the lack of proactive effort from team members.
-
-\section{The Project}
-
-Our planned system comprised of two TinyPICO boards, one being worn by the patient and the other being attached to their walking aid. We then specified our plans to utilise a tri-axial accelerometer to detect the patient walking when they are wearing our device. When walking is detected, we specified that the wearable device would communicate with the walking aid device to identify whether or not the walking aid was also moving. Here we declared to use a second tri-axial accelerometer to identify if the walking aid was indeed moving. If we detect that the patient is moving without their walking aid, then the walking aid device would play a message, recorded by the patient's relative or carer, to remind the patient to take their walking aid with them. To implement the reminder feature, we declared the need to utilise an I2S audio shield that would read a recorded message from an SD card and send the message to be output by a connected external speaker. The implementation of the reminder feature also needed to account for potential patients that may have suffered from hearing loss. To account for this, we also stated the necessity of including a vibration motor within our wearable device that would vibrate to remind the patient to take their walking aid with them, rather than utilising the speaker within the device attached to the walking aid. Finally, we discussed a stretch-requirement, which would be implemented if our time and financial constraints allowed. This requirement was a free-fall detection feature that would be able to detect the fall of a patient in a similar fashion to the leading smart watch devices \cite{samsung_watch, apple_watch}.
-
-\section{Related Work}
-
-The consequences of falls among elderly patients suffering with dementia is well documented, with falls often leading to an increase in fractures suffered by the patients \cite{buchner_1987}, and unfortunately also being a major cause of mortality \cite{shaw_2007}. Along with the clear dangers of falls within the community of elderly patients suffering with dementia, a 1993 study of falls within a nursing home for elderly patients with dementia noted a "rate of about 4 falls per person per year" \cite{van_dijk_meulenberg_van_de_sande_habbema_1993}. When noting the staggering figures of falls suffered per year within a nursing home caring for elderly patients with dementia, it is clear to see why this project provides a strong motivation for us to create a strong product that can be beneficial to this area of medical care. Due to limited development of solutions in this area, by reason of Bangor Health Clinic reaching out to us to help develop this solution, we still strongly feel that what we can provide with a bespoke system far outweighs the gains that can be had from utilising off-the-shelf technology. 
-
-Due to a lack of similar solutions that explicitly solve the problem we are trying to solve, we needed to research further tracking devices such as the Tile ecosystem to identify similar solutions that may use hardware technologies that could be beneficial to our project. Tile is an ecosystem of tracking products that allow buyers to attach devices to their valuables and utilise the Tile mobile application so that the Tile devices ring to notify the user of where their lost valuable is. Tile utilises Bluetooth Low Energy technology to allow the user to connect their Tile devices with their smart phones on demand \cite{hall_2021}. The ESP32 chips found on our TinyPICO devices also allow the use of Bluetooth Low Energy technology, and has provided us with an interesting option for communication between our devices. Further discussion on our chosen technology to provide communication between our TinyPICO devices will be provided later in this document. Tile builds on top of their implementation of their mobile application by partnering with smart home companies such as Google Assistant and Amazon Alexa \cite{hall_2021}, to allow users to use their voice to help locate their lost valuables. 
-
-Competing technologies with the Tile ecosystem include Apple's newest tracking technology, the AirTag, along with Samsung's equivalent, the Galaxy SmartTag. Apple utilise ultra-wideband technology in order to facilitate the communication protocol between their mobile phone devices and their AirTag devices \cite{griffith_2021}. "Ultra-Wideband (UWB) technology is loosely defined as any wireless transmission scheme that occupies a bandwidth of more than 25\% of a center frequency" \cite{Foerster_ultra-widebandtechnology}, with it being used for short distance communication \cite{uwb}. With leading technology companies such as Apple opting to use ultra-wideband technology, we felt it appropriate to also consider using this technology within our own communication system, with its adequate range of up to 200 metres \cite{bleesk}. Ultra-wideband technology also offers distance measuring features as accurate as 10 centimetres \cite{bleesk}, providing us with a further consideration for technologies that could be used for walking detection in the wearable device. More on this later in this document. 
-
-The common downsides to the use of these products in combating the issue we aim to solve, is that they are all tracking devices of sorts. All products make use of a single hardware device system, which in turn communicates with a mobile device to allow the user to locate their lost valuable item. Whilst this would be ideal for helping a patient locate their walking aid, it would not provide reminders to the patient to use their walking aid. Further issues with these devices is that some use alarm sound systems to locate the user's valuables. A clear requirement set out by the client was that our device should not make use of generic alarm systems, to avoid startling the patient. This is why we feel a bespoke system here would be most beneficial. 
-
-\chapter{Current Progress}
-
-Within this chapter we will detail the progress we have made towards completing the product set out to be developed within this project. This chapter will consist of a section detailing what work was carried out prior to the submission of our milestone 1 document on December 14th, and what work has been carried out since then. We will also detail any issues that we have faced along the way that may have hampered the progress we wanted to make and may have impacted upon the schedule we detailed in our milestone 1 document. 
-
-\section{Progress Prior to Milestone 1}
-
-Prior to the submission of our milestone 1 document, we had held 2 meetings with our client to gain an understanding of the user requirements for the project and to clarify details within project management such as the budget we were assigned and if the client had any preferences towards what hardware we should use to develop our product. 
-
-We held an introductory meeting with the client on the 18th of November, which allowed us to clarify what issue the client wanted to solve and what system the client desired to be built to solve said issue. Unfortunately, we left the meeting feeling unsatisfied as we had failed to gain a full understanding of the final direction the client wanted the project to go down. We were left with two options; to develop a non-wearable device, such as a pressure pad system, to detect when the patient had left their resting area, or to develop a wearable device that would constantly poll an accelerometer to detect the patient walking. The client kindly agreed to offer us a budget of £150 to aid with the procurement of hardware devices that were a necessity for developing the product depending on the route we decided to take the project down. 
-
-Due to the fact that we had left the introductory meeting without a clear set of final user requirements, we held an intra-team meeting to decide upon which solution we would prefer to develop as a team, both based on the skills we posses in code development and engineering, as well as what we felt would be most beneficial to solving the problem at hand. We ultimately decided to develop a product that included the wearable device. We decided on this solution as we felt that it offered the best platform to incorporate stretch features, such as fall detection in future. It also avoids some clear disadvantages from using a pressure pad system such as a carer needing to move the pressure pad to each piece of furniture the patient rests on, and creating a water proof solution that means that the pressure pad can be easily cleaned. 
-
-Once we had clarified the route we wanted to take the project down, we scheduled a second meeting with the client for the 25th of November to discuss our decision with them. The client agreed with our reasoning for developing a wearable device and were content for the project to continue in this manner. We finalised a final budget of £150 and the client stated that they did not have any preference for hardware to be used within the development of this system. We agreed with the client that we would develop a list of functional and non-functional requirements for them to agree to or amend where they saw fit, and would include them within the submission of our milestone 1 document. Our next steps from here were to complete the milestone 1 document, and finalise a list of hardware devices that were necessary for the development of the system we had in mind. Once we had finalised a list of hardware devices to procure, we needed to submit them to the client for ordering so that we could begin code development.
-
-\section{Progress Since Milestone 1}
-
-Within this section we will detail the work that we have carried out since the submission of our milestone 1 document. This will include an insight into the challenges we faced in procuring the hardware needed for this project, research that was made into relative code that can be used to detect to walking or to provide communication between our devices, before finally discussing the code we have developed so far along with insights into the challenges we faced with the code and how we overcame them. Each challenge stated will have accompanying discussion as to how they may or may not have negatively affected our project progress both in terms of schedule and/or financing.
-
-\subsection{Hardware Procurement}
-
-The hardware procurement task of the project required our team to come together to agree upon a platform to develop our code on, as well as any additional devices that needed to be connected in order to allow us to meet the client's specified requirements. Our team unanimously voted to work on the Arduino platform, as it offers extensive hardware and documentation options, as well as the option to develop code in either of the Arduino C programming language or MicroPython. Once we had all agreed which platform to develop code on, we set about finalising a list of hardware devices to order. A table of the devices we intended to order, their worst case unit price, quantity, worst case total price and a description of their involvement within this project can be seen on the next page in table \ref{tbl:items}.
-
-\afterpage{%
-    \clearpage% Flush earlier floats (otherwise order might not be correct)
-    \thispagestyle{empty}% empty page style (?)
-    \begin{landscape}% Landscape page
-        \centering % Center table
-        \input{tables/itemsTable}
-    \end{landscape}
-    \clearpage% Flush page
-}
-
-\afterpage{
-
-\subsubsection{Issues Faced with Hardware Procurement}
-
-Unfortunately, the process of attaining hardware for this project has not been without its challenges and has meant that time and money has been lost that could have been spent elsewhere in advancing the progress of the project. The first challenge we faced was that the worst case price of our initial order list came in over budget, at £229.46. Far greater than the budget of £150 that we had been assigned by the client. We therefore needed to identify a solution that would allow us to lower the cost of our devices without hindering the quality of our final solution as well as the confidence of our team in delivering a product. 
-
-The solution we finalised on was to ask the university if we could borrow 2x TinyPICOs whilst also offering to purchase 4x Accelerometers and 4x Speakers using the team's own financing. This would have created a deduction in worst case costing of £85.76, bringing the total worst case price to £143.70. Unfortunately, we could only confirm these changes to the budget once a member of staff from the university confirmed that we could borrow 2x TinyPICOs, which could not happen until staff had returned from annual leave and until we had finished our exams over the Christmas period. That meant that the confirmation of the final item list was not completed until the 19th of January. 
-
-However, we received some good fortune on February 4th where the client stated that they would be able to order our item list within budget, providing that we could still borrow 2x TinyPICOs from the university. This meant that our team were able to save money in not needing to purchase some units of the accelerometers and speakers. The main downside that we faced with the client ordering our hardware items was that they needed to carry out the order process through the university's system. This meant that our team lost 4 weeks worth of development time due to the university needing to sort prices with the seller as well as needing to chase them for delivery updates after it had been delayed. In this time some members of our team decided to purchase some hardware items themselves in order to allow code development to take place whilst waiting for the full item list to arrive. The development that took place in that time was the soldering of 2 TinyPICO boards along with the code development of a communication system between those 2 TinyPICOs.
-
-\subsection{Development of a Communication System}
-
-Whilst we were awaiting the delivery of our hardware items, we knew we needed to make some progress with code development. We had already procured 2 TinyPICOs and needed to solder them in order to test code development. To do this we sourced our own solder wire and soldering iron. We purchased the solder wire but fortunately were able to borrow a soldering iron. Once we had soldered our TinyPICOs we could being the development of code to facilitate communication between them. We had multiple choices of technology to build the communication system on, including Ultra-Wideband (UWB) technology, Bluetooth Low Energy (BLE) technology, or ESP-Now, a protocol developed by ESP32 creators Espressif that allows a secure, peer-to-peer connection between ESP32s without the need for handshaking \cite{esp-now_overview}. 
-
-\subsubsection{Comparison of Communication Protocols}
-
-This section will detail the advantages and disadvantages to using each communication protocol within our project. Once we have done this we will discuss which protocol we decided to use and why it was most suitable for this project.
-
-\paragraph{Bluetooth Low Energy (BLE)}
-
-"Bluetooth Low Energy (BLE) is an emerging low-power wireless technology developed for short-range control and monitoring applications" \cite{gomez_oller_paradells_2012}. BLE utilises the 2.4GHz frequency band for communication and can operate over distances of up to 50 metres when indoors \cite{ble_adv_dis}. 
-
-\input{tables/bleTable}
-
-\paragraph{Ultra-Wideband (UWB)}
-
-"Ultra-Wideband (UWB) technology is loosely defined as any wireless transmission scheme that occupies a bandwidth of more than 25\% of a center frequency" \cite{Foerster_ultra-widebandtechnology}. It can be used to transfer data over short distances, around 30 metres \cite{uwb_adv_dis}, whilst keeping power usage to a minimum \cite{uwb}. Apple opting to use this technology for the communication between their newer models of phones and their AirTag devices demonstrates the effectiveness of UWB.
-
-\input{tables/uwbTable}
-
-\paragraph{ESP-Now}
-
-As mentioned previously, ESP-Now is a protocol developed by ESP32 creators Espressif that allows a secure, peer-to-peer connection between ESP32s without the need for handshaking \cite{esp-now_overview}. It offers a real world tested open-field communication range of 220 metres \cite{random_nerd_tutorials}, further than the ranges of both BLE and UWP.
-
-\input{tables/nowTable}
-
-\subsubsection{Our Chosen Communication Protocol}
-
-When deciding which communication protocol to utilise for data to be sent between our TinyPICO boards, it was a simple decision to initially rule out the use of UWB technology as it would have increased the cost of development for our project to attain UWB capable chips, pushing our cost over the budget assigned to us by the client. That quickly narrowed down our choice of communication protocols to use to BLE and ESP-Now. For this project, we opted to utilise ESP-Now for communication between our TinyPICOs and it will provide the basis for our TinyPICOs to understand if each other are moving and when to play a reminder to the patient. We opted for ESP-Now due to its ease of integration with ESP32 chips and its extended range of communication over both BLE and UWB at 220 metres in open-field communication \cite{random_nerd_tutorials}. With its usage of small message size at 250 bytes, and utilisation of callback functionality within Arduino \cite{random_nerd_tutorials}, it provides the perfect platform for us to send small messages with low overheads between TinyPICOs to check for movement from either device, as well as the callback functionality providing a method for us to add robustness to our communication code. By this, we mean that should a callback be initiated suggesting that communication between the 2 TinyPICOs has failed, we can attempt to resend messages to ensure that the patient receives a reminder to use their walking aid when they should, a vital implementation for patient safety. The callback functionality could also allow us to utilise timeouts and allow the carers of the patient to be notified if continuous communication difficulty is being experienced. The final upside to using ESP-Now is due to its exceptional documentation provided by Espressif for use with ESP32 chips. This should enable us to develop more reliable and clear code that functions in the intended manner of the protocol developers. We should point out here that the major downsides to using ESP-Now are its higher energy consumption over BLE \cite{neupane_2019} and the fact that it is not as widely adopted as BLE. The energy consumption difference is only slightly higher in ESP-Now and we predict that we may not notice a significant difference in real world battery performance, especially if we utilise ESP32's deep sleep modes. The issue with limited market adoption may hamper which boards we could use to develop our product in future, but we feel that should this become an issue then we could quite easily switch from a communication system utilising ESP-Now to a system that utilises the more widely adopted BLE protocol.
-
-\subsubsection{Developed Communication System}
-
-With some help from code published online \cite{random_nerd_tutorials}, we began development of a simple communication system between the 2 TinyPICO devices, the only devices we had available to use at the time. In its current form we have two separate Arduino sketches, one that handles receiving messages (listing \ref{lst:receive}) and the other handling the sending of messages (listing \ref{lst:send}). In relation to our project, we can assign the receiving sketch to the walking aid device and the sending sketch to the wearable device, such that when the wearable device detects walking over a distance greater than 1 metre, then it sends a message to the walking aid device that will run a check to see if itself is too moving. Without the availability of accelerometers and audio shields at this point, we needed to develop a proof of concept solution that could simulate this system. Therefore, we developed code that every 5 seconds would send a message from one device to the other. The receiving device would detect the message and then flash its LED to simulate an audio reminder being played. For the rest of this section, we will include the code for each sketch and discuss what the code does and how it will be used in our final product.
-
-\paragraph{Send}
-
-\lstinputlisting[language=C++, caption=Sketch to send message from wearable device to walking aid device, label=lst:send]{code/send_comms.ino}
-
-We begin the code in this sketch, listing \ref{lst:send}, by declaring the MAC address of the TinyPICO that should receive the message, as well as the contents of the message. We then declare a function that will be called when the ESP-Now protocol triggers a callback. Within this function, we currently print whether the message was sent successfully or not. In future, this function will be changed quite simply to reset counters such as the timing of steps being taken as well as how many steps have been taken since the last message broadcast should the callback return a success response. We then use the Arduino setup function where we provide initialisation of the Serial Monitor, used to print output to our computer screen, and initialisation of the ESP-Now protocol including specific details on the peer TinyPICO to send messages to. Once this is complete, we run the Arduino loop function that constantly loops during the time the device is powered on. Within this function, we send the test message to the receiving device, and then check whether it was sent successfully or not. This code can be changed in future to make the communication system more robust. By this, we mean that we can create a function that attempts to send the message either until it is sent successfully or until we timeout, providing functionality that enhances the safety of the patient using our device by ensuring that reminders are not missed, or that carers are notified if there is an issue with the device. Finally, we call a delay function that blocks the operation of the device for 5 seconds for simulation purposes.
-
-\paragraph{Receive}
-
-\lstinputlisting[language=C++, caption=Sketch to receive message from wearable device, label=lst:receive]{code/receive_comms.ino}
-
-The code within the receive sketch, listing \ref{lst:receive}, begins by initialising a TinyPICO object that will allow us to control its LED later on. We also initialise a String variable that will be used to store the message being sent from the wearable device for us to interpret later. We then follow the code in the send sketch by creating a function that is called when the receive message callback is called by the ESP-Now protocol. Within this function we copy the data sent from the wearable device into our message variable for easier interpretation. We print that message to confirm we are receiving the correct message and then we flash the LED of the TinyPICO. This function in future will contain code to check the contents of the message. If we are being told that the wearable device is moving, then we can run checks here to check if the walking aid is moving too. If not, then we can handle the code to play the reminder here. Next, we include the Arduino setup function and include code to initialise Serial Monitor again for printing outputs to our computer screen, and we include code to initialise the ESP-Now protocol as we did in the send sketch. We also include a line of code that sets the colour of the LED to green. We leave the Arduino loop function empty here as we are relying upon the callback function to handle the receiving of messages currently. Finally, we have defined a flash function that flashes the LED of the receiving TinyPICO once.
-
+\clearpage
 \printbibliography
-
-}
 
 \end{document}
