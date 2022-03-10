@@ -5,10 +5,20 @@
 TinyPICO tp = TinyPICO();
 ADXL345 adxl = ADXL345(5);
 
+unsigned long startMillis;
+unsigned long currentMillis;
+const unsigned long period = 10000; // 10 second period
+bool stepTimerStarted = false;
 int steps = 0;
 
 void setup() {
 	Serial.begin(115200);
+
+	// Set the colour of the LED to green
+	tp.DotStar_SetPixelColor(0,128,0);
+	tp.DotStar_SetBrightness(0);
+  tp.DotStar_Show();
+
 	adxl.powerOn();
     adxl.setRangeSetting(4);
 
@@ -47,11 +57,59 @@ void loop() {
         delay(250);
 
         if (!adxl.triggered(interrupts, ADXL345_DOUBLE_TAP)) {
-            steps++;
-            Serial.print("Steps: ");
-            Serial.println(steps);
+        	addStepToCounter();
         }
 
         delay(250);
 	}
+}
+
+/*
+  A function that causes the LED of the TinyPICO to blink.
+*/
+void flash() {
+    tp.DotStar_SetBrightness(128);
+    tp.DotStar_Show();
+    delay(500);
+    tp.DotStar_SetBrightness(0);
+    tp.DotStar_Show();
+}
+
+void addStepToCounter() {
+	steps++;
+	currentMillis = millis();
+	unsigned long timerVal = currentMillis - startMillis;
+
+	if (!stepTimerStarted) {
+				
+		stepTimerStarted = true;
+		startMillis = millis();
+
+	} else {
+
+		if (timerVal <= period) {
+			if (steps >= 5) {
+
+				// Send reminder to patient
+				flash();
+				Serial.print("REMINDER FIRED:\t");
+				Serial.println(timerVal);
+
+				steps = 0;
+				stepTimerStarted = false;
+
+			}
+		} else {
+
+			Serial.print("Timer Reset:\t");
+			Serial.println(timerVal);
+			steps = 0;
+			stepTimerStarted = false;
+
+		}
+
+	}
+			
+  Serial.print("Steps: ");
+  Serial.println(steps);
 }

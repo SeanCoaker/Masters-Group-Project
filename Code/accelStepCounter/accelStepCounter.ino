@@ -6,6 +6,11 @@ TinyPICO tp = TinyPICO();
 float xavg=0, yavg=0, zavg=0;
 float xcur=0, ycur=0, zcur=0;
 float xnxt=0, ynxt=0, znxt=0;
+
+unsigned long startMillis;
+unsigned long currentMillis;
+const unsigned long period = 10000; // 10 second period
+bool stepTimerStarted = false;
 int steps = 0;
 
 
@@ -190,12 +195,10 @@ void loop() {
 	               ((ynxt - yavg) * (ynxt - yavg)) + 
 	               ((znxt - zavg) * (znxt - zavg)));
 
-	if (acc2-acc > 0.05) {
-		steps = steps + 1;
+	if (acc2 - acc > 0.05) {
+		addStepToCounter();
 	}
 
-	Serial.print("Steps: ");
-	Serial.println(steps);
 	delay(400);
 }
 
@@ -297,4 +300,43 @@ void read_av_acc(){
 	xavg = xavg/50; 
 	yavg = yavg/50;
 	zavg = zavg/50;
+}
+
+void addStepToCounter() {
+	steps++;
+	currentMillis = millis();
+	unsigned long timerVal = currentMillis - startMillis;
+
+	if (!stepTimerStarted) {
+				
+		stepTimerStarted = true;
+		startMillis = millis();
+
+	} else {
+
+		if (timerVal <= period) {
+			if (steps >= 5) {
+
+				// Send reminder to patient
+				flashLED();
+				Serial.print("REMINDER FIRED:\t");
+				Serial.println(timerVal);
+
+				steps = 0;
+				stepTimerStarted = false;
+
+			}
+		} else {
+
+			Serial.print("Timer Reset:\t");
+			Serial.println(timerVal);
+			steps = 0;
+			stepTimerStarted = false;
+
+		}
+
+	}
+			
+  Serial.print("Steps: ");
+  Serial.println(steps);
 }
