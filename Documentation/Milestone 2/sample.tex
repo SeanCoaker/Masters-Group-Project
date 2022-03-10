@@ -34,31 +34,26 @@
 
  \addbibresource{sample.bib}
 
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
 
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
 }
-
-\lstset{style=mystyle}
 
 \setcounter{tocdepth}{3}
 \setcounter{page}{-1}
@@ -187,6 +182,26 @@ This section will detail the advantages and disadvantages to using each communic
 As mentioned previously, ESP-Now is a protocol developed by ESP32 creators Espressif that allows a secure, peer-to-peer connection between ESP32s without the need for handshaking \cite{esp-now_overview}. It offers a real world tested open-field communication range of 220 metres \cite{random_nerd_tutorials}, further than the ranges of both BLE and UWP.
 
 \input{tables/nowTable}
+
+\subsubsection{Our Chosen Communication Protocol}
+
+When deciding which communication protocol to utilise for data to be sent between our TinyPICO boards, it was a simple decision to initially rule out the use of UWB technology as it would have increased the cost of development for our project to attain UWB capable chips, pushing our cost over the budget assigned to us by the client. That quickly narrowed down our choice of communication protocols to use to BLE and ESP-Now. For this project, we opted to utilise ESP-Now for communication between our TinyPICOs and it will provide the basis for our TinyPICOs to understand if each other are moving and when to play a reminder to the patient. We opted for ESP-Now due to its ease of integration with ESP32 chips and its extended range of communication over both BLE and UWB at 220 metres in open-field communication \cite{random_nerd_tutorials}. With its usage of small message size at 250 bytes, and utilisation of callback functionality within Arduino \cite{random_nerd_tutorials}, it provides the perfect platform for us to send small messages with low overheads between TinyPICOs to check for movement from either device, as well as the callback functionality providing a method for us to add robustness to our communication code. By this, we mean that should a callback be initiated suggesting that communication between the 2 TinyPICOs has failed, we can attempt to resend messages to ensure that the patient receives a reminder to use their walking aid when they should, a vital implementation for patient safety. The callback functionality could also allow us to utilise timeouts and allow the carers of the patient to be notified if continuous communication difficulty is being experienced. The final upside to using ESP-Now is due to its exceptional documentation provided by Espressif for use with ESP32 chips. This should enable us to develop more reliable and clear code that functions in the intended manner of the protocol developers. We should point out here that the major downsides to using ESP-Now are its higher energy consumption over BLE \cite{neupane_2019} and the fact that it is not as widely adopted as BLE. The energy consumption difference is only slightly higher in ESP-Now and we predict that we may not notice a significant difference in real world battery performance, especially if we utilise ESP32's deep sleep modes. The issue with limited market adoption may hamper which boards we could use to develop our product in future, but we feel that should this become an issue then we could quite easily switch from a communication system utilising ESP-Now to a system that utilises the more widely adopted BLE protocol.
+
+\subsubsection{Developed Communication System}
+
+With some help from code published online \cite{random_nerd_tutorials}, we began development of a simple communication system between the 2 TinyPICO devices, the only devices we had available to use at the time. In its current form we have two separate Arduino sketches, one that handles receiving messages (listing \ref{lst:receive}) and the other handling the sending of messages (listing \ref{lst:send}). In relation to our project, we can assign the receiving sketch to the walking aid device and the sending sketch to the wearable device, such that when the wearable device detects walking over a distance greater than 1 metre, then it sends a message to the walking aid device that will run a check to see if itself is too moving. Without the availability of accelerometers and audio shields at this point, we needed to develop a proof of concept solution that could simulate this system. Therefore, we developed code that every 5 seconds would send a message from one device to the other. The receiving device would detect the message and then flash its LED to simulate an audio reminder being played. For the rest of this section, we will include the code for each sketch and discuss what the code does and how it will be used in our final product.
+
+\paragraph{Send}
+
+\lstinputlisting[language=C++, caption=Sketch to send message from wearable device to walking aid device, label=lst:send]{code/send_comms.ino}
+
+We begin the code in this sketch, listing \ref{lst:send}, by declaring the MAC address of the TinyPICO that should receive the message, as well as the contents of the message. We then declare a function that will be called when the ESP-Now protocol triggers a callback. Within this function, we currently print whether the message was sent successfully or not. In future, this function will be changed quite simply to reset counters such as the timing of steps being taken as well as how many steps have been taken since the last message broadcast should the callback return a success response. We then use the Arduino setup function where we provide initialisation of the Serial Monitor, used to print output to our computer screen, and initialisation of the ESP-Now protocol including specific details on the peer TinyPICO to send messages to. Once this is complete, we run the Arduino loop function that constantly loops during the time the device is powered on. Within this function, we send the test message to the receiving device, and then check whether it was sent successfully or not. This code can be changed in future to make the communication system more robust. By this, we mean that we can create a function that attempts to send the message either until it is sent successfully or until we timeout, providing functionality that enhances the safety of the patient using our device by ensuring that reminders are not missed, or that carers are notified if there is an issue with the device. Finally, we call a delay function that blocks the operation of the device for 5 seconds for simulation purposes.
+
+\paragraph{Receive}
+
+\lstinputlisting[language=C++, caption=Sketch to receive message from wearable device, label=lst:receive]{code/receive_comms.ino}
+
+The code within the receive sketch, listing \ref{lst:receive}, begins by initialising a TinyPICO object that will allow us to control its LED later on. We also initialise a String variable that will be used to store the message being sent from the wearable device for us to interpret later. We then follow the code in the send sketch by creating a function that is called when the receive message callback is called by the ESP-Now protocol. Within this function we copy the data sent from the wearable device into our message variable for easier interpretation. We print that message to confirm we are receiving the correct message and then we flash the LED of the TinyPICO. This function in future will contain code to check the contents of the message. If we are being told that the wearable device is moving, then we can run checks here to check if the walking aid is moving too. If not, then we can handle the code to play the reminder here. Next, we include the Arduino setup function and include code to initialise Serial Monitor again for printing outputs to our computer screen, and we include code to initialise the ESP-Now protocol as we did in the send sketch. We also include a line of code that sets the colour of the LED to green. We leave the Arduino loop function empty here as we are relying upon the callback function to handle the receiving of messages currently. Finally, we have defined a flash function that flashes the LED of the receiving TinyPICO once.
 
 \printbibliography
 
