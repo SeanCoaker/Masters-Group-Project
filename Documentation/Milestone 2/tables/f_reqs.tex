@@ -1,0 +1,106 @@
+\small
+	\begin{xltabular}[H]{\textwidth}{c | X | X | X}
+		\caption[Functional Requirements.]{A table of functional requirements split into user requirements and their relevant specifications needed to meet those user requirements, along with the progression made so far.}\\
+
+		\toprule
+
+		Code & User Requirement & Specification & Progress\\
+
+		\midrule
+		\endfirsthead
+
+		\toprule
+
+		Code & User Requirement & Specification & Progress\\
+
+		\midrule
+		\endhead
+
+		\hline
+		\multicolumn{4}{|r|}{{Continued on next page}}\\
+		\hline
+		\endfoot
+
+		\bottomrule
+		\endlastfoot
+
+        FREQ1
+
+        &
+
+        The wearable device should detect when a patient has walked more than 1 metre before communicating with the walking aid.
+
+        &
+
+        We can use a tri axial accelerometer to detect changes in acceleration that are indicative of the user moving or being mobile. Once movement is confirmed, we will then commuicate with the walking aid device to ensure the user has successively reached and engaged with it, prior to alerting them to use it.
+
+        &
+
+        -\\
+
+        \midrule
+
+        FREQ2
+
+        &
+
+        Patients should be alerted with the voice of a friend, carer or relative to avoid startling them.
+
+        &
+
+        The device to be attached to the walking aid should include a microphone and speaker that will allow the user to record a voice note and store it on the device. We may need to include an SD card within this device that will store the voice note if need be.
+
+        &
+
+        -\\
+
+        \midrule
+
+        FREQ3
+
+        &
+
+        The wearable device should include a solution for deaf people that still reminds them to take their walking aid with them without the need for an audio alarm.
+
+        &
+
+        The wearable device could use a vibration motor here that vibrates to remind the user to use their walking aid. We can also utilise the LEDs on board the TinyPICOs to flash to remind the user also. There are issues here with potentially startling the patient with the use of vibration and LEDs, however we feel this is most feasible method for meeting this user requirement.
+
+        &
+
+        -\\
+
+        \midrule
+
+        FREQ4
+
+        &
+
+        If development time allows, the system should include fall detection as a stretch goal feature.
+
+        &
+
+        Using the tri axial accelerometer mentioned in the specification of FREQ1, we could detect acceleration and movement along the negative side of the y-axis in attempt to detect when the patient has fallen. An alert system can be used in accordance to alert a nearby carer or relative.
+
+        &
+
+        -\\
+
+        \midrule
+
+        FREQ5
+
+        &
+
+        The wearable device should communicate to the walking aid device to let it know when it's started moving.
+
+        &
+
+        To meet this requirement we investigate the use of 433MHz Rx/Tx modules for low power and low level communication between the 2 devices in the system, this technology should allow for the basic level of communication required, with minimal power use and minimal complexity.
+
+        &
+
+        -\\
+
+	\end{xltabular}
+	\label{tbl:func_reqs_table}
