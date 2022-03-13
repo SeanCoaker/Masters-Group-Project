@@ -16,6 +16,11 @@ auxil
 *.pdf
 *.fdb_latexmk
 *.fls
+*.bcf
+*.lof
+*.lol
+*.lot
+*.run.xml
 !milestone.tex
 !out/milestone1.pdf
 !/out/milestone1.pdf
