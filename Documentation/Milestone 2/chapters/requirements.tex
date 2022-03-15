@@ -1,13 +1,26 @@
 \chapter{Requirements} \label{ch:Requirements}
 
-In this section, we will detail the project's functional and non-functional requirements, which are broken down into
-higher-level user requirements as well as lower-level specifications that will describe the process our team will go
-through to ensure the user requirements are met. These written requirements have been demonstrated to the client and they have provided their consent for the project to be based upon them. Although, we added an aditional column, called progress for each of the user requirements, indicating our progress so far.
+In this section, we will include the functional and non-functional requirements from our Milestone 1 document \cite{coaker}. We will also include an extra column within the tables for both functional and non-functional requirements to detail what progress has been made towards implementing each requirement so far. These requirements were previously accepted by the client prior to the submission of our Milestone 1 document.
 
-\section{Functional Requirements} \label{sec:func_requirements}
+\afterpage{%
+    \clearpage% Flush earlier floats (otherwise order might not be correct)
+    \thispagestyle{empty}% empty page style (?)
+    \begin{landscape}% Landscape page
+        \centering % Center table
 
-\vspace{1em} \input{./tables/f_reqs.tex} \vspace{5em}
+        \section{Functional Requirements} \label{sec:func_requirements}
+        \input{tables/f_reqs}
 
-\section{Non-Functional Requirements} \label{sec:non_func_requirements}
+        \pagebreak
 
-\vspace{1em} \input{./tables/n_f_reqs.tex} \vspace{5em}
+        \section{Non-Functional Requirements} \label{sec:non_func_requirements}
+        \input{tables/n_f_reqs}
+
+    \end{landscape}
+    \clearpage% Flush page
+}
+% \vspace{1em} \input{./tables/f_reqs.tex} \vspace{5em}
+
+% \section{Non-Functional Requirements} \label{sec:non_func_requirements}
+
+% \vspace{1em} \input{./tables/n_f_reqs.tex} \vspace{5em}

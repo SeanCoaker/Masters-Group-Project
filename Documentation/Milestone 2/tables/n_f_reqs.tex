@@ -1,23 +1,23 @@
 \small
-	\begin{xltabular}[H]{\textwidth}{c | X | X | X}
-		\caption[Non-Functional Requirements.]{A table of non-functional requirements split into user requirements and their relevant specifications needed to meet those user requirements.}\\
+	\begin{xltabular}[H]{1.4\textwidth}{p{0.2\textwidth} | p{0.5\textwidth} | p{0.8\textwidth}}
+		\caption[Non-Functional Requirements.]{A table of non-functional requirements split into user requirements and the progress that has been made so far to meet those requirements.}\\
 
 		\toprule
 
-		Code & User Requirement & Specification & Progress\\
+		Code & User Requirement & Progress\\
 
 		\midrule
 		\endfirsthead
 
 		\toprule
 
-		Code & User Requirement & Specification & Progress\\
+		Code & User Requirement & Progress\\
 
 		\midrule
 		\endhead
 
 		\hline
-		\multicolumn{4}{|r|}{{Continued on next page}}\\
+		\multicolumn{3}{|r|}{{Continued on next page}}\\
 		\hline
 		\endfoot
 
@@ -29,10 +29,6 @@
         &
 
         The watch should be a small enough form factor to fit on the wrist of the patient.
-
-        &
-
-        Deciding to use TinyPICO devices as the main board of the device will allow us to keep the device to a small form factor given the TinyPICO is 18mm x 32mm. We will also take into account the form factor when deciding upon extra hardware to add to the devices.
 
         &
 
@@ -48,10 +44,6 @@
 
         &
 
-        The TinyPICO devices we will use as the main boards for the devices include an ESP32 chip capable of using deep sleep cycles. These cycles allow the ESP32 to power down non critical components in order to save power. We can create an interrupt within the code here that powers the devices on when an alarm needs to be fired due to the patient moving. This means that the devices will only need to be fully powered on when movement is detected.
-
-        &
-
         -\\
 
         \midrule
@@ -61,10 +53,6 @@
         &
 
         The devices shall avoid startling the patients with the use of LEDs and vibrations unless they are deaf.
-
-        &
-
-        In this case we would power down the LEDs and Vibration motor at all times to avoid startling the patient. Powering down these devices will also allow us to save battery.
 
         &
 
@@ -80,10 +68,6 @@
 
         &
 
-        We intend to design the device to make it as close the design of a watch as possible, keeping it small and sleek so that it looks like a fashion accessory rather than a medical device. Using small hardware devices we can keep a small form factor so that the device is not overly noticeable on the patient's wrist.
-
-        &
-
         -\\
 
         \midrule
@@ -93,10 +77,6 @@
         &
 
         Security of devices should prohibit outside devices from communicating with the network.
-
-        &
-
-        A possibility here is using an agreed upon 'sync word' between our 2 devices that only reads communcations from devices using the same 'sync word'. This would stop other devices being able to communicate with the network unless they knew the sync word being used.
 
         &
 
@@ -112,10 +92,6 @@
 
         &
 
-        The strap of the wearable device should be designed such that it can be adjusted in a similar way to how normal watches can be adjusted.
-
-        &
-
         -\\
 
 		\midrule
@@ -128,10 +104,6 @@
 
         &
 
-        Our code should be developed with efficiency in mind that will allow for real time readings from the accelerometer to precisely detect when movement has passed 1 metre in order to notify the walking aid device that this has happened. The Rx/Tx communication module will allow for fast communication between the devices to ensure that user is promptly reminded to take their walking aid with them.
-
-        &
-
         -\\
 
 		\midrule
@@ -141,10 +113,6 @@
         &
 
         The system should be delivered upon its conclusion with relevant documentation, including a user manual.
-
-        &
-
-        Our milestone 3 document will include the necessary documentation needed to be handed over to the client upon the handover of our project. This milestone will include a user manual along with any designs and testing documentation that were created during the development of the product.
 
         &
 

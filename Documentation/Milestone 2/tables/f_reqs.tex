@@ -1,23 +1,23 @@
 \small
-	\begin{xltabular}[H]{\textwidth}{c | X | X | X}
-		\caption[Functional Requirements.]{A table of functional requirements split into user requirements and their relevant specifications needed to meet those user requirements, along with the progression made so far.}\\
+	\begin{xltabular}[H]{1.4\textwidth}{p{0.2\textwidth} | p{0.5\textwidth} | p{0.8\textwidth}}
+		\caption[Functional Requirements.]{A table of functional requirements split into user requirements and the progression made on them so far.}\\
 
 		\toprule
 
-		Code & User Requirement & Specification & Progress\\
+		Code & User Requirement & Progress\\
 
 		\midrule
 		\endfirsthead
 
 		\toprule
 
-		Code & User Requirement & Specification & Progress\\
+		Code & User Requirement & Progress\\
 
 		\midrule
 		\endhead
 
 		\hline
-		\multicolumn{4}{|r|}{{Continued on next page}}\\
+		\multicolumn{3}{|r|}{{Continued on next page}}\\
 		\hline
 		\endfoot
 
@@ -32,11 +32,7 @@
 
         &
 
-        We can use a tri axial accelerometer to detect changes in acceleration that are indicative of the user moving or being mobile. Once movement is confirmed, we will then commuicate with the walking aid device to ensure the user has successively reached and engaged with it, prior to alerting them to use it.
-
-        &
-
-        Right now we trying to implement a Bluetooth connection between the device and the walking aid. Through bluetooth, we can calculate the distance between the devices. What we accomplished is to make each devive communicating wiht each other.\\
+        We have already implemented two systems that detects how many steps the patient has taken in a 10 second period using an accelerometer. One system utilises changes in gravity to do this, whilst the other utilises changes in acceleration. If the user takes 5 steps or more in a 10 second period, then we assume they have started walking. We also aim to explore the use of distance tracking between devices using Bluetooth Low Energy to identify when a patient is walking. To now complete this requirement, we must include code that when 5 steps or more are detected in a 10 second period, a message is sent to the walking aid device.\\
 
         \midrule
 
@@ -48,11 +44,7 @@
 
         &
 
-        The device to be attached to the walking aid should include a microphone and speaker that will allow the user to record a voice note and store it on the device. We may need to include an SD card within this device that will store the voice note if need be.
-
-        &
-
-        We created a simulation of the following requirement, where a message it is displayed on the screen, that can be easily changed to a voice message.\\
+        We have not implemented this requirement yet due to delays experienced in receiving the hardware. Having said this, the current system simulates the reminder by printing a reminder message to the screen and flashing an LED. This means that when we come to developing the audio reminder system, it will be simple to implement into the larger project.\\
 
         \midrule
 
@@ -64,11 +56,7 @@
 
         &
 
-        The wearable device could use a vibration motor here that vibrates to remind the user to use their walking aid. We can also utilise the LEDs on board the TinyPICOs to flash to remind the user also. There are issues here with potentially startling the patient with the use of vibration and LEDs, however we feel this is most feasible method for meeting this user requirement.
-
-        &
-
-        -\\
+        This will be implemented when we come to implementing the reminder system. Instead of calling the function to play an audio reminder, we will instead call the vibration motor to vibrate on the wearable device.\\
 
         \midrule
 
@@ -80,11 +68,7 @@
 
         &
 
-        Using the tri axial accelerometer mentioned in the specification of FREQ1, we could detect acceleration and movement along the negative side of the y-axis in attempt to detect when the patient has fallen. An alert system can be used in accordance to alert a nearby carer or relative.
-
-        &
-
-        -\\
+        Should development time allow, we will implement the fall detection feature still. This should be simple to implement as our ADXL accelerometers have built in free fall detection.\\
 
         \midrule
 
@@ -96,11 +80,7 @@
 
         &
 
-        To meet this requirement we investigate the use of 433MHz Rx/Tx modules for low power and low level communication between the 2 devices in the system, this technology should allow for the basic level of communication required, with minimal power use and minimal complexity.
-
-        &
-
-        -\\
+        We have already built the communication system between our walking aid and wearable device with the use of the ESP-Now communication protocol. The current system simulates messages being sent when walking is detected. When further development has been made, this system will be incorporated into the larger system of the project.\\
 
 	\end{xltabular}
 	\label{tbl:func_reqs_table}
