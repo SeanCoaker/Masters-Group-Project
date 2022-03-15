@@ -97,7 +97,7 @@ void addStepToCounter() {
 
 void readAverageAccel(float &xRef, float &yRef, float &zRef) {
 
-	float xavg = 0, yavg = 0, zavg = 0;
+	float xtot = 0, ytot = 0, ztot = 0;
 
 	for (int i = 0; i < 50; i++) {
 		int x, y, z;
@@ -105,30 +105,35 @@ void readAverageAccel(float &xRef, float &yRef, float &zRef) {
 
 		// Converts accel reading to unit of G
 		float xa = x * 0.004;
-		xavg += xa;
+		xtot += xa;
 
 		// Converts accel reading to unit of G
 		float ya = y * 0.004;
-		yavg += ya;
+		ytot += ya;
 
 		// Converts accel reading to unit of G
 		float za = z * 0.004;
-		zavg += za;
+		ztot += za;
 	}
 
-	xRef = xavg / 50; 
-	yRef = yavg / 50;
-	zRef = zavg / 50;
+	xRef = xtot / 50; 
+	yRef = ytot / 50;
+	zRef = ztot / 50;
 
 }
 
 
 float convertToAccel(float x, float y, float z) {
 
-	return sqrt(((x - xCalib) * (x - xCalib)) + 
-	               ((y - yCalib) * (y - yCalib)) + 
-	               ((z - zCalib) * (z - zCalib)));
+	return sqrt((square(x - xCalib)) + 
+	               (square(y - yCalib)) + 
+	               (square(z - zCalib)));
 
+}
+
+
+float square(float val) {
+	return val * val;
 }
 
 

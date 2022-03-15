@@ -104,12 +104,21 @@ We have already developed a walking detection system using the tri-axial acceler
 
 \paragraph{Step-Counter Utilising Changes in Acceleration}
 
-Our initial idea was to develop a system that utilises code to detect changes in acceleration for counting the steps of the patient. We used code provided in a tutorial at \cite{agnihotri_2021} to help develop this system. We begin by setting up the ADXL345 accelerometer to accept data transmission using the SPI protocol as seen in listing \ref{lst:accelChange_setup}. We initialise the Serial monitor as usual to provide debugging messages to the developer's computer system. Next, we setup the LED of our TinyPICOs to be green for use later in the reminder simulation. The function then progresses to initialise the ADXL for communication and also specifies the accuracy that the ADXL should conform to. Finally, we call our readAverageAccel function to set the average calibrated values of acceleration for each plane.
+Our initial idea was to develop a system that utilises code to detect changes in acceleration for counting the steps of the patient. We used code provided in a tutorial at \cite{agnihotri_2021} to help develop this system. We begin by setting up the ADXL345 accelerometer to accept data transmission using the SPI protocol as seen in listing \ref{lst:accelChange_setup}. We initialise the Serial monitor as usual to provide debugging messages to the developer's computer system. Next, we setup the LED of our TinyPICOs to be green for use later in the reminder simulation. The function then progresses to initialise the ADXL for communication and also specifies the accuracy that the ADXL should conform to. Finally, we call our readAverageAccel function to set the average calibrated values of acceleration for each plane when the system boots.
 
 \lstinputlisting[language=C++, caption=Arduino setup function to initialise ADXL to detect acceleration changes, label=lst:accelChange_setup]{code/accelChange_setup.ino}
 
-To get the average values of acceleration at any time, we use code from a tutorial at \cite{agnihotri_2021}. 
+To get the average values of acceleration at any time, we use code similar to a tutorial at \cite{agnihotri_2021}. This code can be viewed in listing \ref{lst:read_accel}. The function works such that it runs over a loop of 50 iterations, each time taking the acceleration values for each axis from the accelerometer. Once we have done this, we multiply the received acceleration value for each axis by 0.004 to convert its unit to G, as \cite{agnihotri_2021} does. For each axis, we add up its total acceleration values measured for each iteration for the loop of 50 iterations. Finally, we divide the total measurements for each axis by 50 to retrieve the average acceleration for each axis over the loop. This function is called multiple times within this solution. Firstly, to retrieve the average calibrated values of acceleration when the system is first booted. Then we call the function twice within the Arduino loop function to detect changes in acceleration and in turn detect steps.
 
+\lstinputlisting[language=C++, caption=Function to measure average acceleration over a loop of 50 iterations, label=lst:read_accel]{code/readAccel.ino}
+
+The Arduino loop function handles the detection of steps. The loop function can be viewed in listing \ref{lst:accelChange_loop}. It begins by retrieving the acceleration values of each axis from the accelerometer. We then use the convertToAccel function in listing \ref{lst:accelChange_loop} to retrieve the acceleration over all 3 axes. We then block the code for 250ms, before retrieving another set of acceleration values and the combined 3 axes acceleration value. Finally, we run a check to see if the difference between the combined 3 axes acceleration values are greater than the specified threshold. If the difference is greater than the threshold, we increment the steps counter. Otherwise, we ignore the changes in acceleration and end the function.
+
+\lstinputlisting[language=C++, caption=Code to detect steps by detecting changes in acceleration, label=lst:accelChange_loop]{code/accelChange_loop.ino}
+
+The final piece of code we wanted to demonstrate from this system is actually a function that is used for both step-counting systems. We begin by incrementing the number of steps taken. Following that our code checks if the 10 second timer for measuring if the patient has walked a certain distance in that time has been started. If it has not been started, then we start the timer and end the function. Otherwise, we run a check to see if the number of steps is greater than or equals to 5. If it is, we currently print a message saying the reminder has been fired and flash the LED of the TinyPICO. This effectively simulates the reminder system. If the steps counter is still below 5 and the timer has past 10 seconds, then we reset the steps counter and timer to start the process again. 
+
+\lstinputlisting[language=C++, caption=Code to increment steps counter and fire reminder to patient, label=lst:step_increment]{code/step_increment.ino}
 
 
 \paragraph{Step-Counter Utilising Changes in Gravity}
@@ -123,5 +132,30 @@ We then moved on to creating code within the Arduino loop function that is used 
 \lstinputlisting[language=C++, caption=Arduino loop function to check for steps, label=lst:spi_loop]{code/spi_loop.ino}
 
 Finally, we move onto the code used to increment the step counter. It's the same code used in listing \ref{lst:step_increment}, where we initially increment the number of steps. We then check if the 10 second timer for measuring if the patient has walked a considerable distance in that time has been started. If it had not been started, then we set it to begin. Otherwise, we run a check to see if the number of steps is greater than or equals to 5. If so, we currently print a message saying the reminder has been fired and flash the LED of the TinyPICO. This effectively simulates the reminder system. If the steps counter is still below 5 and the timer has past 10 seconds, then we reset the steps counter and timer to start the process again. 
+
+
+\subsection{Future Work}
+
+For this section, we will list all the work that we plan to implement in the very near future to advance our project and meet our schedule. For each item of work we list, we will detail what the work will entail and how it benefits the overall progress of the project. 
+
+\paragraph{Integrate communication system with walking detection system}
+
+This work will provide the basis for the reminder system that needs to be developed that will allow us to play audio to the patient when they begin walking without their walking aid. The combination of this code should be fairly simple to implement and will allow us to replace the current code to flash the LED of the TinyPICO with code that will send a message to the walking aid to check if it is moving also. If it is not moving, then we can call code to play the reminder audio.
+
+\paragraph{Develop BLE distance solution for walking detection}
+
+For comparison against our already developed step-counting walking detection system, we want to develop a working solution for detecting walking with the use of BLE distance monitoring using its signal strength. This will allow us to receive real world analysis of each solution and be able to finalise on which system to use based on which is most suitable to our project.
+
+\paragraph{Implement the reminder system}
+
+We need to begin the development of code for the reminder system to allow for audio files to be played which will remind the patient to take their walking aid with them. Once the code for this has been developed, it can easily replace the reminder simulation we currently have implemented that flashes the LED of the TinyPICO device. 
+
+\paragraph{Develop walking aid movement detection system}
+
+To identify whether the walking aid is moving with the patient and whether we need to play reminder audio or not, we need to create an Arduino sketch for the walking aid system itself is moving. The implementation for this should be fairly simple also, as we will use a similar system to our already developed single tap detection step-counter system on our wearable device. Each time the patient places the walking aid down on the floor for support, we will be able to detect a tap through the accelerometer and in turn be able to conclude that the walking aid is moving.
+
+\paragraph{Begin development of Milestone 3 document}
+
+We aim to be able to hand over our project to the client with a fully documented user manual, and to do this it is necessary for us to complete our Milestone 3 to a good standard. It is imperative to the client that we begin development of this document as early as possible to ensure that all details are covered within the document and that final testing can take place with a high level of scrutiny. 
 
 }
