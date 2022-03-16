@@ -1,0 +1,218 @@
+\small
+\begin{xltabular}[H]{\textwidth}{c | X | X}
+    \caption[Risks Table]{A table of risks along with strategies to mitigate those risks.}\\
+
+    \toprule
+
+    Code & Risk & Mitigation\\
+
+    \midrule
+    \endfirsthead
+
+    \toprule
+
+    Code & Risk & Mitigation\\
+
+    \midrule
+    \endhead
+
+    \hline
+    \multicolumn{3}{|r|}{{Continued on next page}}\\
+    \hline
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    RSK1
+
+    &
+
+    Our hardware devices may fail and will limit development and testing.
+
+    &
+
+    To mitigate this risk we will choose to use low cost but still effective hardware, which will allow for extra funds within our £150 budget should we need it to replace hardware during development. We also have the opportunity to attain TinyPICO devices from the University for this project, allowing us to minimise the effects on our budget. \textbf{The processes for ordering and funding replacement hardware should be known in advance of the event of any piece of hardware being broken. }\\
+
+    \midrule
+
+    RSK2
+
+    &
+
+    The Rx/Tx modules could fail disabling communication between the wearable and walking aid devices.
+
+    &
+
+    The replacement of these modules should not be much of an issue due to their low cost. The real issue would arise when an Rx/Tx module fails whilst in operation for a patient. We would need to form a protocol here that detects when communication is unable to occur between the 2 devices, and can alert the patient's carer of this.\\
+
+    \midrule
+
+    RSK3
+
+    &
+
+    Uploading erroneous code to our TinyPICO devices could brick the TinyPICO devices.
+
+    &
+
+    Should this occur, we could attempt to reflash previosuly working code onto the TinyPICO. If this fails, we would be left with the occurrence of risk RSK1 where we would need to replace the TinyPICO devices that have been bricked. The low cost of the TinyPICO devices should enable us to purchase some replacements if need be.\\
+
+    \midrule
+
+    RSK4
+
+    &
+
+    GitHub experience a malicious attack or a server failure which could cause our repository to be lost.
+
+    &
+
+    Mitigating this risk is difficult. It's unlikely this will happen and that we would lose our repository as GitHub likely uses a vast backup storage solution. But, should it happen it would be catastrophic and so we should mitigate against this risk. To do this, each developer within the team will store a clone of the repository on their personal system and the team will be able to piece the code back together should this risk arise.\\
+
+    \midrule
+
+    RSK5
+
+    &
+
+    The user requirements we accept could be too large to implement within the given time frame for the project, potentially leaving the client disappointed at project handover.
+
+    &
+
+    To mitigate against this risk, we have discussed our user requirements with the clients and feel that we have decided upon a set of features that we feel we can confidently implement within the time frame given to us. We have also some marked some features as stretch goals to ensure that the most important features are added first. \textbf{There will be frequent communication between group members to ensure everyone is aware of progress and any delays that might affect feature implementation }\\
+
+    \midrule
+
+    RSK6
+
+    &
+
+    University commitments could impact the development and testing of the product.
+
+    &
+
+    We have attempted to account for this within our schedule by allowing for slippage. Slippage time could allow for the development of unfinished features. We could also spread unfinished work between developers as extra work in an attempt to complete the development of features on time. \textbf{Testing should be planned in advance when group members have time, so that when the testing needs to be carried out it, it can be done quickly and efficiently}\\
+
+    \midrule
+
+    RSK7
+
+    &
+
+    The hardware we choose to use may lack the libraries and compatibility with other hardware for quality feature development.
+
+    &
+
+    To avoid this, we will select hardware that is compatible with the Arduino ecosystem to ensure that they are compatible with each other and that libraries are available for code development.\\
+
+    \midrule
+
+    RSK8
+
+    &
+
+    Natural disasters could bring about the loss of hardware and software being used for the development of our product.
+
+    &
+
+    The use of low cost hardware in this system will allow us to replace any compromised hardware if need be. We have decided to store the team's code in a GitHub repository which will allow our code to be protected in an off cite facility. The loss of developer computer systems is by far the biggest risk here, as our budget would not be able to cover the replacement of such computer systems.\\
+
+    \midrule
+
+    RSK9
+
+    &
+
+    Especially in the current coronavirus climate, our developers may be unwell for a period of time that has a negative impact on the development of the project.
+
+    &
+
+    Within our schedule we have included time for slippage that should allow for any time needed by the team to be taken off due to illness. Should a developer need to self isolate and should they not be experiencing symptoms, they could continue to work on the product from a remote location using the GitHub repository.\\
+
+    \midrule
+
+    RSK10
+
+    &
+
+    An Inadequate testing strategy could allow unidentified bugs to be released in the product when handing it over to the client. This could lead to a disappointed client.
+
+    &
+
+    To mitigate against this risk we have devised a testing strategy that ensures thorough testing is carried out throughout the development of our product. We are confident that the proposed testing strategy will allow the team to identify and correct errors in the system before the product is released to the client. \\
+
+    \midrule
+
+    RSK11
+
+    &
+
+    Poorly developed code could mean that despite substantial testing, many bugs could still be included in the product at the conclusion of the project lifecycle, leaving our product to be ineffective for the uses that the client requires.
+
+    &
+
+    To mitigate this risk, we will be following our testing strategy outlined in this document to allow for integration testing. This means that testing will take place every time a new feature is added to the system, allowing us to detect bugs quickly as features are implemented. \textbf{Code should be reviewed by another group member to aid in spotting any major bugs or errors.}\\
+
+    \midrule
+
+    RSK12
+
+    &
+
+    The wearable device we create may cause patients to feel uncomfortable limiting their use of the device.
+
+    &
+
+    We are slightly out of control with this risk as it mainly depends on how the patient reacts to the wearable. Having said this, we aim to make the wearable as discrete and as watch like as possible in an attempt to avoid the patient feeling uncomfortable when wearing it.\\
+
+    \midrule
+
+    RSK13
+
+    &
+
+    Our device could startle or scare the patient putting them in danger.
+
+    &
+
+    We have taken on board the advice of the client for this risk and will be ensuring the watch does not use vibrations or LEDs unless the patient is deaf. We will ensure that generic alarms are not used also in an attempt to avoid startling the patient.\\
+
+    \midrule
+
+    RSK14
+
+    &
+
+    One of our developers could leave the institution, lowering the number of developers we have available to work on the project.
+
+    &
+
+    Should this occur, we would definitely need to use the slippage time we have allowed for in our schedule. We would not be able to bring another developer into the team and would therefore need to share the workload of the developer that is leaving to the other developers on the team. \textbf{We will ensure that all of the group are familiar with what each other is doing, so that in the need to take over from a member on short notice, the transition will be quicker, and seamless. }\\
+    
+    \midrule
+
+    \textbf{RSK15}
+
+    &
+
+    \textbf{Delays in ordering replacement hardware could cause the project to fall irreparably behind schedule.}
+
+    &
+
+   \textbf{Steps to mitigate RSK1 and RSK3 should be followed. To minimise chances of "bricking" hardware, permanent, difficult to undo processes should only be completed when necessary and the system relying on those parts has been properly tested to ensure no damage will occur.} \\
+   
+    \midrule
+
+    \textbf{RSK16}
+
+    &
+
+    \textbf{Due to previous delays, insufficient time to adequately complete the project.}
+
+    &
+
+   \textbf{Frequent communications and meetings should be held to ensure the group are familiar with the current status of the project, and how well the project is following the agreed upon time plan. In the event of falling behind irreparably, communication with the client is important to ensure that the product produced is as useful as possible} \textbf{} \\
+
+\end{xltabular}
+\label{tbl:risk_table}
