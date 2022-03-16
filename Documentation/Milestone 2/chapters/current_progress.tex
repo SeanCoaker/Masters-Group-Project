@@ -36,7 +36,7 @@ The hardware procurement task of the project required our team to come together 
 
 Unfortunately, the process of attaining hardware for this project has not been without its challenges and has meant that time and money has been lost that could have been spent elsewhere in advancing the progress of the project. The first challenge we faced was that the worst case price of our initial order list came in over budget, at £229.46. Far greater than the budget of £150 that we had been assigned by the client. We therefore needed to identify a solution that would allow us to lower the cost of our devices without hindering the quality of our final solution as well as the confidence of our team in delivering a product.
 
-The solution we finalised on was to ask the university if we could borrow 2x TinyPICOs whilst also offering to purchase 4x Accelerometers and 4x Speakers using the team's own financing. This would have created a deduction in worst case costing of £85.76, bringing the total worst case price to £143.70. Unfortunately, we could only confirm these changes to the budget once a member of staff from the university confirmed that we could borrow 2x TinyPICOs, which could not happen until staff had returned from annual leave and until we had finished our exams over the Christmas period. That meant that the confirmation of the final item list was not completed until the 19th of January.
+The solution we finalised on was to ask the University if we could borrow a number of existing TinyPICOs (2) whilst also offering to purchase 4x Accelerometers and 4x Speakers using the team's own financing. This would have created a deduction in worst case costing of £85.76, bringing the total worst case price to £143.70. Unfortunately, we could only confirm these changes to the budget once a member of staff from the university confirmed that we could borrow the items, which could not happen until staff had returned from annual leave and until we had finished our exams over the Christmas period. That meant that the confirmation of the final item list was not completed until the 19th of January.
 
 However, we received some good fortune on February 4th where the client stated that they would be able to order our item list within budget, providing that we could still borrow 2x TinyPICOs from the university. This meant that our team were able to save money in not needing to purchase some units of the accelerometers and speakers. The main downside that we faced with the client ordering our hardware items was that they needed to carry out the order process through the university's system. This meant that our team lost 4 weeks worth of development time due to the university needing to sort prices with the seller as well as needing to chase them for delivery updates after it had been delayed. In this time some members of our team decided to purchase some hardware items themselves in order to allow code development to take place whilst waiting for the full item list to arrive. The development that took place in that time was the soldering of 2 TinyPICO boards along with the code development of a communication system between those 2 TinyPICOs.
 
@@ -133,6 +133,72 @@ We then moved on to creating code within the Arduino loop function that is used 
 
 Finally, we move onto the code used to increment the step counter. It's the same code used in listing \ref{lst:step_increment}, where we initially increment the number of steps. We then check if the 10 second timer for measuring if the patient has walked a considerable distance in that time has been started. If it had not been started, then we set it to begin. Otherwise, we run a check to see if the number of steps is greater than or equals to 5. If so, we currently print a message saying the reminder has been fired and flash the LED of the TinyPICO. This effectively simulates the reminder system. If the steps counter is still below 5 and the timer has past 10 seconds, then we reset the steps counter and timer to start the process again.
 
+\subsubsection{Final Hardware Initial Prototype}
+
+This section details the progress that has been made on developing the hardware prototype, to be used for final testing and for showcasing the product to the client.
+
+\paragraph{Design Decisions}
+
+Before starting the CAD (Computer Aided Design) model, some decisions had to be made in regards to the general intended design of the device.
+
+During talks with the client, it was decided anything we designed had to be adaptable between different walking aids, and specially small/minimal form factor; this would be to minimise any potential problems or complications with the users. With this in mind, and with the components at hand, the design was made with minimal overhead over the physical size of the items we had at hand. The design would also require some changeable parts, to make it inter-operable between Zimmer Frames, as well as walking sticks of varying thickness'. This portion of the design had been inspired from the pervasive GoPro style handlebar mounts, allowing for secure and easy tightening of our device around a tube. This idea was scaled down to proportions more useful to our product.
+
+Furthermore, it had been decided that the client would need easy access to the storage media of the device, in our case a MicroSD card, as well as the USB MicroB port of the TinyPico to aid development and allow for software updates as required.
+
+With these additional criteria in mind, Autodesk Fusion 360 was used for the design phase, due to our existing  familiarity and experience with the software. This was used with an Educational license provided by Autodesk.
+
+\paragraph{CAD}
+
+Whilst developing the CAD, we were able to find an accurate model of the TinyPICO, but for the speaker, ADXL and Audio Shield, accurate models had to be created by hand using digital vernier calipers for measurement. 
+
+    \begin{figure}[ht!]
+        \centering % Center tables
+            \includegraphics[width=0.5\textwidth,keepaspectratio, angle=0]{./Images/hardware.png}
+            \caption{Hardware Locations within the CAD}
+        \label{fig:gantt_chart}
+    \end{figure}
+
+The hardware was arranged in a format that would allow for wiring, assembly and to take up the most minimal amount of space possible. This would be to satisfy the clients request of a minimal form factor
+
+    \begin{figure}[ht!]
+        \centering % Center tables
+            \includegraphics[width=0.5\textwidth,keepaspectratio, angle=0]{./Images/interior.png}
+            \caption{Mid and Front casing arrangement}
+            
+            \includegraphics[width=0.5\textwidth,keepaspectratio, angle=0]{./Images/final-cad.png}
+            \caption{Final CAD for prototype 1}
+        \label{fig:gantt_chart}
+    \end{figure}
+
+The design uses spacers, as well as an front/end casing design that allows the mid housing to be used for secure attachment of all the pieces together. The spacers allow for the components inside to be held securely, and for minimal fasteners to be needed, aiding the assembly process.
+
+
+
+Tolerances had to be calculated carefully due to our use of a Fused Deposition Modeling (FDM) printer, to ensure the end different parts would interface with eachother correctly.
+
+\paragraph{3D Printing}
+
+Upon finishing the CAD, the first prototype was printed using a Voron Design 0.1 FDM 3D Printer, using ABS plastic. It is a less common thermoplastic used in printing, but allows for good heat resistance beyond the needs of our small micro controllers, as well as excellent resistant to shock and deformation, allowing for a resistant prototype that can be correctly tested. The open source SuperSlicer was used to generate the gcode that was printed.
+
+\paragraph{Assembly}
+
+Assembly was simple as it was designed with it in mind, requiring the speaker to be connected using ferrules and the terminal connector on the audio shield, prior to the TinyPICO being placed onto the headers.
+
+Wiring was completed with 26AWG silicone wire, which allowed for great flexibility and tight wiring paths.
+
+    \begin{figure}[ht!]
+        \centering % Center tables
+            \includegraphics[width=0.5\textwidth,keepaspectratio, angle=0]{./Images/wiring.jpg}
+            \caption{Internal wiring}
+        \label{fig:gantt_chart}
+    \end{figure}
+    
+        \begin{figure}[ht!]
+        \centering % Center tables
+            \includegraphics[width=0.5\textwidth,keepaspectratio, angle=0]{./Images/final-assembly.png}
+            \caption{Final assembly}
+        \label{fig:gantt_chart}
+    \end{figure}
 
 \subsection{Future Work}
 \label{subsec:future_work}
@@ -154,6 +220,12 @@ We need to begin the development of code for the reminder system to allow for au
 \paragraph{Develop walking aid movement detection system}
 
 To identify whether the walking aid is moving with the patient and whether we need to play reminder audio or not, we need to create an Arduino sketch for the walking aid system itself is moving. The implementation for this should be fairly simple also, as we will use a similar system to our already developed single tap detection step-counter system on our wearable device. Each time the patient places the walking aid down on the floor for support, we will be able to detect a tap through the accelerometer and in turn be able to conclude that the walking aid is moving.
+
+\paragraph{Refine 3D Model}
+
+Upon assembly of the initial prototype, some issues were identified. More clearance will be required to make the SD Card more easily removable, as well as some internal structure/spacer will be required to support the TinyPICO from above, as the horizontal supports were not sufficient for this. 
+
+Beyond this, the wearable device will also need to be designed, but we anticipate this to be much easier and simpler than the complex multi-part design for the walking aid.
 
 \paragraph{Begin development of Milestone 3 document}
 
