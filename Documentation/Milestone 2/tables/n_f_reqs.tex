@@ -28,11 +28,11 @@
 
         &
 
-        The watch should be a small enough form factor to fit on the wrist of the patient.
+        The wearable device should be a small enough form factor to be comfortably worn by the patient.
 
         &
 
-        -\\
+        Our CAD designs in section \ref{sec:cad} demonstrate the minimal form factor that we are able to develop for our devices. This demonstrates that we can adequately meet this requirement.\\
 
         \midrule
 
@@ -44,7 +44,7 @@
 
         &
 
-        -\\
+        This requirement will be in progress throughout the development of the project. We have partly implemented the solution to this by selecting low powered hardware and low powered technology for communication between our devices. We will explore ESP32s sleep modes in future in an attempt to try and lower power consumption further.\\
 
         \midrule
 
@@ -56,7 +56,7 @@
 
         &
 
-        -\\
+        This is easily implementable and is still in progress only because we are currently using LEDs for the simulation of the reminder system. Upon the completion of the system, we will only use a recorded audio file for the reminder system, or the vibration motor if the patient is deaf.\\
 
         \midrule
 
@@ -68,7 +68,7 @@
 
         &
 
-        -\\
+        Our CAD designs in section \ref{sec:cad} demonstrate how discrete our devices will be. We have selected our hardware components with this requirement in mind and feel that we have met this requirement based upon our prototypes.\\
 
         \midrule
 
@@ -80,7 +80,7 @@
 
         &
 
-        -\\
+        We have met this requirement with the use of ESP-Now for communication between our devices. ESP-Now utilises Primary Master Key along with multiple Local Master Keys for its communication security \cite{esp}.\\
 
 		\midrule
 
@@ -88,11 +88,11 @@
 
         &
 
-        The developed prototype wearable device shall be designed such that it can fit various wrist dimensions.
+        The developed prototype wearable device shall be designed such that it can fit various limb/walking aid dimensions.
 
         &
 
-        -\\
+        As mentioned in section \ref{sec:cad}, we have created CAD designs and a prototype with adjustability for being able to fit various walking aids/limb sizes.\\
 
 		\midrule
 
@@ -104,7 +104,7 @@
 
         &
 
-        -\\
+        This requirement is still in progress but, we have made advancements to it. We have done this by already limiting the monitoring our accelerometers perform to only monitor the data we need, as we did in listing \ref{lst:spi_setup}. Future progression on this requirement will include cleaning up code as much as possible to limit memory usage, as well as disabling unnecessary hardware within our TinyPICO board such as the Bluetooth technology if we choose not to use it.\\
 
 		\midrule
 
@@ -116,7 +116,7 @@
 
         &
 
-        -\\
+        We have a deadline to submit our user manual within our Milestone 3 submission on the 26th of April. Our user manual will be complete by then.\\
 
 	\end{xltabular}
 	\label{tbl:non_func_reqs_table}
