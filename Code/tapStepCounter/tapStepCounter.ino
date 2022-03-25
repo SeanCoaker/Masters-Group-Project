@@ -3,7 +3,7 @@
 #include <SparkFun_ADXL345.h>
 
 TinyPICO tp = TinyPICO();
-ADXL345 adxl = ADXL345(5);
+ADXL345 adxl = ADXL345();
 
 unsigned long startMillis;
 unsigned long currentMillis;
