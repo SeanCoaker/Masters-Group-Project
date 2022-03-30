@@ -1,70 +1,66 @@
-#include <Arduino.h>
-#include <WiFi.h>
-#include "SPIFFS.h"
+#include "Audio.h"
+#include "SD.h"
+#include "FS.h"
 
-#include "AudioFileSourceSPIFFS.h"
-#include "AudioFileSourceID3.h"
-#include "AudioGeneratorMP3.h"
-#include "AudioOutputI2S.h"
+// Digital I/O used
+#define SD_CS          5
+#define SPI_MOSI      23
+#define SPI_MISO      19
+#define SPI_SCK       18
+#define I2S_DOUT      25
+#define I2S_BCLK      27
+#define I2S_LRC       26
 
-// To run, set your ESP8266 build to 160MHz, and include a SPIFFS of 512KB or greater.
-// Use the "Tools->ESP8266/ESP32 Sketch Data Upload" menu to write the MP3 to SPIFFS
-// Then upload the sketch normally.  
+Audio audio;
 
-// pno_cs from https://ccrma.stanford.edu/~jos/pasp/Sound_Examples.html
-
-AudioGeneratorMP3 *mp3;
-AudioFileSourceSPIFFS *file;
-AudioOutputI2S *out;
-AudioFileSourceID3 *id3;
-
-
-// Called when a metadata event occurs (i.e. an ID3 tag, an ICY block, etc.
-void MDCallback(void *cbData, const char *type, bool isUnicode, const char *string)
-{
-  (void)cbData;
-  Serial.printf("ID3 callback for: %s = '", type);
-
-  if (isUnicode) {
-    string += 2;
-  }
-  
-  while (*string) {
-    char a = *(string++);
-    if (isUnicode) {
-      string++;
-    }
-    Serial.printf("%c", a);
-  }
-  Serial.printf("'\n");
-  Serial.flush();
+void setup(){
+    pinMode(SD_CS, OUTPUT);
+    pinMode(SPI_MISO, INPUT_PULLUP);
+    digitalWrite(SD_CS, HIGH);
+    SPI.begin(SPI_SCK, SPI_MISO, SPI_MOSI);
+    SPI.setFrequency(1000000);
+    Serial.begin(115200);
+    SD.begin(SD_CS);
+    audio.setPinout(I2S_BCLK, I2S_LRC, I2S_DOUT);
+    audio.setVolume(21); // 0...21
+    audio.connecttoFS(SD, "/reminder/reminder.mp3");
+    audio.setFileLoop(true);
 }
 
-
-void setup()
-{
-  WiFi.mode(WIFI_OFF); 
-  Serial.begin(115200);
-  delay(1000);
-  SPIFFS.begin();
-  Serial.printf("Careless Whisper begins...\n");
-
-  audioLogger = &Serial;
-  file = new AudioFileSourceSPIFFS("/cw.mp3");
-  id3 = new AudioFileSourceID3(file);
-  id3->RegisterMetadataCB(MDCallback, (void*)"ID3TAG");
-  out = new AudioOutputI2S();
-  out->SetPinout(27,26,25);
-  mp3 = new AudioGeneratorMP3();
-  mp3->begin(id3, out);
+void loop(){
+    audio.loop();
 }
 
-void loop()
-{
-  if (mp3->isRunning()) {
-    if (!mp3->loop()) mp3->stop();
-  } else {
-    Serial.printf("MP3 done\n");
-    delay(1000);
-  }
+void audio_info(const char *info){
+    Serial.print("info        "); Serial.println(info);
+}
+void audio_id3data(const char *info){  //id3 metadata
+    Serial.print("id3data     ");Serial.println(info);
+}
+void audio_eof_mp3(const char *info){  //end of file
+    Serial.print("eof_mp3     ");Serial.println(info);
+}
+void audio_showstation(const char *info){
+    Serial.print("station     ");Serial.println(info);
+}
+void audio_showstreaminfo(const char *info){
+    Serial.print("streaminfo  ");Serial.println(info);
+}
+void audio_showstreamtitle(const char *info){
+    Serial.print("streamtitle ");Serial.println(info);
+}
+void audio_bitrate(const char *info){
+    Serial.print("bitrate     ");Serial.println(info);
+}
+void audio_commercial(const char *info){  //duration in sec
+    Serial.print("commercial  ");Serial.println(info);
+}
+void audio_icyurl(const char *info){  //homepage
+    Serial.print("icyurl      ");Serial.println(info);
+}
+void audio_lasthost(const char *info){  //stream URL played
+    Serial.print("lasthost    ");Serial.println(info);
+}
+void audio_eof_speech(const char *info){
+    Serial.print("eof_speech  ");Serial.println(info);
 }
