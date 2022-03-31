@@ -240,7 +240,7 @@ void loop() {
 		}
 
 		if (checkFuture) {
-			Serial.printf("Checking for future");
+			Serial.println("Checking for future");
 			long eventStart = millis();
 			bool futureStepDetected = false;
 			while (millis() - eventStart <= period && !futureStepDetected) {
