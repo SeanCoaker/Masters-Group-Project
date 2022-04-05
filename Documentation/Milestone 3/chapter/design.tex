@@ -1,0 +1,35 @@
+\chapter{Design}
+\label{ch:design}
+
+    This chapter will detail the design decisions made for the project's hardware and software systems, that ultimately led to us being able to successfully implement our systems and meet the original requirements set out by our clients. The following sections will break down our final product into two systems, the walking aid device and the wearable device, detailing the design decisions made for each system, including which technologies were used and UML diagrams of the systems. We will begin by detailing the design choices we made that impact both systems before breaking down our design decisions that individually impact the walking aid and wearable devices.
+
+    \section{Both Devices}
+    \label{sec:both_devices}
+
+        This section will contain information on the design decisions we made that impacted both the wearable and walking aid devices. This will include software and hardware decisions to allow us to implement a communications system, to allow us to keep device form factor and power usage to a minimum, and the decisions of why we chose pieces of hardware that are common between both devices.
+
+        \subsection{TinyPICO Development Board}
+        \label{subsec:development_board}
+
+            Due to our previous experience with ESP32 chips and due to the necessity of our devices being of a small enough form factor to fit on the limbs of patients and on walking aids, we decided to use the TinyPICO development boards. Their use of ESP32 chips provide the basis for our communication system which utilises a Wi-Fi module, and provides adequate pin outs to allow us to communicate to each hardware device that we include within our systems. This is all achieved whilst keeping power usage to a minimum and allowing us to meet the client requirement of creating devices that are able to operate for a substantial amount of time without the need for battery replacements. The 240MHz dual-core chip that is the ESP32, would provide performance that allows our system to react to incoming communication from the Wi-Fi module or accelerometer promptly to provide a responsive system for our clients. The vast documentation supporting the development of embedded systems using ESP32s was instrumental in the success of our project, and we feel that the decision to utilise TinyPICO development boards was the correct one because of it. We were also influenced to use TinyPICO development boards due to Swansea University allowing us to borrow two boards at no extra cost, which ultimately allowed us to remain within our £150 budget. Finally, the TinyPICO boards also provide a built-in LED which we utilised throughout project development for debugging purposes.
+
+        \subsection{C++ Programming Language}
+        \label{subsec:programming_language}
+
+            We decided to utilise the Arduino C (C++) programming language rather than using MicroPython to develop our embedded software due to C++'s superior efficiency over Python for the development of embedded software \cite{github_2014, dicola}. Other tools such as PlatformIO would have provided the basis to allow us to utilise C++ for our software development, but due to the benefits of our team having previous experience of using the Arduino IDE to develop embedded systems, espetially in the field of software development with ESP32 chips, we felt that our project would be better suited to being developed utilising the Arduino ecosystem. We were also aware that the handover of this project would mean that another team would be able to take on the role of advancing our code and felt that C++ provided the best platform for developing smaller and more self-explanatory code across multiple header and implementation files. This would mean that any developers that attempt to further develop our code in future, should find it rather simple to identify what each class and block of code is attempting to accomplish.
+
+        \subsection{ADXL345 Accelerometer}
+        \label{subsec:accel}
+
+            The vast documentation supporting the development of embedded systems using ADXL345 accelerometers was a substantial factor in why we opted to include them in our systems. They provide the functionality for the detection of various changes in acceleration such as activity detection, free fall detection and single-tap and double-tap detection. The single-tap detection feature of the ADXL345 provides the basis for movement detection on both devices due to the fact that it can detect changes in gravity to identify when a step has been taken. The single-tap detection feature also allows the system to still be utilised whether the user is wearing the wearable device on their wrist or ankle, with the single-tap detection feature also being able to detect when the walking aid is being lifted and placed back on the ground. The free fall detection feature provided by the ADXL means that future developers will be able to easily implement a free fall detection system, which would allow the client to have their stretch goal implemented into the project. We opted to use the ADXL345 over other accelerometers as it is one of the newer offerings of accelerometers from the well renowned and reliable brand, Adafruit. Because of this, the accelerometers were relatively easy and quick to source, whilst only costing £7 per unit and allowing us to remain within our £150 budget. 
+
+    \section{Walking Aid Device}
+    \label{sec:walking_aid}
+
+        The walking aid device is a device that can be used to detect movement of the walking aid. When the wearable device detects that the patient is walking, a message is sent to the walking aid device. Should the walking aid device detect that it is not moving when the patient is walking, it will play an audio reminder to the patient to take their walking aid with them. The following sections will detail the design choices we made for this system, where we will compare technologies that would have been suited to the system and which we chose to implement, as well as a UML design section which will include a class diagram of the developed software system and an activity diagram that demonstrates the workflow of the software that allows the device to meet our desired specification.
+
+    \section{Wearable Device}
+    \label{sec:wearabledevice}
+
+        The wearable device is one that can be worn on the limbs of the patients to identify when the patient has begun walking. When walking is detected, communication occurs between the walking aid and wearable device to identify if the walking aid device is moving also. 
+

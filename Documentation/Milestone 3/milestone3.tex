@@ -1,0 +1,63 @@
+% Two sided means the left and right margins are different sizes and they alternate every page.
+% If your document is printed to be book or spiral bound this allows for a thick spine to not
+% eat into the space for your page content.
+\documentclass[11pt, a4paper, oneside]{custard}
+
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\geometry{
+	a4paper,
+	left   = 30mm,
+	right  = 30mm,
+	top    = 30mm,
+	bottom = 30mm
+}
+
+% All imports, packages, and configuration in here.
+% Your document should be about content so we abstract away the styling rules and tools we are using.
+\input{customisation}
+
+\begin{document}
+
+% The custom data for Swansea University and your degree name.
+% The \protect\\ command forces a new line in the title which might be otherwise overriden by the template
+	\title{Walking Aid Usage Prompt System}
+	\author{Pedro Caetano, Matthew Culley, Sean Coaker, Panayiotis Melios}
+	\awardinginst{Swansea University}
+	% Comment / uncomment your degree type as needed.
+	\degree{Masters of Science/Engineering}
+
+% Institution details and logo
+	\department{Faculty of Science and Engineering}
+	\university{Swansea University}
+	\unilogo{graphics/swansea.png}
+
+% Hard code the date or allow the LaTeX compiler to fill it in whenever you recompile the document.
+	\date{\today}
+
+% Build the title and declaration pages, and pad the document so the text starts on a right hand book page.
+% Page numbering is in roman numerals until the first page of an actual chapter which resets numbers
+% starting from 1 at that point.
+	\frontmatter%
+	\maketitle
+	%\cleardoublepage
+	\tableofcontents
+
+% Optionally you can make a bank of known acronyms in acronyms.tex that you can call on throughout your document.
+	%\input{acronyms}
+
+% Reset numeric page numbering from page 1
+	\mainmatter%
+
+% Insert the code for each of your chapters
+	\input{chapter/design}
+
+% Formatting citations properly when they are rendering incorrectly in your PDF can be fiddly,
+% espectially when punctuation and international characters are involed. Sometimes multiple re-compilations
+% are needed in addition to clearing temporary auxiliary files to see your changes in your document.
+% Insert the bibliography using citations contained in the file citations.bib
+	\bibintoc
+	\bibliography{citations}
+
+\end{document}
