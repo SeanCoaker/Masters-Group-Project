@@ -1,0 +1,51 @@
+\small
+		\begin{xltabular}[H]{\textwidth}{p{0.47\textwidth} | p{0.47\textwidth}}
+			\caption[ESP-Now Advantages and Disadvantages with comparisons to BLE]{Table listing the advantages and disadvantages of using ESP-Now for communication between our walking aid and wearable devices with comparisons to BLE.}\\
+
+			\toprule
+
+		 	Advantages & Disadvantages\\
+
+			\midrule
+			\endfirsthead
+
+			\toprule
+
+			Advantages & Disadvantages\\
+
+			\midrule
+			\endhead
+
+			\hline
+			\multicolumn{2}{|r|}{{Continued on next page}}\\
+			\hline
+			\endfoot
+
+			\bottomrule
+			\endlastfoot
+
+			The small message sizes that ESP-Now utilises, more specifically 250 bytes in size \cite{espnow_250}, suggests that communication occurs with minimal overheads. In a time sensitive system such as ours, keeping communication overheads to a minimum and being able to respond to messages between our two devices promptly is imperative. BLE also operates by maximising communication messages at sizes of around 250 bytes \cite{gupta_2016} and could offer the same benefits here as ESP-Now.
+			
+			&
+			
+			ESP-Now is only available for use with development boards that house ESP chips, meaning that we would be limiting future developers into using those development boards, or we would be creating more work for them where they would need to develop communication code utilising different technologies in order to use boards that do not house ESP chips. BLE provides an improvement on this particular downside as it is more widely adopted meaning it is supported by various development boards and chips.\\
+			
+			\midrule
+			
+			The ESP-Now implementation would require far less code to implement than the implementation for BLE. Examples of this can be seen from the implementation of ESP-Now client code \cite{random_nerd_tutorials} and the implementation of the BLE client code \cite{kolban_2018}. The fact that shorter code can be utilised to implement ESP-Now communication means that less memory storage space will be occupied, allowing the code to be more efficient and allowing for the storage of larger audio files within the memory of the TinyPICO devices.
+
+			
+			&
+			
+			Possibly the largest downside to using ESP-Now over BLE is that it is seemingly less power efficient than BLE \cite{neupane_2019}. This can increase occurrences where we would require the user to remember to charge or replace the batteries being used to power our devices. This can be problematic when the devices are being utilised by users that suffer from Dementia. Despite this, ESP-Now still uses a minimal amount of power resources and is still more than feasible for use within this project.\\
+			
+			\midrule
+			
+			ESP-Now uses callbacks as a method to respond to receive message and send message events. These callback functions are executed through the ``high-priority Wi-Fi task'' \cite{esp-now_prog} meaning our walking aid device can promptly respond to incoming messages from the wearable device. BLE follows a similar methodology and would also provide us with the same benefits. With ESP-Now utilising the high-priority Wi-Fi task, we needed to design our code such that the callback functions being utilised would not cause the execution of code to be blocked for long periods of time. We have managed to adapt to this issue, but it does demonstrate potential downsides to future growth of our system.
+			
+			&
+			
+			For one-to-one connections, it seems that BLE has consistently superior throughput rates than ESP-Now across all sizes of payloads with the difference being larger at lower payload sizes \cite{neupane_2019}. What this demonstrates is that communication between our two devices may be faster with the use of BLE over ESP-Now.\\
+
+		\end{xltabular} 
+		\label{tbl:now}
