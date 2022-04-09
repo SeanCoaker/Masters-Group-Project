@@ -1,0 +1,34 @@
+\hypertarget{WalkAidAccelerometer_8h_source}{}\doxysection{Walk\+Aid\+Accelerometer.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <SparkFun\_ADXL345.h>}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{keyword}{class }\mbox{\hyperlink{classWalkAidAccelerometer}{WalkAidAccelerometer}} \{}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{private}:}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7     \textcolor{keywordtype}{double} singleTapThresholdValue;}
+\DoxyCodeLine{8     \textcolor{keywordtype}{double} singleTapThresholdDuration;}
+\DoxyCodeLine{9     \textcolor{keywordtype}{double} doubleTapLatency;}
+\DoxyCodeLine{10     \textcolor{keywordtype}{double} doubleTapWindow;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordtype}{bool} stepDetected;}
+\DoxyCodeLine{13     \textcolor{keywordtype}{long} lastStepTime;}
+\DoxyCodeLine{14     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} period;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     ADXL345 adxl;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \mbox{\hyperlink{classWalkAidAccelerometer}{WalkAidAccelerometer}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} init(\textcolor{keywordtype}{double} singleTapThresholdValue, \textcolor{keywordtype}{double} singleTapThresholdDuration}
+\DoxyCodeLine{23         , \textcolor{keywordtype}{double} doubleTapLatency, \textcolor{keywordtype}{double} doubleTapWindow, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} period);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{bool} checkForStep();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} isStepDetected();}
+\DoxyCodeLine{26     \textcolor{keywordtype}{long} getLastStepTime();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} getPeriod();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \};}
+
+\end{DoxyCode}

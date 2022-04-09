@@ -1,0 +1,30 @@
+\hypertarget{WalkAidAudio_8h_source}{}\doxysection{Walk\+Aid\+Audio.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}SPIFFS.h"{}}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}AudioFileSourceSPIFFS.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}AudioFileSourceID3.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}AudioGeneratorMP3.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}AudioOutputI2S.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{SDToSPIFFS_8h}{SDToSPIFFS.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{classWalkAidAudio}{WalkAidAudio}} \{}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{private}:}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     AudioGeneratorMP3 *mp3;}
+\DoxyCodeLine{13     AudioFileSourceSPIFFS *file;}
+\DoxyCodeLine{14     AudioOutputI2S *out;}
+\DoxyCodeLine{15     AudioFileSourceID3 *id3;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \mbox{\hyperlink{classSDToSPIFFS}{SDToSPIFFS}} s2s;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \mbox{\hyperlink{classWalkAidAudio}{WalkAidAudio}}();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} init(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *SDPath, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *SPIFFSPath);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} play();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \};}
+
+\end{DoxyCode}

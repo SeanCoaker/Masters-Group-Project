@@ -1,6 +1,19 @@
+/**
+ * @file SDToSPIFFS.h
+ * @author Sean Coaker (seancoaker@gmail.com)
+ * @brief A file to handle the transferring audio files from the 
+ * microSD card to the SPIFFS storage space.
+ * @version 1.0
+ * @date 2022-04-09
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include <SdFat.h>
 #include "SPIFFS.h"
 
+// Clock Select Pin to the SD Card Module
 #ifndef SDCARD_SS_PIN
 const uint8_t SD_CS_PIN = SS;
 #else  // SDCARD_SS_PIN
@@ -18,6 +31,7 @@ const uint8_t SD_CS_PIN = SDCARD_SS_PIN;
 #define SD_CONFIG SdSpiConfig(SD_CS_PIN, SHARED_SPI, SPI_CLOCK)
 #endif  // HAS_SDIO_CLASS
 
+
 class SDToSPIFFS {
 
 private:
@@ -29,9 +43,32 @@ private:
 
 public:
 
+	/**
+	 * @brief Construct a new SDToSPIFFS object.
+	 * 
+	 */
 	SDToSPIFFS();
+	
+	/**
+	 * @brief Initialises the object ready for the 
+	 * transferring of files from SD card to SPIFFs.
+	 * 
+	 * @param SDPath The path to the SD card file.
+	 * @param SPIFFSPath The file name to give the new SPIFFS file.
+	 */
 	void init(const char *SDPath, const char *SPIFFSPath);
-	void loadSDFileToSPIFFS();
+
+	/**
+	 * @brief Handles the loading of the SD card file to SPIFFS.
+	 * 
+	 */
+	void loadSDFileToSPIFFS(int test);
+
+	/**
+	 * @brief Returns the path to the SPIFFS file.
+	 * 
+	 * @return const char* SPIFFS file path.
+	 */
 	const char *getSPIFFSPath();
 
 };

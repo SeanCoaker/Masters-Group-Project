@@ -36,7 +36,7 @@
                 \input{tables/nowTable.tex}
                 \vspace{5em}
 
-            We ultimately decided to use ESP-Now as our communication protocol due to its ease of implementation and due to the fact that it allows sketch sizes to be smaller \cite{random_nerd_tutorials} than the sketch sizes of BLE \cite{kolban_2018}. The significance to sketch sizes being smaller is that they allow for the larger memory storage spaces accounting for larger audio reminder files, as well as providing more responsive code for what is a time sensitive system. The lower throughput that ESP-Now provides in comparison to BLE should not be noticeable within our system due to the fact that we only ever send one word messages between our devices at a given time. However, the lower power efficiency of ESP-Now in comparison to BLE is a considerable disadvantage for use within this system. Having said this, ESP-Now is still regarded as being a low power solution and should still mean that the patient or carer will not need to remember to replace the batteries in their devices too often.
+                We ultimately decided to use ESP-Now as our communication protocol due to its ease of implementation and due to the fact that it allows sketch sizes to be smaller \cite{random_nerd_tutorials} than the sketch sizes of BLE \cite{kolban_2018}. The significance to sketch sizes being smaller is that they allow for the larger memory storage spaces accounting for larger audio reminder files, as well as providing more responsive code for what is a time sensitive system. The lower throughput that ESP-Now provides in comparison to BLE should not be noticeable within our system due to the fact that we only ever send one word messages between our devices at a given time. However, the lower power efficiency of ESP-Now in comparison to BLE is a considerable disadvantage for use within this system. Having said this, ESP-Now is still regarded as being a low power solution and should still mean that the patient or carer will not need to remember to replace the batteries in their devices too often.
 
     \section{Walking Aid Device}
     \label{sec:walking_aid}
@@ -60,6 +60,17 @@
         
             This section will break down the software systems utilised in the walking aid device into formal language representations. These will take the form of a class diagram, which will illustrate the relationships between each of classes developed for each system, and an activity diagram which will demonstrate the sequence of events that will take place in the system and how they are handled. We hope that this section will help the reader to understand the software system in a broken down, step-by-step manner and to gain an understanding of our rationale towards programming choices that helped us to fulfil the user requirements. The class diagrams will be followed by an explanation of the role of each class and its functions, with the activity diagram also being accompanied by a body of text that establishes in natural language the sequence of events that will take place in the software system and how they are being handled.
 
+            \subsubsection{Class Diagram}
+            \label{subsubsec:class_diagram}
+
+                To demonstrate how the classes within the software are laid out and how they communicate with one another to make up the whole system, we include here a class diagram. Following the class diagram, we will include documentation on what each class and their functions towards benefitting the functionality of the system. 
+
+                \clearpage
+                \thispagestyle{empty}
+                \begin{landscape}
+                    \input{graphics/walking_aid_uml.tex}
+                \end{landscape}
+                
     \section{Wearable Device}
     \label{sec:wearabledevice}
 
@@ -75,4 +86,11 @@
            Therefore, we were left with the utilisation of the ADXL345 accelerometer for the detection of the user walking. To decide on which solution of accelerometer system to use, we decided to develop both the single-tap detection system and the acceleration change detection system and compare them in real world testing. For our system, the single-tap detection system seemed to work better in attempting to detect walking, where the system attempting to detect changes in acceleration struggled with also detecting any movements in the accelerometer. The single-tap detection system would also be beneficial to us as it would be implementable on both the walking aid and wearable devices. Another benefit to the single-tap detection solution is that it allows versatility as to where the wearable device can be placed, with testing proving that the devices can detect walking on both the user's wrist and their ankle. 
 
            Ultimately, we decided to implement the single-tap detection system within the wearable device to detect when the user was walking. We make use of a system that checks if the user makes 5 steps within a 10-second period in order to meet the user requirement of reminders only being played if the user has moved over a metre without their walking aid. If they do, then we send a message to the walking aid device to play an audio reminder to the patient to take their walking aid with them if the walking aid device has not detected movement. The main benefits to this system is its versatility to be worn on the user's wrist or ankle, and it provided the foundations to the similar system that has been developed for the walking aid device. In future, we would like to explore the use of the aforementioned ultra-wideband technology (UWB). Due to its distance measurement error being within 10 cm \cite{uwb_accuracy}, it would have been interesting to implement this within the wearable device, and implement it into the walking aid device working in conjunction with an accelerometer to detect if the walking aid is moving.
+
+    \section{Class Documentation - Walking Aid}
+    \label{sec:class_documentation_walk_aid}\mbox{}
+
+        \input{chapter/docs/walking_aid/sdtospiffs.tex}
+
+
 

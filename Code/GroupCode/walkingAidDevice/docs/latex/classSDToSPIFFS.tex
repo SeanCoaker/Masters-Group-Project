@@ -1,0 +1,53 @@
+\hypertarget{classSDToSPIFFS}{}\doxysection{SDTo\+SPIFFS Class Reference}
+\label{classSDToSPIFFS}\index{SDToSPIFFS@{SDToSPIFFS}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSDToSPIFFS_ab6116a12a60395f368c350bcd1df8b26}\label{classSDToSPIFFS_ab6116a12a60395f368c350bcd1df8b26}} 
+{\bfseries SDTo\+SPIFFS} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classSDToSPIFFS}{SDTo\+SPIFFS}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSDToSPIFFS_afdac9041f93471a3f4ebbb0a1da95285}{init}} (const char $\ast$SDPath, const char $\ast$SPIFFSPath)
+\begin{DoxyCompactList}\small\item\em Initialises the object ready for the transferring of files from SD card to SPIFFs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSDToSPIFFS_a20f3217cfb073acf42a136d9cd1d0744}\label{classSDToSPIFFS_a20f3217cfb073acf42a136d9cd1d0744}} 
+void {\bfseries load\+SDFile\+To\+SPIFFS} (int test)
+\begin{DoxyCompactList}\small\item\em Handles the loading of the SD card file to SPIFFS. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classSDToSPIFFS_a9e1a1e0d847530e1bd86ea1c3e7f52fd}{get\+SPIFFSPath}} ()
+\begin{DoxyCompactList}\small\item\em Returns the path to the SPIFFS file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSDToSPIFFS_a9e1a1e0d847530e1bd86ea1c3e7f52fd}\label{classSDToSPIFFS_a9e1a1e0d847530e1bd86ea1c3e7f52fd}} 
+\index{SDToSPIFFS@{SDToSPIFFS}!getSPIFFSPath@{getSPIFFSPath}}
+\index{getSPIFFSPath@{getSPIFFSPath}!SDToSPIFFS@{SDToSPIFFS}}
+\doxysubsubsection{\texorpdfstring{getSPIFFSPath()}{getSPIFFSPath()}}
+{\footnotesize\ttfamily const char $\ast$ SDTo\+SPIFFS\+::get\+SPIFFSPath (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the path to the SPIFFS file. 
+
+\begin{DoxyReturn}{Returns}
+const char$\ast$ SPIFFS file path. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSDToSPIFFS_afdac9041f93471a3f4ebbb0a1da95285}\label{classSDToSPIFFS_afdac9041f93471a3f4ebbb0a1da95285}} 
+\index{SDToSPIFFS@{SDToSPIFFS}!init@{init}}
+\index{init@{init}!SDToSPIFFS@{SDToSPIFFS}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void SDTo\+SPIFFS\+::init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{SDPath,  }\item[{const char $\ast$}]{SPIFFSPath }\end{DoxyParamCaption})}
+
+
+
+Initialises the object ready for the transferring of files from SD card to SPIFFs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em SDPath} & The path to the SD card file. \\
+\hline
+{\em SPIFFSPath} & The file name to give the new SPIFFS file. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SDToSPIFFS_8h}{SDTo\+SPIFFS.\+h}}\end{DoxyCompactItemize}
