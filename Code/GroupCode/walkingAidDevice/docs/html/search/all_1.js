@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_0',['init',['../classSDToSPIFFS.html#afdac9041f93471a3f4ebbb0a1da95285',1,'SDToSPIFFS']]]
+  ['checkforstep_0',['checkForStep',['../classWalkAidAccelerometer.html#a9d0768969402792f7e27c216556da022',1,'WalkAidAccelerometer']]]
 ];

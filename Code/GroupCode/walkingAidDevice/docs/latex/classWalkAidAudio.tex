@@ -1,16 +1,90 @@
 \hypertarget{classWalkAidAudio}{}\doxysection{Walk\+Aid\+Audio Class Reference}
 \label{classWalkAidAudio}\index{WalkAidAudio@{WalkAidAudio}}
+
+
+{\ttfamily \#include $<$Walk\+Aid\+Audio.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classWalkAidAudio_a5a3a9186c81fc2ba20866f18a864e41e}\label{classWalkAidAudio_a5a3a9186c81fc2ba20866f18a864e41e}} 
-void {\bfseries init} (const char $\ast$SDPath, const char $\ast$SPIFFSPath)
+\mbox{\hyperlink{classWalkAidAudio_aab4de5d8c6fd07a6422a4f8c03629681}{Walk\+Aid\+Audio}} ()
 \item 
-\mbox{\Hypertarget{classWalkAidAudio_a4269513aac9726a9f336d105f8715abb}\label{classWalkAidAudio_a4269513aac9726a9f336d105f8715abb}} 
-void {\bfseries play} ()
+void \mbox{\hyperlink{classWalkAidAudio_a5a3a9186c81fc2ba20866f18a864e41e}{init}} (const char $\ast$SDPath, const char $\ast$SPIFFSPath)
+\item 
+void \mbox{\hyperlink{classWalkAidAudio_a4269513aac9726a9f336d105f8715abb}{play}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Audio\+Generator\+MP3 $\ast$ \mbox{\hyperlink{classWalkAidAudio_a797df80b43fdc0d42f732a3d99a06324}{mp3}}
+\item 
+Audio\+File\+Source\+SPIFFS $\ast$ \mbox{\hyperlink{classWalkAidAudio_a23c7e522f16e5126f02dc5470fc5bd17}{file}}
+\item 
+Audio\+Output\+I2S $\ast$ \mbox{\hyperlink{classWalkAidAudio_adfa2e6a7600030dd6eaaa31f993dd161}{out}}
+\item 
+Audio\+File\+Source\+ID3 $\ast$ \mbox{\hyperlink{classWalkAidAudio_a22e617db8f5a94de0053cf106af5b04b}{id3}}
+\item 
+\mbox{\hyperlink{classSDToSPIFFS}{SDTo\+SPIFFS}} \mbox{\hyperlink{classWalkAidAudio_a2a0f534b5cf0baa88ce50b9e5d3c002a}{s2s}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWalkAidAudio_aab4de5d8c6fd07a6422a4f8c03629681}\label{classWalkAidAudio_aab4de5d8c6fd07a6422a4f8c03629681}} 
+\index{WalkAidAudio@{WalkAidAudio}!WalkAidAudio@{WalkAidAudio}}
+\index{WalkAidAudio@{WalkAidAudio}!WalkAidAudio@{WalkAidAudio}}
+\doxysubsubsection{\texorpdfstring{WalkAidAudio()}{WalkAidAudio()}}
+{\footnotesize\ttfamily Walk\+Aid\+Audio\+::\+Walk\+Aid\+Audio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWalkAidAudio_a5a3a9186c81fc2ba20866f18a864e41e}\label{classWalkAidAudio_a5a3a9186c81fc2ba20866f18a864e41e}} 
+\index{WalkAidAudio@{WalkAidAudio}!init@{init}}
+\index{init@{init}!WalkAidAudio@{WalkAidAudio}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Walk\+Aid\+Audio\+::init (\begin{DoxyParamCaption}\item[{const char $\ast$}]{SDPath,  }\item[{const char $\ast$}]{SPIFFSPath }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classWalkAidAudio_a4269513aac9726a9f336d105f8715abb}\label{classWalkAidAudio_a4269513aac9726a9f336d105f8715abb}} 
+\index{WalkAidAudio@{WalkAidAudio}!play@{play}}
+\index{play@{play}!WalkAidAudio@{WalkAidAudio}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Walk\+Aid\+Audio\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWalkAidAudio_a23c7e522f16e5126f02dc5470fc5bd17}\label{classWalkAidAudio_a23c7e522f16e5126f02dc5470fc5bd17}} 
+\index{WalkAidAudio@{WalkAidAudio}!file@{file}}
+\index{file@{file}!WalkAidAudio@{WalkAidAudio}}
+\doxysubsubsection{\texorpdfstring{file}{file}}
+{\footnotesize\ttfamily Audio\+File\+Source\+SPIFFS$\ast$ Walk\+Aid\+Audio\+::file\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWalkAidAudio_a22e617db8f5a94de0053cf106af5b04b}\label{classWalkAidAudio_a22e617db8f5a94de0053cf106af5b04b}} 
+\index{WalkAidAudio@{WalkAidAudio}!id3@{id3}}
+\index{id3@{id3}!WalkAidAudio@{WalkAidAudio}}
+\doxysubsubsection{\texorpdfstring{id3}{id3}}
+{\footnotesize\ttfamily Audio\+File\+Source\+ID3$\ast$ Walk\+Aid\+Audio\+::id3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWalkAidAudio_a797df80b43fdc0d42f732a3d99a06324}\label{classWalkAidAudio_a797df80b43fdc0d42f732a3d99a06324}} 
+\index{WalkAidAudio@{WalkAidAudio}!mp3@{mp3}}
+\index{mp3@{mp3}!WalkAidAudio@{WalkAidAudio}}
+\doxysubsubsection{\texorpdfstring{mp3}{mp3}}
+{\footnotesize\ttfamily Audio\+Generator\+MP3$\ast$ Walk\+Aid\+Audio\+::mp3\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWalkAidAudio_adfa2e6a7600030dd6eaaa31f993dd161}\label{classWalkAidAudio_adfa2e6a7600030dd6eaaa31f993dd161}} 
+\index{WalkAidAudio@{WalkAidAudio}!out@{out}}
+\index{out@{out}!WalkAidAudio@{WalkAidAudio}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily Audio\+Output\+I2S$\ast$ Walk\+Aid\+Audio\+::out\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classWalkAidAudio_a2a0f534b5cf0baa88ce50b9e5d3c002a}\label{classWalkAidAudio_a2a0f534b5cf0baa88ce50b9e5d3c002a}} 
+\index{WalkAidAudio@{WalkAidAudio}!s2s@{s2s}}
+\index{s2s@{s2s}!WalkAidAudio@{WalkAidAudio}}
+\doxysubsubsection{\texorpdfstring{s2s}{s2s}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSDToSPIFFS}{SDTo\+SPIFFS}} Walk\+Aid\+Audio\+::s2s\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Walk\+Aid\+Audio.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{WalkAidAudio_8h}{Walk\+Aid\+Audio.\+h}}\end{DoxyCompactItemize}

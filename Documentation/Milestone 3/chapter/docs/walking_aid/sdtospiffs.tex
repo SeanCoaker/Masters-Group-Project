@@ -1,65 +1,89 @@
 \subsection{SDToSPIFFS Class Reference}
-        \label{subsec:sdtospiffs}\mbox{}
+\label{subsec:sdtospiffs}\mbox{}
 
-                \paragraph{Public Member Functions}\mbox{}
+    \ttfamily{}
 
-                    \begin{itemize}
-                        \item \textbf{SDToSPIFFS}() 
-                        
-                            \textit{Construct a new SDToSPIFFS object.}
+    \#include <SdFat.h>
 
-                        \item void \textbf{init}(const char *SDPath, const char* SPIFFSPath) 
-                        
-                            \textit{Initalises the object ready for the transferring of files from SD card to SPIFFS.}
+    \#include "SPIFFS.h"\\
 
-                        \item \textbf{loadSDFileToSPIFFS}() 
-                        
-                            \textit{Handles the loading of the SD card file to SPIFFS.}
+    \rmfamily{}
 
-                        \item const char *\textbf{getSPIFFSPath}() 
-                        
-                            \textit{Returns the path to the SPIFFS file.}
-                    \end{itemize}
+    \paragraph{Private Attributes}\mbox{}
 
-            \subsubsection{Member Function Documentation}\mbox{}
+        \begin{itemize}
+            \item const char * \textbf{SDPath}
+            \item const char * \textbf{SPIFFSPath}
+            \item SdFat \textbf{sd}\\
+        \end{itemize}
 
-                \paragraph{SDToSPIFFS()}\mbox{}\\
 
-                    \ttfamily{SDToSPIFFS::SDToSPIFFS (  )}\\
+    \paragraph{Public Member Functions}\mbox{}
 
-                    \rmfamily{Construct a new SDToSPIFFS object.}
+        \begin{itemize}
+            \item \textbf{SDToSPIFFS}() 
+            
+                \textit{Construct a new SDToSPIFFS object.}
 
-                \paragraph{init()}\mbox{}\\
+            \item void \textbf{init}(const char *SDPath, const char* SPIFFSPath) 
+            
+                \textit{Initalises the object ready for the transferring of files from SD card to SPIFFS.}
 
-                    \ttfamily{void SDToSPIFFS::init (\\
-                        \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const char * SDPath,\\ 
-                        \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const char * SPIFFSPath )}\\
+            \item \textbf{loadSDFileToSPIFFS}() 
+            
+                \textit{Handles the loading of the SD card file to SPIFFS.}
 
-                    \rmfamily{Returns the path to the SPIFFS file.}
+            \item const char *\textbf{getSPIFFSPath}() 
+            
+                \textit{Returns the path to the SPIFFS file.}\\
+        \end{itemize}
 
-                    \textbf{Parameters}
+    \subsubsection{Constructor \& Destructor Documentation}\mbox{}
 
-                    \vspace{1em}
-                    \begin{tabular}{| l | l |} 
-                        \hline
-                        SDPath & The path to the SD card file. \\ 
-                        \hline
-                        SPIFFSPath & The file name to give the new SPIFFS file. \\ 
-                        \hline
-                    \end{tabular}
 
-                \paragraph{loadSDFileToSPIFFS()}\mbox{}\\
+        \paragraph{SDToSPIFFS()}\mbox{}\\
 
-                    \ttfamily{void SDToSPIFFS::loadSDFileToSPIFFS (  )}\\
-    
-                    \rmfamily{Handles the loading of the SD card file to SPIFFS.}
+            \ttfamily{SDToSPIFFS::SDToSPIFFS (  )}\\
 
-                \paragraph{getSPIFFSPath()}\mbox{}\\
+            \rmfamily{Construct a new SDToSPIFFS object.}\\
 
-                    \ttfamily{const char * SDToSPIFFS::getSPIFFSPath (  )}\\
 
-                    \rmfamily{Returns the path to the SPIFFS file.}
+    \subsubsection{Member Function Documentation}\mbox{}
 
-                    \textbf{Returns}
 
-                        \quad \quad const char* SPIFFS file path.
+        \paragraph{init()}\mbox{}\\
+
+            \ttfamily{void SDToSPIFFS::init (\\
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const char * SDPath,\\ 
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const char * SPIFFSPath )}\\
+
+            \rmfamily{Returns the path to the SPIFFS file.}
+
+            \textbf{Parameters}
+
+            \vspace{1em}
+            \begin{tabular}{| l | l |} 
+                \hline
+                SDPath & The path to the SD card file. \\ 
+                \hline
+                SPIFFSPath & The file name to give the new SPIFFS file. \\ 
+                \hline
+            \end{tabular}\\~\\
+
+
+        \paragraph{loadSDFileToSPIFFS()}\mbox{}\\
+
+            \ttfamily{void SDToSPIFFS::loadSDFileToSPIFFS (  )}\\
+
+            \rmfamily{Handles the loading of the SD card file to SPIFFS.}\\
+
+
+        \paragraph{getSPIFFSPath()}\mbox{}\\
+
+            \ttfamily{const char * SDToSPIFFS::getSPIFFSPath (  )}\\
+
+            \rmfamily{Returns the path to the SPIFFS file.}
+
+            \textbf{Returns}
+
+                \quad \quad const char* SPIFFS file path.\\

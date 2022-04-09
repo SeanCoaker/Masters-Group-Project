@@ -64,20 +64,211 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classWalkAidAudio-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">WalkAidAudio Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="WalkAidAudio_8h_source.html">WalkAidAudio.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5a3a9186c81fc2ba20866f18a864e41e"><td class="memItemLeft" align="right" valign="top"><a id="a5a3a9186c81fc2ba20866f18a864e41e" name="a5a3a9186c81fc2ba20866f18a864e41e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> (const char *SDPath, const char *SPIFFSPath)</td></tr>
+<tr class="memitem:aab4de5d8c6fd07a6422a4f8c03629681"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#aab4de5d8c6fd07a6422a4f8c03629681">WalkAidAudio</a> ()</td></tr>
+<tr class="separator:aab4de5d8c6fd07a6422a4f8c03629681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a3a9186c81fc2ba20866f18a864e41e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a5a3a9186c81fc2ba20866f18a864e41e">init</a> (const char *SDPath, const char *SPIFFSPath)</td></tr>
 <tr class="separator:a5a3a9186c81fc2ba20866f18a864e41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4269513aac9726a9f336d105f8715abb"><td class="memItemLeft" align="right" valign="top"><a id="a4269513aac9726a9f336d105f8715abb" name="a4269513aac9726a9f336d105f8715abb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>play</b> ()</td></tr>
+<tr class="memitem:a4269513aac9726a9f336d105f8715abb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a4269513aac9726a9f336d105f8715abb">play</a> ()</td></tr>
 <tr class="separator:a4269513aac9726a9f336d105f8715abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a797df80b43fdc0d42f732a3d99a06324"><td class="memItemLeft" align="right" valign="top">AudioGeneratorMP3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a797df80b43fdc0d42f732a3d99a06324">mp3</a></td></tr>
+<tr class="separator:a797df80b43fdc0d42f732a3d99a06324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c7e522f16e5126f02dc5470fc5bd17"><td class="memItemLeft" align="right" valign="top">AudioFileSourceSPIFFS *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a23c7e522f16e5126f02dc5470fc5bd17">file</a></td></tr>
+<tr class="separator:a23c7e522f16e5126f02dc5470fc5bd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa2e6a7600030dd6eaaa31f993dd161"><td class="memItemLeft" align="right" valign="top">AudioOutputI2S *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#adfa2e6a7600030dd6eaaa31f993dd161">out</a></td></tr>
+<tr class="separator:adfa2e6a7600030dd6eaaa31f993dd161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e617db8f5a94de0053cf106af5b04b"><td class="memItemLeft" align="right" valign="top">AudioFileSourceID3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a22e617db8f5a94de0053cf106af5b04b">id3</a></td></tr>
+<tr class="separator:a22e617db8f5a94de0053cf106af5b04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a0f534b5cf0baa88ce50b9e5d3c002a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSDToSPIFFS.html">SDToSPIFFS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a2a0f534b5cf0baa88ce50b9e5d3c002a">s2s</a></td></tr>
+<tr class="separator:a2a0f534b5cf0baa88ce50b9e5d3c002a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aab4de5d8c6fd07a6422a4f8c03629681" name="aab4de5d8c6fd07a6422a4f8c03629681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab4de5d8c6fd07a6422a4f8c03629681">&#9670;&nbsp;</a></span>WalkAidAudio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WalkAidAudio::WalkAidAudio </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5a3a9186c81fc2ba20866f18a864e41e" name="a5a3a9186c81fc2ba20866f18a864e41e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a3a9186c81fc2ba20866f18a864e41e">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WalkAidAudio::init </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>SDPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>SPIFFSPath</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4269513aac9726a9f336d105f8715abb" name="a4269513aac9726a9f336d105f8715abb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4269513aac9726a9f336d105f8715abb">&#9670;&nbsp;</a></span>play()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WalkAidAudio::play </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a23c7e522f16e5126f02dc5470fc5bd17" name="a23c7e522f16e5126f02dc5470fc5bd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c7e522f16e5126f02dc5470fc5bd17">&#9670;&nbsp;</a></span>file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioFileSourceSPIFFS* WalkAidAudio::file</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e617db8f5a94de0053cf106af5b04b" name="a22e617db8f5a94de0053cf106af5b04b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e617db8f5a94de0053cf106af5b04b">&#9670;&nbsp;</a></span>id3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioFileSourceID3* WalkAidAudio::id3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a797df80b43fdc0d42f732a3d99a06324" name="a797df80b43fdc0d42f732a3d99a06324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a797df80b43fdc0d42f732a3d99a06324">&#9670;&nbsp;</a></span>mp3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioGeneratorMP3* WalkAidAudio::mp3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfa2e6a7600030dd6eaaa31f993dd161" name="adfa2e6a7600030dd6eaaa31f993dd161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa2e6a7600030dd6eaaa31f993dd161">&#9670;&nbsp;</a></span>out</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AudioOutputI2S* WalkAidAudio::out</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a0f534b5cf0baa88ce50b9e5d3c002a" name="a2a0f534b5cf0baa88ce50b9e5d3c002a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a0f534b5cf0baa88ce50b9e5d3c002a">&#9670;&nbsp;</a></span>s2s</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSDToSPIFFS.html">SDToSPIFFS</a> WalkAidAudio::s2s</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="WalkAidAudio_8h_source.html">WalkAidAudio.h</a></li>
 </ul>

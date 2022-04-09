@@ -1,9 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "gilsw",
+  0: "acdfgilmoprsw",
   1: "sw",
-  2: "s",
-  3: "gils"
+  2: "sw",
+  3: "cgilpsw",
+  4: "adfilmoprs",
+  5: "s"
 };
 
 var indexSectionNames =
@@ -11,7 +13,9 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "files",
-  3: "functions"
+  3: "functions",
+  4: "variables",
+  5: "defines"
 };
 
 var indexSectionLabels =
@@ -19,6 +23,8 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Files",
-  3: "Functions"
+  3: "Functions",
+  4: "Variables",
+  5: "Macros"
 };
 

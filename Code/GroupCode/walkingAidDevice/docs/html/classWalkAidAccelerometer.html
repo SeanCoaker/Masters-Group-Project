@@ -64,29 +64,358 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classWalkAidAccelerometer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">WalkAidAccelerometer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="WalkAidAccelerometer_8h_source.html">WalkAidAccelerometer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a39d32299a305f121cffbb46f1c2b356b"><td class="memItemLeft" align="right" valign="top"><a id="a39d32299a305f121cffbb46f1c2b356b" name="a39d32299a305f121cffbb46f1c2b356b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> (double singleTapThresholdValue, double singleTapThresholdDuration, double doubleTapLatency, double doubleTapWindow, unsigned long period)</td></tr>
+<tr class="memitem:a143db0d84532cd5fdfc42e49cc3eefc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a143db0d84532cd5fdfc42e49cc3eefc5">WalkAidAccelerometer</a> ()</td></tr>
+<tr class="separator:a143db0d84532cd5fdfc42e49cc3eefc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d32299a305f121cffbb46f1c2b356b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a39d32299a305f121cffbb46f1c2b356b">init</a> (double <a class="el" href="classWalkAidAccelerometer.html#a5c71d8962b4f3866eadfa7ab155b0a7f">singleTapThresholdValue</a>, double <a class="el" href="classWalkAidAccelerometer.html#a27fe73a78b782bf963b945e2bf22f45b">singleTapThresholdDuration</a>, double <a class="el" href="classWalkAidAccelerometer.html#afdde14cafa256e0340845d469ce8662a">doubleTapLatency</a>, double <a class="el" href="classWalkAidAccelerometer.html#a03949d009a0eee0cf05caa2878a8cc1f">doubleTapWindow</a>, unsigned long <a class="el" href="classWalkAidAccelerometer.html#ac797699c8f440ffb69ddd023d1182341">period</a>)</td></tr>
 <tr class="separator:a39d32299a305f121cffbb46f1c2b356b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d0768969402792f7e27c216556da022"><td class="memItemLeft" align="right" valign="top"><a id="a9d0768969402792f7e27c216556da022" name="a9d0768969402792f7e27c216556da022"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>checkForStep</b> ()</td></tr>
+<tr class="memitem:a9d0768969402792f7e27c216556da022"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a9d0768969402792f7e27c216556da022">checkForStep</a> ()</td></tr>
 <tr class="separator:a9d0768969402792f7e27c216556da022"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f5938ef153f384da47092d0405f2493"><td class="memItemLeft" align="right" valign="top"><a id="a3f5938ef153f384da47092d0405f2493" name="a3f5938ef153f384da47092d0405f2493"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isStepDetected</b> ()</td></tr>
+<tr class="memitem:a3f5938ef153f384da47092d0405f2493"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a3f5938ef153f384da47092d0405f2493">isStepDetected</a> ()</td></tr>
 <tr class="separator:a3f5938ef153f384da47092d0405f2493"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62336e82828394e53b8ba2fe7d7fdb8d"><td class="memItemLeft" align="right" valign="top"><a id="a62336e82828394e53b8ba2fe7d7fdb8d" name="a62336e82828394e53b8ba2fe7d7fdb8d"></a>
-long&#160;</td><td class="memItemRight" valign="bottom"><b>getLastStepTime</b> ()</td></tr>
+<tr class="memitem:a62336e82828394e53b8ba2fe7d7fdb8d"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a62336e82828394e53b8ba2fe7d7fdb8d">getLastStepTime</a> ()</td></tr>
 <tr class="separator:a62336e82828394e53b8ba2fe7d7fdb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac98ab6c6636a585f62f0f2ab032b57ad"><td class="memItemLeft" align="right" valign="top"><a id="ac98ab6c6636a585f62f0f2ab032b57ad" name="ac98ab6c6636a585f62f0f2ab032b57ad"></a>
-unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>getPeriod</b> ()</td></tr>
+<tr class="memitem:ac98ab6c6636a585f62f0f2ab032b57ad"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#ac98ab6c6636a585f62f0f2ab032b57ad">getPeriod</a> ()</td></tr>
 <tr class="separator:ac98ab6c6636a585f62f0f2ab032b57ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5c71d8962b4f3866eadfa7ab155b0a7f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a5c71d8962b4f3866eadfa7ab155b0a7f">singleTapThresholdValue</a></td></tr>
+<tr class="separator:a5c71d8962b4f3866eadfa7ab155b0a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27fe73a78b782bf963b945e2bf22f45b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a27fe73a78b782bf963b945e2bf22f45b">singleTapThresholdDuration</a></td></tr>
+<tr class="separator:a27fe73a78b782bf963b945e2bf22f45b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdde14cafa256e0340845d469ce8662a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#afdde14cafa256e0340845d469ce8662a">doubleTapLatency</a></td></tr>
+<tr class="separator:afdde14cafa256e0340845d469ce8662a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03949d009a0eee0cf05caa2878a8cc1f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a03949d009a0eee0cf05caa2878a8cc1f">doubleTapWindow</a></td></tr>
+<tr class="separator:a03949d009a0eee0cf05caa2878a8cc1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35a9901ad132cd9f93b7937dbb3192f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#ad35a9901ad132cd9f93b7937dbb3192f">stepDetected</a></td></tr>
+<tr class="separator:ad35a9901ad132cd9f93b7937dbb3192f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d6758b11a34762a5c838abc2ba6820"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a85d6758b11a34762a5c838abc2ba6820">lastStepTime</a></td></tr>
+<tr class="separator:a85d6758b11a34762a5c838abc2ba6820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac797699c8f440ffb69ddd023d1182341"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#ac797699c8f440ffb69ddd023d1182341">period</a></td></tr>
+<tr class="separator:ac797699c8f440ffb69ddd023d1182341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ac86ee9ca0610825e533cc9e255a29"><td class="memItemLeft" align="right" valign="top">ADXL345&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAccelerometer.html#a60ac86ee9ca0610825e533cc9e255a29">adxl</a></td></tr>
+<tr class="separator:a60ac86ee9ca0610825e533cc9e255a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a143db0d84532cd5fdfc42e49cc3eefc5" name="a143db0d84532cd5fdfc42e49cc3eefc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143db0d84532cd5fdfc42e49cc3eefc5">&#9670;&nbsp;</a></span>WalkAidAccelerometer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WalkAidAccelerometer::WalkAidAccelerometer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9d0768969402792f7e27c216556da022" name="a9d0768969402792f7e27c216556da022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d0768969402792f7e27c216556da022">&#9670;&nbsp;</a></span>checkForStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WalkAidAccelerometer::checkForStep </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62336e82828394e53b8ba2fe7d7fdb8d" name="a62336e82828394e53b8ba2fe7d7fdb8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62336e82828394e53b8ba2fe7d7fdb8d">&#9670;&nbsp;</a></span>getLastStepTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long WalkAidAccelerometer::getLastStepTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac98ab6c6636a585f62f0f2ab032b57ad" name="ac98ab6c6636a585f62f0f2ab032b57ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac98ab6c6636a585f62f0f2ab032b57ad">&#9670;&nbsp;</a></span>getPeriod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long WalkAidAccelerometer::getPeriod </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a39d32299a305f121cffbb46f1c2b356b" name="a39d32299a305f121cffbb46f1c2b356b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d32299a305f121cffbb46f1c2b356b">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WalkAidAccelerometer::init </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>singleTapThresholdValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>singleTapThresholdDuration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>doubleTapLatency</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>doubleTapWindow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>period</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f5938ef153f384da47092d0405f2493" name="a3f5938ef153f384da47092d0405f2493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5938ef153f384da47092d0405f2493">&#9670;&nbsp;</a></span>isStepDetected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WalkAidAccelerometer::isStepDetected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a60ac86ee9ca0610825e533cc9e255a29" name="a60ac86ee9ca0610825e533cc9e255a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60ac86ee9ca0610825e533cc9e255a29">&#9670;&nbsp;</a></span>adxl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ADXL345 WalkAidAccelerometer::adxl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afdde14cafa256e0340845d469ce8662a" name="afdde14cafa256e0340845d469ce8662a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdde14cafa256e0340845d469ce8662a">&#9670;&nbsp;</a></span>doubleTapLatency</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double WalkAidAccelerometer::doubleTapLatency</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03949d009a0eee0cf05caa2878a8cc1f" name="a03949d009a0eee0cf05caa2878a8cc1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03949d009a0eee0cf05caa2878a8cc1f">&#9670;&nbsp;</a></span>doubleTapWindow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double WalkAidAccelerometer::doubleTapWindow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85d6758b11a34762a5c838abc2ba6820" name="a85d6758b11a34762a5c838abc2ba6820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d6758b11a34762a5c838abc2ba6820">&#9670;&nbsp;</a></span>lastStepTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long WalkAidAccelerometer::lastStepTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac797699c8f440ffb69ddd023d1182341" name="ac797699c8f440ffb69ddd023d1182341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac797699c8f440ffb69ddd023d1182341">&#9670;&nbsp;</a></span>period</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long WalkAidAccelerometer::period</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27fe73a78b782bf963b945e2bf22f45b" name="a27fe73a78b782bf963b945e2bf22f45b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27fe73a78b782bf963b945e2bf22f45b">&#9670;&nbsp;</a></span>singleTapThresholdDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double WalkAidAccelerometer::singleTapThresholdDuration</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c71d8962b4f3866eadfa7ab155b0a7f" name="a5c71d8962b4f3866eadfa7ab155b0a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c71d8962b4f3866eadfa7ab155b0a7f">&#9670;&nbsp;</a></span>singleTapThresholdValue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double WalkAidAccelerometer::singleTapThresholdValue</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad35a9901ad132cd9f93b7937dbb3192f" name="ad35a9901ad132cd9f93b7937dbb3192f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad35a9901ad132cd9f93b7937dbb3192f">&#9670;&nbsp;</a></span>stepDetected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WalkAidAccelerometer::stepDetected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="WalkAidAccelerometer_8h_source.html">WalkAidAccelerometer.h</a></li>
 </ul>
