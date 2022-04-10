@@ -36,9 +36,12 @@ class SDToSPIFFS {
 
 private:
 
+	//! Audio file to be transferred.
 	const char *SDPath;
+	//! Name to give the audio file being saved in SPIFFS.
 	const char *SPIFFSPath;
 
+	//! SD Card object.
 	SdFat sd;
 
 public:

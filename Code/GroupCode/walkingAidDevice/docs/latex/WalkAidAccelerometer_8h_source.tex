@@ -1,34 +1,39 @@
 \hypertarget{WalkAidAccelerometer_8h_source}{}\doxysection{Walk\+Aid\+Accelerometer.\+h}
 \mbox{\hyperlink{WalkAidAccelerometer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <SparkFun\_ADXL345.h>}}
-\DoxyCodeLine{2 }
-\DoxyCodeLine{3 \textcolor{keyword}{class }\mbox{\hyperlink{classWalkAidAccelerometer}{WalkAidAccelerometer}} \{}
-\DoxyCodeLine{4 }
-\DoxyCodeLine{5 \textcolor{keyword}{private}:}
-\DoxyCodeLine{6 }
-\DoxyCodeLine{7     \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a5c71d8962b4f3866eadfa7ab155b0a7f}{singleTapThresholdValue}};}
-\DoxyCodeLine{8     \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a27fe73a78b782bf963b945e2bf22f45b}{singleTapThresholdDuration}};}
-\DoxyCodeLine{9     \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_afdde14cafa256e0340845d469ce8662a}{doubleTapLatency}};}
-\DoxyCodeLine{10     \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a03949d009a0eee0cf05caa2878a8cc1f}{doubleTapWindow}};}
-\DoxyCodeLine{11 }
-\DoxyCodeLine{12     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classWalkAidAccelerometer_ad35a9901ad132cd9f93b7937dbb3192f}{stepDetected}};}
-\DoxyCodeLine{13     \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_a85d6758b11a34762a5c838abc2ba6820}{lastStepTime}};}
-\DoxyCodeLine{14     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_ac797699c8f440ffb69ddd023d1182341}{period}};}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <SparkFun\_ADXL345.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{classWalkAidAccelerometer}{WalkAidAccelerometer}} \{}
 \DoxyCodeLine{15 }
-\DoxyCodeLine{16     ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e255a29}{adxl}};}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
 \DoxyCodeLine{17 }
-\DoxyCodeLine{18 \textcolor{keyword}{public}:}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20     \mbox{\hyperlink{classWalkAidAccelerometer_a143db0d84532cd5fdfc42e49cc3eefc5}{WalkAidAccelerometer}}();}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{classWalkAidAccelerometer_a39d32299a305f121cffbb46f1c2b356b}{init}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a5c71d8962b4f3866eadfa7ab155b0a7f}{singleTapThresholdValue}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a27fe73a78b782bf963b945e2bf22f45b}{singleTapThresholdDuration}}}
-\DoxyCodeLine{23         , \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_afdde14cafa256e0340845d469ce8662a}{doubleTapLatency}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a03949d009a0eee0cf05caa2878a8cc1f}{doubleTapWindow}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_ac797699c8f440ffb69ddd023d1182341}{period}});}
-\DoxyCodeLine{24     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classWalkAidAccelerometer_a9d0768969402792f7e27c216556da022}{checkForStep}}();}
-\DoxyCodeLine{25     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classWalkAidAccelerometer_a3f5938ef153f384da47092d0405f2493}{isStepDetected}}();}
-\DoxyCodeLine{26     \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_a62336e82828394e53b8ba2fe7d7fdb8d}{getLastStepTime}}();}
-\DoxyCodeLine{27     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_ac98ab6c6636a585f62f0f2ab032b57ad}{getPeriod}}();}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29 \};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a5c71d8962b4f3866eadfa7ab155b0a7f}{singleTapThresholdValue}};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a27fe73a78b782bf963b945e2bf22f45b}{singleTapThresholdDuration}};}
+\DoxyCodeLine{23     \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_afdde14cafa256e0340845d469ce8662a}{doubleTapLatency}};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a03949d009a0eee0cf05caa2878a8cc1f}{doubleTapWindow}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classWalkAidAccelerometer_ad35a9901ad132cd9f93b7937dbb3192f}{stepDetected}};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_a85d6758b11a34762a5c838abc2ba6820}{lastStepTime}};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_ac797699c8f440ffb69ddd023d1182341}{period}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35     ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e255a29}{adxl}};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{43     \mbox{\hyperlink{classWalkAidAccelerometer_a143db0d84532cd5fdfc42e49cc3eefc5}{WalkAidAccelerometer}}();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{classWalkAidAccelerometer_a39d32299a305f121cffbb46f1c2b356b}{init}}(\textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a5c71d8962b4f3866eadfa7ab155b0a7f}{singleTapThresholdValue}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a27fe73a78b782bf963b945e2bf22f45b}{singleTapThresholdDuration}}}
+\DoxyCodeLine{55         , \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_afdde14cafa256e0340845d469ce8662a}{doubleTapLatency}}, \textcolor{keywordtype}{double} \mbox{\hyperlink{classWalkAidAccelerometer_a03949d009a0eee0cf05caa2878a8cc1f}{doubleTapWindow}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_ac797699c8f440ffb69ddd023d1182341}{period}});}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{62     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classWalkAidAccelerometer_a9d0768969402792f7e27c216556da022}{checkForStep}}();}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{69     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classWalkAidAccelerometer_a3f5938ef153f384da47092d0405f2493}{isStepDetected}}();}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76     \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_a62336e82828394e53b8ba2fe7d7fdb8d}{getLastStepTime}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{82     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{classWalkAidAccelerometer_ac98ab6c6636a585f62f0f2ab032b57ad}{getPeriod}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \};}
 
 \end{DoxyCode}

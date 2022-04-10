@@ -75,23 +75,31 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aab4de5d8c6fd07a6422a4f8c03629681"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#aab4de5d8c6fd07a6422a4f8c03629681">WalkAidAudio</a> ()</td></tr>
+<tr class="memdesc:aab4de5d8c6fd07a6422a4f8c03629681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Walk Aid Audio object.  <a href="classWalkAidAudio.html#aab4de5d8c6fd07a6422a4f8c03629681">More...</a><br /></td></tr>
 <tr class="separator:aab4de5d8c6fd07a6422a4f8c03629681"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a3a9186c81fc2ba20866f18a864e41e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a5a3a9186c81fc2ba20866f18a864e41e">init</a> (const char *SDPath, const char *SPIFFSPath)</td></tr>
+<tr class="memdesc:a5a3a9186c81fc2ba20866f18a864e41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialises the walk aid audio system by calling the transfer of SD file to SPIFFS and generating the mp3 code.  <a href="classWalkAidAudio.html#a5a3a9186c81fc2ba20866f18a864e41e">More...</a><br /></td></tr>
 <tr class="separator:a5a3a9186c81fc2ba20866f18a864e41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4269513aac9726a9f336d105f8715abb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a4269513aac9726a9f336d105f8715abb">play</a> ()</td></tr>
+<tr class="memdesc:a4269513aac9726a9f336d105f8715abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the SPIFFS audio file.  <a href="classWalkAidAudio.html#a4269513aac9726a9f336d105f8715abb">More...</a><br /></td></tr>
 <tr class="separator:a4269513aac9726a9f336d105f8715abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a797df80b43fdc0d42f732a3d99a06324"><td class="memItemLeft" align="right" valign="top">AudioGeneratorMP3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a797df80b43fdc0d42f732a3d99a06324">mp3</a></td></tr>
+<tr class="memdesc:a797df80b43fdc0d42f732a3d99a06324"><td class="mdescLeft">&#160;</td><td class="mdescRight">The generator of the mp3 player.  <a href="classWalkAidAudio.html#a797df80b43fdc0d42f732a3d99a06324">More...</a><br /></td></tr>
 <tr class="separator:a797df80b43fdc0d42f732a3d99a06324"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23c7e522f16e5126f02dc5470fc5bd17"><td class="memItemLeft" align="right" valign="top">AudioFileSourceSPIFFS *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a23c7e522f16e5126f02dc5470fc5bd17">file</a></td></tr>
+<tr class="memdesc:a23c7e522f16e5126f02dc5470fc5bd17"><td class="mdescLeft">&#160;</td><td class="mdescRight">The source file of the SPIFFS audio file.  <a href="classWalkAidAudio.html#a23c7e522f16e5126f02dc5470fc5bd17">More...</a><br /></td></tr>
 <tr class="separator:a23c7e522f16e5126f02dc5470fc5bd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfa2e6a7600030dd6eaaa31f993dd161"><td class="memItemLeft" align="right" valign="top">AudioOutputI2S *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#adfa2e6a7600030dd6eaaa31f993dd161">out</a></td></tr>
+<tr class="memdesc:adfa2e6a7600030dd6eaaa31f993dd161"><td class="mdescLeft">&#160;</td><td class="mdescRight">The output of the mp3 player.  <a href="classWalkAidAudio.html#adfa2e6a7600030dd6eaaa31f993dd161">More...</a><br /></td></tr>
 <tr class="separator:adfa2e6a7600030dd6eaaa31f993dd161"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22e617db8f5a94de0053cf106af5b04b"><td class="memItemLeft" align="right" valign="top">AudioFileSourceID3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a22e617db8f5a94de0053cf106af5b04b">id3</a></td></tr>
+<tr class="memdesc:a22e617db8f5a94de0053cf106af5b04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Metadata handler for the mp3 file.  <a href="classWalkAidAudio.html#a22e617db8f5a94de0053cf106af5b04b">More...</a><br /></td></tr>
 <tr class="separator:a22e617db8f5a94de0053cf106af5b04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a0f534b5cf0baa88ce50b9e5d3c002a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSDToSPIFFS.html">SDToSPIFFS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWalkAidAudio.html#a2a0f534b5cf0baa88ce50b9e5d3c002a">s2s</a></td></tr>
+<tr class="memdesc:a2a0f534b5cf0baa88ce50b9e5d3c002a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object to handle the SD to SPIFFS transfer.  <a href="classWalkAidAudio.html#a2a0f534b5cf0baa88ce50b9e5d3c002a">More...</a><br /></td></tr>
 <tr class="separator:a2a0f534b5cf0baa88ce50b9e5d3c002a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -109,6 +117,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct a new Walk Aid Audio object. </p>
 
 </div>
 </div>
@@ -139,6 +149,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialises the walk aid audio system by calling the transfer of SD file to SPIFFS and generating the mp3 code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SDPath</td><td>Path to the SD card audio file. </td></tr>
+    <tr><td class="paramname">SPIFFSPath</td><td>Name of the SPIFFS audio file to be created. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4269513aac9726a9f336d105f8715abb" name="a4269513aac9726a9f336d105f8715abb"></a>
@@ -155,6 +174,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Plays the SPIFFS audio file. </p>
 
 </div>
 </div>
@@ -179,6 +200,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The source file of the SPIFFS audio file. </p>
+
 </div>
 </div>
 <a id="a22e617db8f5a94de0053cf106af5b04b" name="a22e617db8f5a94de0053cf106af5b04b"></a>
@@ -200,6 +223,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Metadata handler for the mp3 file. </p>
 
 </div>
 </div>
@@ -223,6 +248,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The generator of the mp3 player. </p>
+
 </div>
 </div>
 <a id="adfa2e6a7600030dd6eaaa31f993dd161" name="adfa2e6a7600030dd6eaaa31f993dd161"></a>
@@ -245,6 +272,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>The output of the mp3 player. </p>
+
 </div>
 </div>
 <a id="a2a0f534b5cf0baa88ce50b9e5d3c002a" name="a2a0f534b5cf0baa88ce50b9e5d3c002a"></a>
@@ -266,6 +295,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Object to handle the SD to SPIFFS transfer. </p>
 
 </div>
 </div>

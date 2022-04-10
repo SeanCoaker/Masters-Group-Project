@@ -54,22 +54,6 @@
         \label{subsec:sdfat}
 
             The decision to use the SdFat library by Bill Greiman \cite{greiman} was an unexpected one as Arduino provide their own solution of SD card reading library \cite{arduino} which acts as a wrapper to the SdFat library for easier understanding and further abstraction of the underlying code. However, when testing the transfer of an 150 KB mp3 file to the SPIFFS storage location of the TinyPICO, we began to notice that the library was taking an abnormally long time to complete the process, especially with a file this small. Upon completing research on the transfer speeds of the Arduino SD library, it was clear to see that the library had not been tested or optimised adequately enough to be used for the fast transferring of audio files from the microSD card to SPIFFS within our walking aid device. Discussion of these issues are widespread \cite{fat16lib_2011,drdooom_2019} with one GitHub user claiming that the SdFat library is ``85 times faster'' \cite{kas2_2018} than the Arduino SD library. Our own testing demonstrated transfer times of the 150 KB mp3 file from the microSD card to SPIFFS at around 150 seconds for the Arduino SD library, and around 12 seconds for the SdFat library. More information on this is viewable within the testing section of this document. But with such a stark difference in transfer rates, and with fast transfer rates being crucial for the prompt initialisation of our systems, we felt that the SdFat library was the most appropriate solution for our purposes.
-
-        \subsection{UML}
-        \label{subsec:uml}
-        
-            This section will break down the software systems utilised in the walking aid device into formal language representations. These will take the form of a class diagram, which will illustrate the relationships between each of classes developed for each system, and an activity diagram which will demonstrate the sequence of events that will take place in the system and how they are handled. We hope that this section will help the reader to understand the software system in a broken down, step-by-step manner and to gain an understanding of our rationale towards programming choices that helped us to fulfil the user requirements. The class diagrams will be followed by an explanation of the role of each class and its functions, with the activity diagram also being accompanied by a body of text that establishes in natural language the sequence of events that will take place in the software system and how they are being handled.
-
-            \subsubsection{Class Diagram}
-            \label{subsubsec:class_diagram}
-
-                To demonstrate how the classes within the software are laid out and how they communicate with one another to make up the whole system, we include here a class diagram. Following the class diagram, we will include documentation on what each class and their functions towards benefitting the functionality of the system. 
-
-                \clearpage
-                \thispagestyle{empty}
-                \begin{landscape}
-                    \input{graphics/walking_aid_uml.tex}
-                \end{landscape}
                 
     \section{Wearable Device}
     \label{sec:wearabledevice}
@@ -87,10 +71,64 @@
 
            Ultimately, we decided to implement the single-tap detection system within the wearable device to detect when the user was walking. We make use of a system that checks if the user makes 5 steps within a 10-second period in order to meet the user requirement of reminders only being played if the user has moved over a metre without their walking aid. If they do, then we send a message to the walking aid device to play an audio reminder to the patient to take their walking aid with them if the walking aid device has not detected movement. The main benefits to this system is its versatility to be worn on the user's wrist or ankle, and it provided the foundations to the similar system that has been developed for the walking aid device. In future, we would like to explore the use of the aforementioned ultra-wideband technology (UWB). Due to its distance measurement error being within 10 cm \cite{uwb_accuracy}, it would have been interesting to implement this within the wearable device, and implement it into the walking aid device working in conjunction with an accelerometer to detect if the walking aid is moving.
 
+    \section{UML}
+    \label{sec:uml}
+    
+        This section will break down the software systems utilised in the walking aid and wearable devices into formal language representations. These will take the form of a class diagram, which will illustrate the relationships between each of classes developed for each system, and an activity diagram which will demonstrate the sequence of events that will take place in the system and how they are handled. We hope that this section will help the reader to understand the software system in a broken down, step-by-step manner and to gain an understanding of our rationale towards programming choices that helped us to fulfil the user requirements. The class diagrams will be followed by an explanation of the role of each class and its functions, with the activity diagram also being accompanied by a body of text that establishes in natural language the sequence of events that will take place in the software system and how they are processed.
+
+        \subsection{Walking Aid Device}
+        \label{subsec:walking_aid_device_uml}
+
+            \subsubsection{Class Diagram}
+            \label{subsubsec:class_diagram}
+
+                To demonstrate how the classes within the software are laid out and how they communicate with one another to make up the whole system, we include here a class diagram. Following the class diagram, we will include documentation on each class and their functions towards benefitting the functionality of the system. 
+
+                \clearpage
+                \thispagestyle{empty}
+                \begin{landscape}
+                    \input{graphics/walking_aid_uml.tex}
+                \end{landscape}
+
+                \paragraph{WalkAidSketch}\mbox{}
+
+                    This is the main controller of the whole walking aid system and provides the functionality of the setup and loop functions that are required by Arduino systems. It has a composition relationship with the WalkAidAccelerometer, WalkAidCommunications, and the WalkAidAudio classes. Thus, the WalkAidSketch class cannot function without the existence of those classes, and those classes cannot function without the existence of the WalkAidSketch class. The WalkAidSketch class handles the initialisation of the other classes within the setup function, before ensuring that each time the loop function is called, checks are made to see if reminder messages have been received and if so, are responded to accordingly.
+
+                \paragraph{WalkAidAccelerometer}\mbox{}
+
+                    The WalkAidAccelerometer class is responsible for the initialisation of the accelerometer, and the reading of the accelerometer data. The class keeps track of when a step was last taken to avoid the audio reminder being played if the walking aid is moving. It has a composition relationship with the ADXL345 class meaning that neither class could function properly without the existence of each other. This class also relies on the existence of the WalkAidSketch to exist itself.
+
+                \paragraph{WalkAidCommunications}\mbox{}
+
+                    The WalkAidCommunications class is responsible for the initialisation of the ESP-Now communication protocol to establish a connection to the wearable device. When a reminder message is received, the reminder variable is set to true to allow the WalkAidSketch to check for a step in the previous period of time or in the future period of time. This class is initialised in the WalkAidSketch class and does not exist unless that class exists. Therefore, it is part of a composition relationship with the WalkAidSketch.
+
+                \paragraph{WalkAidAudio}\mbox{}
+
+                    This class handles the initialisation of the SDToSPIFFS class to allow for the transferring of an audio SD file to the SPIFFS memory. Afterwards, it initialises all the necessary classes to interpret the mp3 audio file and play it. This class creates pointers to the AudioFileSourceID3, AudioFileSourceSPIFFS, AudioGeneratorMP3, and AudioOutputI2S classes. It has an aggregation relationship with these classes as it is responsible for their deletion due to them being pointer variables. It also holds a composition relationship with the SDToSPIFFS class, which is utilised for the transferring of the audio file from the SD card to the SPIFFS storage. 
+
+                \paragraph{SDToSPIFFS}\mbox{}
+
+                    This class is responsible only for the transferring of the SD card audio file to the SPIFFS storage. It is part of a composition relationship with the WalkAidAudio class, due to it relying on being initialised in that class to exist. It also holds a composition relationship with the SdFat class, which we discussed in section \ref{subsec:sdfat}, to handle the more intricate SD card functions. 
+                
+                \newpage
+
+            \subsubsection{Activity Diagram}
+            \label{subsubsec:walking_aid_activity}
+
+                The following is an activity diagram that demonstrates the workflow of the walking aid software system. It demonstrates in a graphical way how the system operates in a step-by-step manner. Accompanying the activity diagram will be a body of text that will describe the overview of the activity diagram in natural language.
+
+                \input{graphics/walking_aid_activity.tex}
+                \newpage
+
     \section{Class Documentation - Walking Aid}
     \label{sec:class_documentation_walk_aid}\mbox{}
 
         \input{chapter/docs/walking_aid/sdtospiffs.tex}
-
-
-
+        \newpage
+        \input{chapter/docs/walking_aid/walkaidaccel.tex}
+        \newpage
+        \input{chapter/docs/walking_aid/walkaidaudio.tex}
+        \newpage
+        \input{chapter/docs/walking_aid/walkaidcomms.tex}
+        \newpage
+        \input{chapter/docs/walking_aid/sketch.tex}

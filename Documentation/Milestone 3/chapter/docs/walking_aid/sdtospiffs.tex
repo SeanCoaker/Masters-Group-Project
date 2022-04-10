@@ -3,39 +3,46 @@
 
     \ttfamily{}
 
-    \#include <SdFat.h>
-
-    \#include "SPIFFS.h"\\
+    \#include <SDToSPIFFS.h>\\
 
     \rmfamily{}
 
-    \paragraph{Private Attributes}\mbox{}
+    \paragraph{Private Attributes}\mbox{}\\
 
         \begin{itemize}
             \item const char * \textbf{SDPath}
+            
+                \quad \quad \textit{Audio file to be transferred.}
+
             \item const char * \textbf{SPIFFSPath}
-            \item SdFat \textbf{sd}\\
+            
+                \quad \quad \textit{Name to give the audio file being saved in SPIFFS.}
+
+            \item SdFat \textbf{sd}
+            
+                \quad \quad \textit{SD Card object.}\\
+
         \end{itemize}
 
 
-    \paragraph{Public Member Functions}\mbox{}
+    \paragraph{Public Member Functions}\mbox{}\\
 
         \begin{itemize}
             \item \textbf{SDToSPIFFS}() 
             
-                \textit{Construct a new SDToSPIFFS object.}
+                \quad \quad \textit{Construct a new SDToSPIFFS object.}
 
             \item void \textbf{init}(const char *SDPath, const char* SPIFFSPath) 
             
-                \textit{Initalises the object ready for the transferring of files from SD card to SPIFFS.}
+                \quad \quad \textit{Initalises the object ready for the transferring of files from SD card to SPIFFS.}
 
-            \item \textbf{loadSDFileToSPIFFS}() 
+            \item void \textbf{loadSDFileToSPIFFS}() 
             
-                \textit{Handles the loading of the SD card file to SPIFFS.}
+                \quad \quad \textit{Handles the loading of the SD card file to SPIFFS.}
 
             \item const char *\textbf{getSPIFFSPath}() 
             
-                \textit{Returns the path to the SPIFFS file.}\\
+                \quad \quad \textit{Returns the path to the SPIFFS file.}\\
         \end{itemize}
 
     \subsubsection{Constructor \& Destructor Documentation}\mbox{}
@@ -57,7 +64,7 @@
                 \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const char * SDPath,\\ 
                 \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const char * SPIFFSPath )}\\
 
-            \rmfamily{Returns the path to the SPIFFS file.}
+            \rmfamily{Initialises the object ready for the transferring of files from SD card to SPIFFs.}
 
             \textbf{Parameters}
 

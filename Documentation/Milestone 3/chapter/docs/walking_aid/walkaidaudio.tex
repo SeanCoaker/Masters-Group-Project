@@ -1,0 +1,92 @@
+\subsection{WalkAidAudio Class Reference}
+\label{subsec:WalkAidAudio}\mbox{}
+
+    \ttfamily{}
+
+    \#include <WalkAidAudio.h>\\
+
+    \rmfamily{}
+
+    \paragraph{Private Attributes}\mbox{}\\
+
+        \begin{itemize}
+            \item AudioGeneratorMP3 * \textbf{mp3}
+            
+                \quad \quad \textit{The generator of the mp3 player.}
+
+            \item AudioFileSourceSPIFFS * \textbf{file}
+            
+                \quad \quad \textit{The source file of the SPIFFS audio file.}
+
+            \item AudioOutputI2S * \textbf{out}
+            
+                \quad \quad \textit{The output of the mp3 player.}
+
+            \item AudioFileSourceID3 * \textbf{id3}
+            
+                \quad \quad \textit{Metadata handler for the mp3 file.}
+
+            \item SDToSPIFFS \textbf{s2s}
+            
+                \quad \quad \textit{Object to handle the SD to SPIFFS transfer.}\\
+
+        \end{itemize}
+
+
+    \paragraph{Public Member Functions}\mbox{}\\
+
+        \begin{itemize}
+            \item \textbf{WalkAidAudio}() 
+            
+                \quad \quad \textit{Construct a new Walk Aid Audio object.}
+
+            \item void \textbf{init}(const char *SDPath, const char *SPIFFSPath) 
+            
+                \quad \quad \textit{Initialises the accelerometer with the specified values in parameter fields.}
+
+            \item void \textbf{play}() 
+            
+                \quad \quad \textit{Plays the SPIFFS audio file.}\\
+
+        \end{itemize}
+
+    \subsubsection{Constructor \& Destructor Documentation}\mbox{}
+
+
+        \paragraph{WalkAidAudio()}\mbox{}\\
+
+            \ttfamily{WalkAidAudio::WalkAidAudio (  )}\\
+
+            \rmfamily{Construct a new Walk Aid Audio object.}\\
+
+
+    \subsubsection{Member Function Documentation}\mbox{}
+
+
+        \paragraph{init()}\mbox{}\\
+
+            \ttfamily{void WalkAidAudio::init (\\
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const char * SDPath,\\ 
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const char * SPIFFSPath)}\\
+
+            \rmfamily{Initialises the walk aid audio system by calling the transfer of SD file to SPIFFS and generating the}
+
+            mp3 code.
+
+            \textbf{Parameters}
+
+            \vspace{1em}
+            \begin{tabular}{| l | l |} 
+                \hline
+                SDPath & Path to the SD card audio file.\\ 
+                \hline
+                SPIFFSPath & Name of the SPIFFS audio file to be created.\\ 
+                \hline
+            \end{tabular}\\~\\
+
+
+        \paragraph{play()}\mbox{}\\
+
+            \ttfamily{void WalkAidAudio::play (  )}\\
+
+            \rmfamily{Plays the SPIFFS audio file.}\\

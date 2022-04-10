@@ -1,0 +1,159 @@
+\subsection{WalkAidAccelerometer Class Reference}
+\label{subsec:WalkAidAccelerometer}\mbox{}
+
+    \ttfamily{}
+
+    \#include <WalkAidAccelerometer.h>\\
+
+    \rmfamily{}
+
+    \paragraph{Private Attributes}\mbox{}\\
+
+        \begin{itemize}
+            \item double \textbf{singleTapThresholdValue}
+            
+                \quad \quad \textit{Threshold for single tap to be detected.}
+
+            \item double \textbf{singleTapThresholdDuration}
+            
+                \quad \quad \textit{Duration for single tap to be above threshold to be detected.}
+
+            \item double \textbf{doubleTapLatency}
+            
+                \quad \quad \textit{Time between a tap event and when the reading for a double tap starts.}
+
+            \item double \textbf{doubleTapWindow}
+            
+                \quad \quad \textit{Defines how long a double tap is checked for.}
+
+            \item bool \textbf{stepDetected}
+            
+                \quad \quad \textit{Defines if a step has been detected.}
+
+            \item long \textbf{lastStepTime}
+            
+                \quad \quad \textit{The last time a step was detected.}
+
+            \item unsigned long \textbf{period}
+            
+                \quad \quad \textit{The period to check previously and in future for detected steps.}
+
+            \item ADXL345 \textbf{adxl}
+            
+                \quad \quad \textit{Accelerometer object.}\\
+
+        \end{itemize}
+
+
+    \paragraph{Public Member Functions}\mbox{}\\
+
+        \begin{itemize}
+            \item \textbf{WalkAidAccelerometer}() 
+            
+                \quad \quad \textit{Construct a new Walk Aid Accelerometer object.}
+
+            \item void \textbf{init}(double singleTapThresholdValue, double singleTapThresholdDuration
+            , \\double doubleTapLatency, double doubleTapWindow, unsigned long period) 
+            
+                \quad \quad \textit{Initialises the accelerometer with the specified values in parameter fields.}
+
+            \item bool \textbf{checkForStep}() 
+            
+                \quad \quad \textit{Checks if a tap event was detected by the accelerometer.}
+
+            \item bool \textbf{isStepDetected}() 
+            
+                \quad \quad \textit{Returns the value of stepDetected.}
+
+            \item long \textbf{getLastStepTime}() 
+            
+                \quad \quad \textit{Get the time the last step was taken.}
+
+            \item unsigned long \textbf{getPeriod}() 
+            
+                \quad \quad \textit{Get the developer's specified period to check for steps.}\\
+
+        \end{itemize}
+
+    \subsubsection{Constructor \& Destructor Documentation}\mbox{}
+
+
+        \paragraph{WalkAidAccelerometer()}\mbox{}\\
+
+            \ttfamily{WalkAidAccelerometer::WalkAidAccelerometer (  )}\\
+
+            \rmfamily{Construct a new Walk Aid Accelerometer object.}\\
+
+
+    \subsubsection{Member Function Documentation}\mbox{}
+
+
+        \paragraph{init()}\mbox{}\\
+
+            \ttfamily{void WalkAidAccelerometer::init (\\
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad double singleTapThresholdValue,\\ 
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad double singleTapThresholdDuration,\\ 
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad double doubleTapLatency,\\
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad double doubleTapWindow,\\
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad unsigned long period)}\\
+
+            \rmfamily{Initialises the accelerometer with the specified values in parameter fields.}
+
+            \textbf{Parameters}
+
+            \vspace{1em}
+            \begin{tabular}{| l | l |} 
+                \hline
+                singleTapThresholdValue & Threshold for single tap to be detected.\\ 
+                \hline
+                singleTapThresholdDuration & Duration that tap must be above threshold to be detected.\\ 
+                \hline
+                doubleTapLatency & Time after single tap until double tap is measured.\\ 
+                \hline
+                doubleTapWindow & How long double tap is checked for.\\ 
+                \hline
+                period & Time period to check for steps before and after receiving message.\\ 
+                \hline
+            \end{tabular}\\~\\
+
+
+        \paragraph{checkForStep()}\mbox{}\\
+
+            \ttfamily{bool WalkAidAccelerometer::checkForStep (  )}\\
+
+            \rmfamily{Checks if a tap event was detected by the accelerometer.}\\
+
+            \textbf{Returns}
+
+                \quad \quad true if tap is detected, false otherwise.\\
+
+
+        \paragraph{isStepDetected()}\mbox{}\\
+
+            \ttfamily{bool WalkAidAccelerometer::isStepDetected (  )}\\
+
+            \rmfamily{Returns the value of stepDetected.}
+
+            \textbf{Returns}
+
+                \quad \quad bool stepDetected\\
+
+        \paragraph{getLastStepTime()}\mbox{}\\
+
+            \ttfamily{long WalkAidAccelerometer::getLastStepTime (  )}\\
+
+            \rmfamily{Get the time the last step was taken.}
+
+            \textbf{Returns}
+
+                \quad \quad long lastStepTime.\\
+
+        \paragraph{getPeriod()}\mbox{}\\
+
+            \ttfamily{unsigned long WalkAidAccelerometer::getPeriod (  )}\\
+
+            \rmfamily{Get the developer's specified period to check for steps.}
+
+            \textbf{Returns}
+
+                \quad \quad unsigned long period.\\

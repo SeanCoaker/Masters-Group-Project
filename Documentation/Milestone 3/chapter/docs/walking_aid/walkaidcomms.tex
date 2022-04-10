@@ -1,0 +1,84 @@
+\subsection{WalkAidCommunications Class Reference}
+\label{subsec:WalkAidCommunications}\mbox{}
+
+    \ttfamily{}
+
+    \#include <WalkAidCommunications.h>\\
+
+    \rmfamily{}
+
+    \paragraph{Private Attributes}\mbox{}\\
+
+        \begin{itemize}
+            \item bool \textbf{reminder}
+            
+                \quad \quad \textit{Whether a reminder message has been received.}\\
+
+        \end{itemize}
+
+
+    \paragraph{Public Member Functions}\mbox{}\\
+
+        \begin{itemize}
+            \item \textbf{WalkAidCommunications}() 
+            
+                \quad \quad \textit{Construct a new Walk Aid Communications object.}
+
+            \item void \textbf{init}()
+            
+                \quad \quad \textit{Initialise communication to the wearable device.}
+
+            \item bool \textbf{getReminder}() 
+            
+                \quad \quad \textit{Get whether a reminder has been received or not.}
+                
+            \item void \textbf{setReminder}(bool reminder) 
+            
+                \quad \quad \textit{Set whether a reminder has been received or not.}\\
+
+        \end{itemize}
+
+    \subsubsection{Constructor \& Destructor Documentation}\mbox{}
+
+
+        \paragraph{WalkAidCommunications()}\mbox{}\\
+
+            \ttfamily{WalkAidCommunications::WalkAidCommunications (  )}\\
+
+            \rmfamily{Construct a new Walk Aid Communications object.}\\
+
+
+    \subsubsection{Member Function Documentation}\mbox{}
+
+
+        \paragraph{init()}\mbox{}\\
+
+            \ttfamily{void WalkAidCommunications::init ()}\\
+
+            \rmfamily{Initialise communication to the wearable device.}
+
+        \paragraph{getReminder()}\mbox{}\\
+
+            \ttfamily{bool WalkAidCommunications::getReminder (  )}\\
+
+            \rmfamily{Get whether a reminder has been received or not.}
+
+            \textbf{Returns}
+
+                \quad \quad bool reminder.\\
+
+
+        \paragraph{setReminder()}\mbox{}\\
+
+            \ttfamily{void WalkAidCommunications::setReminder (  )}\\
+
+            \rmfamily{Set whether a reminder has been received or not.}
+
+            \textbf{Parameters}
+
+            \vspace{1em}
+            \begin{tabular}{| l | l |} 
+                \hline
+                reminder & true if reminder received, false otherwise.\\ 
+                \hline
+            \end{tabular}\\~\\

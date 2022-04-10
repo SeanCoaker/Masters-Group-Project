@@ -8,36 +8,36 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classWalkAidAccelerometer_a143db0d84532cd5fdfc42e49cc3eefc5}{Walk\+Aid\+Accelerometer}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new Walk Aid Accelerometer object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classWalkAidAccelerometer_a39d32299a305f121cffbb46f1c2b356b}{init}} (double \mbox{\hyperlink{classWalkAidAccelerometer_a5c71d8962b4f3866eadfa7ab155b0a7f}{single\+Tap\+Threshold\+Value}}, double \mbox{\hyperlink{classWalkAidAccelerometer_a27fe73a78b782bf963b945e2bf22f45b}{single\+Tap\+Threshold\+Duration}}, double \mbox{\hyperlink{classWalkAidAccelerometer_afdde14cafa256e0340845d469ce8662a}{double\+Tap\+Latency}}, double \mbox{\hyperlink{classWalkAidAccelerometer_a03949d009a0eee0cf05caa2878a8cc1f}{double\+Tap\+Window}}, unsigned long \mbox{\hyperlink{classWalkAidAccelerometer_ac797699c8f440ffb69ddd023d1182341}{period}})
-\item 
+\begin{DoxyCompactList}\small\item\em Initialises the accelerometer with the specified values in parameter fields. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classWalkAidAccelerometer_a9d0768969402792f7e27c216556da022}{check\+For\+Step}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a tap event was detected by the accelerometer. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classWalkAidAccelerometer_a3f5938ef153f384da47092d0405f2493}{is\+Step\+Detected}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the value of step\+Detected. \end{DoxyCompactList}\item 
 long \mbox{\hyperlink{classWalkAidAccelerometer_a62336e82828394e53b8ba2fe7d7fdb8d}{get\+Last\+Step\+Time}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the time the last step was taken. \end{DoxyCompactList}\item 
 unsigned long \mbox{\hyperlink{classWalkAidAccelerometer_ac98ab6c6636a585f62f0f2ab032b57ad}{get\+Period}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get the developer\textquotesingle{}s specified period to check for steps. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 double \mbox{\hyperlink{classWalkAidAccelerometer_a5c71d8962b4f3866eadfa7ab155b0a7f}{single\+Tap\+Threshold\+Value}}
-\item 
+\begin{DoxyCompactList}\small\item\em Threshold for single tap to be detected. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classWalkAidAccelerometer_a27fe73a78b782bf963b945e2bf22f45b}{single\+Tap\+Threshold\+Duration}}
-\item 
+\begin{DoxyCompactList}\small\item\em Duration for single tap to be above threshold to be detected. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classWalkAidAccelerometer_afdde14cafa256e0340845d469ce8662a}{double\+Tap\+Latency}}
-\item 
+\begin{DoxyCompactList}\small\item\em Time between a tap event and when the reading for a double tap starts. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{classWalkAidAccelerometer_a03949d009a0eee0cf05caa2878a8cc1f}{double\+Tap\+Window}}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines how long a double tap is checked for. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classWalkAidAccelerometer_ad35a9901ad132cd9f93b7937dbb3192f}{step\+Detected}}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines if a step has been detected. \end{DoxyCompactList}\item 
 long \mbox{\hyperlink{classWalkAidAccelerometer_a85d6758b11a34762a5c838abc2ba6820}{last\+Step\+Time}}
-\item 
+\begin{DoxyCompactList}\small\item\em The last time a step was detected. \end{DoxyCompactList}\item 
 unsigned long \mbox{\hyperlink{classWalkAidAccelerometer_ac797699c8f440ffb69ddd023d1182341}{period}}
-\item 
+\begin{DoxyCompactList}\small\item\em The period to check previously and in future for detected steps when a message is received. \end{DoxyCompactList}\item 
 ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e255a29}{adxl}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Accelerometer object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -49,6 +49,10 @@ ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e25
 
 
 
+Construct a new Walk Aid Accelerometer object. 
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classWalkAidAccelerometer_a9d0768969402792f7e27c216556da022}\label{classWalkAidAccelerometer_a9d0768969402792f7e27c216556da022}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!checkForStep@{checkForStep}}
@@ -56,30 +60,75 @@ ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e25
 \doxysubsubsection{\texorpdfstring{checkForStep()}{checkForStep()}}
 {\footnotesize\ttfamily bool Walk\+Aid\+Accelerometer\+::check\+For\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Checks if a tap event was detected by the accelerometer. 
+
+\begin{DoxyReturn}{Returns}
+true if tap is detected, false otherwise. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classWalkAidAccelerometer_a62336e82828394e53b8ba2fe7d7fdb8d}\label{classWalkAidAccelerometer_a62336e82828394e53b8ba2fe7d7fdb8d}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!getLastStepTime@{getLastStepTime}}
 \index{getLastStepTime@{getLastStepTime}!WalkAidAccelerometer@{WalkAidAccelerometer}}
 \doxysubsubsection{\texorpdfstring{getLastStepTime()}{getLastStepTime()}}
 {\footnotesize\ttfamily long Walk\+Aid\+Accelerometer\+::get\+Last\+Step\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the time the last step was taken. 
+
+\begin{DoxyReturn}{Returns}
+long last\+Step\+Time. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classWalkAidAccelerometer_ac98ab6c6636a585f62f0f2ab032b57ad}\label{classWalkAidAccelerometer_ac98ab6c6636a585f62f0f2ab032b57ad}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!getPeriod@{getPeriod}}
 \index{getPeriod@{getPeriod}!WalkAidAccelerometer@{WalkAidAccelerometer}}
 \doxysubsubsection{\texorpdfstring{getPeriod()}{getPeriod()}}
 {\footnotesize\ttfamily unsigned long Walk\+Aid\+Accelerometer\+::get\+Period (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Get the developer\textquotesingle{}s specified period to check for steps. 
+
+\begin{DoxyReturn}{Returns}
+unsigned long period. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classWalkAidAccelerometer_a39d32299a305f121cffbb46f1c2b356b}\label{classWalkAidAccelerometer_a39d32299a305f121cffbb46f1c2b356b}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!init@{init}}
 \index{init@{init}!WalkAidAccelerometer@{WalkAidAccelerometer}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily void Walk\+Aid\+Accelerometer\+::init (\begin{DoxyParamCaption}\item[{double}]{single\+Tap\+Threshold\+Value,  }\item[{double}]{single\+Tap\+Threshold\+Duration,  }\item[{double}]{double\+Tap\+Latency,  }\item[{double}]{double\+Tap\+Window,  }\item[{unsigned long}]{period }\end{DoxyParamCaption})}
 
+
+
+Initialises the accelerometer with the specified values in parameter fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em single\+Tap\+Threshold\+Value} & Threshold for single tap to be detected. \\
+\hline
+{\em single\+Tap\+Threshold\+Duration} & Duration that tap must be above threshold to be detected. \\
+\hline
+{\em double\+Tap\+Latency} & Time after single tap until double tap is measured. \\
+\hline
+{\em double\+Tap\+Window} & How long double tap is checked for. \\
+\hline
+{\em period} & Time period to check for steps before and after receiving message. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classWalkAidAccelerometer_a3f5938ef153f384da47092d0405f2493}\label{classWalkAidAccelerometer_a3f5938ef153f384da47092d0405f2493}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!isStepDetected@{isStepDetected}}
 \index{isStepDetected@{isStepDetected}!WalkAidAccelerometer@{WalkAidAccelerometer}}
 \doxysubsubsection{\texorpdfstring{isStepDetected()}{isStepDetected()}}
 {\footnotesize\ttfamily bool Walk\+Aid\+Accelerometer\+::is\+Step\+Detected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Returns the value of step\+Detected. 
+
+\begin{DoxyReturn}{Returns}
+bool step\+Detected 
+\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}
@@ -89,11 +138,19 @@ ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e25
 \doxysubsubsection{\texorpdfstring{adxl}{adxl}}
 {\footnotesize\ttfamily ADXL345 Walk\+Aid\+Accelerometer\+::adxl\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Accelerometer object. 
+
 \mbox{\Hypertarget{classWalkAidAccelerometer_afdde14cafa256e0340845d469ce8662a}\label{classWalkAidAccelerometer_afdde14cafa256e0340845d469ce8662a}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!doubleTapLatency@{doubleTapLatency}}
 \index{doubleTapLatency@{doubleTapLatency}!WalkAidAccelerometer@{WalkAidAccelerometer}}
 \doxysubsubsection{\texorpdfstring{doubleTapLatency}{doubleTapLatency}}
 {\footnotesize\ttfamily double Walk\+Aid\+Accelerometer\+::double\+Tap\+Latency\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time between a tap event and when the reading for a double tap starts. 
 
 \mbox{\Hypertarget{classWalkAidAccelerometer_a03949d009a0eee0cf05caa2878a8cc1f}\label{classWalkAidAccelerometer_a03949d009a0eee0cf05caa2878a8cc1f}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!doubleTapWindow@{doubleTapWindow}}
@@ -101,11 +158,19 @@ ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e25
 \doxysubsubsection{\texorpdfstring{doubleTapWindow}{doubleTapWindow}}
 {\footnotesize\ttfamily double Walk\+Aid\+Accelerometer\+::double\+Tap\+Window\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Defines how long a double tap is checked for. 
+
 \mbox{\Hypertarget{classWalkAidAccelerometer_a85d6758b11a34762a5c838abc2ba6820}\label{classWalkAidAccelerometer_a85d6758b11a34762a5c838abc2ba6820}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!lastStepTime@{lastStepTime}}
 \index{lastStepTime@{lastStepTime}!WalkAidAccelerometer@{WalkAidAccelerometer}}
 \doxysubsubsection{\texorpdfstring{lastStepTime}{lastStepTime}}
 {\footnotesize\ttfamily long Walk\+Aid\+Accelerometer\+::last\+Step\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The last time a step was detected. 
 
 \mbox{\Hypertarget{classWalkAidAccelerometer_ac797699c8f440ffb69ddd023d1182341}\label{classWalkAidAccelerometer_ac797699c8f440ffb69ddd023d1182341}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!period@{period}}
@@ -113,11 +178,19 @@ ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e25
 \doxysubsubsection{\texorpdfstring{period}{period}}
 {\footnotesize\ttfamily unsigned long Walk\+Aid\+Accelerometer\+::period\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+The period to check previously and in future for detected steps when a message is received. 
+
 \mbox{\Hypertarget{classWalkAidAccelerometer_a27fe73a78b782bf963b945e2bf22f45b}\label{classWalkAidAccelerometer_a27fe73a78b782bf963b945e2bf22f45b}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!singleTapThresholdDuration@{singleTapThresholdDuration}}
 \index{singleTapThresholdDuration@{singleTapThresholdDuration}!WalkAidAccelerometer@{WalkAidAccelerometer}}
 \doxysubsubsection{\texorpdfstring{singleTapThresholdDuration}{singleTapThresholdDuration}}
 {\footnotesize\ttfamily double Walk\+Aid\+Accelerometer\+::single\+Tap\+Threshold\+Duration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Duration for single tap to be above threshold to be detected. 
 
 \mbox{\Hypertarget{classWalkAidAccelerometer_a5c71d8962b4f3866eadfa7ab155b0a7f}\label{classWalkAidAccelerometer_a5c71d8962b4f3866eadfa7ab155b0a7f}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!singleTapThresholdValue@{singleTapThresholdValue}}
@@ -125,11 +198,19 @@ ADXL345 \mbox{\hyperlink{classWalkAidAccelerometer_a60ac86ee9ca0610825e533cc9e25
 \doxysubsubsection{\texorpdfstring{singleTapThresholdValue}{singleTapThresholdValue}}
 {\footnotesize\ttfamily double Walk\+Aid\+Accelerometer\+::single\+Tap\+Threshold\+Value\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Threshold for single tap to be detected. 
+
 \mbox{\Hypertarget{classWalkAidAccelerometer_ad35a9901ad132cd9f93b7937dbb3192f}\label{classWalkAidAccelerometer_ad35a9901ad132cd9f93b7937dbb3192f}} 
 \index{WalkAidAccelerometer@{WalkAidAccelerometer}!stepDetected@{stepDetected}}
 \index{stepDetected@{stepDetected}!WalkAidAccelerometer@{WalkAidAccelerometer}}
 \doxysubsubsection{\texorpdfstring{stepDetected}{stepDetected}}
 {\footnotesize\ttfamily bool Walk\+Aid\+Accelerometer\+::step\+Detected\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Defines if a step has been detected. 
 
 
 
