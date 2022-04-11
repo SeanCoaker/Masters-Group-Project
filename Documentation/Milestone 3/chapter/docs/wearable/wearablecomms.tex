@@ -1,0 +1,66 @@
+\subsection{WearableCommunications Class Reference}
+\label{subsec:WearableCommunications}\mbox{}
+
+    \ttfamily{}
+
+    \#include <WearableCommunications.h>\\
+
+    \rmfamily{}
+
+    \paragraph{Private Attributes}\mbox{}\\
+
+        \begin{itemize}
+            \item String \textbf{message}
+            
+                \quad \quad \textit{The message to send to the peer.}
+                
+            \item uint8\_t \textbf{*broadcastAddress}
+            
+                \quad \quad \textit{The MAC address of the peer.}\\
+
+        \end{itemize}
+
+
+    \paragraph{Public Member Functions}\mbox{}\\
+
+        \begin{itemize}
+            \item \textbf{WearableCommunications}() 
+            
+                \quad \quad \textit{Construct a new Wearable Communications object.}
+
+            \item void \textbf{init}(String message, uint8\_t broadcastAddress[])
+            
+                \quad \quad \textit{Initialise ESP-Now and peer device info, and set on send message callback function.}
+                
+            \item void \textbf{sendReminderMessage}() 
+            
+                \quad \quad \textit{Send the message to the walking aid device.}\\
+
+        \end{itemize}
+
+    \subsubsection{Constructor \& Destructor Documentation}\mbox{}
+
+
+        \paragraph{WearableCommunications()}\mbox{}\\
+
+            \ttfamily{WearableCommunications::WearableCommunications (  )}\\
+
+            \rmfamily{Construct a new Wearable Communications object.}\\
+
+
+    \subsubsection{Member Function Documentation}\mbox{}
+
+
+        \paragraph{init()}\mbox{}\\
+
+            \ttfamily{void WearableCommunications::init (\\
+            \null \quad \quad \quad \quad \quad \quad \quad \quad \quad String message,\\ 
+            \null \quad \quad \quad \quad \quad \quad \quad \quad \quad uint8\_t broadcastAddress[])}\\
+
+            \rmfamily{Initialise ESP-Now and peer device info, and set on send message callback function.}\\
+
+        \paragraph{sendReminderMessage()}\mbox{}\\
+
+            \ttfamily{bool WearableCommunications::getReminder (  )}\\
+
+            \rmfamily{Send the message to the walking aid device.}\\

@@ -1,0 +1,139 @@
+\subsection{WearableAccelerometer Class Reference}
+\label{subsec:WearableAccelerometer}\mbox{}
+
+    \ttfamily{}
+
+    \#include <WearableAccelerometer.h>\\
+
+    \rmfamily{}
+
+    \paragraph{Private Attributes}\mbox{}\\
+
+        \begin{itemize}
+            \item double \textbf{singleTapThresholdValue}
+            
+                \quad \quad \textit{Threshold for single tap to be detected.}
+
+            \item double \textbf{singleTapThresholdDuration}
+            
+                \quad \quad \textit{Duration for single tap to be above threshold to be detected.}
+
+            \item double \textbf{doubleTapLatency}
+            
+                \quad \quad \textit{Time between a tap event and when the reading for a double tap starts.}
+
+            \item double \textbf{doubleTapWindow}
+            
+                \quad \quad \textit{Defines how long a double tap is checked for.}
+
+            \item ADXL345 \textbf{adxl}
+            
+                \quad \quad \textit{Accelerometer object.}
+
+            \item unsigned long \textbf{startMillis}
+            
+                \quad \quad \textit{Keeps track of when the first step was taken.}
+
+            \item unsigned long \textbf{currentMillis}
+            
+                \quad \quad \textit{Stores the time of the current step being taken.}
+
+            \item unsigned long \textbf{period}
+            
+                \quad \quad \textit{The period to check previously and in future for detected steps.}
+                
+            \item bool \textbf{stepTimerStarted}
+            
+                \quad \quad \textit{Stores if the timer has been started or not.}
+                
+            \item int \textbf{steps}
+            
+                \quad \quad \textit{Acts as the step counter.}\\
+
+        \end{itemize}
+
+
+    \paragraph{Public Member Functions}\mbox{}\\
+
+        \begin{itemize}
+            \item \textbf{WearableAccelerometer}() 
+            
+                \quad \quad \textit{Construct a new Wearable Accelerometer object.}
+
+            \item void \textbf{init}(double singleTapThresholdValue, double singleTapThresholdDuration
+            , \\double doubleTapLatency, double doubleTapWindow, unsigned long period) 
+            
+                \quad \quad \textit{Initialises the accelerometer with the specified values in parameter fields.}
+
+            \item bool \textbf{poll}() 
+            
+                \quad \quad \textit{Polls the accelerometer to see if a single-tap has been detected. Calls the addStepToCounter function if it has.}
+
+            \item bool \textbf{addStepToCounter}() 
+            
+                \quad \quad \textit{Increments the step counter. If the it has been longer than the set period of time since the first step, then reset the time of the first step and reset the step counter. If not, and the step counter = 5 reset the step counter and time of first step, and return true.}\\
+
+        \end{itemize}
+
+    \subsubsection{Constructor \& Destructor Documentation}\mbox{}
+
+
+        \paragraph{WearableAccelerometer()}\mbox{}\\
+
+            \ttfamily{WearableAccelerometer::WearableAccelerometer (  )}\\
+
+            \rmfamily{Construct a new Wearable Accelerometer object.}\\
+
+
+    \subsubsection{Member Function Documentation}\mbox{}
+
+
+        \paragraph{init()}\mbox{}\\
+
+            \ttfamily{void WearableAccelerometer::init (\\
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad double singleTapThresholdValue,\\ 
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad double singleTapThresholdDuration,\\ 
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad double doubleTapLatency,\\
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad double doubleTapWindow,\\
+                \null \quad \quad \quad \quad \quad \quad \quad \quad \quad unsigned long period)}\\
+
+            \rmfamily{Initialises the accelerometer with the specified values in parameter fields.}
+
+            \textbf{Parameters}
+
+            \vspace{1em}
+            \begin{tabular}{| l | l |} 
+                \hline
+                singleTapThresholdValue & Threshold for single tap to be detected.\\ 
+                \hline
+                singleTapThresholdDuration & Duration that tap must be above threshold to be detected.\\ 
+                \hline
+                doubleTapLatency & Time after single tap until double tap is measured.\\ 
+                \hline
+                doubleTapWindow & How long double tap is checked for.\\ 
+                \hline
+                period & Time period to check for steps before and after receiving message.\\ 
+                \hline
+            \end{tabular}\\~\\
+
+
+        \paragraph{poll()}\mbox{}\\
+
+            \ttfamily{bool WearableAccelerometer::poll (  )}\\
+
+            \rmfamily{Polls the accelerometer to see if a single-tap has been detected. Calls the addStepToCounter function if it has.}\\
+
+            \textbf{Returns}
+
+                \quad \quad The result of addStepToCounter.\\
+
+
+        \paragraph{addStepToCounter()}\mbox{}\\
+
+            \ttfamily{bool WearableAccelerometer::isStepDetected (  )}\\
+
+            \rmfamily{Increments the step counter. If the it has been longer than the set period of time since the first step, then reset the time of the first step and reset the step counter. If not, and the step counter = 5 reset the step counter and time of first step, and return true.}
+
+            \textbf{Returns}
+
+                \quad \quad true if 5 steps were detected within period of time, false otherwise.\\

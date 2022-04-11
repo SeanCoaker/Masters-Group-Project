@@ -1,0 +1,213 @@
+\hypertarget{classWearableAccelerometer}{}\doxysection{Wearable\+Accelerometer Class Reference}
+\label{classWearableAccelerometer}\index{WearableAccelerometer@{WearableAccelerometer}}
+
+
+{\ttfamily \#include $<$Wearable\+Accelerometer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWearableAccelerometer_a0b866d435f9bdfacb0fdc10fcac61a1a}{Wearable\+Accelerometer}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Wearable Accelerometer object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWearableAccelerometer_aca7ca68be8c5ebeba5cca52d4d662c42}{init}} (double \mbox{\hyperlink{classWearableAccelerometer_a330fd88d796a4e27cf2a72c4bb2bf4ef}{single\+Tap\+Threshold\+Value}}, double \mbox{\hyperlink{classWearableAccelerometer_aa7c7ef0b4fb80131b3a34be61f9f9e49}{single\+Tap\+Threshold\+Duration}}, double \mbox{\hyperlink{classWearableAccelerometer_a87c8162b30012c8096ff12669fb9ce36}{double\+Tap\+Latency}}, double \mbox{\hyperlink{classWearableAccelerometer_a314402bfbde6ea77f9bb9c825bd1ccd0}{double\+Tap\+Window}}, unsigned long \mbox{\hyperlink{classWearableAccelerometer_ab2a397b95de567e5601cc3aad6f55106}{period}})
+\begin{DoxyCompactList}\small\item\em Initialises the accelerometer with the specified values in parameter fields. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWearableAccelerometer_a795dc5a670e9f64e9f33eca9252658e4}{poll}} ()
+\begin{DoxyCompactList}\small\item\em Polls the accelerometer to see if a single-\/tap has been detected. Calls the add\+Step\+To\+Counter function if it has. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWearableAccelerometer_a6a0067436a856a536dcac6ceb80df2e0}{add\+Step\+To\+Counter}} ()
+\begin{DoxyCompactList}\small\item\em Increments the step counter. If the it has been longer than the set period of time since the first step, then reset the time of the first step and reset the step counter. If not, and the step counter = 5 reset the step counter and time of first step, and return true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classWearableAccelerometer_a330fd88d796a4e27cf2a72c4bb2bf4ef}{single\+Tap\+Threshold\+Value}}
+\begin{DoxyCompactList}\small\item\em Threshold for single tap to be detected. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classWearableAccelerometer_aa7c7ef0b4fb80131b3a34be61f9f9e49}{single\+Tap\+Threshold\+Duration}}
+\begin{DoxyCompactList}\small\item\em Duration for single tap to be above threshold to be detected. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classWearableAccelerometer_a87c8162b30012c8096ff12669fb9ce36}{double\+Tap\+Latency}}
+\begin{DoxyCompactList}\small\item\em Time between a tap event and when the reading for a double tap starts. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classWearableAccelerometer_a314402bfbde6ea77f9bb9c825bd1ccd0}{double\+Tap\+Window}}
+\begin{DoxyCompactList}\small\item\em Defines how long a double tap is checked for. \end{DoxyCompactList}\item 
+ADXL345 \mbox{\hyperlink{classWearableAccelerometer_a272659ad62e1e5e7d0411a7827799e36}{adxl}}
+\begin{DoxyCompactList}\small\item\em Accelerometer object. \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{classWearableAccelerometer_a686c44ab7cfb7c6243e59aca4082ce6e}{start\+Millis}}
+\begin{DoxyCompactList}\small\item\em Keeps track of when the first step was taken. \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{classWearableAccelerometer_a92cc3052706adeb431727d6a5fea6a73}{current\+Millis}}
+\begin{DoxyCompactList}\small\item\em Stores the time of the current step being taken. \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{classWearableAccelerometer_ab2a397b95de567e5601cc3aad6f55106}{period}}
+\begin{DoxyCompactList}\small\item\em The period of time that we should check for 5 steps. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWearableAccelerometer_a6c55400fdee992b217c04cafead56290}{step\+Timer\+Started}}
+\begin{DoxyCompactList}\small\item\em Stores if the timer has been started or not. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWearableAccelerometer_ad357ac780b9c72bf2e4a969ffac8e786}{steps}}
+\begin{DoxyCompactList}\small\item\em Acts as the step counter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWearableAccelerometer_a0b866d435f9bdfacb0fdc10fcac61a1a}\label{classWearableAccelerometer_a0b866d435f9bdfacb0fdc10fcac61a1a}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!WearableAccelerometer@{WearableAccelerometer}}
+\index{WearableAccelerometer@{WearableAccelerometer}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{WearableAccelerometer()}{WearableAccelerometer()}}
+{\footnotesize\ttfamily Wearable\+Accelerometer\+::\+Wearable\+Accelerometer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Wearable Accelerometer object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWearableAccelerometer_a6a0067436a856a536dcac6ceb80df2e0}\label{classWearableAccelerometer_a6a0067436a856a536dcac6ceb80df2e0}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!addStepToCounter@{addStepToCounter}}
+\index{addStepToCounter@{addStepToCounter}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{addStepToCounter()}{addStepToCounter()}}
+{\footnotesize\ttfamily bool Wearable\+Accelerometer\+::add\+Step\+To\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Increments the step counter. If the it has been longer than the set period of time since the first step, then reset the time of the first step and reset the step counter. If not, and the step counter = 5 reset the step counter and time of first step, and return true. 
+
+\begin{DoxyReturn}{Returns}
+true if 5 steps were detected within period of time, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classWearableAccelerometer_aca7ca68be8c5ebeba5cca52d4d662c42}\label{classWearableAccelerometer_aca7ca68be8c5ebeba5cca52d4d662c42}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!init@{init}}
+\index{init@{init}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Wearable\+Accelerometer\+::init (\begin{DoxyParamCaption}\item[{double}]{single\+Tap\+Threshold\+Value,  }\item[{double}]{single\+Tap\+Threshold\+Duration,  }\item[{double}]{double\+Tap\+Latency,  }\item[{double}]{double\+Tap\+Window,  }\item[{unsigned long}]{period }\end{DoxyParamCaption})}
+
+
+
+Initialises the accelerometer with the specified values in parameter fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em single\+Tap\+Threshold\+Value} & Threshold for single tap to be detected. \\
+\hline
+{\em single\+Tap\+Threshold\+Duration} & Duration that tap must be above threshold to be detected. \\
+\hline
+{\em double\+Tap\+Latency} & Time after single tap until double tap is measured. \\
+\hline
+{\em double\+Tap\+Window} & How long double tap is checked for. \\
+\hline
+{\em period} & Time period to check for steps before and after receiving message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWearableAccelerometer_a795dc5a670e9f64e9f33eca9252658e4}\label{classWearableAccelerometer_a795dc5a670e9f64e9f33eca9252658e4}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!poll@{poll}}
+\index{poll@{poll}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{poll()}{poll()}}
+{\footnotesize\ttfamily bool Wearable\+Accelerometer\+::poll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Polls the accelerometer to see if a single-\/tap has been detected. Calls the add\+Step\+To\+Counter function if it has. 
+
+\begin{DoxyReturn}{Returns}
+The result of add\+Step\+To\+Counter. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classWearableAccelerometer_a272659ad62e1e5e7d0411a7827799e36}\label{classWearableAccelerometer_a272659ad62e1e5e7d0411a7827799e36}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!adxl@{adxl}}
+\index{adxl@{adxl}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{adxl}{adxl}}
+{\footnotesize\ttfamily ADXL345 Wearable\+Accelerometer\+::adxl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Accelerometer object. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_a92cc3052706adeb431727d6a5fea6a73}\label{classWearableAccelerometer_a92cc3052706adeb431727d6a5fea6a73}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!currentMillis@{currentMillis}}
+\index{currentMillis@{currentMillis}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{currentMillis}{currentMillis}}
+{\footnotesize\ttfamily unsigned long Wearable\+Accelerometer\+::current\+Millis\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores the time of the current step being taken. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_a87c8162b30012c8096ff12669fb9ce36}\label{classWearableAccelerometer_a87c8162b30012c8096ff12669fb9ce36}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!doubleTapLatency@{doubleTapLatency}}
+\index{doubleTapLatency@{doubleTapLatency}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{doubleTapLatency}{doubleTapLatency}}
+{\footnotesize\ttfamily double Wearable\+Accelerometer\+::double\+Tap\+Latency\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time between a tap event and when the reading for a double tap starts. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_a314402bfbde6ea77f9bb9c825bd1ccd0}\label{classWearableAccelerometer_a314402bfbde6ea77f9bb9c825bd1ccd0}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!doubleTapWindow@{doubleTapWindow}}
+\index{doubleTapWindow@{doubleTapWindow}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{doubleTapWindow}{doubleTapWindow}}
+{\footnotesize\ttfamily double Wearable\+Accelerometer\+::double\+Tap\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Defines how long a double tap is checked for. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_ab2a397b95de567e5601cc3aad6f55106}\label{classWearableAccelerometer_ab2a397b95de567e5601cc3aad6f55106}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!period@{period}}
+\index{period@{period}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{period}{period}}
+{\footnotesize\ttfamily unsigned long Wearable\+Accelerometer\+::period\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The period of time that we should check for 5 steps. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_aa7c7ef0b4fb80131b3a34be61f9f9e49}\label{classWearableAccelerometer_aa7c7ef0b4fb80131b3a34be61f9f9e49}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!singleTapThresholdDuration@{singleTapThresholdDuration}}
+\index{singleTapThresholdDuration@{singleTapThresholdDuration}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{singleTapThresholdDuration}{singleTapThresholdDuration}}
+{\footnotesize\ttfamily double Wearable\+Accelerometer\+::single\+Tap\+Threshold\+Duration\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Duration for single tap to be above threshold to be detected. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_a330fd88d796a4e27cf2a72c4bb2bf4ef}\label{classWearableAccelerometer_a330fd88d796a4e27cf2a72c4bb2bf4ef}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!singleTapThresholdValue@{singleTapThresholdValue}}
+\index{singleTapThresholdValue@{singleTapThresholdValue}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{singleTapThresholdValue}{singleTapThresholdValue}}
+{\footnotesize\ttfamily double Wearable\+Accelerometer\+::single\+Tap\+Threshold\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Threshold for single tap to be detected. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_a686c44ab7cfb7c6243e59aca4082ce6e}\label{classWearableAccelerometer_a686c44ab7cfb7c6243e59aca4082ce6e}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!startMillis@{startMillis}}
+\index{startMillis@{startMillis}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{startMillis}{startMillis}}
+{\footnotesize\ttfamily unsigned long Wearable\+Accelerometer\+::start\+Millis\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Keeps track of when the first step was taken. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_ad357ac780b9c72bf2e4a969ffac8e786}\label{classWearableAccelerometer_ad357ac780b9c72bf2e4a969ffac8e786}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!steps@{steps}}
+\index{steps@{steps}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{steps}{steps}}
+{\footnotesize\ttfamily int Wearable\+Accelerometer\+::steps\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Acts as the step counter. 
+
+\mbox{\Hypertarget{classWearableAccelerometer_a6c55400fdee992b217c04cafead56290}\label{classWearableAccelerometer_a6c55400fdee992b217c04cafead56290}} 
+\index{WearableAccelerometer@{WearableAccelerometer}!stepTimerStarted@{stepTimerStarted}}
+\index{stepTimerStarted@{stepTimerStarted}!WearableAccelerometer@{WearableAccelerometer}}
+\doxysubsubsection{\texorpdfstring{stepTimerStarted}{stepTimerStarted}}
+{\footnotesize\ttfamily bool Wearable\+Accelerometer\+::step\+Timer\+Started\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores if the timer has been started or not. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{WearableAccelerometer_8h}{Wearable\+Accelerometer.\+h}}\end{DoxyCompactItemize}

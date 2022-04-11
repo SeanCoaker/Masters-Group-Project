@@ -80,7 +80,7 @@
         \label{subsec:walking_aid_device_uml}
 
             \subsubsection{Class Diagram}
-            \label{subsubsec:class_diagram}
+            \label{subsubsec:class_diagram_walking_aid}
 
                 To demonstrate how the classes within the software are laid out and how they communicate with one another to make up the whole system, we include here a class diagram. Following the class diagram, we will include documentation on each class and their functions towards benefitting the functionality of the system. 
 
@@ -118,9 +118,63 @@
                 The following is an activity diagram that demonstrates the workflow of the walking aid software system. It demonstrates in a graphical way how the system operates in a step-by-step manner. Accompanying the activity diagram will be a body of text that will describe the overview of the activity diagram in natural language.
 
                 \input{graphics/walking_aid_activity.tex}
+                
+                The system begins as soon as the device is powered on. The first process that the system runs is the transferral of the SD audio file to the SPIFFS storage location for quicker access later on. The system then attempts to initialise the ESP-Now communication with the wearable device. If this is unsuccessful then it will sit in an inactive state. Otherwise, it will attempt to initialise the accelerometer and begin the loop function of the sketch. 
+
+                For each pass of the loop function, the system firstly checks to see if a reminder message has been received from the wearable device. This message basically states, ``The wearable device is moving, is the walking aid device moving also?''. At this stage, the system checks if the time of the last detected step happened within the last developer set period of time. If a step had been detected in that time, then we skip to the end of the loop and check again for movement in the walking aid to update the last time a movement was detected. Otherwise, we then run a loop for the developer set period of time to check if movement is then detected. This allows the user time to get to their walking aid before having a reminder played. If movement was not detected in that period of time, then we play the audio reminder. If movement was detected then we skip playing the audio and move to the end of the loop. In all instances, the end of the loop signifies that the check for movement should occur again. As previously stated, this is to update the timestamp of the last movement detected. Once this is complete, we move back to the check for reminder message step to start the loop again.
+
+                To terminate the execution of the system prematurely, the device can be powered off. We may not have followed the etiquette of activity diagrams to demonstrate this, but we wanted to demonstrate that the system remains functional in a constant loop unless the device is powered off. We added a second initial activity of turn off device to demonstrate this, where a power off device activity is run and we finish in a state where the device is powered off and non-functional.
+
+        \subsection{Wearable Device}
+        \label{subsec:wearable_device_uml}
+
+            \subsubsection{Class Diagram}
+            \label{subsubsec:class_diagram_wearable}
+
+                Similarly to the walking aid device section, this section will include the class and activity diagrams of the wearable device. Each diagram will be accompanied by a body of text that explains the diagram in a natural language format.
+
+                \clearpage
+                \thispagestyle{empty}
+                \begin{landscape}
+                    \input{graphics/wearable_uml.tex}
+                \end{landscape}
+
+                \paragraph{WearableDeviceSketch}\mbox{}
+
+                    This is the main sketch for the wearable device system and implements the setup and loop functions necessary for an Arduino system. It creates instances of the WearableAccelerometer and WearableCommunications class to provide the full functionality of the wearable device. The setup function initialises both classes with the developer's selected parameters. Following this, the loop function handles the calls to check if the user has moved more than 5 steps within a period of time set by the developer. If they have, then the communications object is called to handle the broadcasting of a reminder message to the walking aid device.
+
+                    The WearableDeviceSketch has a composition relationship to both of the other classes as it plays the role of instantiating both objects. Therefore, without the existence of the WearableDeviceSketch, an object of the other two classes would not exist.
+
+                \paragraph{WearableCommunications}\mbox{}
+
+                    The WearableCommunications class handles all the functionality needed to broadcast a message to the walking aid device. Once it is intialised by the WearableDeviceSketch class with a reminder message to send and a MAC address to send the message to, its sendReminderMessage function can be called to broadcast a reminder message when the user has walked more than 5 steps in a specified period of time set by the developer.
+
+                    This class is part of a composition relationship with the WearableDeviceSketch class and therefore an object of it cannot exists unless the WearableDeviceSketch class is instantiated.
+
+                \paragraph{WearableAccelerometer}\mbox{}
+
+                    Controlling the functionality of the walking detection, this class utilises the ADXL345 accelerometer library to detect single-taps or gravitational changes through the accelerometer. Once it is initialised with threshold values and a value for the period of time used to check for 5 steps, the poll function can be called by the WearableDeviceSketch to check for steps. Each time a step is detected, the addStepToCounter function is called to add to the total number of steps detected. If a step is detected and it has taken more than the period of time since the first step is detected, then the timer is reset. Otherwise, if the step counter is incremented and is still less than 5 steps, then we move on. However, if the step counter reaches 5 steps within the developer set period of time, then a true boolean value is returned to the WearableDeviceSketch to notify it that a reminder message should be sent to the walking aid device.
+
+                    The class holds a composition relationship with the ADXL345 library to retrieve the necessary functionality for step detection. This class is also part of a composition relationship with the WearableDeviceSketch class, meaning that if an instance of the WearableDeviceSketch class does not exist then neither will an instance of this class. 
+
                 \newpage
 
-    \section{Class Documentation - Walking Aid}
+            \subsubsection{Activity Diagram}
+            \label{subsubsec:wearable_activity}
+
+                The following is an activity diagram that demonstrates the workflow of the wearable software system. The diagram demonstrates how the system attempts to detect that the user is walking in a step-by-step manner to provide clarity of how the software was developed for these purposes. Accompanying the diagram will be a body of text that describes the process in natural language.
+
+                \input{graphics/wearable_activity.tex}
+
+                The activity diagram demonstrates that the system begins when the device is powered on. The system begins by intitialising the accelerometer with the configurations of the developer before attempting to intitialise the ESP-Now communications protocol and registering the walking aid device as a peer for communication. If either of ESP-Now steps fail then we end up in a state where the device is powered on but is not functional. 
+
+                If the communication intitialisation is successful, then we begin the process of attempting to identify when the user is walking. We begin first by checking for a step, which in actual fact checks if the accelerometer has detected a change in gravity. If it has not detected a step, then we loop back and check for a step again until we identify one. Otherwise, we increment the step counter before checking to see if the timer has started and if it has, then we check to see if the time since the first step was detected is greater than the period of time set by the developer. If the timer has not been started or it has been greater than the developer specified period of time since the first step, we reset the timer and set the step counter back to 1 and start the check for step process again. Otherwise, we run a check to see if the step counter is now at 5 steps. If it is not, then we loop back to the beginning of the check for step counter. If the step counter is indeed equal to 5, then we have reached the situation where the user has moved a considerable amount in the period of time set by the developer. We can therefore ascertain that the user is walking and send a reminder message to the walking aid device to check if the walking aid is moving as well.
+
+                Finally, despite it not following activity diagram etiquette, we wanted to demonstrate how powering off the system is the only way to stop the device from being functional. The existence of a second initial activity that controls the powering off of the system demonstrates this, and demonstrates how the rest of the system relies on the device being powered on.
+
+                \newpage
+
+    \section{Class Documentation - Walking Aid Device}
     \label{sec:class_documentation_walk_aid}\mbox{}
 
         \input{chapter/docs/walking_aid/sdtospiffs.tex}
@@ -132,3 +186,14 @@
         \input{chapter/docs/walking_aid/walkaidcomms.tex}
         \newpage
         \input{chapter/docs/walking_aid/sketch.tex}
+        \newpage
+
+    \section{Class Documentation - Wearable Device}
+    \label{sec:class_documentation_wearable}\mbox{}
+
+        \input{chapter/docs/wearable/wearableaccel.tex}
+        \newpage
+        \input{chapter/docs/wearable/wearablecomms.tex}
+        \newpage
+        \input{chapter/docs/wearable/sketch.tex}
+        \newpage
