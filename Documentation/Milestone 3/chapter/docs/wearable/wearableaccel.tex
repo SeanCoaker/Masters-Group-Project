@@ -67,11 +67,17 @@
 
             \item bool \textbf{poll}() 
             
-                \quad \quad \textit{Polls the accelerometer to see if a single-tap has been detected. Calls the addStepToCounter function if it has.}
+                \quad \quad \textit{Polls the accelerometer to see if a single-tap has been detected. Calls the addStepToCounter }
+
+                \quad \quad \textit{function if it has.}
 
             \item bool \textbf{addStepToCounter}() 
             
-                \quad \quad \textit{Increments the step counter. If the it has been longer than the set period of time since the first step, then reset the time of the first step and reset the step counter. If not, and the step counter = 5 reset the step counter and time of first step, and return true.}\\
+                \quad \quad \textit{Increments the step counter. If the it has been longer than the set period of time since the first }
+                
+                \quad \quad \textit{step, then reset the time of the first step and reset the step counter. If not, and the step counter }
+                
+                \quad \quad \textit{= 5 reset the step counter and time of first step, and return true.}\\
 
         \end{itemize}
 
@@ -121,7 +127,9 @@
 
             \ttfamily{bool WearableAccelerometer::poll (  )}\\
 
-            \rmfamily{Polls the accelerometer to see if a single-tap has been detected. Calls the addStepToCounter function if it has.}\\
+            \rmfamily{Polls the accelerometer to see if a single-tap has been detected. Calls the addStepToCounter function }
+            
+            if it has.\\
 
             \textbf{Returns}
 
@@ -132,7 +140,11 @@
 
             \ttfamily{bool WearableAccelerometer::isStepDetected (  )}\\
 
-            \rmfamily{Increments the step counter. If the it has been longer than the set period of time since the first step, then reset the time of the first step and reset the step counter. If not, and the step counter = 5 reset the step counter and time of first step, and return true.}
+            \rmfamily{Increments the step counter. If the it has been longer than the set period of time since the first step, }
+
+            then reset the time of the first step and reset the step counter. If not, and the step counter = 5 reset the 
+
+            step counter and time of first step, and return true.
 
             \textbf{Returns}
 
