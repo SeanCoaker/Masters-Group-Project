@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['sendremindermessage_0',['sendReminderMessage',['../classWearableCommunications.html#abed9a98f5e9d9c7fd92744729a662811',1,'WearableCommunications']]]
+  ['peersetuperror_0',['peerSetupError',['../classDebugLED.html#a2ce83c6f8115eddc51193559a0aff322',1,'DebugLED']]],
+  ['poll_1',['poll',['../classWearableAccelerometer.html#a795dc5a670e9f64e9f33eca9252658e4',1,'WearableAccelerometer']]],
+  ['poweredon_2',['poweredOn',['../classDebugLED.html#a59187820311c31cc88a3b732dbbede4a',1,'DebugLED']]]
 ];

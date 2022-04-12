@@ -12,6 +12,7 @@
 
 #include <WiFi.h>
 #include <esp_now.h>
+#include "DebugLED.h"
 
 class WearableCommunications {
 
@@ -21,6 +22,8 @@ private:
 	String message;
 	//! The MAC address of the peer.
 	uint8_t *broadcastAddress;
+	//! An instance of DebugLED to display LED colours depending on state of system.
+	DebugLED debugLED;
 
 public:
 	

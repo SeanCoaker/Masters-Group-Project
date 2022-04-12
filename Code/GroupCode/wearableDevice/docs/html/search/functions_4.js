@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wearableaccelerometer_0',['WearableAccelerometer',['../classWearableAccelerometer.html#a0b866d435f9bdfacb0fdc10fcac61a1a',1,'WearableAccelerometer']]],
-  ['wearablecommunications_1',['WearableCommunications',['../classWearableCommunications.html#a7ccc1b9b56e3281deb4ca1b6a3017419',1,'WearableCommunications']]]
+  ['sendremindermessage_0',['sendReminderMessage',['../classWearableCommunications.html#abed9a98f5e9d9c7fd92744729a662811',1,'WearableCommunications']]]
 ];

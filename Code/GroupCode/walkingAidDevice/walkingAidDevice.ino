@@ -1,6 +1,7 @@
 #include "WalkAidAccelerometer.h"
 #include "WalkAidCommunications.h"
 #include "WalkAidAudio.h"
+#include "TinyPICO.h"
 
 //! A copy of the message received from the wearable device.
 String message;
@@ -10,6 +11,8 @@ WalkAidAudio audio;
 WalkAidCommunications comms;
 //! The accelerometer controller object.
 WalkAidAccelerometer accel;
+
+TinyPICO tp = TinyPICO();
 
 
 /**
@@ -30,7 +33,14 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *data, int len) {
  * 
  */
 void setup() {
-	  Serial.begin(115200);
+	Serial.begin(115200);
+
+	tp.DotStar_SetPixelColor(0,128,0);
+  	tp.DotStar_SetBrightness(128);
+  	tp.DotStar_Show();
+  	delay(1000);
+  	tp.DotStar_SetBrightness(0);
+  	tp.DotStar_Show();
 
     audio.init("/reminder/reminder.mp3", "/reminder.mp3");
   	comms.init();
