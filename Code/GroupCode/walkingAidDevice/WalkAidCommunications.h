@@ -57,7 +57,7 @@ public:
 	void setReminder(bool reminder);
 
 	/**
-	 * @brief Sends a message to wearable device to vibrate.
+	 * @brief Sends a message to the wearable device to vibrate.
 	 * 
 	 */
 	void sendVibrateMessage();

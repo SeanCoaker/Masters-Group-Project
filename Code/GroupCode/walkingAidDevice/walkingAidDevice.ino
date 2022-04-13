@@ -4,7 +4,7 @@
 
 //! A copy of the message received from the wearable device.
 String message;
-//! The MAC address of the walking aid device.
+//! The MAC address of the wearable device.
 uint8_t broadcastAddress[] = {0x50, 0x02, 0x91, 0xA1, 0xA9, 0x0C};
 //! The audio controller object.
 WalkAidAudio audio;

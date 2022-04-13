@@ -13,7 +13,7 @@
 #include "WearableCommunications.h"
 
 
-//! A copy of the message received from the wearable device.
+//! A copy of the message received from the walking aid device.
 String message;
 //! The MAC address of the walking aid device.
 uint8_t broadcastAddress[] = {0x50, 0x02, 0x91, 0xA1, 0xA0, 0x84};
@@ -24,13 +24,13 @@ WearableCommunications comms;
 TinyPICO tp = TinyPICO();
 
 /**
- * @brief Callback function to be executed when data is received from a reminder message.
+ * @brief Callback function to be executed when data is received from a vibrate message.
  * 
- * @param mac MAC address of the device that sent the reminder.
- * @param data Data of the reminder.
- * @param len Length of the reminder.
+ * @param mac MAC address of the device that sent the vibrate message.
+ * @param data Data of the vibrate message.
+ * @param len Length of the vibrate message.
  */
-void OnDataRecv(const uint8_t * mac, const uint8_t *data, int len) {
+void OnDataRecv(const uint8_t * mac, const uint8_t * data, int len) {
   memcpy(&message, data, sizeof(message));
   Serial.println(message);
   tp.DotStar_SetPixelColor(230, 230, 250);

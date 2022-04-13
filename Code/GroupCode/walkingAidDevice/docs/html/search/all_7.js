@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mp3_0',['mp3',['../classWalkAidAudio.html#a797df80b43fdc0d42f732a3d99a06324',1,'WalkAidAudio']]]
+  ['laststeptime_0',['lastStepTime',['../classWalkAidAccelerometer.html#a85d6758b11a34762a5c838abc2ba6820',1,'WalkAidAccelerometer']]],
+  ['loadsdfiletospiffs_1',['loadSDFileToSPIFFS',['../classSDToSPIFFS.html#a0106563ad1d3357dfdef569cb9be5615',1,'SDToSPIFFS']]]
 ];

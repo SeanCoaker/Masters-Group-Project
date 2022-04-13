@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['sdtospiffs_0',['SDToSPIFFS',['../classSDToSPIFFS.html#ab6116a12a60395f368c350bcd1df8b26',1,'SDToSPIFFS']]],
-  ['setreminder_1',['setReminder',['../classWalkAidCommunications.html#aa1463c3c176fa41451114b39a46fbea5',1,'WalkAidCommunications']]]
+  ['peersetuperror_0',['peerSetupError',['../classDebugLED.html#a2ce83c6f8115eddc51193559a0aff322',1,'DebugLED']]],
+  ['play_1',['play',['../classWalkAidAudio.html#a4269513aac9726a9f336d105f8715abb',1,'WalkAidAudio']]],
+  ['poweredon_2',['poweredOn',['../classDebugLED.html#a59187820311c31cc88a3b732dbbede4a',1,'DebugLED']]]
 ];

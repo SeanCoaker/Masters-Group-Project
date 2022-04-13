@@ -1,0 +1,71 @@
+\subsection{DebugLED Class Reference}
+\label{subsec:debugled2}\mbox{}
+
+    \ttfamily{}
+
+    \#include <DebugLED.h>\\
+
+    \rmfamily{}
+
+    \paragraph{Private Attributes}\mbox{}\\
+
+        \begin{itemize}
+            \item TinyPICO \textbf{tp}
+            
+                \quad \quad \textit{The TinyPICO object used to control the LEDs.}\\
+
+        \end{itemize}
+
+
+    \paragraph{Public Member Functions}\mbox{}\\
+
+        \begin{itemize}
+            \item \textbf{DebugLED}() 
+            
+                \quad \quad \textit{Construct a new DebugLED object.}
+
+            \item void \textbf{poweredOn}() 
+            
+                \quad \quad \textit{Displays a green LED for 1 second to signify successful power on.}
+
+            \item void \textbf{initError}() 
+            
+                \quad \quad \textit{Displays a red LED to signify ESP-Now init error.}
+
+            \item void \textbf{peerSetupError}() 
+            
+                \quad \quad \textit{Displays an orange LED to signify an ESP-Now peer connection error.}\\
+        \end{itemize}
+
+    \subsubsection{Constructor \& Destructor Documentation}\mbox{}
+
+
+        \paragraph{DebugLED()}\mbox{}\\
+
+            \ttfamily{DebugLED::DebugLED (  )}\\
+
+            \rmfamily{Construct a new DebugLED object.}\\
+
+
+    \subsubsection{Member Function Documentation}\mbox{}
+
+
+        \paragraph{poweredOn()}\mbox{}\\
+
+            \ttfamily{void DebugLED::poweredOn (  )}\\
+
+            \rmfamily{Displays a green LED for 1 second to signify successful power on.}\\
+
+
+        \paragraph{initError()}\mbox{}\\
+
+            \ttfamily{void DebugLED::initError (  )}\\
+
+            \rmfamily{Displays a red LED to signify ESP-Now init error.}\\
+
+
+        \paragraph{peerSetupError()}\mbox{}\\
+
+            \ttfamily{void DebugLED::peerSetupError (  )}\\
+
+            \rmfamily{Displays an orange LED to signify an ESP-Now peer connection error.}\\

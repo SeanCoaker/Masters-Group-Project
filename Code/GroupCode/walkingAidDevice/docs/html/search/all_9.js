@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['period_0',['period',['../classWalkAidAccelerometer.html#ac797699c8f440ffb69ddd023d1182341',1,'WalkAidAccelerometer']]],
-  ['play_1',['play',['../classWalkAidAudio.html#a4269513aac9726a9f336d105f8715abb',1,'WalkAidAudio']]]
+  ['out_0',['out',['../classWalkAidAudio.html#adfa2e6a7600030dd6eaaa31f993dd161',1,'WalkAidAudio']]]
 ];

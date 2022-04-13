@@ -100,7 +100,15 @@
 
                 \paragraph{WalkAidCommunications}\mbox{}
 
-                    The WalkAidCommunications class is responsible for the initialisation of the ESP-Now communication protocol to establish a connection to the wearable device. When a reminder message is received, the reminder variable is set to true to allow the WalkAidSketch to check for a step in the previous period of time or in the future period of time. This class is initialised in the WalkAidSketch class and does not exist unless that class exists. Therefore, it is part of a composition relationship with the WalkAidSketch.
+                    The WalkAidCommunications class is responsible for the initialisation of the ESP-Now communication protocol to establish a connection to the wearable device. When a reminder message is received, the reminder variable is set to true to allow the WalkAidSketch to check for a step in the previous period of time or in the future period of time. Should a reminder need to be played but the user is deaf, this class will send a message back to the wearable device prompting it to vibrate. This class is initialised in the WalkAidSketch class and does not exist unless that class exists. Therefore, it is part of a composition relationship with the WalkAidSketch.
+
+                    The WalkAidCommunications class also makes use of the DebugLED class to ensure that the user is notified of any issues in initialising the communications protocol on boot. It has a composition relationship with the DebugLED class to allow for the LED to be configured should an error occur with the initiation of the communication protocol.
+
+                \paragraph{DebugLED}\mbox{}
+
+                    The DebugLED class exists to handle the configuration of the TinyPICO's onboard LED to indicate whether the communication protocol is working or not. It is initialised in the WearableDeviceSketch class and is therefore part of a composition relationship with the WearableCommunications class. More specifically, an instance of the DebugLED class cannot exist without an instance of the WearableCommunications class.
+
+                    The DebugLED class also holds a composition relationship with the TinyPICO helper library to allow for the configuration of the LED.
 
                 \paragraph{WalkAidAudio}\mbox{}
 
@@ -119,9 +127,9 @@
 
                 \input{graphics/walking_aid_activity.tex}
                 
-                The system begins as soon as the device is powered on. The first process that the system runs is the transferral of the SD audio file to the SPIFFS storage location for quicker access later on. The system then attempts to initialise the ESP-Now communication with the wearable device. If this is unsuccessful then it will sit in an inactive state. Otherwise, it will attempt to initialise the accelerometer and begin the loop function of the sketch. 
+                The system begins as soon as the device is powered on. The first process that the system runs is the transferral of the SD audio file to the SPIFFS storage location for quicker access later on. If an error is detected with the process of transferring the audio file from SD card to SPIFFS, then system is left in a non-functional state. The system then attempts to initialise the ESP-Now communication with the wearable device. If this is unsuccessful then it will sit in an inactive state. Otherwise, it will attempt to initialise the accelerometer and begin the loop function of the sketch. 
 
-                For each pass of the loop function, the system firstly checks to see if a reminder message has been received from the wearable device. This message basically states, ``The wearable device is moving, is the walking aid device moving also?''. At this stage, the system checks if the time of the last detected step happened within the last developer set period of time. If a step had been detected in that time, then we skip to the end of the loop and check again for movement in the walking aid to update the last time a movement was detected. Otherwise, we then run a loop for the developer set period of time to check if movement is then detected. This allows the user time to get to their walking aid before having a reminder played. If movement was not detected in that period of time, then we play the audio reminder. If movement was detected then we skip playing the audio and move to the end of the loop. In all instances, the end of the loop signifies that the check for movement should occur again. As previously stated, this is to update the timestamp of the last movement detected. Once this is complete, we move back to the check for reminder message step to start the loop again.
+                For each pass of the loop function, the system firstly checks to see if a reminder message has been received from the wearable device. This message basically states, ``The wearable device is moving, is the walking aid device moving also?''. At this stage, the system checks if the time of the last detected step happened within the last developer set period of time. If a step had been detected in that time, then we skip to the end of the loop and check again for movement in the walking aid to update the last time a movement was detected. Otherwise, we then run a loop for the developer set period of time to check if movement is then detected. This allows the user time to get to their walking aid before having a reminder played or a vibration played through the wearable device. If movement was not detected in that period of time, then we play the audio reminder or send a vibrate message to the wearable device if the user is deaf. If movement was detected then we skip playing the audio or sending a vibrate message and move to the end of the loop. In all instances, the end of the loop signifies that the check for movement should occur again. As previously stated, this is to update the timestamp of the last movement detected. Once this is complete, we move back to the check for reminder message step to start the loop again.
 
                 To terminate the execution of the system prematurely, the device can be powered off. We may not have followed the etiquette of activity diagrams to demonstrate this, but we wanted to demonstrate that the system remains functional in a constant loop unless the device is powered off. We added a second initial activity of turn off device to demonstrate this, where a power off device activity is run and we finish in a state where the device is powered off and non-functional.
 
@@ -147,9 +155,15 @@
 
                 \paragraph{WearableCommunications}\mbox{}
 
-                    The WearableCommunications class handles all the functionality needed to broadcast a message to the walking aid device. Once it is intialised by the WearableDeviceSketch class with a reminder message to send and a MAC address to send the message to, its sendReminderMessage function can be called to broadcast a reminder message when the user has walked more than 5 steps in a specified period of time set by the developer.
+                    The WearableCommunications class handles all the functionality needed to broadcast a message to the walking aid device. Once it is intialised by the WearableDeviceSketch class with a reminder message to send and a MAC address to send the message to, its sendReminderMessage function can be called to broadcast a reminder message when the user has walked more than 5 steps in a specified period of time set by the developer. It is also initialised with the details of the walking aid device as a peer to allow incmoming communication. The WearableCommunications class has a composition relationship with the DebugLED class to allow for the LED to be configured should an error occur with the initiation of the communication protocol.
 
-                    This class is part of a composition relationship with the WearableDeviceSketch class and therefore an object of it cannot exists unless the WearableDeviceSketch class is instantiated.
+                    This class is also part of a composition relationship with the WearableDeviceSketch class and therefore an object of it cannot exist unless the WearableDeviceSketch class is instantiated.
+
+                \paragraph{DebugLED}\mbox{}
+
+                    The DebugLED class exists to handle the configuration of the TinyPICO's onboard LED to indicate whether the communication protocol is working or not. It is initialised in the WearableDeviceSketch class and is therefore part of a composition relationship with the WearableCommunications class. More specifically, an instance of the DebugLED class cannot exist without an instance of the WearableCommunications class.
+
+                    The DebugLED class also holds a composition relationship with the TinyPICO helper library to allow for the configuration of the LED.
 
                 \paragraph{WearableAccelerometer}\mbox{}
 
@@ -185,6 +199,8 @@
         \newpage
         \input{chapter/docs/walking_aid/walkaidcomms.tex}
         \newpage
+        \input{chapter/docs/walking_aid/debugled.tex}
+        \newpage
         \input{chapter/docs/walking_aid/sketch.tex}
         \newpage
 
@@ -194,6 +210,8 @@
         \input{chapter/docs/wearable/wearableaccel.tex}
         \newpage
         \input{chapter/docs/wearable/wearablecomms.tex}
+        \newpage
+        \input{chapter/docs/wearable/debugled.tex}
         \newpage
         \input{chapter/docs/wearable/sketch.tex}
         \newpage
