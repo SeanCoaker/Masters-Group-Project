@@ -5,8 +5,8 @@ WalkAidAudio::WalkAidAudio() {}
 void WalkAidAudio::init(const char *SDPath, const char *SPIFFSPath) {
 
 	this->s2s.init(SDPath, SPIFFSPath);
-    this->s2s.loadSDFileToSPIFFS();
-
+	this->s2s.loadSDFileToSPIFFS();
+	this->play();
 }
 
 void WalkAidAudio::play() {

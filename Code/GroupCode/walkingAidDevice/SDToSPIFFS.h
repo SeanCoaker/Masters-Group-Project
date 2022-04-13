@@ -65,7 +65,7 @@ public:
 	 * @brief Handles the loading of the SD card file to SPIFFS.
 	 * 
 	 */
-	void loadSDFileToSPIFFS(int test);
+	void loadSDFileToSPIFFS();
 
 	/**
 	 * @brief Returns the path to the SPIFFS file.

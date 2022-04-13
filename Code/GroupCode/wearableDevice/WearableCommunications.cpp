@@ -13,7 +13,7 @@ void WearableCommunications::init(String message, uint8_t broadcastAddress[]) {
   	// Init ESP-NOW
   	if (esp_now_init() != ESP_OK) {
     	Serial.println("Error initializing ESP-NOW");
-		debugLED.initError();
+		this->debugLED.initError();
     	return;
   	}
 
@@ -34,11 +34,11 @@ void WearableCommunications::init(String message, uint8_t broadcastAddress[]) {
   	// Add peer        
   	if (esp_now_add_peer(&peerInfo) != ESP_OK){
     	Serial.println("Failed to add peer");
-		debugLED.peerSetupError();
+		this->debugLED.peerSetupError();
     	return;
   	}
 
-	debugLED.poweredOn();
+	this->debugLED.poweredOn();
 }
 
 

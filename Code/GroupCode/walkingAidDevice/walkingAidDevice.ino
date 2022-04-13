@@ -1,18 +1,19 @@
 #include "WalkAidAccelerometer.h"
 #include "WalkAidCommunications.h"
 #include "WalkAidAudio.h"
-#include "TinyPICO.h"
 
 //! A copy of the message received from the wearable device.
 String message;
+//! The MAC address of the walking aid device.
+uint8_t broadcastAddress[] = {0x50, 0x02, 0x91, 0xA1, 0xA9, 0x0C};
 //! The audio controller object.
 WalkAidAudio audio;
 //! The communications controller object.
 WalkAidCommunications comms;
 //! The accelerometer controller object.
 WalkAidAccelerometer accel;
-
-TinyPICO tp = TinyPICO();
+//! Should the wearable device vibrate or not.
+bool isVibrate = false;
 
 
 /**
@@ -34,16 +35,10 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *data, int len) {
  */
 void setup() {
 	Serial.begin(115200);
-
-	tp.DotStar_SetPixelColor(0,128,0);
-  	tp.DotStar_SetBrightness(128);
-  	tp.DotStar_Show();
-  	delay(1000);
-  	tp.DotStar_SetBrightness(0);
-  	tp.DotStar_Show();
-
-    audio.init("/reminder/reminder.mp3", "/reminder.mp3");
-  	comms.init();
+	if (!isVibrate) {
+		audio.init("/reminder/reminder.mp3", "/reminder.mp3");
+	}
+  	comms.init("Vibrate", broadcastAddress);
     // Sets callback on data received.
     esp_now_register_recv_cb(OnDataRecv);
   	accel.init(20, 15, 10, 30, 10000);
@@ -85,7 +80,12 @@ void loop() {
 	}
 
 	if (isPlayAudio) {
-		audio.play();
+
+		if (!isVibrate) {
+			audio.play();
+		} else {
+			comms.sendVibrateMessage();
+		}
 	}
 
 	accel.checkForStep();
