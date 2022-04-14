@@ -16,6 +16,7 @@
 	top    = 30mm,
 	bottom = 30mm
 }
+\usepackage{todonotes}
 
 % All imports, packages, and configuration in here.
 % Your document should be about content so we abstract away the styling rules and tools we are using.
@@ -44,7 +45,10 @@
 % starting from 1 at that point.
 	\frontmatter%
 	\maketitle
-	%\cleardoublepage
+	%generate list of todos
+	%\setcounter{secnumdepth}{2}
+	%\setcounter{tocdepth}{2}
+	\listoftodos
 	\tableofcontents
 
 % Optionally you can make a bank of known acronyms in acronyms.tex that you can call on throughout your document.

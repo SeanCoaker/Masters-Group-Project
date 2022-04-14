@@ -5,6 +5,7 @@
 
     \section{Both Devices}
     \label{sec:both_devices}
+        \todo{"General?" unsure on the wording of both, seems really informal in the TOC}
 
         This section will contain information on the design decisions we made that impacted both the wearable and walking aid devices. This will include software and hardware decisions to allow us to implement a communications system, to allow us to keep device form factor and power usage to a minimum, and the decisions of why we chose pieces of hardware that are common between both devices.
 
@@ -38,6 +39,20 @@
 
                 We ultimately decided to use ESP-Now as our communication protocol due to its ease of implementation and due to the fact that it allows sketch sizes to be smaller \cite{random_nerd_tutorials} than the sketch sizes of BLE \cite{kolban_2018}. The significance to sketch sizes being smaller is that they allow for the larger memory storage spaces accounting for larger audio reminder files, as well as providing more responsive code for what is a time sensitive system. The lower throughput that ESP-Now provides in comparison to BLE should not be noticeable within our system due to the fact that we only ever send one word messages between our devices at a given time. However, the lower power efficiency of ESP-Now in comparison to BLE is a considerable disadvantage for use within this system. Having said this, ESP-Now is still regarded as being a low power solution and should still mean that the patient or carer will not need to remember to replace the batteries in their devices too often.
 
+        \subsection{Prototyping}
+        \label{subsec: Prototyping}
+        
+            /todo{Add software citations}
+            The software package used for designing the prototypes was chosen to be Autodesk Fusion 36, as well as how pervasive it is within the 3D Printing community.
+
+            Where possible, we ensured to use accurate existing models. This allowed us to make progress faster, as working out and modelling tight tolerances on PCB components wasn't always required. 
+
+            For the hardware we could not find models for, such as the speaker, i2s audio shield, and vibration motor, critical dimensions were taking using Vernier calipers, and by cross checking datasheets for each or similar devices.
+
+            Once designs for the enclosures were created, they were sliced and converted to gcode using the open source software package SuperSlicer, and then printed on a custom VoronDesign 0.1 CoreXY Fused Filament Deposition (FDM) 3D Printer.
+
+            The material for printing was chosen to be Acrylonitrile butadiene styrene (ABS), a ubiquitous thermoplastic most often used with injection moulding in everyday objects due to its high impact resistance and thermal/checmical resistance. It used to be the plastic of choice for hobby grade 3D Printing, however is becoming less common vs easier to print, and weaker/biodegradable plastics like Polylactic Acid (PLA) or Polyethylene terephthalate (PETG). We chose to continue with ABS, as our printer is cable of printing this more exotic material, and its properties will us to undertaken stricter impact and resistance testing.
+
     \section{Walking Aid Device}
     \label{sec:walking_aid}
 
@@ -54,7 +69,17 @@
         \label{subsec:sdfat}
 
             The decision to use the SdFat library by Bill Greiman \cite{greiman} was an unexpected one as Arduino provide their own solution of SD card reading library \cite{arduino} which acts as a wrapper to the SdFat library for easier understanding and further abstraction of the underlying code. However, when testing the transfer of an 150 KB mp3 file to the SPIFFS storage location of the TinyPICO, we began to notice that the library was taking an abnormally long time to complete the process, especially with a file this small. Upon completing research on the transfer speeds of the Arduino SD library, it was clear to see that the library had not been tested or optimised adequately enough to be used for the fast transferring of audio files from the microSD card to SPIFFS within our walking aid device. Discussion of these issues are widespread \cite{fat16lib_2011,drdooom_2019} with one GitHub user claiming that the SdFat library is ``85 times faster'' \cite{kas2_2018} than the Arduino SD library. Our own testing demonstrated transfer times of the 150 KB mp3 file from the microSD card to SPIFFS at around 150 seconds for the Arduino SD library, and around 12 seconds for the SdFat library. More information on this is viewable within the testing section of this document. But with such a stark difference in transfer rates, and with fast transfer rates being crucial for the prompt initialisation of our systems, we felt that the SdFat library was the most appropriate solution for our purposes.
-                
+
+        \subsection{Physical Design}
+        \label{subsec:Design Decisions}
+
+            \todo{Check for self-plagiarism}
+            Upon clarifying the physical needs and requirements of the device, it was decided that the walking aid device had to be adaptable between different walking aids, such as a walking sticker or Zimmer frame. Form factor was a specially important priority, as a small/minimal footprint would minimise any potential problems or complications with the users. With this in mind, and with components at hand, the design was made with minimal overhead over the physical size of the items we had at hand. The design was made as modular as possible, to allow for changeable parts, to make it inter-operable different walking aids and mounting/battery options. The mounting options were inspired from the GoPro style of handlebar mount, this was chosen due to its simplilcity, and the sturdiness of attachment which will help with the reading from our accelerometers. The mount was scaled down to more appropriately attach to a walking stick or zimmer frame, but as mentioned can be easily swapped and modified to work with bigger or smaller tubes/frames.
+
+            In order to fulfill the specification, and allow for familiar voices to remind the users, a MicroSD card was chosen as described above. This required easy access to the card slot, which had to be intuitive and accesible without disassembly of the device.
+
+            Further considerations include easy access to the microUSB port. This port is required for programming/updating the device, as well as be an option for powering the device if no battery is wanted/needed, or a 5v source is available (such as a large, portable powerbank).
+            
     \section{Wearable Device}
     \label{sec:wearabledevice}
 
