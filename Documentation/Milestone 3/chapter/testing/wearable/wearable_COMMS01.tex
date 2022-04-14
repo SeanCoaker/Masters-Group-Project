@@ -1,0 +1,29 @@
+{
+\bgroup
+\def\arraystretch{1.5}
+\centering
+\begin{tabular}{| m{0.97\textwidth} |} 
+    \hline
+    \textbf{Test Case:} TEST\_WEARABLE\_COMMS01\\ 
+    \hline
+    \textbf{Assert Specification(s):} 
+    
+    \begin{itemize}
+        \item FREQ1: The wearable device should detect when a patient has walked more than 1 metre before communicating with the walking aid.
+        \item FREQ5: The wearable device should communicate to the
+        walking aid device to let it know when it's started
+        moving.
+    \end{itemize}\\ 
+    \hline
+    \textbf{Description:} This test ensures that the wearable device attempts to send a message to the walking aid device should more than 5 steps be detected in a 10 second period.\\ 
+    \hline
+    \textbf{Acceptance Criteria:} 
+        \begin{itemize}
+            \item The wearable device should broadcast a message to the walking aid device if it detects more than 5 steps in a 10 second period.
+        \end{itemize}\\ 
+    \hline
+    \textbf{Result:} \colorbox{green}{PASS}\\ 
+    \hline
+\end{tabular}
+\egroup
+}

@@ -95,7 +95,7 @@
 \RequirePackage{amsthm}
 \RequirePackage{graphicx}
 \RequirePackage[nohints]{minitoc} % Mini table of contents (e.g. for each chapter)
-\RequirePackage{xcolor} % Colour support
+\RequirePackage[dvipsnames]{xcolor}% Colour support
 \RequirePackage{xspace} % For macros (add space unless followed by punctuation)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

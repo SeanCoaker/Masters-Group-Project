@@ -1,0 +1,24 @@
+{
+\bgroup
+\def\arraystretch{1.5}
+\centering
+\begin{tabular}{| m{0.97\textwidth} |} 
+    \hline
+    \textbf{Test Case:} TEST\_WEARABLE\_WALK01\\ 
+    \hline
+    \textbf{Assert Specification(s):} FREQ1: The wearable device should detect when a patient has walked more than 1 metre before communicating with the walking aid.\\ 
+    \hline
+    \textbf{Description:} This test ensures that the wearable device is able to detect changes in gravity as steps through the accelerometer.\\ 
+    \hline
+    \textbf{Acceptance Criteria:} 
+        \begin{itemize}
+            \item The wearable device should detect steps when the user is walking with the device attached to them.
+        \end{itemize}\\ 
+    \hline
+    \textbf{Result:} \colorbox{Dandelion}{PARTIAL PASS}\\ 
+    \hline
+    \textbf{Reason:} Despite the accelerometer being able to detect steps when the user is moving with the device attached to them, the system inherits similar issues to step counter systems employed in some of the most well known mobile devices on the market. That is, the user can be still, but the frequent motion of the accelerometer can cause steps to be counted.\\
+    \hline
+\end{tabular}
+\egroup
+}

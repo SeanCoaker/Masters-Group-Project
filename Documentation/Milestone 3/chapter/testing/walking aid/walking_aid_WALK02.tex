@@ -1,0 +1,22 @@
+{
+\bgroup
+\def\arraystretch{1.5}
+\centering
+\begin{tabular}{| m{0.97\textwidth} |} 
+    \hline
+    \textbf{Test Case:} TEST\_WALKING\_AID\_WALK02\\ 
+    \hline
+    \textbf{Assert Specification(s):} The system should detect if the walking aid is moving too before playing an alarm.\\ 
+    \hline
+    \textbf{Description:} This test ensures that the reminder cannot be played if movement was detected 10 seconds prior to a message being received from the wearable device.\\ 
+    \hline
+    \textbf{Acceptance Criteria:} 
+        \begin{itemize}
+            \item Movement detected within 10 seconds prior to a message being sent by the wearable device should stop the reminder from being played.
+        \end{itemize}\\ 
+    \hline
+    \textbf{Result:} \colorbox{green}{PASS}\\ 
+    \hline
+\end{tabular}
+\egroup
+}
