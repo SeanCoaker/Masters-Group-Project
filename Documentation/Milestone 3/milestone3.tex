@@ -9,6 +9,7 @@
 \usepackage{pdflscape}
 \usepackage{afterpage}
 \usepackage{enumitem}
+\usepackage{todonotes}
 \geometry{
 	a4paper,
 	left   = 30mm,
@@ -44,7 +45,10 @@
 % starting from 1 at that point.
 	\frontmatter%
 	\maketitle
-	%\cleardoublepage
+	%generate list of todos
+	%\setcounter{secnumdepth}{2}
+	%\setcounter{tocdepth}{2}
+	\listoftodos
 	\tableofcontents
 
 % Optionally you can make a bank of known acronyms in acronyms.tex that you can call on throughout your document.
