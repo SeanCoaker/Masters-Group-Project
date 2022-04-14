@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['walkaidaccelerometer_0',['WalkAidAccelerometer',['../classWalkAidAccelerometer.html#a143db0d84532cd5fdfc42e49cc3eefc5',1,'WalkAidAccelerometer']]],
-  ['walkaidaudio_1',['WalkAidAudio',['../classWalkAidAudio.html#aab4de5d8c6fd07a6422a4f8c03629681',1,'WalkAidAudio']]],
-  ['walkaidcommunications_2',['WalkAidCommunications',['../classWalkAidCommunications.html#a346b6e18b4453aea61b206a9610ccebe',1,'WalkAidCommunications']]]
+  ['sdtospiffs_0',['SDToSPIFFS',['../classSDToSPIFFS.html#ab6116a12a60395f368c350bcd1df8b26',1,'SDToSPIFFS']]],
+  ['sendvibratemessage_1',['sendVibrateMessage',['../classWalkAidCommunications.html#a481fc996512f0d774d2af0337f3cd957',1,'WalkAidCommunications']]],
+  ['setreminder_2',['setReminder',['../classWalkAidCommunications.html#aa1463c3c176fa41451114b39a46fbea5',1,'WalkAidCommunications']]]
 ];

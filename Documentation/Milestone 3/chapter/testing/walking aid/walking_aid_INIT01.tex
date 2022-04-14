@@ -1,0 +1,22 @@
+{
+\bgroup
+\def\arraystretch{1.5}
+\centering
+\begin{tabular}{| m{0.97\textwidth} |} 
+    \hline
+    \textbf{Test Case:} TEST\_WALKING\_AID\_INIT01\\ 
+    \hline
+    \textbf{Assert Specification(s):} Should the walking aid device experience a failure when initialising the ESP-Now communications protocol, a debugging LED light should be displayed to help the user understand the issue.\\ 
+    \hline
+    \textbf{Description:} This test ensures that the walking aid device displays a debugging LED when it experiences a failure in initialising ESP-Now.\\ 
+    \hline
+    \textbf{Acceptance Criteria:} 
+        \begin{itemize}
+            \item The walking aid device should display a solid red LED light when it cannot initialise ESP-Now successfully.
+        \end{itemize}\\ 
+    \hline
+    \textbf{Result:} \colorbox{green}{PASS}\\ 
+    \hline
+\end{tabular}
+\egroup
+}

@@ -8,6 +8,10 @@
             
                 \quad \quad \textit{A copy of the message received from the wearable device.}
 
+            \item uint8\_t \textbf{broadcastAddress[]}
+            
+                \quad \quad \textit{The MAC address of the wearable device.}
+
             \item WalkAidAudio \textbf{audio}
             
                 \quad \quad \textit{The audio controller object.}
@@ -18,7 +22,11 @@
                 
             \item WalkAidAccelerometer \textbf{accel}
             
-                \quad \quad \textit{The accelerometer controller object.}\\
+                \quad \quad \textit{The accelerometer controller object.}
+                
+            \item WalkAidAccelerometer \textbf{accel}
+            
+                \quad \quad \textit{Should the wearable device vibrate or not.}\\
 
         \end{itemize}
 
@@ -26,6 +34,10 @@
     \paragraph{Public Member Functions}\mbox{}\\
 
         \begin{itemize}
+            \item void \textbf{OnDataRecv}(const uint8\_t * mac, const uint8\_t *data, int len) 
+            
+                \quad \quad \textit{Callback function to be executed when data is received from a reminder message.}
+
             \item void \textbf{setup}() 
             
                 \quad \quad \textit{Handles the Arduino setup function. Initialises the accelerometer, communications, and audio.}
@@ -39,6 +51,28 @@
 
 
     \subsubsection{Member Function Documentation}\mbox{}
+
+        \paragraph{OnDataRecv()}\mbox{}\\
+
+            \ttfamily{void OnDataRecv (\\
+            \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const uint8\_t * mac,\\ 
+            \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const uint8\_t *data,\\ 
+            \null \quad \quad \quad \quad \quad \quad \quad \quad \quad int len)}\\
+
+            \rmfamily{Callback function to be executed when data is received from a vibrate message.}
+
+            \textbf{Parameters}
+
+            \vspace{1em}
+            \begin{tabular}{| l | l |} 
+                \hline
+                mac & MAC address of the device that sent the reminder.\\ 
+                \hline
+                data & Data of the reminder.\\ 
+                \hline
+                len & Length of the reminder.\\ 
+                \hline
+            \end{tabular}\\~\\
 
 
         \paragraph{setup()}\mbox{}\\

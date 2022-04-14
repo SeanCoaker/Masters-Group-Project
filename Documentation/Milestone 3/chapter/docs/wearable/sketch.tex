@@ -4,6 +4,10 @@
     \paragraph{Public Attributes}\mbox{}\\
 
         \begin{itemize}
+            \item String \textbf{message}
+            
+                \quad \quad \textit{A copy of the message received from the walking aid device.}
+
             \item uint8\_t \textbf{broadcastAddress[]}
             
                 \quad \quad \textit{The MAC address of the walking aid device.}
@@ -18,6 +22,10 @@
     \paragraph{Public Member Functions}\mbox{}\\
 
         \begin{itemize}
+            \item void \textbf{OnDataRecv}(const uint8\_t * mac, const uint8\_t *data, int len) 
+            
+                \quad \quad \textit{Callback function to be executed when data is received from a vibrate message.}
+
             \item void \textbf{setup}() 
             
                 \quad \quad \textit{Handles the initialisation of the accelerometer and the communications objects and is the }
@@ -35,6 +43,27 @@
 
     \subsubsection{Member Function Documentation}\mbox{}
 
+        \paragraph{OnDataRecv()}\mbox{}\\
+
+            \ttfamily{void OnDataRecv (\\
+            \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const uint8\_t * mac,\\ 
+            \null \quad \quad \quad \quad \quad \quad \quad \quad \quad const uint8\_t *data,\\ 
+            \null \quad \quad \quad \quad \quad \quad \quad \quad \quad int len)}\\
+
+            \rmfamily{Callback function to be executed when data is received from a vibrate message.}
+
+            \textbf{Parameters}
+
+            \vspace{1em}
+            \begin{tabular}{| l | l |} 
+                \hline
+                mac & MAC address of the device that sent the vibrate message.\\ 
+                \hline
+                data & Data of the vibrate message.\\ 
+                \hline
+                len & Length of the vibrate message.\\ 
+                \hline
+            \end{tabular}\\~\\
 
         \paragraph{setup()}\mbox{}\\
 

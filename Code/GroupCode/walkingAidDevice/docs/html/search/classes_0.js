@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sdtospiffs_0',['SDToSPIFFS',['../classSDToSPIFFS.html',1,'']]]
+  ['debugled_0',['DebugLED',['../classDebugLED.html',1,'']]]
 ];

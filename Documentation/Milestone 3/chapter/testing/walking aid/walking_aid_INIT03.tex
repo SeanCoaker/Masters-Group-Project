@@ -1,0 +1,22 @@
+{
+\bgroup
+\def\arraystretch{1.5}
+\centering
+\begin{tabular}{| m{0.97\textwidth} |} 
+    \hline
+    \textbf{Test Case:} TEST\_WEARABLE\_INIT03\\ 
+    \hline
+    \textbf{Assert Specification(s):} Should the walking aid device experience a failure when attempting to initialise the SD card, the system should stall and notify the user of the issue.\\ 
+    \hline
+    \textbf{Description:} This test ensures that when the walking aid device experiences a failure in initialising the SD card, the system blocks and an LED is displayed to allow for debugging.\\ 
+    \hline
+    \textbf{Acceptance Criteria:} 
+        \begin{itemize}
+            \item On SD card initialisation failure, the system should block and display a solid blue LED light on the audio shield.
+        \end{itemize}\\ 
+    \hline
+    \textbf{Result:} \colorbox{green}{PASS}\\ 
+    \hline
+\end{tabular}
+\egroup
+}

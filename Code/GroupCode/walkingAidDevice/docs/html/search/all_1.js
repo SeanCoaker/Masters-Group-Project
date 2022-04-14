@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['checkforstep_0',['checkForStep',['../classWalkAidAccelerometer.html#a9d0768969402792f7e27c216556da022',1,'WalkAidAccelerometer']]]
+  ['broadcastaddress_0',['broadcastAddress',['../classWalkAidCommunications.html#ad24edf721f3af0de9b01d4dd99d744b1',1,'WalkAidCommunications']]]
 ];
