@@ -39,6 +39,20 @@
 
                 We ultimately decided to use ESP-Now as our communication protocol due to its ease of implementation and due to the fact that it allows sketch sizes to be smaller \cite{random_nerd_tutorials} than the sketch sizes of BLE \cite{kolban_2018}. The significance to sketch sizes being smaller is that they allow for the larger memory storage spaces accounting for larger audio reminder files, as well as providing more responsive code for what is a time sensitive system. The lower throughput that ESP-Now provides in comparison to BLE should not be noticeable within our system due to the fact that we only ever send one word messages between our devices at a given time. However, the lower power efficiency of ESP-Now in comparison to BLE is a considerable disadvantage for use within this system. Having said this, ESP-Now is still regarded as being a low power solution and should still mean that the patient or carer will not need to remember to replace the batteries in their devices too often.
 
+        \subsection{Prototyping}
+        \label{subsec: Prototyping}
+        
+            /todo{Add software citations}
+            The software package used for designing the prototypes was chosen to be Autodesk Fusion 36, as well as how pervasive it is within the 3D Printing community.
+
+            Where possible, we ensured to use accurate existing models. This allowed us to make progress faster, as working out and modelling tight tolerances on PCB components wasn't always required. 
+
+            For the hardware we could not find models for, such as the speaker, i2s audio shield, and vibration motor, critical dimensions were taking using Vernier calipers, and by cross checking datasheets for each or similar devices.
+
+            Once designs for the enclosures were created, they were sliced and converted to gcode using the open source software package SuperSlicer, and then printed on a custom VoronDesign 0.1 CoreXY Fused Filament Deposition (FDM) 3D Printer.
+
+            The material for printing was chosen to be Acrylonitrile butadiene styrene (ABS), a ubiquitous thermoplastic most often used with injection moulding in everyday objects due to its high impact resistance and thermal/checmical resistance. It used to be the plastic of choice for hobby grade 3D Printing, however is becoming less common vs easier to print, and weaker/biodegradable plastics like Polylactic Acid (PLA) or Polyethylene terephthalate (PETG). We chose to continue with ABS, as our printer is cable of printing this more exotic material, and its properties will us to undertaken stricter impact and resistance testing.
+
     \section{Walking Aid Device}
     \label{sec:walking_aid}
 
@@ -65,13 +79,7 @@
             In order to fulfill the specification, and allow for familiar voices to remind the users, a MicroSD card was chosen as described above. This required easy access to the card slot, which had to be intuitive and accesible without disassembly of the device.
 
             Further considerations include easy access to the microUSB port. This port is required for programming/updating the device, as well as be an option for powering the device if no battery is wanted/needed, or a 5v source is available (such as a large, portable powerbank).
-
-            \subsubsection{CAD}
-            \label{subsubsec: CAD}
-
             
-
-                
     \section{Wearable Device}
     \label{sec:wearabledevice}
 
