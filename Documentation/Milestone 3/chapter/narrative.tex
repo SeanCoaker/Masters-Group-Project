@@ -6,20 +6,35 @@
     \section{Requirements and Topic}
     \label{sec:reqs}
 
-    The first thing we did was to arrange a meeting with the client, who in this case was a representative of Bangor Health Clinic. The reason for this meeting is to understand better the topic and also gather the requirements from the client. At first we thought of two possible outcomes, according to client's requirments, develop a wearable device or a non-wearable device. The first one being a device similar to a watch that will includes accelerometer, which will be responsible of calculating user's movement, and the second one being a pressure pad, that will detectes when the user is sitting or not to it. We chose the first solution rather than the second, as the second might need extra information to calculate the user's movement, for instance if the user stands up there is no way of understanding if the user is walking.
+    The first thing we did was to arrange a meeting with the client, who in this case was a representative of Bangor Health Clinic. The reason for this meeting is to understand better the topic and also gather the requirements from the client. At first, we thought of two possible outcomes, according to the client's requirements, developing a wearable device or a non-wearable device. The first one is a device similar to a watch that will include an accelerometer, which will be responsible for calculating the user's movement, and the second one is a pressure pad, that will detect when the user is sitting or not to it. We proposed to Bangor Health Clinic, the first solution rather than the second, as the second might need extra information to calculate the user's movement, for instance, if the user stands up there is no way of understanding if the user is walking, or creating a solution in which the pad can be easily cleaned up. All of these reasons were also very difficult for us to implement, so we chose the first solution as it is the more passable solution when it comes to our skills.
 
     \section{Development}
     \label{sec:development}
 
-    The next step is the development of the proposed solution, including the methodology we followed. The development of the Walking Aid System was tough for our team, to complete in time, as we lost valuable time at the beginning of the project while waiting for the proper equipment to arrive. Fortunately, we moved the project forward in both software and hardware development, developing prototypes, after their arrival. The loss of that time was something from which our timetable could never recover. The development is split into two sections, the first section contains all the problems we encountered for the software development, and the second section contains all the problems we encountered for the hardware development.
+    The next step is the development of the proposed solution, including the methodology we followed. The development of the Walking Aid System was tough for our team, to complete in time, as we lost valuable time at the beginning of the project while waiting for the proper equipment to arrive. Fortunately, we moved the project forward in both software and hardware development, developing prototypes, after their arrival. The loss of that time was something from which our timetable could never recover. Although we realized that working on a project that includes both software and hardware development may necessitate additional time, the delivery and arrival of the equipment may take extra time; therefore, the project plan must be adaptable to those dates. The development is split into three sections, the first section contains all the problems we encountered for the software development, the second section contains all the problems we encountered for the hardware development, and the final one contains all the problems we encoutnered for the risk analysis. Each section will highlight how we solved the problem if it was solved, and what we learnt from that solution.
 
     \subsection{Software Development}
-    \label{sec:software}
+    \label{ssec:software}
 
+    Working on this type of project that requires software and hardware development was very challenging for us, especially when it comes to hardware selection, which was the first problem we faced. Because the initial budget we required exceeded the one allocated by the customer, we devised a method to reduce the ordering budget by borrowing two TinyPICOs from the University. Having now all the equimpent we needed to find a solution on how these two systems will communicate with each other. Choosing a communication protocol was a key challenge since we required one that would not exceed our budget while still being extremely precise at a long-range. As a result, we chose the ESP-Now protocol for communication between our TinyPICOs since it is simple to integrate with ESP32 chips and has a range of 220 meters.
+
+    % Add more information about walking detection system, problems and solutions.
 
     \subsection{Hardware Development}
-    \label{sec:hardware}
+    \label{ssec:hardware}
 
+    % What problems we encountered during this phase, and what are our solutions.
+    % What we learnt from the problem(s) and the solution(s)
+
+    \subsection{Risk Analysis}
+    \label{ssec:}
+
+    % What problems we encountered while defining risks
+    When we defined our risks in Milestone 1 \cite{coaker}, we ran into issues with our budget and hardware procurement, which caused us to lose development time. However, in Milestone 2 \cite{mile2}, we revised our risks because the loss of development time was still affecting our schedule, so we needed to conduct team meetings so we could oversee the project's progress, whether we were still behind schedule or not.
 
     \section{Reflection}
     \label{sec:Reflection}
+
+    From this group project, the first thing we learnt from developing a project for a client is that working in groups is very difficult, especially when not all members contribute at the same level. This is something that happened in this project, as some members did not pull their weight, resulting in many incomplete tasks being left to be completed at the last minute. This might have happened since everyone's schedules were different, but it doesn't imply it's not a reasonable reason for everyone's workload. Of course, if all of the team members were totally devoted to this project, we would have greater outcomes and not have as much work to do near the finish.
+
+    Although, this project gave us the chance to implement software engineering principles we learnt through the years, such as software design, choosing a proper methodology, developing a project plan and also working as a team.
