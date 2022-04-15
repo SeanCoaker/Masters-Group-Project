@@ -21,6 +21,8 @@ auxil
 *.lol
 *.lot
 *.run.xml
+*.brf
+*.ilg
 !milestone.tex
 !out/milestone1.pdf
 !/out/milestone1.pdf
