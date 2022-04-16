@@ -95,10 +95,104 @@
 
 		\subsection{Setup Guide}
 		\label{subsec:quick_start_setup_guide}
-			
+
+			\subsubsection{To use the audio reminder system}
+
+				\paragraph{Getting your MicroSD card ready}\mbox{}
+
+				To utilise the audio reminder system, you will need a MicroSD card with at least 2MB of storage capacity and an MP3 file that is less than 2MB in size. We recommend that the MP3 file include the voice recording of a relative, friend or carer that will remind the patient to use their walking aid. 
+
+				\paragraph{Recording your reminder message}\mbox{}
+
+				Using voice recording software and a microphone, record your voice message. Voice recording software can include the likes of:
+
+				\begin{itemize}
+					\item Windows Voice Recorder
+					\item Audacity
+					\item Mobile Device Voice Recording App such as Voice Recorder \& Audio Editor by TapMedia Ltd (iOS)
+				\end{itemize}
+
+				Should you need further assistance with recording your voice message, please see the full user guide \hyperref[sec:user_guide]{here} or head to section \ref{sec:user_guide}.
+
+				\paragraph{Getting ready to transfer your file to the MicroSD card}\mbox{}
+
+				Before getting started with the transferring of your MP3 file to the SD card, you will need to ensure that you have a means to read/write to the SD card. For example, a USB to MicroSD card reader that can connect to your computer system or mobile device, or computer system with a built in MicroSD card reader.
+
+				It is imperative that your MicroSD card is using a FAT16/FAT32 file system to allow our devices to detect your audio file. Should your MicroSD card be using a different file system, please format your MicroSD card so that it is using a FAT16/FAT32 file system. WARNING! Formatting your MicroSD card will cause you to lose all of your data currently saved on it. Instructions for formatting your MicroSD card can be found below:
+
+				\begin{itemize}
+					\item \href{https://www.bu.edu/comtech/students/technical-guides/hardware/how-to-format-hard-drives/}{Format Instructions}
+				\end{itemize}
+
+				To transfer from your computer system to the MicroSD card, you will need to ensure that you file explorer software such as Windows Explorer or MacOS Finder ready to use.
+
+				If you have recorded your voice message using a mobile device, you can either transfer your MP3 file to the computer system using a message system such as email or by connecting your mobile device to your computer system via USB. Another option is to connect your MicroSD card to your mobile device using one of the previously mentioned adapters to allow for file transfer.
+
+				\paragraph{Transferring your MP3 file to the MicroSD card}\mbox{}
+
+				Once you have access to writing to your MicroSD card, you are ready to transfer your MP3 file. Please follow the following steps to ensure that your MP3 file is transferred to the MicroSD card correctly to be fully functional with the Walking Aid Usage Prompt System:
+
+				\begin{itemize}
+					\item Open the file explorer software and locate your voice recorded MP3 file.
+					\item Rename the file to 'reminder.mp3'.
+					\item Through the file explorer software, locate your MicroSD card's storage location.
+					\item Create a folder on the MicroSD card named 'reminder'.
+					\item Copy and paste the 'reminder.mp3' file from your computer system/mobile device to the 'reminder' folder on the MicroSD card.
+				\end{itemize}
+
+				The process is now complete! You are ready to insert the MicroSD card into the walking aid device to begin using the system.
+
+				\paragraph{Inserting you MicroSD card into the walking aid device}\mbox{}
+
+				\begin{wrapfigure}{R}{0.25\textwidth}
+					\vspace{-3.5em}
+					\centering
+					\includegraphics[width=0.25\textwidth]{graphics/sd_arrow.png}
+				\end{wrapfigure}
+
+				Once you have transferred your MP3 file to the MicroSD card, you will need to insert the MicroSD card into the walking aid device. You can insert the MicroSD card into the walking aid device by simply sliding the MicroSD card into the slot until you feel a click. The location of the MicroSD card slot can be seen in the image to the right. Once you have inserted the MicroSD card into the walking aid device, you are ready to power on your devices.
+
+				\paragraph{Powering on your devices}\mbox{}
+
+				Our current prototype lacks a battery powered solution, but one will be included in future work. For now, the devices require USB power, either from a battery bank or from a computer system. Once you have powered on your devices, you are ready to begin using the Walking Aid Usage Prompt System. To confirm that the device is functional, you should see the flash of a green LED for about one second.
+
+				Should you notice any other LED light indicators, then please refer to the User Guide \hyperref[sec:user_guide]{here} or head to section \ref{sec:user_guide} for further troubleshooting instructions.
+
+				\subsubsection{To use the vibration reminder system}
+
+				As you are relying on the vibration reminder system, there is no need to utilise a MicroSD card, therefore you can skip to powering on the device. The design of our current prototype means that we will have setup the devices prior to you receiving them to ensure that they are functional for vibration reminders. Future work will be carried out to ensure that a button or switch system is implemented to allow the user to switch between vibration and audio reminders themselves.
+
+				\paragraph{Powering on your devices}\mbox{}
+
+				Our current prototype lacks a battery powered solution, but one will be included in future work. For now, the devices require USB power, either from a battery bank or from a computer system. Once you have powered on your devices, you are ready to begin using the Walking Aid Usage Prompt System. To confirm that the device is functional, you should see the flash of a green LED for about one second.
+
+				Should you notice any other LED light indicators, then please refer to the User Guide \hyperref[sec:user_guide]{here} or head to section \ref{sec:user_guide} for further troubleshooting instructions.
+
 
 	\section{User Guide}
 	\label{sec:user_guide}
+
+		\subsection{Troubleshooting LEDs}
+		\label{subsec:troubleshooting_leds}
+
+			\begin{tabular}{ m{0.1\linewidth} m{0.8\linewidth} } 
+
+				\vspace{2em}
+				\includegraphics[width=0.5\linewidth]{graphics/green_circle.png}
+				
+				& You should see this LED for one second when you initally power on the device. This indicates that your device is functional. \\ 
+
+				\vspace{2em}
+				\includegraphics[width=0.5\linewidth]{graphics/orange_circle.png}
+				
+				&  You are seeing this LED because the device in question is struggling to connect to the other device. Try powering them down, moving them closer together and restarting them. If you are still experiencing issues, please contact our support team here. \\ 
+
+				\vspace{2em}
+				\includegraphics[width=0.5\linewidth]{graphics/red_circle.png}
+				
+				& This LED is being displayed as the initialisation of the communication protocol has failed. Please contact our support team here. \\
+				 
+			\end{tabular}
 
 	\section{Developer Guide}
 	\label{sec:developer_guide}
@@ -108,7 +202,7 @@
 
 	% 	Intro on what the devices to, prerequisites, etc
 
-	% 	\todo{We probably need health disclaimers somewhere in our doc?}
+		\todo{We probably need health disclaimers somewhere in our doc?}
 
 	
 	% \section{Hardware Guide}
