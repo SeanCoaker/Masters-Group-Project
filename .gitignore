@@ -23,6 +23,8 @@ auxil
 *.run.xml
 *.brf
 *.ilg
+*.pygtex
+*.pygstyle
 !milestone.tex
 !out/milestone1.pdf
 !/out/milestone1.pdf
