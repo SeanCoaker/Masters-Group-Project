@@ -10,7 +10,7 @@
 			\includegraphics[width=0.25\textwidth]{graphics/final-cad.png}
 		\end{wrapfigure}
 
-		The Walking Aid Usage Prompt System is a medical aid consisting of a pair of hardware devices that allows patients suffering with dementia to be automatically reminded to use their walking aid when they begin walking without it. With stastically high rates of falling in dementia patients, the Walking Aid Usage Prompt System attempts to reduce these numbers. It aims to do this by offering a system that automatically detects when patients are walking without their walking aid and plays them a reminder to take their walking aid with them.
+		The Walking Aid Usage Prompt System is a medical aid consisting of a pair of hardware devices that allows patients suffering with dementia to be automatically reminded to use their walking aid when they begin walking without it. With stastically high rates of falling in dementia patients, the Walking Aid Usage Prompt System attempts to reduce these numbers. It aims to do this by offering a system that automatically detects when patients are walking without their walking aid and plays them an audible reminder from a relatives voice, to take their walking aid with them.
 
 		\paragraph{Automatic Movement Detection}\mbox{}
 
@@ -18,7 +18,7 @@
 
 		\paragraph{Remind the patient with the sound of a familiar voice}\mbox{}
 
-		Utilising the SD card reader on the walking aid device, you can upload an MP3 file to be played to the patient when they begin walking without their walking aid. The connected speaker will give you the peace of mind that the patient will hear the reminder whenever it needs to be played.
+		Utilising the SD card reader on the walking aid device, you can upload an MP3 file to be played to the patient when they begin walking without their walking aid. The connected speaker will give you the peace of mind that the patient will hear the reminder whenever it needs to be played. According to our research, and insight from the client, this will increase the chances of the patient reacting appropriately, and will ease them into being accustomed to the device.
 
 		\begin{wrapfigure}{L}{0.25\textwidth}
 			\vspace{-1em}
@@ -26,13 +26,13 @@
 			\includegraphics[width=0.25\textwidth]{graphics/hardware.png}
 		\end{wrapfigure}
 
-		\paragraph{Use a vibration reminder for patients who are hard of hearing}\mbox{}
+		\paragraph{Use vibration feedback as a reminder for patients who are hard of hearing}\mbox{}
 
-		The inclusion of a communication protocol between our two devices will mean that the use of an audio reminder can be replaced, with the wearable device being asked to vibrate instead.
+		The inclusion of a low power, low latency communication protocol between our two devices will mean that the use of an audio reminder can be replaced, with the wearable device being asked to vibrate instead.
 
 		\paragraph{Never use intrusive wearables again}\mbox{}
 
-		Boasting a small form factor and the avoidance of distracting LEDs, our devices were developed with the comfort of the patient in mind. Utilising 18mm x 32mm TinyPICO development boards, our solution manages to keep device sizes to a minimum and can be worn on either the ankle or the wrist. 
+		Boasting a small form factor and the avoidance of distracting LEDs, our devices were developed with the comfort of the patient in mind. Utilising 18mm x 32mm TinyPICO development boards, our solution succeeds at keeping device sizes to a minimum and can be worn on either the ankle or wrist, with adaptable attachment methods that can be tailored to each patient.
 
 		\paragraph{Next Steps:}\mbox{}
 
@@ -71,12 +71,12 @@
 				\item MicroSD Card >= 2MB Capacity.
 				\item Windows/MacOS/Linux Computer System.
 				\item A means to read/write to the SD card from the computer system. For example, a USB to MicroSD card reader.
-				\item A microphone to record audio.
+				\item A microphone to record audio, or a pre-recorded audio file (.MP3)
 			\end{itemize}
 
 			\paragraph{To use the vibration reminder system:}\mbox{}
 
-			No hardware necessary, please advance to section \ref{subsec:quick_start_setup_guide}.
+			No additional hardware necessary, please advance to section \ref{subsec:quick_start_setup_guide}.
 
 		\subsection{Software Requirements}
 		\label{subsec:quick_start_guide_software}
@@ -84,14 +84,14 @@
 			\paragraph{To use the audio reminder system:}\mbox{}
 
 			\begin{itemize}
-				\item Voice recording software such as Windows Voice Recorder or Audacity. (An alternative could be to record your voice message on a mobile device and transfer it to your computer system).
+				\item Voice recording software such as Windows Voice Recorder or Audacity. (An alternative could be to record your voice message on a mobile device and transfer it to the computer system).
 				\item File explorer software to copy the file to the SD card.
 				\item MP3 audio file should be <= 2MB in size.
 			\end{itemize}
 
 			\paragraph{To use the vibration reminder system:}\mbox{}
 
-			No software necessary, please advance to section \ref{subsec:quick_start_setup_guide}.
+			No additional software necessary, please advance to section \ref{subsec:quick_start_setup_guide}.
 
 		\subsection{Setup Guide}
 		\label{subsec:quick_start_setup_guide}
@@ -102,9 +102,11 @@
 
 				To utilise the audio reminder system, you will need a MicroSD card with at least 2MB of storage capacity and an MP3 file that is less than 2MB in size. We recommend that the MP3 file include the voice recording of a relative, friend or carer that will remind the patient to use their walking aid. 
 
+				Friendly voices are known to provide a higher success rate, than generic voices that could further confuse or frighten the patient.
+
 				\paragraph{Recording your reminder message}\mbox{}
 
-				Using voice recording software and a microphone, record your voice message. Voice recording software can include the likes of:
+				Using voice recording software and a microphone, record your voice message. Recommended voice recording software includes, but is not limited to, the following:
 
 				\begin{itemize}
 					\item Windows Voice Recorder
@@ -124,7 +126,7 @@
 					\item \href{https://www.bu.edu/comtech/students/technical-guides/hardware/how-to-format-hard-drives/}{Format Instructions}
 				\end{itemize}
 
-				To transfer from your computer system to the MicroSD card, you will need to ensure that you file explorer software such as Windows Explorer or MacOS Finder ready to use.
+				To transfer from your computer system to the MicroSD card, you will need to ensure that your file explorer software such as Windows Explorer or MacOS Finder ready to use.
 
 				If you have recorded your voice message using a mobile device, you can either transfer your MP3 file to the computer system using a message system such as email or by connecting your mobile device to your computer system via USB. Another option is to connect your MicroSD card to your mobile device using one of the previously mentioned adapters to allow for file transfer.
 
@@ -154,7 +156,7 @@
 
 				\paragraph{Powering on your devices}\mbox{}
 
-				Our current prototype lacks a battery powered solution, but one will be included in future work. For now, the devices require USB power, either from a battery bank or from a computer system. Once you have powered on your devices, you are ready to begin using the Walking Aid Usage Prompt System. To confirm that the device is functional, you should see the flash of a green LED for about one second.
+				Our current prototype does not include an internal battery, but different battery solutions will be provided as options in future work. For now, the devices require 5V USB power, either from a battery bank, computer system, or phone charger. Once you have powered on your devices, you are ready to begin using the Walking Aid Usage Prompt System. To confirm that the device is functional, you should see the flash of a green LED for about one second.
 
 				Should you notice any other LED light indicators, then please refer to the User Guide \hyperref[sec:user_guide]{here} or head to section \ref{sec:user_guide} for further troubleshooting instructions.
 
@@ -164,7 +166,7 @@
 
 				\paragraph{Powering on your devices}\mbox{}
 
-				Our current prototype lacks a battery powered solution, but one will be included in future work. For now, the devices require USB power, either from a battery bank or from a computer system. Once you have powered on your devices, you are ready to begin using the Walking Aid Usage Prompt System. To confirm that the device is functional, you should see the flash of a green LED for about one second.
+				Our current prototype does not include an internal battery, but different battery solutions will be provided as options in future work. For now, the devices require 5V USB power, either from a battery bank, computer system, or phone charger. Once you have powered on your devices, you are ready to begin using the Walking Aid Usage Prompt System. To confirm that the device is functional, you should see the flash of a green LED for about one second.
 
 				Should you notice any other LED light indicators, then please refer to the User Guide \hyperref[sec:user_guide]{here} or head to section \ref{sec:user_guide} for further troubleshooting instructions.
 
