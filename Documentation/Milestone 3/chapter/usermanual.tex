@@ -1,6 +1,8 @@
 \chapter{User Manual}
 \label{ch:usermanual}
 
+	\todo{We probably need health disclaimers somewhere in our doc?}
+
 	\section{Welcome}
 	\label{sec:welcome}
 
@@ -145,7 +147,7 @@
 
 				Should you notice any other LED light indicators, then please refer to the User Guide \hyperref[sec:user_guide]{here} or head to section \ref{sec:user_guide} for further troubleshooting instructions.
 
-
+	\newpage
 	\section{User Guide}
 	\label{sec:user_guide}
 
@@ -291,29 +293,77 @@
 				 
 			\end{tabular}
 
+	\newpage
 	\section{Developer Guide}
 	\label{sec:developer_guide}
 
-	% \section{Introduction}
-	% \label{sec:usermanual_intro}
+		This section is designed to help developers in the future to build on top of this project, to experiment with further techniques for the main features and to allow them the opportunity to learn from our code and systems to help impact the lives of dementia patients. We understand that this project may be handed onto developers in a professional setting in future, and wanted to offer a section including the necessary details on this project to allow developers to easily understand the code and systems.
 
-	% 	Intro on what the devices to, prerequisites, etc
+		This section will contain details on how we wired both the walking aid and wearable devices, and why we decided to wire the devices the way we did. It will also contain details on the code that we have written and will provide suggestions as to how the code can be improved moving forward. We have developed our code such that classes can be transferred seamlessly for classes that utilise more expensive hardware or more complex libraries to help facilitate the advancement of these systems in future. 
 
-		\todo{We probably need health disclaimers somewhere in our doc?}
+		\subsection{Wiring}
+		\label{subsec:wiring}
 
-	
-	% \section{Hardware Guide}
-	% \label{sec:usermanual_hardware}
+			We had intended to include a wiring diagram here of the connections between our TinyPICO boards, the accelerometers and the audio shield. However, there seems to be a lack of software that allows for the creation of wiring models for TinyPICO boards. We have therefore decided to include a list of the connections that we have made between the devices. Following this list will be illustrations of the hardware used and their pinouts. Thus, the developer can understand how the hardware is connected and be able to reference the images to understand where the pins are located on them. The following is a list of the necessary wiring between the hardware, with the TinyPICO to ADXL345 Accelerometer section necessary for both the walking aid and wearable devices, and the TinyPICO to I2S Audio Shield necessary only for the walking aid device.
 
-	% 	Hardware stuff, powering on device, inserting sd card, assembly/dissasmbly guide? 
+			\subsubsection{TinyPICO to ADXL345 Accelerometer}
 
-	% \section{Software Guide}
-	% \label{sec:usermanual_software}
+				As it was necessary for us to utilise the SPI communication standard for the communication between the TinyPICO board and the I2S Audio Shield in the walking aid device, we were influenced to utilise the I\textsuperscript{2}C communcation standard between the TinyPICO boards and the ADXL345 accelerometer. The full wiring list for the TinyPICO to ADXL345 Accelerometer is shown below.
 
-	% 	Software related things, setting device up with voice recording on sd card etc?
+				\begin{itemize}
+					\item TinyPICO 5V Pin (5V) \hspace{2.5em} ---> \hspace{2em} ADXL345 VCC Pin.
+					\item TinyPICO Ground Pin (G) \hspace{1.15em} ---> \hspace{2em} ADXL345 GND Pin.
+					\item TinyPICO SDA Pin (21)	\hspace{2em} ---> \hspace{2em} ADXL345 SDA Pin.
+					\item TinyPICO SCL Pin (22)	\hspace{2.1em} ---> \hspace{2em} ADXL345 SCL Pin.
+				\end{itemize}
 
+				We opted not to utilise the INT1 and INT2 interrupt pins for this project, but they do provide an interesting experimental feature for further development work. These pins could be used to trigger a software interrupt on the TinyPICO board, which would allow code to be run in real time when an event has been triggered through the accelerometer.
 
-	% \section{Development Guide}
-	% \label{sec:usermanual_development}
+			\subsubsection{TinyPICO to I2S Audio Shield}
 
-	% 	Code related guide
+				The TinyPICO to Audio Shield communication utilises the I\textsuperscript{2}S audio communication standard and that was why we opted for this specific wiring communication. It was also a necessity for us to use the SPI communication protocol between the two hardware devices to provide a communication route for the transferring of audio files between the two boards. The full wiring list for the TinyPICO to I2S Audio Shield is shown below.
+
+				\begin{itemize}
+					\item TinyPICO 3.3V Pin (3V3) \hspace{2.1em} ---> \hspace{2em} I2S Audio Shield 3.3V Pin (3V3).
+					\item TinyPICO Ground Pin (G) \hspace{2em} ---> \hspace{2em} I2S Audio Shield Ground Pin (G).
+					\item TinyPICO SS Pin (5) \hspace{4.15em} ---> \hspace{2em} I2S Audio Shield SD SEL Pin (5).
+					\item TinyPICO SCK Pin (18) \hspace{2.8em} ---> \hspace{2em} I2S Audio Shield SPI CLK Pin (18).
+					\item TinyPICO MI Pin (19) \hspace{3.55em} ---> \hspace{2em} I2S Audio Shield SPI MI Pin (19).
+					\item TinyPICO MO Pin (23) \hspace{3.15em} ---> \hspace{2em} I2S Audio Shield SPI MO Pin (23).
+					\item TinyPICO DAC 1 Pin (25) \hspace{2em} ---> \hspace{2em} I2S Audio Shield D IN Pin (25).
+					\item TinyPICO DAC 2 Pin (26) \hspace{2em} ---> \hspace{2em} I2S Audio Shield LRCLK Pin (26).
+					\item TinyPICO TCH 7 Pin (27) \hspace{2em} ---> \hspace{2em} I2S Audio Shield BCLK Pin (27).
+				\end{itemize}
+
+		\newpage
+		\subsection{Hardware Pinouts}
+		\label{subsec:hardware_pinouts}
+
+			The following sections will contain the pinout images for the TinyPICO board, the ADXL345 accelerometer and the I2S Audio Shield. These images are provided for reference with the wiring section in section \ref{subsec:wiring}, to aid in the process of understanding the wiring of our systems and to allow developers to reconfigure the wiring of the devices themselves.
+
+			\subsubsection{TinyPICO Board}
+
+				The following is an image of the pinouts of the TinyPICO board provided by \cite{tinypico}.
+
+				\input{graphics/tinypico_pinouts.tex}
+
+			\newpage
+			\subsubsection{ADXL345 Accelerometer}
+
+				The following is an image of the pinouts of the ADXL345 accelerometer provided by \cite{components101}.
+
+				\input{graphics/accel_pinouts.tex}
+
+			\newpage
+			\subsubsection{I2S Audio Shield}
+
+				The following is an image of the pinouts of the I2S audio shield provided by \cite{unexpected_maker}.
+
+				\input{graphics/audioshield_pinouts.tex}
+
+		\newpage
+		\subsection{Software Development}
+
+			This section is designed to help the developer understand what each class within the software system does and how they can be altered to incorporate different technologies that could potentially improve the system in future.
+
+			
