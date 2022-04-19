@@ -1,0 +1,52 @@
+\vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{FREQ1: The wearable device should detect when a patient has walked more than 1 metre before communicating with the walking aid.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{We developed the wearable device to include an ADXL345 accelerometer that would provide the basis for detecting when the patient is walking. Utilising the single-tap detection feature of the accelerometer, we identify changes in gravity above our set threshold as a step. When each step is detected, it is added to a step counter which is used to identify if a user has walked more than 5 metres within a 10 second period. The check to identify if the user has walked 5 steps in a 10 second period ensures that we safely know that the user has walked more than 1 metre. Only when this has occurred does the system send a message to the walking aid device.
+                
+                However, there are some issues with this system as described previously in this document. Following the inherent issues of step counters within smartphone devices, the shaking of our wearable device can cause steps to be detected even without walking. However, this issue is very difficult to avoid without the large budgets needed to provide more research and development within this area.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{FREQ2: Patients should be alerted with the voice of a friend, carer or relative to avoid startling them.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{The success of this requirement is based heavily on what message carers, relatives and friends decide to use as reminders for the patient. However, with the inclusion of our SD card reading and audio playing system, we feel we have provided the necessary functionality to allow voice recordings to be played as reminders from our walking aid device. Therefore, we class this requirement as completed.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{FREQ3: The wearable device should include a solution for deaf people that still reminds them to take their walking aid with them without the need for an audio alarm.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{We feel that this requirement has been completed due to the fact that we have implemented two-way communication between our walking aid and wearable devices, that allows for the vibration motor on the wearable device to vibrate, replacing the audio reminder for deaf patients. When the walking aid device receives a message from the wearable declaring that the user has started walking, and the walking aid device does not detect any movement itself, then rather than playing an audio reminder it sends a message back to the wearable asking it to vibrate.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup

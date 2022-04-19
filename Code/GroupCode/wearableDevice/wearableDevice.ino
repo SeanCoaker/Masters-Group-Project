@@ -12,6 +12,8 @@
 #include "WearableAccelerometer.h"
 #include "WearableCommunications.h"
 
+#define VIBRATOR_PIN 15
+
 
 //! A copy of the message received from the walking aid device.
 String message;
@@ -33,12 +35,10 @@ TinyPICO tp = TinyPICO();
 void OnDataRecv(const uint8_t * mac, const uint8_t * data, int len) {
   memcpy(&message, data, sizeof(message));
   Serial.println(message);
-  tp.DotStar_SetPixelColor(230, 230, 250);
-  tp.DotStar_SetBrightness(128);
-  tp.DotStar_Show();
+
+  digitalWrite(VIBRATOR_PIN, HIGH);
   delay(1000);
-  tp.DotStar_SetBrightness(0);
-  tp.DotStar_Show();
+  digitalWrite(VIBRATOR_PIN, LOW);
 }
 
 /**
@@ -46,6 +46,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t * data, int len) {
  * 
  */
 void setup() {
+  pinMode(VIBRATOR_PIN, OUTPUT);
 	Serial.begin(115200);
   accel.init(20, 15, 10, 30, 10000);
   comms.init("Reminder", broadcastAddress);
