@@ -129,7 +129,7 @@
 					\includegraphics[width=0.25\textwidth]{graphics/sd_arrow.png}
 				\end{wrapfigure}
 
-				Once you have transferred your MP3 file to the MicroSD card, you will need to insert the MicroSD card into the walking aid device. You can insert the MicroSD card into the walking aid device by simply sliding the MicroSD card into the slot until you feel a click. The location of the MicroSD card slot can be seen in the image to the right. Once you have inserted the MicroSD card into the walking aid device, you are ready to power on your devices.
+				Once you have transferred your MP3 file to the MicroSD card, you will need to insert the MicroSD card into the walking aid device. You can insert the MicroSD card into the walking aid device by simply sliding the MicroSD card into the slot until you feel a click. The location of the MicroSD card slot can be seen in the image to the right. Once you have inserted the MicroSD card into the walking aid device, you are ready to power on your devices. Ensure that the MicroSD card is connected to the walking aid device before powering the device on.
 
 				\paragraph{Powering on your devices}\mbox{}
 
@@ -260,7 +260,7 @@
 					\includegraphics[width=0.25\textwidth]{graphics/sd_arrow.png}
 				\end{wrapfigure}
 
-				Once you have transferred your MP3 file to the MicroSD card, you will need to insert the MicroSD card into the walking aid device. You can insert the MicroSD card into the walking aid device by simply sliding the MicroSD card into the slot until you feel a click. The location of the MicroSD card slot can be seen in the image to the right. Once you have inserted the MicroSD card into the walking aid device, you are ready to power on your devices.
+				Once you have transferred your MP3 file to the MicroSD card, you will need to insert the MicroSD card into the walking aid device. You can insert the MicroSD card into the walking aid device by simply sliding the MicroSD card into the slot until you feel a click. The location of the MicroSD card slot can be seen in the image to the right. Once you have inserted the MicroSD card into the walking aid device, you are ready to power on your devices. Please remember that the walking aid device must have a MicroSD card inserted before the device is powered on to ensure that an audio file can be transferred to the device's onboard memory.
 
 				\paragraph{Powering on your devices}\mbox{}
 				\label{para:powering}
@@ -364,6 +364,52 @@
 		\newpage
 		\subsection{Software Development}
 
-			This section is designed to help the developer understand what each class within the software system does and how they can be altered to incorporate different technologies that could potentially improve the system in future.
+			This section is designed to help the developer understand what each class within the software system does and how they can be altered to incorporate different technologies that could potentially improve the system in future. Each breakdown of the classes will include an overview of what the class does, and what particular changes can be made to adjust the system.
 
-			
+			\subsubsection{WalkAidAccelerometer/WearableAccelerometer}
+
+				These classes are used to operate the walking and movement detection features of the wearable and walking aid devices. They currently utilise a system that detects changes in gravity over a specified threshold as steps. Those steps are recorded as the steps those devices have taken and signify whether they are moving or not. Issues relating to this system can also be identified in high end mobile step counters, where the quick movement of the mobile device without actually walking can cause steps to be detected.
+
+				Listing \ref{lst:accel} demonstrates how the code is implemented to detect changes in gravity and call the code that increments the step counter on the wearable device and the last step time updater on the walking aid device. This code can be easily replaced with code that detects changes in acceleration for example. An interesting alternative here could be to implement distance tracking between the two devices with the accurate Ultra wideband technology currently on offer. However, this technology would add to your budget. 
+
+				\lstinputlisting[language=C++, caption=Code to detect steps through the ADXL345's built-in single tap detection feature., label=lst:accel]{listings/tap_detection.cpp}
+
+				Both accelerometer classes also contain initialisations of the accelerometer, which is used to set the threshold for the single tap detection feature. We encourage the developers to experiment with different thresholds to see how the system performs for your specific needs. A further feature that could be experimented with is the use of the interrupt signals sent by the accelerometer. Utilising the INT1 or INT2 pins on the ADXL345 could allow the user to call a function in real time when an event has been triggered through the accelerometer.
+
+				Further documentation for these classes can be viewed in sections \ref{subsec:WalkAidAccelerometer} and \ref{subsec:WearableAccelerometer}.
+
+			\subsection{WalkAidCommunications/WearableCommunications}
+
+				These classes are used to define the communication behaviours between the walking aid and wearable devices. As mentioned previously, we opted to utilise ESP-Now as our communication protocol, but this technology can be easily transferred to the developer's preferred technology such as Bluetooth. The classes in their current form include an init class that initialises the necessary details for ESP-Now to function correctly within this system. This includes the assigning of peer devices and messages that should be sent to those peer devices. 
+
+				Within the main sketch files of each device, we include the callback function OnDataRecv, which is called when ESP-Now detects a message. It is here that the developer can adjust the behaviour of the system when the message received. For example, we currently use the code in listing \ref{lst:callback} on the walking aid device to set a boolean to true, which in turn allows the next run of the Arduino loop function to check if the walking aid is moving. This can be adjusted however to incorporate the needs of the developer. For example, the developer could instead opt to use a different method for movement detection and have that function called within the callback function.
+
+				\lstinputlisting[language=C++, caption=A callback function called when the walking aid device detects a message., label=lst:callback]{listings/callback.cpp}
+
+				Further documentation for these classes can be viewed in sections \ref{subsec:WalkAidCommunications} and \ref{subsec:WearableCommunications}.
+
+			\subsection{WalkAidAudio}
+
+				The WalkAidAudio class handles the initialisation of the SDToSPIFFS class, calls for the audio file to be transferred from the SD card to the SPIFFS file system, and then calls for the audio file to be played when necessary. The class currently utilises a select number of generator classes to allow the ESP32 to interpret the MP3 file. The developer can adjust these classes to allow for further audio file formats to be interpreted also.
+
+				The playing of the audio file requires the reinstantiation of these audio generators and decoders before allowing the audio to be played correctly.
+
+				Further documentation for this class can be viewed in section \ref{subsec:WalkAidAudio}.
+
+			\subsection{SDToSPIFFS}
+
+				To allow for the transferral of the MP3 file from the MicroSD card to the SPIFFS file system, the SDToSPIFFS class is used. The class utilises the SdFat library discussed in section \ref{subsec:sdfat}. We opted to utilise this class due to the inefficiency of Arduino's SD library, we highly recommend that the developer avoids the use of the Arduino SD library due to these inefficiency reasons. Our current system requires that the MicroSD card is within the MicroSD card slot of the walking aid device whenever it is powered on. This is due to the fact that the SPIFFS file system is volatile and therefore data within it is deleted when the device powers down. A future advancement to this could involve the developer adjusting our code in listing \ref{lst:transfer} to allow for the transferral of the MP3 file to a persistent storage location, or to include code that detects when a MicroSD card has been inserted and have the transferral process take place at that point. 
+
+				\lstinputlisting[language=C++, caption=Code to transfer the MP3 file from the MicroSD card to the SPIFFS file system., label=lst:transfer]{listings/transfer.cpp}
+
+				Further documentation for this class can be viewed in section \ref{subsec:sdtospiffs}.
+
+			\subsection{Sketch Files}
+
+				The sketch file for each device contains the functions necessary to allow the devices to be developed through Arduino. The setup function of each class instantiates the required libraries for the full desired functionality of the systems. The loop function for the wearable device repeatedly calls the check for step function where steps are detected and added to the counter, and calls for messages to be sent to the walking aid device are made should a reminder need to be played.
+
+				The loop function for the walking aid device is a little more complex as it incorporates the functionality for checking if the walking aid had been moved in the last 10 seconds and if not, waits to see if the walking aid is moved in the next 10 seconds before deciding to play a reminder or not. The code for the walking aid loop function can be viewed in listing \ref{lst:loop}. The main area we feel that the developer could experiment with here is to implement the accelerometer interrupt feature to allow movements to be responded to in real time rather than having to wait for the loop function to be called each time to have movements detected.
+
+				\lstinputlisting[language=C++, caption=The loop function of the walking aid sketch file., label=lst:loop]{listings/loop.cpp}
+
+				Further documentation for these sketch files can be viewed in sections \ref{subsec:sketch_walking_aid} and \ref{subsec:sketch_wearable}.
