@@ -50,3 +50,173 @@
 				 
 			\end{tabular}
             \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{FREQ4: If development time allows, the system should include fall detection as a \textit{stretch goal} feature.} & \colorbox{red}{0\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{Due to the time lost in waiting for hardware to be delivered, we needed to prioritise the deveopment of the crucial features needed to complete the project. Therefore the implementation of the fall detection stretch goal was not implemented, but is planned to be implemented in future work.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{FREQ5: The wearable device should communicate to the walking aid device to let it know when it has started moving.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{With the utilisation of the ESP-Now communication technology, we were able to fully implement two-way communication between our wearable and walking aid device. Thus, when the wearable device has detected that the patient is walking, communication can be made with the walking aid device.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{NONFREQ1: The watch should be a small enough form factor to fit on the wrist of the patient.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{Utilising the TinyPICO meant that we were able to keep our wearable device form factor to a minimum. With the TinyPICO measuring at 18mm x 32mm \cite{tinypico}, it is safe to say that the wearable device can be easily worn on the wrist or any other part of the body.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{NONFREQ2: The devices shall be power efficient to avoid the patient needing to charge them often.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{We were unable to test the power efficiency of our devices as we lack the apparatus that could produce an efficiency rating. However, we continuously considered this requirement when making design decisions such as the choice to utilise the TinyPICOs, and therefore feel confident that our devices are power efficient enough to avoid the patient needing to recharge them or change their batteries.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{NONFREQ3: The devices shall avoid startling the patients with the use of LEDs and vibrations unless they are deaf.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{As we only utilise LEDs for debugging purposes when the devices start up, and only utilise the vibration motor when we pre declare that it should be used, we feel confident in stating that this requirement has been met. The LED debugging feature was designed such that the patient's carer, friend or relative will be the person to setup the device, meaning that the LEDs will not startle the patients. Due to budget constraints, we were unable to implement a switch that allowed the user to switch between audio reminder usage and vibration reminder usage. Therefore, should the device need to be utilised by a deaf patient, there is a line of code in our implementation that switches between audio reminder usage and vibration reminder usage. This avoids patients being unnecessarily startled by vibrations when they are not useful to them.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{NONFREQ4: The wearable device should be discrete enough that it does not make patients uncomfortable wearing it.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{The small form factor of the TinyPICO devices allowed us to create a wearable device that minimises the discomfort to patients wearing it. Our casing features a clip-on mechanism meaning that the wearable could be attached to straps on the patient's limbs or attached to an item of clothing. We feel that the versatility that this design offers will help to lower the discomfort of the patients that utilise our system.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{NONFREQ5: Security of devices should prohibit outside devices from communicating with the network.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{ESP-Now requires the knowledge of a device's MAC address to send a message to it. Therefore, a malicious attacker would need to first identify this information before being able to compromise the network. As well as this, ESP-Now incorporates an encryption feature that we will utilise in future work that will mean that we can also secure the messages being sent between our devices. Because of these reasons, we feel that this requirement has been met.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{NONFREQ6: The developed prototype wearable device shall be designed such that it can fit various writs dimensions.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{As mentioned for the requirement NONFREQ4, we have developed a prototype that utilises a clip-on mechanism for attaching the wearable device to the patient. This versatility means that the wearable can be attached to any item of clothing, as well as be attached to any band that can be placed on the wrist or ankle of the patient. Due to the versatility of this mechanism, we feel that we have met this requirement.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{NONFREQ7: The coding system the devices run on should be efficient enough to react to real time actions.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{As mentioned in section \ref{subsec:programming_language}, our utilisation of Arduino C is beneficial due to the fact that it is a compiled language. This provides faster response times, meaning we could develop an efficient software system. Because of this, we feel that this requirement has been met. However, we could enhance the responsiveness of our systems in future by utilising hardware interrupts.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
+
+            \vspace{2em}
+            \bgroup
+            \def\arraystretch{1.5}
+            \begin{tabular}{| p{0.7\linewidth} | c |} 
+                \hline
+
+				\textbf{NONFREQ8: The system should be delivered upon its conclusion with relevant documentation, including a user manual.} & \colorbox{green}{100\% Complete.}\\ 
+
+                \hline
+
+                \multicolumn{2}{| p{0.9\linewidth} |}{At the time of writing this, we have not handed over the system and its documentation yet. However, when this document is concluded and submitted to the University, we will ensure that we hand over the devices, coding system and all relevant documentation to the client.}\\
+
+                \hline
+				 
+			\end{tabular}
+            \egroup
