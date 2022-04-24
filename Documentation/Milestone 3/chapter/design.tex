@@ -42,19 +42,25 @@
 
         \subsection{Power}
         \label{subsec: Power}
-            \todo{Power sources/batteries/out of scope/power requirements etc}
+            Our prototypes will not include any battery or portable power source support, this decision was made due to the limited time and budget we had. Our vision, research and hardware supports 1S Lithium Polymer (LiPo) batteries as standard, and the TinyPico is designed to be used with this power source in mind. Unfortunately, researching safe battery charging circuits as well as proper battery care was not something we had the time for, and will leave as an attainable stretch goal if this project were to gain further funding or time budgets.
+
+            \todo{Add pictures of 1s lipos}
+
+            1S LiPos are compact, and offer excellent discharge currents which would make it ideal for our high wattage speaker, although adjusting speaker size can reduce the battery requirement quite significantly, and can be considered later on with further research and testing.
+
+            Our prototypes are powered by the same MicroUSB, 5V port that is used for programming and updating the device, to facilitate testing, these will run off of portable power banks with USB outputs, to ensure reliable voltage and amperage is provided to our devices to reduce potential issues during testing.
 
         \subsection{Prototyping}
         \label{subsec: Prototyping}
         
-            /todo{Add software citations}
+            \todo{Add software citations}
             The software package used for designing the prototypes was chosen to be Autodesk Fusion 36, as well as how pervasive it is within the 3D Printing community.
 
             Where possible, we ensured to use accurate existing models. This allowed us to make progress faster, as working out and modelling tight tolerances on PCB components wasn't always required. 
 
             For the hardware we could not find models for, such as the speaker, i2s audio shield, and vibration motor, critical dimensions were taking using Vernier calipers, and by cross checking datasheets for each or similar devices.
 
-            For both devices, a large emphasis was placed on creating an enclosure for the electronics with a minimal, but modular form factor. As shown in their respective sections, the devices were designed to effectively house and protect the existing componnents, as well as allow for future expansion using modular systems and design choices, such as extendable mid plates and standard sized screws and fasteners.
+            For both devices, a large emphasis was placed on creating an enclosure for the electronics with a minimal, but modular form factor. As shown in their respective sections, the devices were designed to effectively house and protect the existing components, as well as allow for future expansion using modular systems and design choices, such as extendable mid plates and standard sized screws and fasteners.
 
             Once designs for the enclosures were created, they were sliced and converted to gcode using the open source software package SuperSlicer, and then printed on a custom VoronDesign 0.1 CoreXY Fused Filament Deposition (FDM) 3D Printer. SuperSlicer was chosen due to our teams experience with the software, as well as already having a previously tuned profile for the machine.
 
@@ -81,7 +87,11 @@
         \label{subsec:Design_Decisions_walking_aid}
 
             \todo{Check for self-plagiarism}
-            Upon clarifying the physical needs and requirements of the device, it was decided that the walking aid device had to be adaptable between different walking aids, such as a walking sticker or Zimmer frame. Form factor was a specially important priority, as a small/minimal footprint would minimise any potential problems or complications with the users. With this in mind, and with components at hand, the design was made with minimal overhead over the physical size of the items we had at hand. The design was made as modular as possible, to allow for changeable parts, to make it inter-operable different walking aids and mounting/battery options. The mounting options were inspired from the GoPro style of handlebar mount, this was chosen due to its simplicity, and the sturdiness of attachment which will help with the reading from our accelerometers. The mount was scaled down to more appropriately attach to a walking stick or Zimmer frame, but as mentioned can be easily swapped and modified to work with bigger or smaller tubes/frames.
+            Upon clarifying the physical needs and requirements of the device, it was decided that the walking aid device had to be adaptable between different walking aids, such as a walking sticker or Zimmer frame. Form factor was a specially important priority, as a small/minimal footprint would minimise any potential problems or complications with the users. With this in mind, and with components at hand, the design was made with minimal overhead over the physical size of the items we had at hand. 
+
+            \input{graphics/cad/walkingaid_0.tex}
+
+            The design was made as modular as possible, to allow for changeable parts, to make it inter-operable different walking aids and mounting/battery options. The mounting options were inspired from the GoPro style of handlebar mount, this was chosen due to its simplicity, and the sturdiness of attachment which will help with the reading from our accelerometers. The mount was scaled down to more appropriately attach to a walking stick or Zimmer frame, but as mentioned can be easily swapped and modified to work with bigger or smaller tubes/frames.
 
             In order to fulfil the specification, and allow for familiar voices to remind the users, a MicroSD card was chosen as described above. This required easy access to the card slot, which had to be intuitive and accessible without disassembly of the device.
 
@@ -103,11 +113,16 @@
 
            Therefore, we were left with the utilisation of the ADXL345 accelerometer for the detection of the user walking. To decide on which solution of accelerometer system to use, we decided to develop both the single-tap detection system and the acceleration change detection system and compare them in real world testing. For our system, the single-tap detection system seemed to work better in attempting to detect walking, where the system attempting to detect changes in acceleration struggled with also detecting any movements in the accelerometer. The single-tap detection system would also be beneficial to us as it would be implementable on both the walking aid and wearable devices. Another benefit to the single-tap detection solution is that it allows versatility as to where the wearable device can be placed, with testing proving that the devices can detect walking on both the user's wrist and their ankle. 
 
-           Ultimately, we decided to implement the single-tap detection system within the wearable device to detect when the user was walking. We make use of a system that checks if the user makes 5 steps within a 10-second period in order to meet the user requirement of reminders only being played if the user has moved over a metre without their walking aid. If they do, then we send a message to the walking aid device to play an audio reminder to the patient to take their walking aid with them if the walking aid device has not detected movement. The main benefits to this system is its versatility to be worn on the user's wrist or ankle, and it provided the foundations to the similar system that has been developed for the walking aid device. In future, we would like to explore the use of the aforementioned ultra-wideband technology (UWB). Due to its distance measurement error being within 10 cm \cite{uwb_accuracy}, it would have been interesting to implement this within the wearable device, and implement it into the walking aid device working in conjunction with an accelerometer to detect if the walking aid is moving.
+           Ultimately, we decided to implement the single-tap detection system within the wearable device to detect when the user was walking. We make use of a system that checks if the user makes 5 steps within a 10-second period in order to meet the user requirement of reminders only being played if the user has moved over a metre without their walking aid. If they do, then we send a message to the walking aid device to play an audio reminder to the patient to take their walking aid with them if the walking aid device has not detected movement. The main benefits to this system is its versatility to be worn on the user's wrist or ankle, and it provided the foundations to the similar system that has been developed for the walking aid device. In future, we would like to explore the use of the aforementioned ultra-wideband technology (UWB). Due to its distance measurement error b
+           eing within 10 cm \cite{uwb_accuracy}, it would have been interesting to implement this within the wearable device, and into the walking aid device working in conjunction with an accelerometer to detect if the walking aid is moving.
 
            \subsection{Physical Design}
             \label{subsec:Design_Decisions_wearable}
-                As with the walking aid device, the design was formulated around a minimalistic form factor around the components that needed to be present, in this case, the TinyPico, ADXL, and vibration motor. This prototype needed to be of a particularly small form factor; the client made it clear that patients aren't always happy with new, large and obtrusive objects on their bodies, so the more natural we could make it, the better it would be.
+                As with the walking aid device, the design was formulated around a minimalistic form factor around the components that needed to be present, in this case, the TinyPico, ADXL, and vibration motor. This prototype needed to be of a particularly small form factor; the client made it clear that patients aren't always happy with new, large and obtrusive objects on their bodies, so the more natural we could make it, the better it would be. This device is very tightly packed, with the components in very short distances of one another, although this could be an issue with electrical shorts, during assembly there will be insulating factors included, that will stop this from happening.
+
+                \input{graphics/cad/wearable_components_1.tex} %%also includes endcase
+
+                A similar approach was taken regarding the modular design, with an end-housing that can be quickly and easily changed. We designed a base end-plate from which all attachments are based off of, and will include it in the deliverables to ensure the client can adjust and create more as needed from our working template.
 
                 \input{graphics/cad/wearable_0.tex}
 
@@ -115,11 +130,17 @@
 
                 \input{graphics/cad/wearable_clip_0.tex}
 
-                The second attachment option is a watch strap mount. This allows the wearable device to be used with any standard 22mm watchstrap, and the idea behind this is to allow for a more comfortable, and familiar feel on the arm. Clients aren't always happy trying new things due to their condition, but this should allow for existing watch straps to be used, and making them feel at home with their new device.
+                The second attachment option is a watch strap mount. This allows the wearable device to be used with any standard 22mm watchstrap, and the idea behind this is to allow for a more comfortable, and familiar feel on the arm. Patients aren't always happy trying new things due to their condition, but this should allow for existing watch straps to be used, and making them feel at home with their new device.
+
+                \todo Add IRL pictures
 
                 \input{graphics/cad/wearable_strap_0.tex}
-    \section{UML}
+
+            \subsection{Prototype}
+            \label{subsec:Prototype_wearable}
+
     \label{sec:uml}
+    \section{UML}
     
         This section will break down the software systems utilised in the walking aid and wearable devices into formal language representations. These will take the form of a class diagram, which will illustrate the relationships between each of classes developed for each system, and an activity diagram which will demonstrate the sequence of events that will take place in the system and how they are handled. We hope that this section will help the reader to understand the software system in a broken down, step-by-step manner and to gain an understanding of our rationale towards programming choices that helped us to fulfil the user requirements. The class diagrams will be followed by an explanation of the role of each class and its functions, with the activity diagram also being accompanied by a body of text that establishes in natural language the sequence of events that will take place in the software system and how they are processed.
 
