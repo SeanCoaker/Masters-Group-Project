@@ -22,16 +22,17 @@
 	bottom = 30mm
 }
 
-
 % All imports, packages, and configuration in here.
 % Your document should be about content so we abstract away the styling rules and tools we are using.
 \input{customisation}
+
+\setcounter{tocdepth}{3}
 
 \begin{document}
 
 % The custom data for Swansea University and your degree name.
 % The \protect\\ command forces a new line in the title which might be otherwise overriden by the template
-	\title{Walking Aid Usage Prompt System}
+	\title{Walking Aid Usage \\Prompt System - Milestone 3}
 	\author{Pedro Caetano, Sean Coaker, Matthew Culley, Panayiotis Melios}
 	\awardinginst{Swansea University}
 	% Comment / uncomment your degree type as needed.
@@ -54,7 +55,11 @@
 	%\setcounter{secnumdepth}{2}
 	%\setcounter{tocdepth}{2}
 	\listoftodos
-	\tableofcontents
+	\tableofcontents*
+	\newpage
+	\listoftables*
+	\newpage
+	\listoffigures*
 
 % Optionally you can make a bank of known acronyms in acronyms.tex that you can call on throughout your document.
 	%\input{acronyms}

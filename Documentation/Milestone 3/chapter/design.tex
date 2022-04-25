@@ -190,7 +190,7 @@
 
                 Finally, despite it not following activity diagram etiquette, we wanted to demonstrate how powering off the system is the only way to stop the device from being functional. The existence of a second initial activity that controls the powering off of the system demonstrates this, and demonstrates how the rest of the system relies on the device being powered on.
 
-    \section{Common designs between the Walking Aid and the Wearable Devices}
+    \section{Walking Aid \& Wearable Device Design Commonalities}
     \label{sec:both_devices}
 
         This section will contain information on the design decisions we made that impacted both the wearable and walking aid devices. This will include software and hardware decisions that allowed us to implement a communications system, that allowed us to keep device form factor and power usage to a minimum, and discussion of why we chose pieces of hardware that are common between both devices.
@@ -203,7 +203,7 @@
         \subsection{Programming Language - Arduino C (C/C++)}
         \label{subsec:programming_language}
 
-            We decided to utilise the Arduino C (C++) programming language rather than using MicroPython to develop our embedded software due to C++'s superior efficiency over Python for the development of embedded software \cite{github_2014, dicola}. Other tools such as PlatformIO would have provided the basis to allow us to utilise C++ for our software development, but due to the benefits of our team having previous experience of using the Arduino IDE to develop embedded systems, espetially in the field of software development with ESP32 chips, we felt that our project would be better suited to being developed utilising the Arduino ecosystem. We were also aware that the handover of this project would mean that another team would be able to take on the role of advancing our code and felt that C++ provided the best platform for developing smaller and more self-explanatory code across multiple header and implementation files. This would mean that any developers that attempt to further develop our code in future, should find it rather simple to identify what each class and block of code is attempting to accomplish.
+            We decided to utilise the Arduino C (C++) programming language rather than using MicroPython to develop our embedded software due to C++'s superior efficiency over Python for the development of embedded software \cite{github_2014, dicola}. Other tools such as PlatformIO would have provided the basis to allow us to utilise C++ for our software development, but due to the benefits of our team having previous experience of using the Arduino IDE to develop embedded systems, especially in the field of software development with ESP32 chips, we felt that our project would be better suited to being developed utilising the Arduino ecosystem. We were also aware that the handover of this project would mean that another team would be able to take on the role of advancing our code and felt that C++ provided the best platform for developing smaller and more self-explanatory code across multiple header and implementation files. This would mean that any developers that attempt to further develop our code in future, should find it rather simple to identify what each class and block of code is attempting to accomplish.
 
         \subsection{Accelerometer - Adafruit ADXL345}
         \label{subsec:accel}
