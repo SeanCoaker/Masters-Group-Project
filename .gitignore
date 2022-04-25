@@ -31,3 +31,4 @@ auxil
 !out/milestone1.pdf
 !/out/milestone1.pdf
 *.synctex(busy)
+!UserManual.pdf
