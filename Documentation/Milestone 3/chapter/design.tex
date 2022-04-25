@@ -1,12 +1,12 @@
 \chapter{Design}
 \label{ch:design}
 
-    This chapter will detail the design decisions made for the project's hardware and software systems, that ultimately led to us being able to successfully implement our systems and meet the original requirements set out by our clients. The following sections will break down our final product into two systems, the walking aid device and the wearable device, detailing the design decisions made for each system, including which technologies were used and UML diagrams of the systems. We will begin by detailing the design choices we made that impact both systems before breaking down our design decisions that individually impact the walking aid and wearable devices.
+    This chapter details the design decisions made for the project's hardware and software systems, that ultimately led to us being able to successfully implement our systems and meet the original requirements set out by our clients. The following sections will break down our final product into two systems, the walking aid device and the wearable device, detailing the design decisions made for each system, including which technologies were used and UML diagrams of the systems. We will begin by detailing the design choices we made that impact both systems before breaking down our design decisions that individually impact the walking aid and wearable devices.
 
     \section{Walking Aid Device}
     \label{sec:walking_aid}
 
-        The walking aid device is a device that can be used to detect movement of the walking aid. When the wearable device detects that the patient is walking, a message is sent to the walking aid device. Should the walking aid device detect that it is not moving when the patient is walking, it will play an audio reminder to the patient to take their walking aid with them. The following sections will detail the design choices we made for this system, where we will compare technologies that would have been suited to the system and which we chose to implement, as well as a UML design section which will include a class diagram of the developed software system and an activity diagram that demonstrates the workflow of the software that allows the device to meet our desired specification.
+        The walking aid device is a system that can be used to detect movement of the walking aid. When the wearable device detects that the patient is walking, a message is sent to the walking aid device. Should the walking aid device detect that it is not moving when the patient is walking, it will play an audio reminder to the patient to take their walking aid with them. The following sections will detail the design choices we made for this system, where we will compare technologies that would have been suited to the system and which we chose to implement, as well as a UML design section which will include a class diagram of the developed software system and an activity diagram that demonstrates the workflow of the software that allows the device to meet our desired specification.
 
         \subsection{I2S Audio Shield}
         \label{subsec:i2s_audio_shield}
@@ -31,6 +31,8 @@
             The design was made as modular as possible, to allow for changeable parts, to make it inter-operable different walking aids and mounting/battery options. The mounting options were inspired from the GoPro style of handlebar mount, this was chosen due to its simplicity, and the sturdiness of attachment which will help with the reading from our accelerometers. The mount was scaled down to more appropriately attach to a walking stick or Zimmer frame, but as mentioned can be easily swapped and modified to work with bigger or smaller tubes/frames.
 
             In order to fulfil the specification, and allow for familiar voices to remind the users, a MicroSD card was chosen as described above. This required easy access to the card slot, which had to be intuitive and accessible without disassembly of the device.
+
+            \input{graphics/cad/walkingaid_0_1.tex}
 
             Further considerations include easy access to the microUSB port. This port is required for programming/updating the device, as well as be an option for powering the device if no battery is wanted/needed, or a 5v source is available (such as a large, portable powerbank).
 
