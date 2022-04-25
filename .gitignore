@@ -30,3 +30,4 @@ auxil
 !milestone.tex
 !out/milestone1.pdf
 !/out/milestone1.pdf
+*.synctex(busy)
