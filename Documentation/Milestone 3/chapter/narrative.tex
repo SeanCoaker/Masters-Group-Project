@@ -59,6 +59,7 @@
             \vspace{2em}
 
             Due to the evaluation of the progress towards requirements above, we feel that we have completed this project and all the requirements that were necessary to be completed by the project deadline. We are aware that a stretch goal was not managed to be completed prior to the project deadline, however this is a stretch goal and was not necessary to be completed by the project deadline. Because of this, we feel that the project is complete.
+            \todo{Repeated words, alot}
 
         \subsection{Problems and Solutions}
         \label{subsec:probs_solutions}
@@ -105,7 +106,13 @@
 
                 This issue was outlined previously in section \ref{subsec:sdfat}, but we thought we should reiterate it here in a narrative format. When developing the code that allowed the transferral of an audio file from the MicroSD card to the SPIFFS storage space on the TinyPICO development boards we opted to utilise the SD library provided by Arduino. This was due to the fact that the library was designed as a wrapper for the more complex SdFat library. In essence, we opted to use the Arduino SD library as it looked to be simple to implement and use for our purposes. However, we noticed that the SD library was taking a remarkably long time to read the audio file on the MicroSD card. More specifically, the library was taking 150 seconds to read a 150 KB MP3 file, which was completely unacceptable for our purposes. Upon further investigation, we noticed that many other developers were experiencing a similar issue and were recommending the use of the original SdFat library instead. It took some time to implement this library but once we did, the improvements were astounding. We were able to instantly decrease the read time of the audio file from 150 seconds, down to about 10 seconds. This solution provided a huge improvement in our ability to read the audio file from the MicroSD card and was crucial in the development of our product. This issue did provide a learning opportunity for us, allowing our team to realise that research should be done into libraries before utilising them, and to not always select the library that seems the easiest to implement at the time.
 
+            \subsubsection{Vibrator Limitations}
+
+                The mobile coin cell vibrator made available to us was simply too high powered, and would result in damaging our TinyPico's GPIO pins which are limited to 12mA. The vibrators require 70mA to sustain vibration, and even higher to overcome inertia and startup. This wasn't part of the initial scope, however we already had transistors from previous hobby projects that were suitable to control this, but had to be improvised once hardware was on hand.
+
+
             \subsubsection{Our Chosen Methodology}
+            \label{subsubsec:methodology}
 
                 In our Milestone 1 document, we stated that we would follow the Scrum software lifecycle methodology as a means to ensure that we successfully implement the requirements set out in that document \cite{coaker}. However, this software lifecycle methodology did not seem to suit the nature of our project, the work ethic of our team members, nor the pressures we faced with deadlines for other University work. The Scrum methodology requires constant input from all team members, who are all working towards completing the same task on 2 to 4 weekly basis. Our interpretation of the Scrum methodology was to attempt to meet every week, rather than following the daily meeting precedence set by the usual Scrum methodology. We had initially opted for this meeting frequency as it would have been unreasonable to expect full time students to meet every day to discuss a project. However, with the lack of commitment to meetings from some group members, and with the University curriculum affecting our planning, it was implausible to hold group meetings every week. We also identified that being able to implement features every 2 to 4 weeks as per the Scrum methodology was also implausible, especially when we experienced delays in the procurement of hardware, but also due to the fact that group members were working on different schedules and were not all committed towards implementing features in a timely fashion.
 
@@ -135,7 +142,7 @@
                 \clearpage% Flush page
             }
 
-            Seeing that we only needed to apply solutions to 5 out of 16 identified risks, we feel that our previous risk analysis was successful and certainly benefitted the project. The solutions that we applied when some identified risks did occur were all successful and allowed the project to be completed on time despite project progress being hampered by the occurrences of illness, hardware procurement delays and University work that was large enough to negatively affect the progress of the project. 
+            Seeing that we only needed to apply solutions to 5 out of 16 identified risks, we feel that our previous risk analysis was successful and certainly benefited the project. The solutions that we applied when some identified risks did occur were all successful and allowed the project to be completed on time despite project progress being hampered by the occurrences of illness, hardware procurement delays and University work that was large enough to negatively affect the progress of the project. 
 
             We updated our risk analysis section in Milestone 2 \cite{mile2} to included risks that we had not previously identified in our Milestone 1 document \cite{coaker}, but since the submission of our risk analysis section, we have not seen the occurrence of any unidentified risks. Because of this, we feel that our risk analysis work throughout this project's lifecycle has been successful and led to a situation where unidentified risks did not arise during the most crucial stages of project development.
 
@@ -167,6 +174,10 @@
                 The team have had previous experience in creating class diagrams as a basis for demonstrating the design of our software systems in previous University work. However, the development of UML diagrams in Umbrello was new to us, as well as the development of activity diagrams in general. We had previously aimed to include flowcharts within this document that demonstrated the workflow of our software systems, but realised that activity diagrams do this well and are a part of the UML diagram family. Therefore, we opted to provide activity diagrams within this document instead to illustrate the workflows of our software systems.
 
                 The experiences we have had with utilising Umbrello to develop UML diagrams, and the experiences of developing UML diagrams in general will certainly benefit our team members when they use similar methods of documentation in future work. Evidence of our UML diagrams can be seen in chapter \ref{ch:design}.
+
+            \subsubsection{3D Design with internal components and wiring}
+
+                Although members of the team had previous experience with 3D design, they were not familiar with designing with multiple PCB's and components in mind, as well as accounting for order of operations for assembly. Whilst going through design iterations, it became clearer how the housings had to be designed, to allow them to be easily assembled and disassembled. One time where this lack of knowledge became apparent was during the assembly of the mid-housing for the walking aid device, where the speaker wires had to be initially connected to the AudioShield, as the TinyPico would obscure it when in place. This caused some issues during initial assembly, but have since been rectified in later designs. Regardless, designing with tolerances for wiring and soldering is something new to the team, and a valuable skill to carry into industry and other personal hobbies.
                 
         \subsection{What if there was more time and a larger budget?}
 
@@ -184,8 +195,7 @@
 
         \subsection{Team Work}
 
-            Unfortunately the team work throughout the development of this product was not completely fair and equal, with some members contributing more to software and hardware 
-            development and more to the documentation. This section will outline the work each member did towards the development of this project, providing evidence as to how contribution levels of each team member was not equal. The following will contain a paragraph for each team member, outlining the work they carried out for this project, before we finally include an illustration of contribution to our git repository. Our git repository was our main storage location for our documentation and coding work throughout the project. It should be noted, that not all work has been uploaded to our git repository, such as our CAD designs and 3D printing work.
+            Unfortunately the team work throughout the development of this product was not completely fair and equal, with some members contributing more to software and hardware development, and more to the documentation. This section will outline the work each member did towards the development of this project, providing evidence as to how contribution levels of each team member was not equal. The following will contain a paragraph for each team member, outlining the work they carried out for this project, before we finally include an illustration of contribution to our git repository. Our git repository was our main storage location for our documentation and coding work throughout the project. It should be noted, that not all work has been uploaded to our git repository, such as our CAD designs and 3D printing work.
 
             \subsubsection{Team Member Contributions}
 
