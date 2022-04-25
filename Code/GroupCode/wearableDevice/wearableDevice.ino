@@ -48,7 +48,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t * data, int len) {
 void setup() {
   pinMode(VIBRATOR_PIN, OUTPUT);
 	Serial.begin(115200);
-  accel.init(20, 15, 10, 30, 10000);
+  accel.init(22, 15, 10, 30, 10000);
   comms.init("Reminder", broadcastAddress);
   // Sets callback on data received.
   esp_now_register_recv_cb(OnDataRecv);
