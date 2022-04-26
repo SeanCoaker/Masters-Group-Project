@@ -38,14 +38,20 @@
             As noted, the current prototype has no battery support, but the design decision for this walking aid device is to offer swappable endcases, this helps with modularity to allow for different mounts and attachments, but with a through hole for wiring, this allows for future implementations of battery based sources, such as replaceable batteries or rechargeable internal cells.
 
 
-        \subsection{Physical Design}
+        \subsection{Prototype}
         \label{subsec:prototype_walking_aid}
 
             As with the wearable device, assembly was made using standard M3 sized bolts, this time 35mm long to ensure suffcient length to attach the the front and rear endcasing to the midframe. This designed allows assembly to be done rather easily, and again utilising the self-tapping capabilities of the ABS plastic to retain the screws.
 
             Before assembly, the speaker wires had to be attached to the terminal of the Audio Shield, as the TinyPico would block access to it later on in assembly. The wires had to be fed through the access hole in the midframe, to allow access as well as boost the internal area that the speaker can leverage for stronger sound.
 
-            The front encases the 40mm driver, and the 4 screws attach it to the midframe securely without further adhesives, initially we had thought that spacers may be needed to stop unnecessary movement, but we instead opted for friction fit tolerances during design, which allowed for this step to be skipped and for an easier assembly process. The TinyPico with the accompanying soldered ADXL wiring is then added to the assembly. Side brackets are included in the complex midplate, that stop the boards from moving inside the casing. This is critical as we did not want internal movement to affect the sensitive accelerometer, and due to the SD Card and MicroUSB port requiring precise cutouts in order to remain accessible.
+            \input{graphics/prototype/walkingaid_1.tex}
+
+            The front encases the 40mm driver, and the 4 screws attach it to the midframe securely without further adhesives, initially we had thought that spacers may be needed to stop unnecessary movement, but we instead opted for friction fit tolerances during design, which allowed for this step to be skipped and for an easier assembly process. The original speaker wiring is used, to ensure the correct gauge and rating is used and therefor safe.
+
+            The TinyPico with the accompanying soldered ADXL wiring is then added to the assembly. Side brackets are included in the complex midplate, that stop the boards from moving inside the casing. This is critical as we did not want internal movement to affect the sensitive accelerometer, and due to the SD Card and MicroUSB port requiring precise cutouts in order to remain accessible.
+
+            \input{graphics/prototype/walkingaid_2.tex}
 
             The rear endcasing can then be attached, in the same manner as the front casing. This self taps into the designed screw holes, and ensures that both sides of the device are securely clamped and in place.
 
