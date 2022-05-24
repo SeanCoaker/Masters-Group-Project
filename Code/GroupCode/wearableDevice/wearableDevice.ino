@@ -18,7 +18,7 @@
 //! A copy of the message received from the walking aid device.
 String message;
 //! The MAC address of the walking aid device.
-uint8_t broadcastAddress[] = {0x50, 0x02, 0x91, 0xA1, 0xA0, 0x84};
+uint8_t broadcastAddress[] = {0xAC, 0x0B, 0xFB, 0x6F, 0x75, 0xB4};
 
 WearableAccelerometer accel;
 WearableCommunications comms;
@@ -48,8 +48,14 @@ void OnDataRecv(const uint8_t * mac, const uint8_t * data, int len) {
 void setup() {
   pinMode(VIBRATOR_PIN, OUTPUT);
 	Serial.begin(115200);
+  Serial.println("Setup Start");
+  Serial.print("MAC Address:  ");
+  Serial.println(WiFi.macAddress());
+  Serial.println("Init accel");
   accel.init(20, 15, 10, 30, 10000);
+  Serial.println("Comms init");
   comms.init("Reminder", broadcastAddress);
+  Serial.println("Init callback");
   // Sets callback on data received.
   esp_now_register_recv_cb(OnDataRecv);
 }

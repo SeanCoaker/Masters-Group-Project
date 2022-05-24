@@ -5,7 +5,7 @@
 //! A copy of the message received from the wearable device.
 String message;
 //! The MAC address of the wearable device.
-uint8_t broadcastAddress[] = {0x50, 0x02, 0x91, 0xA1, 0xA9, 0x0C};
+uint8_t broadcastAddress[] = {0x24, 0xA1, 0x60, 0x74, 0xEB, 0xF0};
 //! The audio controller object.
 WalkAidAudio audio;
 //! The communications controller object.
@@ -35,13 +35,20 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *data, int len) {
  */
 void setup() {
 	Serial.begin(115200);
+  Serial.println("Setup Start");
+  Serial.print("MAC Address:  ");
+  Serial.println(WiFi.macAddress());
 	if (!isVibrate) {
 		audio.init("/reminder/reminder.mp3", "/reminder.mp3");
 	}
+    Serial.println("Comms init");
   	comms.init("Vibrate", broadcastAddress);
     // Sets callback on data received.
+    Serial.println("Init callback");
     esp_now_register_recv_cb(OnDataRecv);
+    Serial.println("Init accel");
   	accel.init(20, 15, 10, 30, 10000);
+    Serial.println("Finished setup");
 }
 
 /**
