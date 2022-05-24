@@ -2,6 +2,7 @@
 \bgroup
 \def\arraystretch{1.5}
 \centering
+\begin{table}[H]
 \begin{tabular}{| m{0.97\textwidth} |} 
     \hline
     \textbf{Test Case:} TEST\_WEARABLE\_WALK02\\ 
@@ -17,8 +18,10 @@
     \hline
     \textbf{Result:} \colorbox{Dandelion}{PARTIAL PASS}\\ 
     \hline
-    \textbf{Reason:} In normal walking conditions, the wearable device sends a message to the walking aid device after walking over 1 metre. However, the same issue flagged in TEST_WEARABLE_01 can be identified here. That is, should the user move the wearable device with enough force, steps will be detected even without them walking. This issue can be limited with adjustments to thresholds and through wearing of the device on the ankle.\\
+    \textbf{Reason:} In normal walking conditions, the wearable device sends a message to the walking aid device after walking over 1 metre. However, the same issue flagged in TEST\_WEARABLE\_01 can be identified here. That is, should the user move the wearable device with enough force, steps will be detected even without them walking. This issue can be limited with adjustments to thresholds and through wearing of the device on the ankle.\\
     \hline
 \end{tabular}
+\caption{Wearable Device Walking Detection Test Case 2}
+\end{table}
 \egroup
 }

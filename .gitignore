@@ -25,6 +25,10 @@ auxil
 *.ilg
 *.pygtex
 *.pygstyle
+*.tdo
+*.synctex(busy)
 !milestone.tex
 !out/milestone1.pdf
 !/out/milestone1.pdf
+*.synctex(busy)
+!UserManual.pdf
